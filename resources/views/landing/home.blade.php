@@ -1,4 +1,3 @@
-
 <section class="home">
     <div class="home-container">
         <div class="home-content">
@@ -25,10 +24,9 @@
 </section>
 
 <style>
-
     @font-face {
         font-family: 'fredoka';
-        src: url('/fonts/fredoka/FredokaOne-Regular.ttf') format('truetype');
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
@@ -42,24 +40,33 @@
 
 
     .home {
-        min-height: 100vh;
-        margin-top: 65px;
-        /* jarak dari navbar */
+        min-height: 90vh;
+        margin-top: 0px;
         background:
             linear-gradient(to right,
-                rgba(255, 245, 240, 0.95) 40%,
-                rgba(255, 245, 240, 0.6) 60%,
-                rgba(255, 245, 240, 0.2) 75%,
-                rgba(255, 245, 240, 0) 100%),
+                /* Mulai dengan warna solid (Pink Muda #FFDAD1) di kiri */
+                rgba(255, 218, 209, 1) 0%,
+
+                /* Tetap solid sampai 45% lebar layar (area teks aman) */
+                rgba(255, 218, 209, 0.95) 20%,
+
+                /* Mulai memudar perlahan */
+                rgba(255, 218, 209, 0.6) 45%,
+
+                /* Benar-benar transparan di ujung kanan */
+                rgba(255, 218, 209, 0) 100%),
+
             url("/img/home.jpeg") center/cover no-repeat;
         display: flex;
+        align-items: center;
+        padding-top: 10vh;
+        /* Tambahan: supaya konten vertikal di tengah */
     }
 
     .home-container {
         max-width: 1200px;
-        /* padding: 0 24px; */
         margin-left: 89px;
-        margin-top: 79px;
+        margin-bottom: 100px;
     }
 
     .home-content {
@@ -70,7 +77,6 @@
     .home-title {
         font-family: 'fredoka', sans-serif;
         font-size: 100px;
-        /* font-weight: 300; */
         color: #f29aa0;
         margin-bottom: 6px;
         line-height: 1;
@@ -99,10 +105,11 @@
     /* PARAGRAF */
     .home-content p {
         font-family: 'nunito', sans-serif;
-        font-size: 14px;
+        font-size: 18px;
         color: #555;
         line-height: 1.8;
         margin-bottom: 24px;
+        color: #303030;
     }
 
     /* BUTTON */

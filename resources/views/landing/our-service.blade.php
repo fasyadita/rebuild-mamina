@@ -41,7 +41,7 @@
     /* Card Besar (Pink) */
     .services-card {
         max-width: 1100px;
-        max-height: 600px;
+        max-height: 550px;
         margin: auto;
         background: #ffdcd1; /* Warna pink background */
         border-radius: 40px;  /* Membuat sudut lebih bulat */
@@ -51,7 +51,7 @@
         display: flex;
         flex-wrap: wrap;       /* Agar item bisa turun ke bawah jika tidak muat */
         justify-content: center; /* Posisi item di tengah */
-        gap: 40px;             /* Jarak antar elemen */
+        gap: 10px 40px;             /* Jarak antar elemen */
     }
 
     /* Judul Section */
@@ -61,7 +61,7 @@
         font-family: 'Fredoka', sans-serif;
         font-size: 32px;
         font-weight: 700;
-        margin-bottom: 20px;   /* Jarak dari judul ke item di bawahnya */
+        /* margin-bottom: 20px;   Jarak dari judul ke item di bawahnya */
         color: #333;
     }
 
