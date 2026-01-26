@@ -6,6 +6,10 @@
     @include('landing.home')
     @include('landing.our-service')
     @include('landing.about')
+    @include('landing.why')
+    @include('landing.info')
+    @include('landing.testimony')
+    @include('landing.cabang')
     {{-- Tambahkan bagian lain yang diperlukan --}}
 @endsection
 
