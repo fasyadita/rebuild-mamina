@@ -56,7 +56,7 @@
             <div class="box-content">
                 <h3>Ditangani Terapis Profesional</h3>
                 <p class="desc-text">Semua treatment dilakukan oleh terapis bersertifikat dengan standar perawatan terbaik.</p>
-                <a href="#" class="btn-info">Kenali Tim Mamina</a>
+                <a href="/tim-mamina" class="btn-info">Kenali Tim Mamina</a>
             </div>
         </div>
 

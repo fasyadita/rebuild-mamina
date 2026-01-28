@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('main.layouts.app')
 
 <section id="reservasi" class="reservasi-section">
     <div class="container">
