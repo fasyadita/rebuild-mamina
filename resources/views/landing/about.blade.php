@@ -1,4 +1,4 @@
-<section class="about-banner">
+<section id="about" class="about-banner">
     <div class="banner-text">
         <h2>About Mamina Baby Spa</h2>
         <p>Comforting You</p>
@@ -39,8 +39,7 @@
         background-position: center;
         /* Fokus gambar di tengah */
 
-        height: 150px;
-        /* Tinggi banner (sesuaikan keinginan) */
+        height: 200px;
         width: 100%;
 
         /* Teknik menengahkan teks secara vertikal & horizontal */
@@ -56,7 +55,7 @@
     .banner-text h2 {
         font-family: 'Fredoka-sm', sans-serif;
         /* Menggunakan font yang sama dgn sebelumnya */
-        font-size: 36px;
+        font-size: 30px;
         font-weight: 700;
         color: #333;
         margin: 0;
@@ -67,7 +66,7 @@
     /* 3. Styling Tulisan Kecil (Subheading) */
     .banner-text p {
         font-family: 'Fredoka-m', sans-serif;
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 500;
         color: #555;
         margin: 0;

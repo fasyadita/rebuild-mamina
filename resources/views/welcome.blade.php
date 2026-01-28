@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Mamina - Home')
+@section('title', 'Mamina')
 
 @section('content')
     @include('landing.home')
