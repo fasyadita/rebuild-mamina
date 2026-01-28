@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('main.layouts.app')
 
 <div class="pricelist-wrapper">
 

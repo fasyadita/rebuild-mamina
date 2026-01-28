@@ -1,15 +1,15 @@
-@extends('layouts.app')
+@extends('main.layouts.app')
 
 @section('title', 'Mamina')
 
 @section('content')
-    @include('landing.home')
-    @include('landing.our-service')
-    @include('landing.about')
-    @include('landing.why')
-    @include('landing.info')
-    @include('landing.testimony')
-    @include('landing.cabang')
+    @include('main.landing.home')
+    @include('main.landing.our-service')
+    @include('main.landing.about')
+    @include('main.landing.why')
+    @include('main.landing.info')
+    @include('main.landing.testimony')
+    @include('main.landing.cabang')
     {{-- Tambahkan bagian lain yang diperlukan --}}
 @endsection
 

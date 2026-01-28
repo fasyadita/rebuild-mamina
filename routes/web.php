@@ -7,29 +7,29 @@ Route::get('/', function () {
 });
 
 Route::get('/reservasi', function () {
-    return view('reservasi.reservasi');
+    return view('main.reservasi.reservasi');
 });
 
 Route::get('/pricelist', function () {
-    return view('pricelist.pricelist');
+    return view('main.pricelist.pricelist');
 });
 
 Route::get('/tim-mamina', function () {
-    return view('tim-mamina.tim-mamina');
+    return view('main.tim-mamina.tim-mamina');
 });
 Route::get('/event', function () {
-    return view('event.event');
+    return view('main.event.event');
 });
 Route::get('/event/detail-event', function () {
-    return view('event.detail-event');
+    return view('main.event.detail-event');
 })->name('event.detail');
 
 Route::get('/layanan', function () {
-    return view('layanan.index');
+    return view('main.layanan.index');
 })->name('layanan.index');
 
 Route::get('/layanan/detail-layanan', function () {
-    return view('layanan.detail-layanan');
+    return view('main.layanan.detail-layanan');
 })->name('layanan.detail');
 
 

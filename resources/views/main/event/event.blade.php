@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('main.layouts.app')
 
 @section('title', 'Event Kami')
 
 @section('content')
 
-<section class="event-section">
+<section id="event" class="event-section">
     <div class="event-header">
         <h1 class="event-title">Event Kami</h1>
     </div>
