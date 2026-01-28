@@ -1,9 +1,9 @@
-<section class="why-choose">
+<section id="why" class="why-choose">
     <div class="container">
         <h2 class="section-title">Kenapa memilih Mamina?</h2>
 
         <div class="benefits-grid">
-            
+
             <div class="benefit-card">
                 <img src="img/bayi.jpeg" alt="Gentle Care">
                 <div class="card-content">
@@ -41,6 +41,20 @@
 </section>
 
 <style>
+    @font-face {
+        font-family: 'fredoka-m';
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito';
+        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
     /* 1. Pengaturan Section Utama */
     .why-choose {
         padding: 60px 20px;
@@ -55,9 +69,8 @@
     /* 2. Judul */
     .section-title {
         text-align: center;
-        font-family: 'Fredoka', sans-serif;
-        font-size: 28px;
-        font-weight: 600;
+        font-family: 'fredoka-m', sans-serif;
+        font-size: 30px;
         color: #333;
         margin-bottom: 40px;
     }
@@ -66,8 +79,8 @@
     .benefits-grid {
         display: grid;
         /* KUNCI: Memaksa 4 kolom sejajar */
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 20px; 
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
     }
 
     /* 4. Styling Kartu (PERBAIKAN DISINI) */
@@ -75,9 +88,9 @@
         background: transparent;
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s ease;
-        
+
         /* HAPUS 'grid-template-columns' dari sini, karena ini adalah item, bukan wadah */
     }
 
@@ -100,14 +113,14 @@
     }
 
     .card-content h3 {
-        font-family: 'Fredoka', sans-serif;
+        font-family: 'nunito-m', sans-serif;
         font-size: 18px;
         color: #333;
         margin-bottom: 10px;
     }
 
     .card-content p {
-        font-family: sans-serif;
+        font-family: 'nunito-m';
         font-size: 14px;
         color: #666;
         line-height: 1.5;
@@ -117,13 +130,15 @@
     /* --- RESPONSIF (Agar di HP tidak gepeng/rusak) --- */
     @media (max-width: 1024px) {
         .benefits-grid {
-            grid-template-columns: repeat(2, 1fr); /* Tablet jadi 2 kolom */
+            grid-template-columns: repeat(2, 1fr);
+            /* Tablet jadi 2 kolom */
         }
     }
 
     @media (max-width: 600px) {
         .benefits-grid {
-            grid-template-columns: 1fr; /* HP jadi 1 kolom ke bawah */
+            grid-template-columns: 1fr;
+            /* HP jadi 1 kolom ke bawah */
         }
     }
 </style>

@@ -1,4 +1,4 @@
-<section class="cabang-section">
+<section id="cabang" class="cabang-section">
     <div class="container">
         <h2 class="cabang-title">Cabang Mamina</h2>
 
@@ -8,7 +8,7 @@
             </div>
 
             <div class="cabang-right">
-                
+
                 <div class="cabang-card">
                     <div class="card-img-wrapper">
                         <img src="img/bg1.jpeg" alt="Cabang Malang">
@@ -69,21 +69,43 @@
 </section>
 
 <style>
+    @font-face {
+        font-family: 'fredoka';
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito-m';
+        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito-r';
+        src: url('/fonts/nunito/static/Nunito-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
     /* 1. Container Utama */
     .cabang-section {
-        padding: 60px 20px;
-        background-color: #fffaf3; /* Cream Background */
+        padding: 60px 0px;
+        background-color: #fffaf3;
+        /* Cream Background */
     }
 
     .container {
-        max-width: 1200px;
-        margin: 0 auto;
+        max-width: 90% !important;
     }
 
     /* 2. Judul */
     .cabang-title {
         text-align: center;
-        font-family: 'Fredoka', sans-serif;
+        font-family: 'fredoka', sans-serif;
         font-size: 32px;
         color: #333;
         margin-bottom: 40px;
@@ -93,26 +115,27 @@
     .cabang-content {
         display: flex;
         gap: 30px;
-        align-items: center; /* Agar sejajar di atas */
+        align-items: center;
+        /* Agar sejajar di atas */
     }
 
     /* Kolom Kiri: Gambar Besar */
     .cabang-left {
-        flex: 1; /* Mengambil 1 bagian ruang */
-        
+        flex: 1.2;
     }
 
     .main-img {
-        width: 90%;
-        height: 90%;
-        /* min-height: 500px; Tinggi minimum agar terlihat proporsional */
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        border-radius: 30px; /* Sudut sangat bulat */
+        border-radius: 30px;
+        /* Sudut sangat bulat */
     }
 
     /* Kolom Kanan: Daftar Card */
     .cabang-right {
-        flex: 1.3; /* Mengambil ruang sedikit lebih lebar */
+        flex: 1.4;
+        /* Mengambil ruang sedikit lebih lebar */
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -121,17 +144,21 @@
     /* 4. Styling Kartu Cabang */
     .cabang-card {
         display: flex;
-        background-color: #d8f5ef; /* Hijau Mint Muda */
+        background-color: #d8f5ef;
+        /* Hijau Mint Muda */
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        width: 750px;
+        height: 250px;
     }
 
     /* Gambar Kecil di Kiri Kartu */
     .card-img-wrapper {
-        width: 35%; /* Lebar gambar gedung */
+        width: 35%;
+        /* Lebar gambar gedung */
     }
-    
+
     .card-img-wrapper img {
         width: 100%;
         height: 100%;
@@ -148,9 +175,10 @@
     }
 
     .card-info h3 {
-        font-family: 'Fredoka', sans-serif;
+        font-family: 'fredoka', sans-serif;
         font-size: 20px;
-        color: #ff8e8e; /* Warna Pink Salmon untuk Judul Cabang */
+        color: #ff8e8e;
+        /* Warna Pink Salmon untuk Judul Cabang */
         margin-top: 0;
         margin-bottom: 15px;
     }
@@ -159,22 +187,23 @@
     .info-details {
         list-style: none;
         padding: 0;
-        margin: 0 0 20px 0;
+        margin: 0 0 0px 0;
     }
 
     .info-details li {
         display: flex;
         align-items: flex-start;
-        gap: 12px;
+        gap: 5px;
         margin-bottom: 10px;
-        font-family: sans-serif;
+        font-family: 'nunito-r', sans-serif;
         font-size: 13px;
         color: #555;
         line-height: 1.4;
     }
 
     .info-details i {
-        color: #3fb6a8; /* Warna Ikon Tosca */
+        color: #3fb6a8;
+        /* Warna Ikon Tosca */
         margin-top: 3px;
     }
 
@@ -182,10 +211,13 @@
     .card-buttons {
         display: flex;
         gap: 10px;
-        flex-wrap: wrap; /* Agar tombol turun jika layar sempit */
+        flex-wrap: wrap;
+        /* Agar tombol turun jika layar sempit */
+        margin-left: 145px;
     }
 
-    .btn-contact, .btn-maps {
+    .btn-contact,
+    .btn-maps {
         padding: 8px 16px;
         border-radius: 20px;
         text-decoration: none;
@@ -213,24 +245,29 @@
     /* --- Responsif (HP) --- */
     @media (max-width: 900px) {
         .cabang-content {
-            flex-direction: column; /* Ubah jadi susunan ke bawah */
+            flex-direction: column;
+            /* Ubah jadi susunan ke bawah */
         }
-        
+
         .main-img {
-            min-height: 300px; /* Perkecil tinggi gambar utama di HP */
+            min-height: 300px;
+            /* Perkecil tinggi gambar utama di HP */
             margin-bottom: 20px;
         }
 
         .cabang-card {
-            flex-direction: column; /* Kartu jadi susunan ke bawah di HP */
+            flex-direction: column;
+            /* Kartu jadi susunan ke bawah di HP */
         }
 
-        .card-img-wrapper, .card-info {
+        .card-img-wrapper,
+        .card-info {
             width: 100%;
         }
 
         .card-img-wrapper img {
-            height: 200px; /* Tinggi gambar gedung di HP */
+            height: 200px;
+            /* Tinggi gambar gedung di HP */
         }
     }
 </style>

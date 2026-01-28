@@ -1,4 +1,4 @@
-<section class="services">
+<section id="services" class="services">
     <div class="services-card">
         <h2 class="services-title">Our Services</h2>
 
@@ -8,7 +8,7 @@
             <p>
                 Body text for whatever you'd like to add more to the subheading.
             </p>
-            <a href="#" class="btn-price">Lihat Pricelist</a>
+            <a href="/pricelist" class="btn-price">Lihat Pricelist</a>
         </div>
 
         <div class="service-item">
@@ -17,7 +17,7 @@
             <p>
                 Body text for whatever you'd like to add more to the subheading.
             </p>
-            <a href="#" class="btn-price">Lihat Pricelist</a>
+            <a href="/pricelist" class="btn-price">Lihat Pricelist</a>
         </div>
 
         <div class="service-item">
@@ -26,7 +26,7 @@
             <p>
                 Body text for whatever you'd like to add more to the subheading.
             </p>
-            <a href="#" class="btn-price">Lihat Pricelist</a>
+            <a href="/pricelist" class="btn-price">Lihat Pricelist</a>
         </div>
     </div>
 </section>
@@ -45,8 +45,7 @@
         margin: auto;
         background: #ffdcd1; /* Warna pink background */
         border-radius: 40px;  /* Membuat sudut lebih bulat */
-        padding: 48px 30px;
-        
+        padding: 30px 30px;
         /* Pengaturan Flexbox */
         display: flex;
         flex-wrap: wrap;       /* Agar item bisa turun ke bawah jika tidak muat */

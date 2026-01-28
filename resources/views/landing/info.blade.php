@@ -1,4 +1,4 @@
-<section class="info-section">
+<section id="info" class="info-section">
     <div class="info-header">
         <p>Perawatan lengkap, edukatif, dan terpercaya untuk ibu & buah hati</p>
     </div>
@@ -64,6 +64,20 @@
 </section>
 
 <style>
+    @font-face {
+        font-family: 'fredoka';
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito';
+        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
     /* 1. Container Utama */
     .info-section {
         width: 100%;
@@ -79,7 +93,7 @@
     .info-header p {
         font-family: 'nunito', sans-serif;
         font-style: italic;
-        font-size: 18px;
+        font-size: 25px;
         color: #555;
         margin: 0;
     }
@@ -92,7 +106,7 @@
 
     /* 3. Styling Kotak (PENTING: Diubah jadi Row/Samping) */
     .info-box {
-        padding: 50px 60px; /* Padding lebih lega */
+        padding: 50px 50px;
         display: flex;
         flex-direction: row; /* Ikon dan Teks sejajar ke samping */
         align-items: flex-start; /* Rata atas */
@@ -114,6 +128,7 @@
         height: 70px;
         border-radius: 50%;
         display: flex;
+        margin-top: 25px;
         align-items: center;
         justify-content: center;
         font-size: 32px;
@@ -141,34 +156,29 @@
         margin: 0;
         display: grid;
         grid-template-columns: 1fr 1.2fr; /* Kolom kanan sedikit lebih lebar */
-        column-gap: 20px;
+        column-gap: 10px;
         row-gap: 12px;
     }
 
     .check-list li {
-        font-family: sans-serif;
-        font-size: 15px;
+        font-family: 'nunito', sans-serif;
+        font-size: 18px;
         color: #555;
         display: flex;
         align-items: center;
         gap: 10px;
     }
 
-    /* WARNA CENTANG (Otomatis menyesuaikan background) */
-    /* Jika background Pink, centang jadi Hijau Tosca */
     .pink-bg .check-list i { color: #3fb6a8; }
     
-    /* Jika background Biru, centang jadi Pink/Orange */
     .blue-bg .check-list i { color: #fa9d9d; }
 
-
-    /* 7. Deskripsi & Tombol (Kotak 4) */
     .desc-text {
         font-family: sans-serif;
-        font-size: 15px;
+        font-size: 18px;
         color: #555;
         line-height: 1.6;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
     .btn-info {

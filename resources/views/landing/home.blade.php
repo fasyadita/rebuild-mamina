@@ -1,4 +1,4 @@
-<section class="home">
+<section id="home" class="home">
     <div class="home-container">
         <div class="home-content">
 
@@ -18,7 +18,7 @@
                 beberapa kota di Indonesia untuk layanan homecare.
             </p>
 
-            <a href="#" class="btn-reservasi">Reservasi</a>
+            <a href="/reservasi" class="btn-reservasi">Reservasi</a>
         </div>
     </div>
 </section>
