@@ -153,7 +153,7 @@
                 
                 <!-- Join Member Button -->
                 <li class="nav-item ms-3">
-                    <a href="#" class="btn btn-primary btn-join">
+                    <a href="/join-member" class="btn btn-primary btn-join">
                         Join Member
                     </a>
                 </li>

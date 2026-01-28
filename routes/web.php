@@ -32,4 +32,7 @@ Route::get('/layanan/detail-layanan', function () {
     return view('main.layanan.detail-layanan');
 })->name('layanan.detail');
 
+Route::get('/join-member', function () {
+    return view('welcome-guest');
+});
 
