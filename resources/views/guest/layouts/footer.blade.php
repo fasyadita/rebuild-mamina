@@ -9,7 +9,7 @@
 
     /* Styling Footer */
     .footer-container {
-        background-color: #fbfbf2;
+        background-color: #FFFDEB;
         /* Warna background cream/kuning pucat */
         color: #757575;
         /* Warna teks abu-abu tua */
