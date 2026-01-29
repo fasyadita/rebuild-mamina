@@ -36,6 +36,10 @@ Route::get('/join-member', function () {
     return view('welcome-guest');
 });
 
+Route::get('/member', function () {
+    return view('welcome-member');
+});
+
 Route::get('/terapis', function () {
     return view('guest.terapis.terapis');
 });
