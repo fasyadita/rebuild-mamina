@@ -1,11 +1,9 @@
-@extends('guest.layouts.app')
+@extends('member.layouts.app')
 
-@section('title', 'join member')
+@section('title', 'member')
 
 @section('content')
-    @include('guest.landing.home')
-    @include('guest.landing.top-service')
-    @include('guest.landing.service')
+
     
 @endsection
 

@@ -36,3 +36,7 @@ Route::get('/join-member', function () {
     return view('welcome-guest');
 });
 
+Route::get('/member', function () {
+    return view('welcome-member');
+});
+
