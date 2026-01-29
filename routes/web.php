@@ -40,3 +40,17 @@ Route::get('/member', function () {
     return view('welcome-member');
 });
 
+Route::get('/terapis', function () {
+    return view('guest.terapis.terapis');
+});
+
+Route::get('/cabang', function () {
+    return view('guest.cabang.cabang');
+});
+
+Route::get('/login', function () {
+    return view('guest.login-regist.login');
+});
+Route::get('/regist', function () {
+    return view('guest.login-regist.regist');
+});
