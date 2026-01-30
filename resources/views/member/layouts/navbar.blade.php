@@ -126,39 +126,38 @@
             /* Tengah di mobile */
         }
     }
-</style>
 
-/* Mobile Responsive */
-@media (max-width: 991.98px) {
-.navbar {
-height: auto;
-padding: 15px 0;
-}
+    /* Mobile Responsive */
+    @media (max-width: 991.98px) {
+        .navbar {
+            height: auto;
+            padding: 15px 0;
+        }
 
-.navbar-nav {
-padding: 20px 0;
-gap: 15px;
-}
+        .navbar-nav {
+            padding: 20px 0;
+            gap: 15px;
+        }
 
-.nav-item {
-text-align: center;
-}
+        .nav-item {
+            text-align: center;
+        }
 
-.cart-icon {
-justify-content: center;
-padding-right: 0;
-}
+        .cart-icon {
+            justify-content: center;
+            padding-right: 0;
+        }
 
-.btn-join {
-margin-top: 10px;
-}
-}
+        .btn-join {
+            margin-top: 10px;
+        }
+    }
 
-@media (max-width: 768px) {
-.navbar .container {
-padding: 0 20px;
-}
-}
+    @media (max-width: 768px) {
+        .navbar .container {
+            padding: 0 20px;
+        }
+    }
 </style>
 <nav class="navbar navbar-expand-lg fixed-top mamina-navbar">
     <div class="container">
@@ -179,16 +178,16 @@ padding: 0 20px;
                     <a class="nav-link" href="#home">Layanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">Terapis</a>
+                    <a class="nav-link" href="/terapis">Terapis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Cabang</a>
+                    <a class="nav-link" href="/cabang">Cabang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Riwayat Reservasi</a>
+                    <a class="nav-link" href="/riwayat-reservasi">Riwayat Reservasi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Anak</a>
+                    <a class="nav-link" href="/anak">Anak</a>
                 </li>
 
                 <li class="nav-item ms-3">

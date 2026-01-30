@@ -54,3 +54,16 @@ Route::get('/login', function () {
 Route::get('/regist', function () {
     return view('guest.login-regist.regist');
 });
+Route::get('/riwayat-reservasi', function () {
+    return view('member.reservasi.reservasi');
+});
+Route::get('/anak', function () {
+    return view('member.anak.anak');
+});
+Route::get('/profile', function () {
+    return view('member.profile.profile');
+});
+
+Route::get('/edit-profile', function () {
+    return view('member.profile.edit-profile');
+});

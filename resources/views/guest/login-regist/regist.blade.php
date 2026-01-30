@@ -30,7 +30,7 @@
                 <span>Saya menyetujui <a href="#">Kebijakan Privasi</a></span>
             </label>
 
-            <button type="submit" class="auth-btn">Daftar</button>
+            <a href="/login" class="btn-login">Daftar</a>
 
             <p class="auth-footer">
                 Sudah punya akun? <a href="/login">Login</a>
