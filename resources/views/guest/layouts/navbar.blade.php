@@ -125,23 +125,23 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="/layanan">Layanan</a>
+                    <a class="nav-link" href="#home">Layanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/terapis">Terapis</a>
+                    <a class="nav-link" href="/guest/terapis">Terapis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/cabang">Cabang</a>
+                    <a class="nav-link" href="/guest/cabang">Cabang</a>
                 </li>
                 
                 <!-- Join Member Button -->
                 <li class="nav-item ms-3">
-                    <a href="/login" class="btn btn-primary btn-join">
+                    <a href="/guest/login" class="btn btn-primary btn-join">
                         Login
                     </a>
                 </li>
                  <li class="nav-item ms-3">
-                    <a href="/regist" class="btn btn-primary btn-join">
+                    <a href="/guest/regist" class="btn btn-primary btn-join">
                         Daftar
                     </a>
                 </li>

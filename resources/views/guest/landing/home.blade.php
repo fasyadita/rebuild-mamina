@@ -72,7 +72,7 @@
         }
     </style>
 
-    <div class="slider-container">
+    <div id="home" class="slider-container">
 
         <button class="tombol" onclick="gantiSlide(-1)">&#10094;</button>
 

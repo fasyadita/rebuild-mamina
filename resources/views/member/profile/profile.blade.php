@@ -268,7 +268,7 @@
         
         <div class="data-header">
             <h4 class="section-title">Data Pribadi</h4>
-            <a href="/edit-profile" class="btn-edit-profile">
+            <a href="/member/edit-profile" class="btn-edit-profile">
                 <i class="fas fa-pencil-alt me-1"></i> Edit Profil
             </a>
         </div>

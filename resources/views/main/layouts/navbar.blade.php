@@ -134,10 +134,10 @@
                     <a class="nav-link" href="#about">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#testimony">Testimony</a>
+                    <a class="nav-link" href="#testimony">Testimommy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/event">Event</a>
+                    <a class="nav-link" href="/main/event">Event</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#cabang">Cabang</a>
@@ -153,7 +153,7 @@
                 
                 <!-- Join Member Button -->
                 <li class="nav-item ms-3">
-                    <a href="/join-member" class="btn btn-primary btn-join">
+                    <a href="/guest" class="btn btn-primary btn-join">
                         Join Member
                     </a>
                 </li>
