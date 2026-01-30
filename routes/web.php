@@ -36,6 +36,10 @@ Route::get('/join-member', function () {
     return view('welcome-guest');
 });
 
+Route::get('/member', function () {
+    return view('welcome-member');
+});
+
 Route::get('/terapis', function () {
     return view('guest.terapis.terapis');
 });
@@ -51,6 +55,20 @@ Route::get('/regist', function () {
     return view('guest.login-regist.regist');
 });
 
+
 Route::get('/layanan-anak', function () {
     return view('guest.layanan.layanan-anak');
+});
+Route::get('/riwayat-reservasi', function () {
+    return view('member.reservasi.reservasi');
+});
+Route::get('/anak', function () {
+    return view('member.anak.anak');
+});
+Route::get('/profile', function () {
+    return view('member.profile.profile');
+});
+
+Route::get('/edit-profile', function () {
+    return view('member.profile.edit-profile');
 });

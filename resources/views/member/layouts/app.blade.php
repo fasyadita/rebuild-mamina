@@ -24,7 +24,7 @@
 
 <body>
     <!-- Navbar -->
-    @include('guest.layouts.navbar')
+    @include('member.layouts.navbar')
 
     <!-- Main Content -->
     <main style="margin-top: 90px;"> <!-- Tambahkan margin karena navbar fixed -->
@@ -59,7 +59,7 @@
     </main>
 
     <!-- Footer -->
-    @include('guest.layouts.footer')
+    @include('member.layouts.footer')
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

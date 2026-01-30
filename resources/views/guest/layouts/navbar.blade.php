@@ -1,5 +1,5 @@
 <style>
-.header {
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,16 +19,16 @@
     background-color: #fffdeb;
 }
 
-.mamina-header {
+.mamina-navbar {
     background-color: #fffdeb !important;
 }
 
-.header .container {
+.navbar .container {
     max-width: 1300px;
     padding: 0 32px;
 }
 
-.header-nav {
+.navbar-nav {
     gap: 28px;
 }
 
@@ -79,12 +79,12 @@
 
 /* Mobile Responsive */
 @media (max-width: 991.98px) {
-    .header {
+    .navbar {
         height: auto;
         padding: 15px 0;
     }
 
-    .header-nav {
+    .navbar-nav {
         padding: 20px 0;
         gap: 15px;
     }
@@ -104,44 +104,44 @@
 }
 
 @media (max-width: 768px) {
-    .header .container {
+    .navbar .container {
         padding: 0 20px;
     }
 }
 </style>
-<nav class="header header-expand-lg fixed-top mamina-header">
+<nav class="navbar navbar-expand-lg fixed-top mamina-navbar">
     <div class="container">
         <!-- Logo di Kiri -->
-        <a class="header-brand" href="/">
+        <a class="navbar-brand" href="/">
             <img src="{{ asset('img/logo.png') }}" alt="Mamina" height="60">
         </a>
 
         <!-- Tombol Hamburger untuk Mobile -->
-        <button class="header-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#headerNav">
-            <span class="header-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Menu di Kanan -->
-        <div class="collapse header-collapse justify-content-end" id="headerNav">
-            <ul class="header-nav align-items-center">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Layanan</a>
+                    <a class="nav-link" href="/layanan">Layanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">Terapis</a>
+                    <a class="nav-link" href="/terapis">Terapis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Cabang</a>
+                    <a class="nav-link" href="/cabang">Cabang</a>
                 </li>
                 
                 <!-- Join Member Button -->
                 <li class="nav-item ms-3">
-                    <a href="#" class="btn btn-primary btn-join">
+                    <a href="/login" class="btn btn-primary btn-join">
                         Login
                     </a>
                 </li>
                  <li class="nav-item ms-3">
-                    <a href="#" class="btn btn-primary btn-join">
+                    <a href="/regist" class="btn btn-primary btn-join">
                         Daftar
                     </a>
                 </li>

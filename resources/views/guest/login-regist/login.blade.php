@@ -23,7 +23,7 @@
                     <a href="#">Reset Password</a>
                 </div>
 
-                <button type="submit" class="btn-login">Masuk</button>
+                <a href="/member" class="btn-login">Masuk</a>
             </form>
 
             <p class="register-text">
