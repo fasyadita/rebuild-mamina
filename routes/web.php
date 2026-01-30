@@ -28,8 +28,8 @@ Route::get('/layanan', function () {
     return view('main.layanan.index');
 })->name('layanan.index');
 
-Route::get('/layanan/detail-layanan', function () {
-    return view('main.layanan.detail-layanan');
+Route::get('/layanan/detail-layanan-anak', function () {
+    return view('main.layanan.detail-layanan-anak');
 })->name('layanan.detail');
 
 Route::get('/join-member', function () {
@@ -49,4 +49,8 @@ Route::get('/login', function () {
 });
 Route::get('/regist', function () {
     return view('guest.login-regist.regist');
+});
+
+Route::get('/layanan-anak', function () {
+    return view('guest.layanan.layanan-anak');
 });

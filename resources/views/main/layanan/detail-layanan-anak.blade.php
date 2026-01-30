@@ -6,39 +6,7 @@
 
 <section class="detail-layanan-section">
     <div class="detail-container">
-
-        {{-- SEARCH --}}
-        <div class="layanan-search">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Cari layanan...">
-        </div>
-
-        {{-- KATEGORI --}}
-        @php
-        $kategori = [
-            ['nama'=>'Anak','icon'=>'fa-child'],
-            ['nama'=>'Bayi','icon'=>'fa-baby'],
-            ['nama'=>'Ibu','icon'=>'fa-person-breastfeeding'],
-            ['nama'=>'Imunisasi','icon'=>'fa-syringe'],
-            ['nama'=>'Kelas','icon'=>'fa-chalkboard-teacher'],
-            ['nama'=>'Konsultasi','icon'=>'fa-comments'],
-            ['nama'=>'Paket','icon'=>'fa-box'],
-            ['nama'=>'Toddler','icon'=>'fa-child-reaching'],
-            ['nama'=>'Umum','icon'=>'fa-user'],
-            ['nama'=>'Lainnya','icon'=>'fa-ellipsis-h'],
-        ];
-        @endphp
-
-        <div class="layanan-kategori">
-            @foreach ($kategori as $item)
-                <div class="kategori-item {{ $item['nama'] == 'Anak' ? 'active' : '' }}">
-                    <i class="fas {{ $item['icon'] }}"></i>
-                    <span>{{ $item['nama'] }}</span>
-                </div>
-            @endforeach
-        </div>
-
-        {{-- JUDUL --}}
+        {{-- JUDUL --}}  
         <h2 class="judul-layanan">Layanan Anak</h2>
 
         {{-- GRID --}}
@@ -51,7 +19,6 @@
                     <h3>Pijat Bayi</h3>
                     <p class="harga">Rp 80.000</p>
                     <span class="cabang">Cabang Malang</span>
-
                     <button class="btn-tambah">
                         <i class="fas fa-plus"></i> Tambah
                     </button>
@@ -88,64 +55,7 @@
 .detail-container {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-/* SEARCH */
-.layanan-search {
-    max-width: 420px;
-    margin: 0 auto 30px;
-    display: flex;
-    align-items: center;
-    background: rgba(180, 235, 230, 0.45); /* B4EBE6 45% */
-    padding: 12px 18px;
-    border-radius: 40px;
-}
-
-.layanan-search i {
-    color: #3D9F9E;
-    margin-right: 10px;
-}
-
-.layanan-search input {
-    border: none;
-    background: transparent;
-    width: 100%;
-    outline: none;
-    font-size: 13px;
-}
-
-/* KATEGORI */
-.layanan-kategori {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 18px;
-    margin-bottom: 40px;
-    justify-items: center;
-}
-
-.kategori-item {
-    background: #FBE4E2;
-    border-radius: 16px;
-    padding: 18px 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.kategori-item i {
-    display: block;
-    font-size: 22px;
-    margin-bottom: 6px;
-}
-
-.kategori-item.active,
-.kategori-item:hover {
-    background: #3D9F9E;
-    color: #fff;
-}
+} 
 
 /* JUDUL */
 .judul-layanan {
@@ -198,17 +108,14 @@
 /* RESPONSIVE */
 @media (max-width: 1024px) {
     .layanan-grid { grid-template-columns: repeat(3, 1fr); }
-    .layanan-kategori { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (max-width: 768px) {
     .layanan-grid { grid-template-columns: repeat(2, 1fr); }
-    .layanan-kategori { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 480px) {
     .layanan-grid { grid-template-columns: 1fr; }
-    .layanan-kategori { grid-template-columns: repeat(2, 1fr); }
 }
 
 </style>
