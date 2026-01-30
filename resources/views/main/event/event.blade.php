@@ -28,7 +28,7 @@
                         <span>08:00 - 11:00</span>
                     </div>
                 </div>
-                <a href="{{ route('event.detail') }}" class="event-btn">Detail</a>
+                <a href="{{ route('main.event.detail') }}" class="event-btn">Detail</a>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
                         <span>08:00 - 11:00</span>
                     </div>
                 </div>
-                <a href="{{ route('event.detail') }}" class="event-btn">Detail</a>
+                <a href="{{ route('main.event.detail') }}" class="event-btn">Detail</a>
             </div>
         </div>
 
@@ -72,7 +72,7 @@
                         <span>08:00 - 11:00</span>
                     </div>
                 </div>
-                <a href="{{ route('event.detail') }}" class="event-btn">Detail</a>
+                <a href="{{ route('main.event.detail') }}" class="event-btn">Detail</a>
             </div>
         </div>
 
@@ -94,7 +94,7 @@
                         <span>08:00 - 11:00</span>
                     </div>
                 </div>
-                <a href="{{ route('event.detail') }}" class="event-btn">Detail</a>
+                <a href="{{ route('main.event.detail') }}" class="event-btn">Detail</a>
             </div>
         </div>
 
@@ -116,7 +116,7 @@
                         <span>08:00 - 11:00</span>
                     </div>
                 </div>
-                <a href="{{ route('event.detail') }}" class="event-btn">Detail</a>
+                <a href="{{ route('main.event.detail') }}" class="event-btn">Detail</a>
             </div>
         </div>
 
@@ -138,7 +138,7 @@
                         <span>08:00 - 11:00</span>
                     </div>
                 </div>
-                <a href="{{ route('event.detail') }}" class="event-btn">Detail</a>
+                <a href="{{ route('main.event.detail') }}" class="event-btn">Detail</a>
             </div>
         </div>
 
@@ -160,7 +160,7 @@
                         <span>08:00 - 11:00</span>
                     </div>
                 </div>
-                <a href="{{ route('event.detail') }}" class="event-btn">Detail</a>
+                <a href="{{ route('main.event.detail') }}" class="event-btn">Detail</a>
             </div>
         </div>
 
@@ -182,7 +182,7 @@
                         <span>08:00 - 11:00</span>
                     </div>
                 </div>
-                <a href="{{ route('event.detail') }}" class="event-btn">Detail</a>
+                <a href="{{ route('main.event.detail') }}" class="event-btn">Detail</a>
             </div>
         </div>
     </div>

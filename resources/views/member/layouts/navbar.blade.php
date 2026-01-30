@@ -178,20 +178,20 @@
                     <a class="nav-link" href="#home">Layanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/terapis">Terapis</a>
+                    <a class="nav-link" href="/member/terapis">Terapis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/cabang">Cabang</a>
+                    <a class="nav-link" href="/member/cabang">Cabang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/riwayat-reservasi">Riwayat Reservasi</a>
+                    <a class="nav-link" href="/member/riwayat-reservasi">Riwayat Reservasi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/anak">Anak</a>
+                    <a class="nav-link" href="/member/anak">Anak</a>
                 </li>
 
                 <li class="nav-item ms-3">
-                    <a href="/profile" class="profile-btn">
+                    <a href="/member/profile" class="profile-btn">
                         <i class="fas fa-user"></i>
                     </a>
                 </li>
