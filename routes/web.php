@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-Route::prefix('main')->name('main.')->group(function () {
+// main 
     Route::get('/', function () {
         return view('welcome');
     });
@@ -36,7 +35,7 @@ Route::prefix('main')->name('main.')->group(function () {
     Route::get('/layanan/detail-layanan-anak', function () {
         return view('main.layanan.detail-layanan-anak');
     })->name('layanan.detail');
-});
+
 
 Route::prefix('guest')->name('guest.')->group(function () {
 
