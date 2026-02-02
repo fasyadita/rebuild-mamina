@@ -137,7 +137,7 @@
                     <a class="nav-link" href="#testimony">Testimommy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/main/event">Event</a>
+                    <a class="nav-link" href="/event">Event</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#cabang">Cabang</a>
