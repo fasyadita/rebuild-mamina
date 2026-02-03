@@ -73,7 +73,7 @@
     }
 
     .layanan-index {
-        background: #FFFFFF; 
+        background: #FFFDEB; /* Cream page background */
         padding: 60px 20px;
         font-family: 'nunito', sans-serif;
         min-height: 100vh;
