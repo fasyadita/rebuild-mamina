@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
         return view('main.event.event');
     });
 
-
     Route::get('/event/detail-event', function () {
         return view('main.event.detail-event');
     })->name('event.detail');
@@ -97,7 +96,7 @@ Route::prefix('guest')->name('guest.')->group(function () {
     Route::get('/layanan-lainnya', function () {
         return view('guest.layanan.layanan-lainnya');
     });
-});
+
 Route::prefix('member')->name('member.')->group(function () {
 
     Route::get('/', function () {
@@ -125,8 +124,5 @@ Route::prefix('member')->name('member.')->group(function () {
     Route::get('/edit-profile', function () {
         return view('member.profile.edit-profile');
     });
-
-    Route::get('/reset-password', function () {
-        return view('member.profile.reset-password');
     });
 });

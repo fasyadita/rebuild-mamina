@@ -90,19 +90,15 @@
         font-style: normal;
     }
 
-
-    /* 1. Container Utama */
     .cabang-section {
         padding: 60px 0px;
         background-color: #fffaf3;
-        /* Cream Background */
     }
 
     .container {
         max-width: 90% !important;
     }
 
-    /* 2. Judul */
     .cabang-title {
         text-align: center;
         font-family: 'fredoka', sans-serif;
@@ -111,15 +107,12 @@
         margin-bottom: 40px;
     }
 
-    /* 3. Layout Flexbox (Kiri Gambar, Kanan List) */
     .cabang-content {
         display: flex;
         gap: 30px;
         align-items: center;
-        /* Agar sejajar di atas */
     }
 
-    /* Kolom Kiri: Gambar Besar */
     .cabang-left {
         flex: 1.2;
     }
@@ -129,23 +122,18 @@
         height: 100%;
         object-fit: cover;
         border-radius: 30px;
-        /* Sudut sangat bulat */
     }
 
-    /* Kolom Kanan: Daftar Card */
     .cabang-right {
         flex: 1.4;
-        /* Mengambil ruang sedikit lebih lebar */
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    /* 4. Styling Kartu Cabang */
     .cabang-card {
         display: flex;
         background-color: #d8f5ef;
-        /* Hijau Mint Muda */
         border-radius: 20px;
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -153,10 +141,8 @@
         height: 250px;
     }
 
-    /* Gambar Kecil di Kiri Kartu */
     .card-img-wrapper {
         width: 35%;
-        /* Lebar gambar gedung */
     }
 
     .card-img-wrapper img {
@@ -165,7 +151,6 @@
         object-fit: cover;
     }
 
-    /* Bagian Info (Kanan Kartu) */
     .card-info {
         width: 65%;
         padding: 20px;
@@ -178,12 +163,10 @@
         font-family: 'fredoka', sans-serif;
         font-size: 20px;
         color: #ff8e8e;
-        /* Warna Pink Salmon untuk Judul Cabang */
         margin-top: 0;
         margin-bottom: 15px;
     }
 
-    /* List Detail (Alamat, Jam, Telp) */
     .info-details {
         list-style: none;
         padding: 0;
@@ -203,16 +186,13 @@
 
     .info-details i {
         color: #3fb6a8;
-        /* Warna Ikon Tosca */
         margin-top: 3px;
     }
 
-    /* 5. Tombol-tombol */
     .card-buttons {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
-        /* Agar tombol turun jika layar sempit */
         margin-left: 145px;
     }
 

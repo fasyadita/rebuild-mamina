@@ -10,7 +10,6 @@
     </div>
 
     <div class="event-grid">
-        {{-- Event Card 1 --}}
         <div class="event-card">
             <div class="event-image">
                 <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
@@ -32,7 +31,6 @@
             </div>
         </div>
 
-        {{-- Event Card 2 --}}
         <div class="event-card">
             <div class="event-image">
                 <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
@@ -54,7 +52,6 @@
             </div>
         </div>
 
-        {{-- Event Card 3 --}}
         <div class="event-card">
             <div class="event-image">
                 <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
@@ -76,7 +73,6 @@
             </div>
         </div>
 
-        {{-- Event Card 4 --}}
         <div class="event-card">
             <div class="event-image">
                 <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
@@ -98,7 +94,6 @@
             </div>
         </div>
 
-        {{-- Event Card 5 --}}
         <div class="event-card">
             <div class="event-image">
                 <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
@@ -120,7 +115,6 @@
             </div>
         </div>
 
-        {{-- Event Card 6 --}}
         <div class="event-card">
             <div class="event-image">
                 <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
@@ -142,7 +136,6 @@
             </div>
         </div>
 
-        {{-- Event Card 7 --}}
         <div class="event-card">
             <div class="event-image">
                 <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
@@ -164,7 +157,6 @@
             </div>
         </div>
 
-        {{-- Event Card 8 --}}
         <div class="event-card">
             <div class="event-image">
                 <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
@@ -189,7 +181,6 @@
 </section>
 
 <style>
-    /* ===== Font Face ===== */
     @font-face {
         font-family: 'fredoka';
         src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
@@ -204,14 +195,12 @@
         font-style: normal;
     }
 
-    /* ===== Event Section ===== */
     .event-section {
         padding: 60px 80px;
         background: #FFFDEB;
         min-height: 100vh;
     }
 
-    /* ===== Header ===== */
     .event-header {
         text-align: center;
         margin-bottom: 50px;
@@ -225,14 +214,12 @@
         font-weight: 600;
     }
 
-    /* ===== Grid ===== */
     .event-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 25px;
     }
 
-    /* ===== Event Card ===== */
     .event-card {
         background: #DDF5EA;
         border-radius: 14px;
@@ -246,7 +233,6 @@
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
     }
 
-    /* ===== Event Image ===== */
     .event-image {
         position: relative;
         width: 100%;
@@ -273,7 +259,6 @@
         font-weight: 600;
     }
 
-    /* ===== Event Content ===== */
     .event-content {
         padding: 18px 16px 20px;
     }
@@ -287,7 +272,6 @@
         line-height: 1.4;
     }
 
-    /* ===== Event Info ===== */
     .event-info {
         display: flex;
         flex-direction: column;
@@ -311,7 +295,6 @@
         font-size: 13px;
     }
 
-    /* ===== Event Button ===== */
     .event-btn {
         display: inline-block;
         width: 100%;

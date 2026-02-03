@@ -61,7 +61,6 @@
 </section>
 
 <style>
-    /* Font setup (biarkan sama) */
     @font-face {
         font-family: 'fredoka';
         src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
@@ -73,7 +72,6 @@
         font-weight: normal; font-style: normal;
     }
 
-    /* Section Utama (Background Cream Luar) */
     .layanan-index {
         background: #FFFDEB; /* Cream page background */
         padding: 60px 20px;
@@ -84,9 +82,8 @@
         justify-content: center;
     }
 
-    /* === BARU: Box Pink di Tengah === */
     .services-box {
-        background-color: #ffece5; /* Pink Salem/Peach */
+        background-color: #ffece5; 
         border-radius: 30px;
         padding: 40px 50px;
         max-width: 1100px;
@@ -94,36 +91,33 @@
         box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     }
 
-    /* ===== JUDUL ===== */
     .judul-page {
         text-align: center;
         font-family: 'fredoka', sans-serif;
-        color: #4db6ac; /* Warna Tosca */
+        color: #4db6ac; 
         font-size: 26px;
         font-weight: 600;
         margin-bottom: 40px;
         letter-spacing: 0.5px;
     }
 
-    /* ===== GRID KATEGORI ===== */
     .kategori-grid {
         display: grid;
-        grid-template-columns: repeat(5, 1fr); /* 5 Kolom */
+        grid-template-columns: repeat(5, 1fr); 
         gap: 25px;
         justify-content: center;
     }
 
-    /* ===== CARD KATEGORI ===== */
     .kategori-card {
-        background: #FFFFFF; /* Putih */
+        background: #FFFFFF; 
         border-radius: 20px;
-        padding: 25px 15px; /* Padding vertikal sedikit dikurangi agar kotak */
+        padding: 25px 15px; 
         text-align: center;
         text-decoration: none;
         color: #000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
         transition: all 0.3s ease;
-        aspect-ratio: 1 / 1; /* Memaksa bentuk kotak */
+        aspect-ratio: 1 / 1; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -135,23 +129,20 @@
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-    /* ICON */
     .kategori-card i {
         font-size: 32px;
-        color: #000; /* Hitam Solid */
+        color: #000; 
         margin-bottom: 12px;
         display: block;
     }
 
-    /* TEXT */
     .kategori-card span {
         display: block;
         font-size: 15px;
         font-weight: 700;
-        color: #000; /* Hitam Solid */
+        color: #000;
     }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 992px) {
         .kategori-grid {
             grid-template-columns: repeat(4, 1fr);

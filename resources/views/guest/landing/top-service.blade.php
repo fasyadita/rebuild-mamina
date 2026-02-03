@@ -1,27 +1,21 @@
 <style>
-    /* --- Styling Area Utama (Background Hijau) --- */
     .favorite-section {
         background-color: #d1f2eb;
-        /* Hijau tosca muda pastel */
         border-radius: 30px;
         padding: 40px 50px;
         position: relative;
-        /* Agar panah bisa diposisikan absolute */
         margin: 40px auto;
         max-width: 1200px;
-        /* Batas lebar agar tidak terlalu melar */
     }
 
     .section-title {
         color: #fca5a5;
-        /* Warna pink teks judul */
         font-weight: bold;
         text-align: center;
         font-size: 24px;
         margin-bottom: 30px;
     }
 
-    /* --- Styling Card Produk --- */
     .product-card {
         border: none;
         background: transparent;
@@ -34,13 +28,11 @@
 
     .product-card:hover {
         transform: translateY(-5px);
-        /* Efek naik dikit pas di-hover */
     }
 
     .product-img {
         width: 100%;
         height: 200px;
-        /* Tinggi gambar fix agar rapi */
         object-fit: cover;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
@@ -48,7 +40,6 @@
 
     .product-info {
         background-color: #ffdad6;
-        /* Warna pink background info */
         padding: 15px 10px;
         text-align: center;
         border-bottom-left-radius: 20px;
@@ -73,7 +64,6 @@
         color: #666;
     }
 
-    /* --- Panah Navigasi (Hiasan) --- */
     .nav-arrow-right {
         position: absolute;
         right: 20px;
@@ -116,7 +106,6 @@
         font-family: 'nunito', sans-serif;
     }
 
-    /* Responsif untuk Mobile */
     @media (max-width: 768px) {
         .favorite-section {
             padding: 30px 20px;
