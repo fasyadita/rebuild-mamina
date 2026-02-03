@@ -104,6 +104,18 @@
         background: #3b7d7b;
     }
 
+    .page-bg {
+    background-color: #FFFDEB;
+    min-height: 100vh;
+    width: 100%;
+    padding: 60px 0;
+    }
+
+    .container {
+        padding: 60px 20px;
+        font-family: 'nunito', sans-serif;
+    }
+
     /* Responsif untuk Mobile */
     @media (max-width: 768px) {
         .favorite-section {
@@ -118,22 +130,23 @@
     }
 </style>
 
-<div id="top-service" class="container">
-    <div class="favorite-section">
+<div class="page-bg">
+    <div id="top-service" class="container">
+        <div class="favorite-section">
 
-        <h3 class="section-title">Paling disukai, nih</h3>
+            <h3 class="section-title">Paling disukai, nih</h3>
 
-        <div class="row g-4">
-            <div class="col-6 col-lg-3">
-                <div class="product-card">
-                    <img src="{{ asset('img/baby.jpeg') }}" class="product-img" alt="Pijat Bayi">
-                    <div class="product-info">
-                        <div class="product-name">Pijat Bayi</div>
-                        <div class="product-price">Rp 88.000</div>
-                        <div class="product-details">
-                            4050+ suka<br>
-                            Cabang Malang
-                        </div>
+            <div class="row g-4">
+                <div class="col-6 col-lg-3">
+                    <div class="product-card">
+                        <img src="{{ asset('img/baby.jpeg') }}" class="product-img" alt="Pijat Bayi">
+                        <div class="product-info">
+                            <div class="product-name">Pijat Bayi</div>
+                            <div class="product-price">Rp 88.000</div>
+                            <div class="product-details">
+                                4050+ suka<br>
+                                Cabang Malang
+                            </div>
                         <button class="btn-tambah">
                             <i class="fas fa-plus"></i> Tambah
                         </button>
@@ -190,8 +203,7 @@
                     </div>
                 </div>
             </div>
-
         </div> <i class="fas fa-chevron-right nav-arrow-right"></i>
-
+        </div>
     </div>
 </div>

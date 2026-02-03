@@ -97,7 +97,7 @@ Route::prefix('guest')->name('guest.')->group(function () {
     Route::get('/layanan-lainnya', function () {
         return view('guest.layanan.layanan-lainnya');
     });
-
+});
 Route::prefix('member')->name('member.')->group(function () {
 
     Route::get('/', function () {
@@ -112,7 +112,6 @@ Route::prefix('member')->name('member.')->group(function () {
         return view('member.cabang.cabang');
     });
 
-
     Route::get('/riwayat-reservasi', function () {
         return view('member.reservasi.reservasi');
     });
@@ -126,5 +125,8 @@ Route::prefix('member')->name('member.')->group(function () {
     Route::get('/edit-profile', function () {
         return view('member.profile.edit-profile');
     });
+
+    Route::get('/reset-password', function () {
+        return view('member.profile.reset-password');
     });
 });
