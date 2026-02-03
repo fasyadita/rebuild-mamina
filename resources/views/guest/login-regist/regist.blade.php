@@ -33,7 +33,7 @@
             <a href="/guest/login" class="btn-login">Daftar</a>
 
             <p class="auth-footer">
-                Sudah punya akun? <a href="/login">Login</a>
+                Sudah punya akun? <a href="/guest/login">Login</a>
             </p>
 
         </form>

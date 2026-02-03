@@ -28,7 +28,7 @@
 
             <p class="register-text">
                 Belum punya akun?
-                <a href="#">Daftar</a>
+                <a href="/guest/regist">Daftar</a>
             </p>
         </div>
 

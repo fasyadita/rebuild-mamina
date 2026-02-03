@@ -1,109 +1,143 @@
-    <style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-        /* Kotak Pink Pembungkus (seperti di gambar) */
-        .slider-container {
-            background-color: #ffe4d6;
-            /* Warna pink soft */
-            padding: 40px;
-            border-radius: 20px;
-            /* Sudut melengkung */
-            width: 80%;
-            max-width: 800px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            margin-top : 140px ;
-            margin-left: 270px;
-        }
+<style>
 
-        /* Area Gambar */
-        .slider-wrapper {
-            width: 100%;
-            text-align: center;
-            overflow: hidden;
-            /* Agar gambar tidak bocor keluar */
-        }
+    .slider-container {
+        max-width: 1000px;
+        margin: 150px auto
+    }
 
-        /* Gambar itu sendiri */
-        .slide-image {
-            width: 100%;
-            max-width: 500px;
-            /* Batas lebar gambar */
-            border-radius: 10px;
-            display: none;
-            /* Sembunyikan semua gambar dulu */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeEffect 0.5s;
-            /* Efek transisi halus */
-        }
+    /* --- Styling Card Slider --- */
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
 
-        /* Gambar yang sedang aktif (ditampilkan) */
-        .active {
-            display: inline-block;
-        }
+        /* TRANSISI & EFEK NON-AKTIF (SAMPING) */
+        transition: all 0.4s ease;
+        transform: scale(0.85);
+        /* Mengecil */
+        opacity: 0.6;
+        /* Pudar */
+        filter: blur(2px) grayscale(20%);
+        /* Blur & agak abu */
+    }
 
-        /* Tombol Panah (Kiri & Kanan) */
-        .tombol {
-            background: none;
-            border: none;
-            font-size: 30px;
-            color: #555;
-            cursor: pointer;
-            padding: 10px;
-            transition: 0.3s;
-        }
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Gambar full memenuhi kotak */
+    }
 
-        .tombol:hover {
-            color: #000;
-            transform: scale(1.2);
-            /* Membesar sedikit saat di-hover */
-        }
+    /* --- KONDISI AKTIF (TENGAH) --- */
+    .swiper-slide.swiper-slide-active {
+        transform: scale(1.1);
+        /* Zoom In */
+        opacity: 1;
+        /* Jelas */
+        filter: blur(0) grayscale(0);
+        /* Tajam */
+        z-index: 10;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        /* Bayangan biar pop-up */
+    }
 
-        /* Efek kedip halus saat ganti gambar */
-        @keyframes fadeEffect {
-            from {
-                opacity: 0.4
-            }
+    /* --- Navigasi Panah --- */
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #555;
+        background: rgba(255, 255, 255, 0.7);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        backdrop-filter: blur(4px);
+    }
 
-            to {
-                opacity: 1
-            }
-        }
-    </style>
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
 
-    <div id="home" class="slider-container">
+<div class="slider-section">
+    <div class="slider-container">
 
-        <button class="tombol" onclick="gantiSlide(-1)">&#10094;</button>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
 
-        <div class="slider-wrapper">
-            <img src="{{ asset('img/spons.jpg') }}" class="slide-image active">
-            <img src="{{ asset('img/ghost.jpg') }}" class="slide-image">
-            <img src="{{ asset('img/disney.jpg') }}" class="slide-image">
+                <div class="swiper-slide">
+                    <img src="{{ asset('img/banner1.png') }}" alt="Produk 1">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ asset('img/benner2.png') }}" alt="Produk 2">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ asset('img/banner3.png') }}" alt="Produk 3">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="{{ asset('img/banner4.png') }}" alt="Produk 4">
+                </div>
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <div class="swiper-pagination"></div>
         </div>
 
-        <button class="tombol" onclick="gantiSlide(1)">&#10095;</button>
-
     </div>
-    <script>
-        let indexSekarang = 0; // Mulai dari gambar pertama (urutan 0)
-        const gambar = document.getElementsByClassName("slide-image");
+</div>
 
-        function gantiSlide(arah) {
-            // Hilangkan gambar yang sedang tampil
-            gambar[indexSekarang].classList.remove("active");
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-            // Hitung urutan gambar baru
-            indexSekarang = indexSekarang + arah;
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true, // PENTING: Agar fokus di tengah
+            slidesPerView: "auto", // PENTING: Agar lebar mengikuti CSS
+            loop: true, // Infinite scroll
+            spaceBetween: 30, // Jarak antar slide
 
-            // Logika putar balik (Looping)
-            if (indexSekarang >= gambar.length) {
-                indexSekarang = 0; // Kalau sudah di akhir, balik ke awal
-            } else if (indexSekarang < 0) {
-                indexSekarang = gambar.length - 1; // Kalau di awal klik kiri, ke akhir
-            }
+            autoplay: {
+                delay: 3000,                // 5000ms = 5 detik
+                disableOnInteraction: false, // Tetap jalan walau sudah digeser manual user
+                pauseOnMouseEnter: true,     // (Opsional) Berhenti pas kursor nempel (biar user bisa baca)
+            },
 
-            // Munculkan gambar baru
-            gambar[indexSekarang].classList.add("active");
-        }
-    </script>
+            // Konfigurasi Efek 3D/Zoom
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false, // Matikan shadow bawaan krn kita pakai CSS
+            },
+
+            // Navigasi
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            // (Opsional) Titik navigasi bawah
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+    });
+</script>

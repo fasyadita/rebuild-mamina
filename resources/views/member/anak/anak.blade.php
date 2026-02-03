@@ -97,6 +97,41 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Aaisyah Nur Salsabil</td>
+                        <td>30 Nov 2003</td>
+                        <td>2 bulan lebih 22 tahun</td>
+                        <td>Perempuan</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Fasya Dita</td>
+                        <td>14 Feb 2004</td>
+                        <td>11 bulan lebih 21 tahun</td>
+                        <td>Perempuan</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Rangga Dwi Saputra</td>
+                        <td>11 Agustus 2004</td>
+                        <td>5 bulan lebih 21 tahun</td>
+                        <td>Laki-laki</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Bagas Satria Nugroho</td>
+                        <td>8 Desember 2004</td>
+                        <td>1 bulan lebih 21 tahun</td>
+                        <td>Laki-laki</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Gilang Purnomo</td>
+                        <td>5 Mei 2005</td>
+                        <td>9 bulan lebih 20 tahun</td>
+                        <td>Laki-laki</td>
+                    </tr>
                 </tbody>
             </table>
             <div class="empty-space"></div>
@@ -121,6 +156,74 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Fasya</strong></td>
+                        <td>12 Jan 2024</td>
+                        <td>8.5</td>
+                        <td>72</td>
+                        <td>44</td>
+                        <td>
+                            <a href="#" style="color: #3fb6a8; text-decoration: none; font-weight: 600;">
+                                Lihat Foto
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Aaisyah</strong></td>
+                        <td>10 Feb 2024</td>
+                        <td>10.2</td>
+                        <td>85</td>
+                        <td>46</td>
+                        <td>
+                            <a href="#" style="color: #3fb6a8; text-decoration: none; font-weight: 600;">
+                                Lihat Foto
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Gilang</strong></td>
+                        <td>05 Mar 2024</td>
+                        <td>12.5</td>
+                        <td>92</td>
+                        <td>48</td>
+                        <td>
+                            <a href="#" style="color: #3fb6a8; text-decoration: none; font-weight: 600;">
+                                Lihat Foto
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Rangga</strong></td>
+                        <td>20 Mar 2024</td>
+                        <td>6.8</td>
+                        <td>64</td>
+                        <td>41</td>
+                        <td>
+                            <a href="#" style="color: #3fb6a8; text-decoration: none; font-weight: 600;">
+                                Lihat Foto
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Satria</strong></td>
+                        <td>20 Mar 2024</td>
+                        <td>6.8</td>
+                        <td>64</td>
+                        <td>41</td>
+                        <td>
+                            <a href="#" style="color: #3fb6a8; text-decoration: none; font-weight: 600;">
+                                Lihat Foto
+                            </a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="empty-space"></div>
