@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 
 
-    <!-- Additional Styles Section -->
     @stack('styles')
 </head>
 

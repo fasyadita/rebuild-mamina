@@ -423,9 +423,9 @@
 
                             <div class="row mt-5">
                                 <div class="col-12 text-end">
-                                    <button type="submit" class="btn-simpan">
+                                    <a href="/member/profile" class="btn-simpan">
                                         <i class="fas fa-check"></i> Simpan
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
 

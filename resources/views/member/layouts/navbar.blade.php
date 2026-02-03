@@ -190,6 +190,13 @@
                     <a class="nav-link" href="/member/anak">Anak</a>
                 </li>
 
+                <li class="nav-item position-relative ms-3">
+                    <a class="nav-link cart-icon" href="#">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="badge bg-danger rounded-circle position-absolute">0</span>
+                    </a>
+                </li>
+
                 <li class="nav-item ms-3">
                     <a href="/member/profile" class="profile-btn">
                         <i class="fas fa-user"></i>
