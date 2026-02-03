@@ -89,13 +89,19 @@
         opacity: 1;
     }
 
-    /* --- Text Footer --- */
-    .click-hint {
-        text-align: center;
-        color: #888;
-        font-size: 14px;
-        margin-top: 20px;
-        font-weight: 300;
+    .btn-tambah {
+        background: #4FA8A6;
+        color: #fff;
+        border: none;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .btn-tambah:hover {
+        background: #3b7d7b;
     }
 
     /* Responsif untuk Mobile */
@@ -128,6 +134,9 @@
                             4050+ suka<br>
                             Cabang Malang
                         </div>
+                        <button class="btn-tambah">
+                            <i class="fas fa-plus"></i> Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -142,6 +151,9 @@
                             4050+ suka<br>
                             Cabang Malang
                         </div>
+                        <button class="btn-tambah">
+                            <i class="fas fa-plus"></i> Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -156,6 +168,9 @@
                             4050+ suka<br>
                             Cabang Malang
                         </div>
+                        <button class="btn-tambah">
+                            <i class="fas fa-plus"></i> Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -170,13 +185,13 @@
                             4050+ suka<br>
                             Cabang Malang
                         </div>
+                        <button class="btn-tambah">
+                            <i class="fas fa-plus"></i> Tambah
                     </div>
                 </div>
             </div>
 
         </div> <i class="fas fa-chevron-right nav-arrow-right"></i>
-
-        <div class="click-hint">klik gambar untuk mengetahui lebih lanjut</div>
 
     </div>
 </div>
