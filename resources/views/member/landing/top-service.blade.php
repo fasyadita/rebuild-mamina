@@ -98,6 +98,25 @@
         font-weight: 300;
     }
 
+    .btn-tambah {
+        background: #4FA8A6;
+        color: #fff;
+        border: none;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: background 0.2s ease;
+        margin: 10px;
+    }
+
+    .btn-tambah:hover {
+        background: #3B8F8D;
+    }
+
     /* Responsif untuk Mobile */
     @media (max-width: 768px) {
         .favorite-section {
@@ -128,6 +147,9 @@
                             4050+ suka<br>
                             Cabang Malang
                         </div>
+                        <button class="btn-tambah">
+                            <i class="fas fa-plus"></i> Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -142,6 +164,9 @@
                             4050+ suka<br>
                             Cabang Malang
                         </div>
+                        <button class="btn-tambah">
+                            <i class="fas fa-plus"></i> Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -156,6 +181,9 @@
                             4050+ suka<br>
                             Cabang Malang
                         </div>
+                        <button class="btn-tambah">
+                            <i class="fas fa-plus"></i> Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -170,13 +198,14 @@
                             4050+ suka<br>
                             Cabang Malang
                         </div>
+                        <button class="btn-tambah">
+                            <i class="fas fa-plus"></i> Tambah
+                        </button>
                     </div>
                 </div>
             </div>
 
         </div> <i class="fas fa-chevron-right nav-arrow-right"></i>
-
-        <div class="click-hint">klik gambar untuk mengetahui lebih lanjut</div>
 
     </div>
 </div>

@@ -30,8 +30,8 @@
                             </li>
                         </ul>
                         <div class="card-buttons">
-                            <a href="#" class="btn-contact">Hubungi Cabang</a>
-                            <a href="#" class="btn-maps">Lihat di Google Maps</a>
+                            <a href="https://wa.me/6281329913203?text=Halo%20Admin"  target="_blank" class="btn-contact">Hubungi Cabang</a>
+                            <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A" target="_blank" class="btn-maps">Lihat di Google Maps</a>
                         </div>
                     </div>
                 </div>
@@ -57,8 +57,8 @@
                             </li>
                         </ul>
                         <div class="card-buttons">
-                            <a href="#" class="btn-contact">Hubungi Cabang</a>
-                            <a href="#" class="btn-maps">Lihat di Google Maps</a>
+                            <a href="https://wa.me/6282131090283?text=Halo%20Admin"  target="_blank" class="btn-contact">Hubungi Cabang</a>
+                            <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87" target="_blank" class="btn-maps">Lihat di Google Maps</a>
                         </div>
                     </div>
                 </div>
