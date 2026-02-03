@@ -11,31 +11,23 @@
         align-content: center;
     }
 
-    /* --- Judul Section (Warna Tosca) --- */
     .section-title {
         color: #3fb6a8;
-        /* Hijau Tosca */
         font-weight: 600;
         font-size: 20px;
         margin-bottom: 15px;
         margin-top: 30px;
     }
 
-    /* --- Styling Card Tabel --- */
     .history-card {
         background-color: #fff;
         border-radius: 20px;
-        /* Lengkungan sudut card */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        /* Bayangan halus */
         overflow: hidden;
-        /* Agar header pink tidak keluar dari lengkungan */
         margin-bottom: 20px;
         min-height: 150px;
-        /* Tinggi minimal agar terlihat putih kosong jika tidak ada data */
     }
 
-    /* --- Styling Header Tabel (Pink) --- */
     .custom-table {
         width: 100%;
         margin-bottom: 0;
@@ -44,7 +36,6 @@
 
     .custom-table thead {
         background-color: #ffdad6;
-        /* Pink Salem Header */
     }
 
     .custom-table thead th {
@@ -53,22 +44,17 @@
         font-size: 14px;
         padding: 18px 15px;
         border: none;
-        /* Hilangkan garis border bawaan */
         text-align: left;
         white-space: nowrap;
-        /* Agar teks header tidak turun baris */
     }
 
-    /* --- Styling Body Tabel (Isi) --- */
     .custom-table tbody td {
         padding: 15px;
         color: #666;
         border-bottom: 1px solid #f0f0f0;
         font-size: 14px;
-        /* Garis tipis antar baris (opsional) */
     }
 
-    /* Styling tambahan untuk status atau angka */
     .text-success {
         color: #28a745;
         font-weight: 600;
@@ -79,14 +65,11 @@
         font-weight: 600;
     }
 
-    /* Area Kosong (Empty State) - Optional jika data penuh */
     .empty-space {
         height: 20px;
-        /* Dikurangi tingginya karena sudah ada data */
         background-color: white;
     }
 
-    /* Responsive Wrapper */
     .table-responsive {
         border-radius: 20px;
     }

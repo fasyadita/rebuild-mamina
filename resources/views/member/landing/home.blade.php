@@ -66,7 +66,7 @@
     }
 </style>
 
-<div class="slider-section">
+<div id="home" class="slider-section">
     <div class="slider-container">
 
         <div class="swiper mySwiper">
