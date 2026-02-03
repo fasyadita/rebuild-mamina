@@ -61,7 +61,42 @@ Route::prefix('guest')->name('guest.')->group(function () {
     Route::get('/layanan-anak', function () {
         return view('guest.layanan.layanan-anak');
     });
-});
+
+    Route::get('/layanan-bayi', function () {
+        return view('guest.layanan.layanan-bayi');
+    });
+
+    Route::get('/layanan-ibu', function () {
+        return view('guest.layanan.layanan-ibu');
+    });
+    
+    Route::get('/layanan-imunisasi', function () {
+        return view('guest.layanan.layanan-imunisasi');
+    });
+
+    Route::get('/layanan-kelas', function () {
+        return view('guest.layanan.layanan-kelas');
+    });
+
+    Route::get('/layanan-konsultasi', function () {
+        return view('guest.layanan.layanan-konsultasi');
+    });
+
+    Route::get('/layanan-paket', function () {
+        return view('guest.layanan.layanan-paket');
+    });
+
+    Route::get('/layanan-toddler', function () {
+        return view('guest.layanan.layanan-toddler');
+    });
+
+    Route::get('/layanan-umum', function () {
+        return view('guest.layanan.layanan-umum');
+    });
+
+    Route::get('/layanan-lainnya', function () {
+        return view('guest.layanan.layanan-lainnya');
+    });
 
 Route::prefix('member')->name('member.')->group(function () {
 
@@ -90,5 +125,6 @@ Route::prefix('member')->name('member.')->group(function () {
 
     Route::get('/edit-profile', function () {
         return view('member.profile.edit-profile');
+    });
     });
 });

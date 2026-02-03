@@ -8,50 +8,50 @@
 
             <div class="kategori-grid">
 
-                <a href="{{ url('/layanan/anak') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-anak') }}" class="kategori-card">
                     <i class="fas fa-child"></i>
                     <span>Anak</span>
                 </a>
 
-                <a href="{{ url('/layanan/bayi') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-bayi') }}" class="kategori-card">
                     <i class="fas fa-baby"></i>
                     <span>Bayi</span>
                 </a>
 
-                <a href="{{ url('/layanan/ibu') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-ibu') }}" class="kategori-card">
                     <i class="fas fa-person-breastfeeding"></i>
                     <span>Ibu</span>
                 </a>
 
-                <a href="{{ url('/layanan/imunisasi') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-imunisasi') }}" class="kategori-card">
                     <i class="fas fa-syringe"></i>
                     <span>Imunisasi</span>
                 </a>
 
-                <a href="{{ url('/layanan/kelas') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-kelas') }}" class="kategori-card">
                     <i class="fas fa-chalkboard-teacher"></i>
                     <span>Kelas</span>
                 </a>
 
-                <a href="{{ url('/layanan/konsultasi') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-konsultasi') }}" class="kategori-card">
                     <i class="fas fa-headset"></i> <span>Konsultasi</span>
                 </a>
 
-                <a href="{{ url('/layanan/paket') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-paket') }}" class="kategori-card">
                     <i class="fas fa-box-open"></i>
                     <span>Paket</span>
                 </a>
 
-                <a href="{{ url('/layanan/toddler') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-toddler') }}" class="kategori-card">
                     <i class="fas fa-shapes"></i> <span>Toddler</span>
                 </a>
 
-                <a href="{{ url('/layanan/umum') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-umum') }}" class="kategori-card">
                     <i class="fas fa-user-check"></i>
                     <span>Umum</span>
                 </a>
 
-                <a href="{{ url('/layanan/lainnya') }}" class="kategori-card">
+                <a href="{{ url('/guest/layanan-lainnya') }}" class="kategori-card">
                     <i class="fas fa-ellipsis-h"></i>
                     <span>Lainnya</span>
                 </a>
