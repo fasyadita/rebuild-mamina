@@ -35,7 +35,7 @@ use Illuminate\Support\Facades\Route;
         return view('main.layanan.detail-layanan-anak');
     })->name('layanan.detail');
 
-
+    
 Route::prefix('guest')->name('guest.')->group(function () {
 
     Route::get('/', function () {
@@ -97,6 +97,8 @@ Route::prefix('guest')->name('guest.')->group(function () {
         return view('guest.layanan.layanan-lainnya');
     });
 
+});
+
 Route::prefix('member')->name('member.')->group(function () {
 
     Route::get('/', function () {
@@ -124,5 +126,5 @@ Route::prefix('member')->name('member.')->group(function () {
     Route::get('/edit-profile', function () {
         return view('member.profile.edit-profile');
     });
-    });
+    
 });
