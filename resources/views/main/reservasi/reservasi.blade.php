@@ -26,7 +26,7 @@
                     </select>
                 </div>
                     <div class="btn-wrapper">
-                        <button type="submit" class="btn-next">Next</button>
+                        <a href="/reservasi/outlet" class="btn-next">Next</a>
                     </div>
             </form>
 

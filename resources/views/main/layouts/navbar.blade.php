@@ -145,7 +145,7 @@
                 
                 <!-- Cart -->
                 <li class="nav-item position-relative ms-3">
-                    <a class="nav-link cart-icon" href="#">
+                    <a class="nav-link cart-icon" href="/keranjang">
                         <i class="fas fa-shopping-cart fa-lg"></i>
                         <span class="badge bg-danger rounded-circle position-absolute">0</span>
                     </a>

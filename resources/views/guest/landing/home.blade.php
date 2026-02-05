@@ -3,7 +3,7 @@
 <style>
     .slider-container {
         max-width: 1000px;
-        margin: 150px auto
+        margin: 150px auto;
     }
 
     .swiper-slide {
