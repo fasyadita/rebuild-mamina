@@ -27,7 +27,7 @@
         display: flex;
         align-items: center;
     }
-
+ 
     .page-title::after {
         content: '';
         flex: 1;

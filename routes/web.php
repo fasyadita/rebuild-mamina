@@ -170,5 +170,52 @@ Route::prefix('member')->name('member.')->group(function () {
     Route::get('/edit-profile', function () {
         return view('member.profile.edit-profile');
     });
+
+    Route::get('/change-password', function () {
+        return view('member.profile.change-password');
+    });
+
+    Route::get('/reset-password', function () {
+        return view('member.profile.reset-password');
+    });
+
+    Route::get('/layanan-anak', function () {
+        return view('member.layanan.layanan-anak');
+    });
+
+    Route::get('/layanan-bayi', function () {
+        return view('member.layanan.layanan-bayi');
+    });
+
+    Route::get('/layanan-ibu', function () {
+        return view('member.layanan.layanan-ibu');
+    });
     
+    Route::get('/layanan-imunisasi', function () {
+        return view('member.layanan.layanan-imunisasi');
+    });
+
+    Route::get('/layanan-kelas', function () {
+        return view('member.layanan.layanan-kelas');
+    });
+
+    Route::get('/layanan-konsultasi', function () {
+        return view('member.layanan.layanan-konsultasi');
+    });
+
+    Route::get('/layanan-paket', function () {
+        return view('member.layanan.layanan-paket');
+    });
+
+    Route::get('/layanan-toddler', function () {
+        return view('member.layanan.layanan-toddler');
+    });
+
+    Route::get('/layanan-umum', function () {
+        return view('member.layanan.layanan-umum');
+    });
+
+    Route::get('/layanan-lainnya', function () {
+        return view('member .layanan.layanan-lainnya');
+    });
 });
