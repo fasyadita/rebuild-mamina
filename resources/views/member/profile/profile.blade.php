@@ -249,7 +249,7 @@
                 <div class="user-name">Nadira Azzahra</div>
                 <div class="user-detail">nadira@gmail.com</div>
                 <div class="user-detail">081234567898</div>
-                <button class="btn-reset-pass">Reset Password</button>
+                <a href="{{ url('/member/reset-password') }}" class="btn-reset-pass">Reset Password</a>
             </div>
 
             <div class="col-md-auto mt-3 mt-md-0">
