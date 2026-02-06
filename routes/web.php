@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Route;
         return view('main.reservasi.reservasi');
     });
 
+    Route::get('/reservasi/outlet', function () {
+        return view('main.reservasi.form-reservasi-outlet');
+    });
+
     Route::get('/pricelist', function () {
         return view('main.pricelist.pricelist');
     });
@@ -31,9 +35,49 @@ use Illuminate\Support\Facades\Route;
         return view('main.layanan.index');
     })->name('layanan.index');
 
-    Route::get('/layanan/detail-layanan-anak', function () {
+    Route::get('/layanan/anak', function () {
         return view('main.layanan.detail-layanan-anak');
     })->name('layanan.detail');
+
+    Route::get('/layanan/bayi', function () {
+        return view('main.layanan.detail-layanan-bayi');
+    })->name('layanan.detail');
+
+    Route::get('/layanan/toddler', function () {
+        return view('main.layanan.detail-layanan-toddler');
+    })->name('layanan.detail');
+
+    Route::get('/layanan/ibu', function () {
+        return view('main.layanan.detail-layanan-ibu');
+    })->name('layanan.detail');
+
+    Route::get('/layanan/imunisasi', function () {
+        return view('main.layanan.detail-layanan-imunisasi');
+    })->name('layanan.detail');
+
+    Route::get('/layanan/kelas', function () {
+        return view('main.layanan.detail-layanan-kelas');
+    })->name('layanan.detail');
+
+    Route::get('/layanan/konsultasi', function () {
+        return view('main.layanan.detail-layanan-konsultasi');
+    })->name('layanan.detail');
+
+    Route::get('/layanan/lainnya', function () {
+        return view('main.layanan.detail-layanan-lainnya');
+    })->name('layanan.detail');
+
+    Route::get('/layanan/paket', function () {
+        return view('main.layanan.detail-layanan-paket');
+    })->name('layanan.detail');
+
+    Route::get('/layanan/umum', function () {
+        return view('main.layanan.detail-layanan-umum');
+    })->name('layanan.detail');
+
+    Route::get('/keranjang', function () {
+        return view('main.keranjang.keranjang');
+    });
 
     
 Route::prefix('guest')->name('guest.')->group(function () {
