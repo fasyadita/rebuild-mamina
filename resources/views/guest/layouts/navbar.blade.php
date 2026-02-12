@@ -7,7 +7,7 @@
         z-index: 999;
         background: #fffdeb;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        height: 90px;
+        min-height: 90px;
     }
 
     .fixed-top {
@@ -75,7 +75,41 @@
         box-shadow: 0 4px 12px rgba(63, 182, 168, 0.2);
         color: #fff;
     }
+
+    @media (max-width: 991px) {
+
+        .navbar {
+            padding: 10px 0;
+            min-height: auto;
+        }
+
+        .navbar .container {
+            padding: 0 16px;
+        }
+
+        .navbar-nav {
+            gap: 12px;
+            padding-top: 12px;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            padding: 8px 0;
+            justify-content: center;
+        }
+
+        .btn-join {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
+        }
+    }
 </style>
+
 <nav class="navbar navbar-expand-lg fixed-top mamina-navbar">
     <div class="container">
         <a class="navbar-brand" href="/">

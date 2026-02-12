@@ -154,7 +154,7 @@
         font-family: 'fredoka', sans-serif;
         font-size: 32px;
         color: #333;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
     }
 
     .cabang-content {
@@ -171,8 +171,6 @@
         border-radius: 20px;
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        width: 750px;
-        height: 250px;
     }
 
     .card-img-wrapper {
@@ -226,8 +224,6 @@
     .card-buttons {
         display: flex;
         gap: 10px;
-        flex-wrap: wrap;
-        margin-left: 145px;
     }
 
     .btn-contact,
@@ -236,7 +232,7 @@
         border-radius: 20px;
         text-decoration: none;
         font-family: sans-serif;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
         text-align: center;
     }
