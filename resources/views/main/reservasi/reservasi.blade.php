@@ -12,8 +12,8 @@
                         <option value="" selected disabled>Pilih reservasi</option>
                         <option value="baby-spa">Baby Spa</option>
                         <option value="pijat-laktasi">Pijat Laktasi</option>
-                        <option value="kids-treatment">Kids Treatment</option>
-                        <option value="home-care">Home Care</option>
+                        <option value="kids-treatment">Perawatan Anak</option>
+                        <option value="home-care">Layanan Kunjungan ke Rumah</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -26,7 +26,7 @@
                     </select>
                 </div>
                     <div class="btn-wrapper">
-                        <a href="/reservasi/outlet" class="btn-next">Next</a>
+                        <a href="/reservasi/outlet" class="btn-next">Lanjutkan</a>
                     </div>
             </form>
 

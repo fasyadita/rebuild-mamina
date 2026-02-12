@@ -6,7 +6,7 @@
 
 <section id="event" class="event-section">
     <div class="event-header">
-        <h1 class="event-title">Event Kami</h1>
+        <h1 class="event-title">Kegiatan Kami</h1>
     </div>
 
     <div class="event-grid">

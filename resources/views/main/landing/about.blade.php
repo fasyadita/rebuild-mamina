@@ -1,6 +1,6 @@
 <section id="about" class="about-banner">
     <div class="banner-text">
-        <h2>About Mamina Baby Spa</h2>
+        <h2>Tentang Mamina Baby Spa</h2>
         <p>Comforting You</p>
     </div>
 </section>

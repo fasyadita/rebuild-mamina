@@ -13,7 +13,7 @@
     </div>
 
     {{-- JUDUL --}}
-    <h2 class="judul-page">Our Services</h2>
+    <h2 class="judul-page">Layanan Kami</h2>
 
         <div class="kategori-grid">
 
