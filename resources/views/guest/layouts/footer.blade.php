@@ -19,7 +19,6 @@
         gap: 30px;
     }
 
-    /* Membuat tampilan responsif (menumpuk saat di HP) */
     @media (max-width: 768px) {
         .footer-container {
             flex-direction: column;

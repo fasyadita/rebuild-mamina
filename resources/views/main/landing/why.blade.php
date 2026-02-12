@@ -55,7 +55,6 @@
         font-style: normal;
     }
 
-    /* 1. Pengaturan Section Utama */
     .why-choose {
         padding: 60px 20px;
         background-color: #fffaf3;
@@ -66,7 +65,6 @@
         margin: 0 auto;
     }
 
-    /* 2. Judul */
     .section-title {
         text-align: center;
         font-family: 'fredoka-m', sans-serif;
@@ -75,23 +73,18 @@
         margin-bottom: 40px;
     }
 
-    /* 3. Grid Layout (PERBAIKAN DISINI) */
     .benefits-grid {
         display: grid;
-        /* KUNCI: Memaksa 4 kolom sejajar */
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
     }
 
-    /* 4. Styling Kartu (PERBAIKAN DISINI) */
     .benefit-card {
         background: transparent;
         border-radius: 20px;
         overflow: hidden;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s ease;
-
-        /* HAPUS 'grid-template-columns' dari sini, karena ini adalah item, bukan wadah */
     }
 
     .benefit-card:hover {

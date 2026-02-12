@@ -44,23 +44,15 @@
         margin-top: 0px;
         background:
             linear-gradient(to right,
-                /* Mulai dengan warna solid (Pink Muda #FFDAD1) di kiri */
                 rgba(255, 218, 209, 1) 0%,
-
-                /* Tetap solid sampai 45% lebar layar (area teks aman) */
                 rgba(255, 218, 209, 0.95) 20%,
-
-                /* Mulai memudar perlahan */
                 rgba(255, 218, 209, 0.6) 45%,
-
-                /* Benar-benar transparan di ujung kanan */
                 rgba(255, 218, 209, 0) 100%),
 
             url("/img/home.jpeg") center/cover no-repeat;
         display: flex;
         align-items: center;
         padding-top: 10vh;
-        /* Tambahan: supaya konten vertikal di tengah */
     }
 
     .home-container {

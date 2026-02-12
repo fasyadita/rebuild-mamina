@@ -114,7 +114,6 @@
 
         .nav-arrow-right {
             display: none;
-            /* Hilangkan panah di HP */
         }
     }
 </style>
