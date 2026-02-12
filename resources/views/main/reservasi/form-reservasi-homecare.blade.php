@@ -190,7 +190,7 @@
 
                 <div class="form-group">
                     <select class="custom-select">
-                        <option value="" disabled selected>Jenis treatment</option>
+                        <option value="" disabled selected>Jenis perawatan</option>
                         <option value="pijat">Pijat Bayi</option>
                         <option value="spa">Baby Spa</option>
                     </select>
@@ -198,13 +198,13 @@
 
                 <div class="form-group">
                     <select class="custom-select">
-                        <option value="" disabled selected>Tanggal treatment</option>
+                        <option value="" disabled selected>Tanggal perawatan</option>
                         </select>
                 </div>
 
                 <div class="form-group">
                     <select class="custom-select">
-                        <option value="" disabled selected>Jam treatment</option>
+                        <option value="" disabled selected>Jam perawatan</option>
                         <option value="09:00">09:00</option>
                         <option value="10:00">10:00</option>
                     </select>
@@ -225,7 +225,7 @@
         <div class="sidebar">
             
             <div class="card-panel">
-                <h3 class="sidebar-title">Price Summary</h3>
+                <h3 class="sidebar-title">Ringkasan Harga</h3>
                 <div class="price-list">
                     <div class="price-row">
                         <span>Pijat Bayi</span>
@@ -236,7 +236,7 @@
                         <span>Rp 88.000</span>
                     </div>
                     <div class="price-row">
-                        <span>Promo Code Discount</span>
+                        <span>Promo Kode Diskon</span>
                         <span>Rp xxxxxx</span>
                     </div>
                     
@@ -250,10 +250,10 @@
             </div>
 
             <div class="card-panel">
-                <h3 class="sidebar-title">Promo Code</h3>
+                <h3 class="sidebar-title">Kode Promo</h3>
                 <div class="promo-group">
                     <input type="text" class="promo-input" placeholder="Enter Code">
-                    <button class="apply-btn">Apply</button>
+                    <button class="apply-btn">Terapkan</button>
                 </div>
             </div>
 

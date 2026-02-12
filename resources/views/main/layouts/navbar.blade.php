@@ -125,19 +125,19 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#home">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">Our Services</a>
+                    <a class="nav-link" href="#services">Layanan Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About Us</a>
+                    <a class="nav-link" href="#about">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#testimony">Testimommy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/event">Event</a>
+                    <a class="nav-link" href="/event">Kegiatan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#cabang">Cabang</a>
@@ -154,7 +154,7 @@
                 <!-- Join Member Button -->
                 <li class="nav-item ms-3">
                     <a href="/guest" class="btn btn-primary btn-join">
-                        Join Member
+                        Daftar Member
                     </a>
                 </li>
             </ul>

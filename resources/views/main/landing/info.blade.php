@@ -10,7 +10,7 @@
                 <i class="fa-solid fa-baby-carriage"></i>
             </div>
             <div class="box-content">
-                <h3>Services</h3>
+                <h3>Layanan</h3>
                 <ul class="check-list">
                     <li><i class="fa-regular fa-circle-check"></i> Ibu Hamil</li>
                     <li><i class="fa-regular fa-circle-check"></i> Baby Spa</li>
@@ -25,7 +25,7 @@
                 <i class="fa-solid fa-shield-heart"></i>
             </div>
             <div class="box-content">
-                <h3>Trust</h3>
+                <h3>Kepercayaan</h3>
                 <ul class="check-list">
                     <li><i class="fa-regular fa-circle-check"></i> Prosedur berstandar</li>
                     <li><i class="fa-regular fa-circle-check"></i> Fokus kenyamanan</li>
@@ -40,7 +40,7 @@
                 <i class="fa-solid fa-graduation-cap"></i>
             </div>
             <div class="box-content">
-                <h3>Education</h3>
+                <h3>Edukasi</h3>
                 <ul class="check-list">
                     <li><i class="fa-regular fa-circle-check"></i> Kelas menyusui</li>
                     <li><i class="fa-regular fa-circle-check"></i> Edukasi ibu & anak</li>

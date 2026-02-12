@@ -9,7 +9,7 @@
     <div class="event-hero">
         <div class="event-hero-image">
             <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
-            <span class="event-status">Event Sedang Berlangsung</span>
+            <span class="event-status">Kegiatan Sedang Berlangsung</span>
         </div>
 
         <div class="event-hero-content">
