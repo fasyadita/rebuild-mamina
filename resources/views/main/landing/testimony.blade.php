@@ -192,7 +192,6 @@
 </section>
 
 <style>
-    /* 1. Section Utama */
     .testimommy-section {
         padding: 60px 0;
         background-color: #fffaf3;
@@ -208,41 +207,31 @@
         margin-bottom: 40px;
     }
 
-    /* 2. Container Slider (Jendela) */
     .testi-slider {
         width: 100%;
         overflow: hidden;
-        /* Sembunyikan yang lewat batas */
         padding: 15px 0;
-        /* Memberi ruang untuk bayangan kartu */
         display: flex;
     }
 
-    /* 3. Track (Jalur Animasi) */
     .testi-track {
         display: flex;
         gap: 24px;
         width: max-content;
-        /* Lebar mengikuti isi konten */
-        /* Animasi default: dimatikan dulu, diaktifkan di kelas spesifik bawah */
     }
 
-    /* Pengaturan Animasi KE KIRI */
     .scroll-left {
         animation: moveLeft 30s linear infinite;
     }
 
-    /* Pengaturan Animasi KE KANAN */
     .scroll-right {
         animation: moveRight 30s linear infinite;
     }
 
-    /* Pause saat Hover (Mouse Nempel) */
     .testi-track:hover {
         animation-play-state: paused;
     }
 
-    /* DEFINISI ANIMASI */
     @keyframes moveLeft {
         0% {
             transform: translateX(0);
@@ -251,25 +240,17 @@
         100% {
             transform: translateX(-50%);
         }
-
-        /* Geser setengah total panjang */
     }
 
     @keyframes moveRight {
         0% {
             transform: translateX(-50%);
         }
-
-        /* Mulai dari posisi geser */
         100% {
             transform: translateX(0);
         }
-
-        /* Kembali ke 0 */
     }
 
-
-    /* 4. Styling Kartu Review (Sama seperti sebelumnya) */
     .testi-card {
         background-color: #ffdcd1;
         min-width: 320px;
@@ -281,15 +262,12 @@
         justify-content: space-between;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
         transition: transform 0.3s;
-
-        /* Penting: Mencegah teks terpotong saat animasi */
         white-space: normal;
     }
 
     .testi-card:hover {
         transform: translateY(-5px);
         background-color: #ffcfc2;
-        /* Sedikit lebih gelap saat hover */
     }
 
     .review-text {

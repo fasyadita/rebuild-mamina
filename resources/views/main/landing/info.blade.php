@@ -98,33 +98,29 @@
         margin: 0;
     }
 
-    /* 2. Grid Layout 2x2 */
     .info-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Bagi 2 kolom */
+        grid-template-columns: 1fr 1fr;
     }
 
-    /* 3. Styling Kotak (PENTING: Diubah jadi Row/Samping) */
     .info-box {
         padding: 50px 50px;
         display: flex;
-        flex-direction: row; /* Ikon dan Teks sejajar ke samping */
-        align-items: flex-start; /* Rata atas */
-        gap: 25px; /* Jarak antara Ikon dan Teks */
+        flex-direction: row; 
+        align-items: flex-start;
+        gap: 25px;
     }
 
-    /* Agar isi teks mengambil sisa ruang */
+
     .box-content {
         flex: 1;
     }
 
-    /* Warna Background */
     .pink-bg { background-color: #ffdcd1; }
     .blue-bg { background-color: #bcede6; }
 
-    /* 4. Ikon Bulat */
     .icon-circle {
-        width: 70px; /* Sedikit diperbesar */
+        width: 70px; 
         height: 70px;
         border-radius: 50%;
         display: flex;
@@ -133,13 +129,13 @@
         justify-content: center;
         font-size: 32px;
         color: #fff;
-        flex-shrink: 0; /* Agar lingkaran tidak gepeng */
+        flex-shrink: 0;
     }
     
     .teal-icon { background-color: #3fb6a8; }
     .pink-icon { background-color: #fa9d9d; }
 
-    /* 5. Judul */
+
     .info-box h3 {
         font-family: 'Fredoka', sans-serif;
         font-size: 24px;
@@ -149,13 +145,12 @@
         line-height: 1.2;
     }
 
-    /* 6. List Checklist */
     .check-list {
         list-style: none;
         padding: 0;
         margin: 0;
         display: grid;
-        grid-template-columns: 1fr 1.2fr; /* Kolom kanan sedikit lebih lebar */
+        grid-template-columns: 1fr 1.2fr; 
         column-gap: 10px;
         row-gap: 12px;
     }
@@ -200,7 +195,7 @@
     /* --- Responsif HP --- */
     @media (max-width: 900px) {
         .info-grid {
-            grid-template-columns: 1fr; /* Jadi 1 kolom ke bawah */
+            grid-template-columns: 1fr; 
         }
         .info-box {
             padding: 40px 30px;
