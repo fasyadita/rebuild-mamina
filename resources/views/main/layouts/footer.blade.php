@@ -6,11 +6,11 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Layanan Kami</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
                     <li><a href="#">Testimommy</a></li>
-                    <li><a href="#">Event</a></li>
+                    <li><a href="#">Kegiatan</a></li>
                     <li><a href="#">Cabang</a></li>
                 </ul>
             </div>
@@ -19,7 +19,7 @@
                 <h4>Extra Links</h4>
                 <ul>
                     <li><a href="#">Kenali Tim Mamina</a></li>
-                    <li><a href="#">Join Member</a></li>
+                    <li><a href="#">Daftar Member</a></li>
                 </ul>
             </div>
 
