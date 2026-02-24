@@ -4,7 +4,7 @@
     </div>
 
     <div class="info-grid">
-        
+
         <div class="info-box pink-bg">
             <div class="icon-circle teal-icon">
                 <i class="fa-solid fa-baby-carriage"></i>
@@ -90,6 +90,7 @@
         padding-bottom: 20px;
         padding-top: 50px;
     }
+
     .info-header p {
         font-family: 'nunito', sans-serif;
         font-style: italic;
@@ -106,7 +107,7 @@
     .info-box {
         padding: 50px 50px;
         display: flex;
-        flex-direction: row; 
+        flex-direction: row;
         align-items: flex-start;
         gap: 25px;
     }
@@ -116,11 +117,16 @@
         flex: 1;
     }
 
-    .pink-bg { background-color: #ffdcd1; }
-    .blue-bg { background-color: #bcede6; }
+    .pink-bg {
+        background-color: #ffdcd1;
+    }
+
+    .blue-bg {
+        background-color: #bcede6;
+    }
 
     .icon-circle {
-        width: 70px; 
+        width: 70px;
         height: 70px;
         border-radius: 50%;
         display: flex;
@@ -131,9 +137,14 @@
         color: #fff;
         flex-shrink: 0;
     }
-    
-    .teal-icon { background-color: #3fb6a8; }
-    .pink-icon { background-color: #fa9d9d; }
+
+    .teal-icon {
+        background-color: #3fb6a8;
+    }
+
+    .pink-icon {
+        background-color: #fa9d9d;
+    }
 
 
     .info-box h3 {
@@ -150,7 +161,7 @@
         padding: 0;
         margin: 0;
         display: grid;
-        grid-template-columns: 1fr 1.2fr; 
+        grid-template-columns: 1fr 1.2fr;
         column-gap: 10px;
         row-gap: 12px;
     }
@@ -164,9 +175,13 @@
         gap: 10px;
     }
 
-    .pink-bg .check-list i { color: #3fb6a8; }
-    
-    .blue-bg .check-list i { color: #fa9d9d; }
+    .pink-bg .check-list i {
+        color: #3fb6a8;
+    }
+
+    .blue-bg .check-list i {
+        color: #fa9d9d;
+    }
 
     .desc-text {
         font-family: sans-serif;
@@ -188,6 +203,7 @@
         font-size: 14px;
         transition: 0.3s;
     }
+
     .btn-info:hover {
         background-color: #2e8b80;
     }
@@ -195,10 +211,30 @@
     /* --- Responsif HP --- */
     @media (max-width: 900px) {
         .info-grid {
-            grid-template-columns: 1fr; 
+            grid-template-columns: 1fr;
         }
+
         .info-box {
             padding: 40px 30px;
         }
+
+        .info-header p {
+            font-size: 20px;
+        }
+
+        .check-list li {
+            font-size: 16px;
+        }
+
+        .desc-text {
+            font-size: 16px;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            margin-top: 40px;
+        }
+
     }
 </style>

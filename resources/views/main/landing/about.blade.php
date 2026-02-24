@@ -6,6 +6,7 @@
 </section>
 
 <style>
+    /* --- FONT FACE --- */
     @font-face {
         font-family: 'fredoka-m';
         src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
@@ -28,8 +29,7 @@
     }
 
     .about-banner {
-        background:
-            url('img/about.png');
+        background: url('img/about.png');
         background-size: cover;
         background-position: center;
         height: 200px;
@@ -38,10 +38,11 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        padding: 0 20px;
     }
 
     .banner-text h2 {
-        font-family: 'Fredoka-sm', sans-serif;
+        font-family: 'fredoka-sm', sans-serif;
         font-size: 30px;
         font-weight: 700;
         color: #333;
@@ -50,10 +51,25 @@
     }
 
     .banner-text p {
-        font-family: 'Fredoka-m', sans-serif;
+        font-family: 'fredoka-m', sans-serif;
         font-size: 25px;
         font-weight: 500;
         color: #555;
         margin: 0;
+    }
+
+    /* --- MEDIA QUERIES UNTUK RESPONSIVE (TAMPILAN HP) --- */
+    @media (max-width: 768px) {
+        .about-banner {
+            height: 160px;
+        }
+
+        .banner-text h2 {
+            font-size: 24px;
+        }
+
+        .banner-text p {
+            font-size: 18px;
+        }
     }
 </style>

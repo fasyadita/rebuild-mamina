@@ -126,6 +126,10 @@
             grid-template-columns: repeat(2, 1fr);
             /* Tablet jadi 2 kolom */
         }
+
+        .section-title {
+            font-size: 24px; /* Judul sedikit dikecilkan */
+        }
     }
 
     @media (max-width: 600px) {

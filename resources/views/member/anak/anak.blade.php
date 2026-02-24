@@ -82,7 +82,7 @@
 
 <div class="history-section">
 
-    <h3 class="section-title">Riwayat Reservasi</h3>
+    <h3 class="section-title">Daftar Anak</h3>
 
     <div class="history-card">
         <div class="table-responsive">
@@ -139,7 +139,7 @@
     </div>
 
 
-    <h3 class="section-title">Riwayat Poin</h3>
+    <h3 class="section-title">Pertumbuhan Anak</h3>
 
     <div class="history-card">
         <div class="table-responsive">

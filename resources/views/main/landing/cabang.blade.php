@@ -2,123 +2,124 @@
     <div class="container">
         <h2 class="cabang-title">Cabang Mamina</h2>
 
-        <section id="cabang" class="cabang-section">
-            <div class="container">
-                <div class="cabang-content">
-
-                    <div class="cabang-card">
-                        <div class="card-img-wrapper">
-                            <img src="img/bg1.jpeg" alt="Cabang Malang">
-                        </div>
-                        <div class="card-info">
-                            <h3>Mamina Cabang Malang</h3>
-                            <ul class="info-details">
-                                <li>
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
-                                </li>
-                                <li>
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span>Senin - Minggu <br> 08.00 - 19.00</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-phone"></i>
-                                    <span>08131234567</span>
-                                </li>
-                            </ul>
-                            <div class="card-buttons">
-                                <a href="https://wa.me/6281329913203?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
-                                <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A" target="_blank" class="btn-maps">Lihat di Google Maps</a>
-                            </div>
-                        </div>
+        <div class="cabang-content">
+            <div class="cabang-card">
+                <div class="card-img-wrapper">
+                    <img src="img/bg1.jpeg" alt="Cabang Malang">
+                </div>
+                <div class="card-info">
+                    <h3>Mamina Cabang Malang</h3>
+                    <ul class="info-details">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>08131234567</span>
+                        </li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/6281329913203?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
+                        <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A" target="_blank" class="btn-maps">Lihat di Google Maps</a>
                     </div>
-
-                    <div class="cabang-card">
-                        <div class="card-img-wrapper">
-                            <img src="img/bg1.jpeg" alt="Cabang Malang">
-                        </div>
-                        <div class="card-info">
-                            <h3>Mamina Cabang Malang</h3>
-                            <ul class="info-details">
-                                <li>
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
-                                </li>
-                                <li>
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span>Senin - Minggu <br> 08.00 - 19.00</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-phone"></i>
-                                    <span>08131234567</span>
-                                </li>
-                            </ul>
-                            <div class="card-buttons">
-                                <a href="https://wa.me/6281329913203?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
-                                <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A" target="_blank" class="btn-maps">Lihat di Google Maps</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cabang-card">
-                        <div class="card-img-wrapper">
-                            <img src="img/bg1.jpeg" alt="Cabang Kediri">
-                        </div>
-                        <div class="card-info">
-                            <h3>Mamina Cabang Kediri</h3>
-                            <ul class="info-details">
-                                <li>
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
-                                </li>
-                                <li>
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span>Senin - Minggu <br> 08.00 - 19.00</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-phone"></i>
-                                    <span>08131234567</span>
-                                </li>
-                            </ul>
-                            <div class="card-buttons">
-                                <a href="https://wa.me/6282131090283?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
-                                <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87" target="_blank" class="btn-maps">Lihat di Google Maps</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cabang-card">
-                        <div class="card-img-wrapper">
-                            <img src="img/bg1.jpeg" alt="Cabang Kediri">
-                        </div>
-                        <div class="card-info">
-                            <h3>Mamina Cabang Kediri</h3>
-                            <ul class="info-details">
-                                <li>
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
-                                </li>
-                                <li>
-                                    <i class="fa-regular fa-clock"></i>
-                                    <span>Senin - Minggu <br> 08.00 - 19.00</span>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-phone"></i>
-                                    <span>08131234567</span>
-                                </li>
-                            </ul>
-                            <div class="card-buttons">
-                                <a href="https://wa.me/6282131090283?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
-                                <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87" target="_blank" class="btn-maps">Lihat di Google Maps</a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </section>
+
+            <div class="cabang-card">
+                <div class="card-img-wrapper">
+                    <img src="img/bg1.jpeg" alt="Cabang Malang">
+                </div>
+                <div class="card-info">
+                    <h3>Mamina Cabang Malang</h3>
+                    <ul class="info-details">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>08131234567</span>
+                        </li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/6281329913203?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
+                        <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cabang-card">
+                <div class="card-img-wrapper">
+                    <img src="img/bg1.jpeg" alt="Cabang Kediri">
+                </div>
+                <div class="card-info">
+                    <h3>Mamina Cabang Kediri</h3>
+                    <ul class="info-details">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>08131234567</span>
+                        </li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/6282131090283?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
+                        <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cabang-card">
+                <div class="card-img-wrapper">
+                    <img src="img/bg1.jpeg" alt="Cabang Kediri">
+                </div>
+                <div class="card-info">
+                    <h3>Mamina Cabang Kediri</h3>
+                    <ul class="info-details">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>08131234567</span>
+                        </li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/6282131090283?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
+                        <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 <style>
+    * {
+        box-sizing: border-box; /* Mencegah elemen keluar jalur */
+    }
+
     @font-face {
         font-family: 'fredoka';
         src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
@@ -143,10 +144,14 @@
     .cabang-section {
         padding: 60px 0px;
         background-color: #fffaf3;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     .container {
-        max-width: 90% !important;
+        max-width: 1100px; /* Diubah dari 90% menjadi pixel agar lebih rapi di monitor besar, margin auto akan membuatnya ke tengah */
+        width: 90%;
+        margin: 0 auto;
     }
 
     .cabang-title {
@@ -154,16 +159,15 @@
         font-family: 'fredoka', sans-serif;
         font-size: 32px;
         color: #333;
-        margin-bottom: 10px;
+        margin-top: 0;
+        margin-bottom: 30px; /* Jarak bawah judul diperbesar sedikit */
     }
 
     .cabang-content {
         display: grid;
         gap: 30px;
-        align-items: center;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* 2 Kolom di Desktop */
     }
-
 
     .cabang-card {
         display: flex;
@@ -175,6 +179,7 @@
 
     .card-img-wrapper {
         width: 35%;
+        flex-shrink: 0; /* Mencegah gambar menyusut aneh di flexbox */
     }
 
     .card-img-wrapper img {
@@ -202,13 +207,13 @@
     .info-details {
         list-style: none;
         padding: 0;
-        margin: 0 0 0px 0;
+        margin: 0 0 15px 0; /* Jarak sebelum tombol */
     }
 
     .info-details li {
         display: flex;
         align-items: flex-start;
-        gap: 5px;
+        gap: 8px; /* Gap ikon dan teks diperbesar sedikit */
         margin-bottom: 10px;
         font-family: 'nunito-r', sans-serif;
         font-size: 13px;
@@ -219,11 +224,13 @@
     .info-details i {
         color: #3fb6a8;
         margin-top: 3px;
+        min-width: 14px; /* Agar ikon tidak gepeng */
     }
 
     .card-buttons {
         display: flex;
         gap: 10px;
+        flex-wrap: wrap; /* PENTING: Agar tombol turun ke bawah kalau layar terlalu sempit */
     }
 
     .btn-contact,
@@ -235,6 +242,8 @@
         font-size: 11px;
         font-weight: 600;
         text-align: center;
+        transition: 0.3s;
+        flex-grow: 1; /* Membuat tombol seimbang panjangnya */
     }
 
     .btn-contact {
@@ -243,9 +252,14 @@
         border: 1px solid #ccece6;
     }
 
+    .btn-contact:hover {
+        background-color: #e0f8f3;
+    }
+
     .btn-maps {
         background-color: #3fb6a8;
         color: white;
+        border: 1px solid #3fb6a8;
     }
 
     .btn-maps:hover {
@@ -255,29 +269,28 @@
     /* --- Responsif (HP) --- */
     @media (max-width: 900px) {
         .cabang-content {
-            flex-direction: column;
-            /* Ubah jadi susunan ke bawah */
-        }
-
-        .main-img {
-            min-height: 300px;
-            /* Perkecil tinggi gambar utama di HP */
-            margin-bottom: 20px;
+            grid-template-columns: 1fr; /* PERBAIKAN: Jadikan 1 kolom penuh ke bawah */
         }
 
         .cabang-card {
-            flex-direction: column;
-            /* Kartu jadi susunan ke bawah di HP */
+            flex-direction: column; /* Gambar di atas, info di bawah */
         }
 
         .card-img-wrapper,
         .card-info {
-            width: 100%;
+            width: 100%; /* Lebar penuh */
         }
 
-        .card-img-wrapper img {
-            height: 200px;
-            /* Tinggi gambar gedung di HP */
+        .card-img-wrapper {
+            height: 200px; /* Tinggi gambar dibatasi di HP */
+        }
+        
+        .card-info {
+            padding: 24px 20px;
+        }
+
+        .card-buttons {
+            flex-direction: column; /* Tombol ditumpuk ke bawah di HP agar tidak kekecilan */
         }
     }
 </style>
