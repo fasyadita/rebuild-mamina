@@ -97,7 +97,7 @@
         color: #4db6ac; 
         font-size: 26px;
         font-weight: 600;
-        margin-bottom: 40px;
+        /* margin-bottom: 40px; */
         letter-spacing: 0.5px;
     }
 
