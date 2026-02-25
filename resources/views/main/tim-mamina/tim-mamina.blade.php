@@ -107,6 +107,7 @@
     padding: 30px 80px;
     /* background: linear-gradient(180deg, #FFDAD1 0%, #fff7ec 100%); */
     text-align: center;
+    background-color: #FFFDEB;
 }
 
 .tim-section:nth-child(even) {

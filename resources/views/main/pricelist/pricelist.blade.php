@@ -46,9 +46,9 @@
     .pricelist-wrapper {
         display: flex;
         gap: 50px;
-        margin-top: 95px;
+        margin-top: 90px;
         padding: 24px;
-        background: #f3f3ea;
+        background: #FFFDEB;
         min-height: calc(100vh - 90px);
         align-items: flex-start; /* PENTING: Agar sidebar tidak ikut memanjang ke bawah menyamai tinggi iframe */
     }

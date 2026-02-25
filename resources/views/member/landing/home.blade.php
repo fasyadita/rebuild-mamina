@@ -4,7 +4,8 @@
 
     .slider-container {
         max-width: 1000px;
-        margin: 150px auto
+        margin: 150px auto;
+        background-color: #FFFDEB;
     }
 
     /* --- Styling Card Slider --- */

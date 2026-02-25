@@ -6,18 +6,15 @@
 
 <style>
 
-    .body {
-        background-color: #FFFDEB;
-    }
     /* 2. Layout Utama (Grid 2 Kolom) */
     .main-layout {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        /* Kiri 2 bagian, Kanan 1 bagian */
         gap: 30px;
         width: 100%;
         max-width: 1100px;
         margin: 140px auto 80px auto;
+        background-color: #FFFDEB;
     }
 
 

@@ -61,7 +61,7 @@
 
     .why-choose {
         padding: 60px 20px;
-        background-color: #fffaf3;
+        background-color: #fffdeb;
     }
 
     .container {
