@@ -116,10 +116,6 @@
 </section>
 
 <style>
-    body {
-        background-color: #FFFDEB;
-        
-    }
 
     * {
         box-sizing: border-box;
@@ -149,7 +145,7 @@
 
     .cabang-section {
         padding: 60px 0px;
-        background-color: #fffaf3;
+        background-color: #fffdeb;
         width: 100%;
         overflow-x: hidden;
     }
