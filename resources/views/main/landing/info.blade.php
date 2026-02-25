@@ -87,6 +87,7 @@
         width: 100%;
         background-color: #fffaf3;
         padding-bottom: 40px;
+        background-color: #FFFDEB;
     }
 
     .info-header {

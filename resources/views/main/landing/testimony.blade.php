@@ -200,6 +200,7 @@
         padding: 60px 0;
         background-color: #fffaf3;
         overflow: hidden;
+        background-color: #FFFDEB;
     }
 
     .testi-title {
