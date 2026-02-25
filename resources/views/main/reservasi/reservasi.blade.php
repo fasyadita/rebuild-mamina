@@ -39,7 +39,6 @@
     .reservasi-section {
         padding: 60px 20px;
         background-color: #fffdeb;
-        /* Cream Background (sama dengan section lain) */
         display: flex;
         justify-content: center;
         margin-top: 90px;

@@ -75,7 +75,7 @@
 
     /* Section Utama (Background Cream Luar) */
     .layanan-index {
-        background: #FFFFFF; /* Cream page background */
+        background: #FFFDEB; 
         padding: 60px 20px;
         font-family: 'nunito', sans-serif;
         min-height: 100vh;

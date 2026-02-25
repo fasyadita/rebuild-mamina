@@ -6,9 +6,6 @@
 
 <style>
 
-    body {
-        background-color: #FFFDEB;
-    }
 
     /* 2. Layout Utama (Grid 2 Kolom) */
     .main-layout {
