@@ -38,7 +38,7 @@
     /* 1. Container Utama */
     .reservasi-section {
         padding: 60px 20px;
-        background-color: #fffaf3;
+        background-color: #fffdeb;
         /* Cream Background (sama dengan section lain) */
         display: flex;
         justify-content: center;

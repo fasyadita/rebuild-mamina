@@ -34,6 +34,11 @@
 </div>
 
 <style>
+    body{
+        background-color: #FFFDEB;
+    }
+
+    
     * {
         box-sizing: border-box; /* Mencegah padding merusak ukuran elemen */
     }

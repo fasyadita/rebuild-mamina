@@ -6,6 +6,10 @@
 
     <style>
 
+        body {
+            background-color: #FFFDEB;
+        }
+
         /* Header "Keranjang Kamu" */
         .header {
             background: linear-gradient(90deg, #DFF6F0 0%, #FAE3E3 100%);

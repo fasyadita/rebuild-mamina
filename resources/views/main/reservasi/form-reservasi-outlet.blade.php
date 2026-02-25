@@ -5,8 +5,14 @@
 @section('content')
 
 <style>
+
+    body {
+        background-color: #FFFDEB;
+    }
+
     /* 2. Layout Utama (Grid 2 Kolom) */
     .main-layout {
+        background-color: #FFFDEB;
         display: grid;
         grid-template-columns: 2fr 1fr;
         /* Kiri 2 bagian, Kanan 1 bagian */
