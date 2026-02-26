@@ -4,7 +4,7 @@
         border-radius: 30px;
         padding: 40px 50px;
         position: relative;
-        margin: 40px auto;
+        margin: 20px auto 0px;
         max-width: 1200px;
     }
 
@@ -16,41 +16,52 @@
         margin-bottom: 30px;
     }
 
+    /* Update pada .product-card */
     .product-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%; /* Memaksa card mengisi tinggi kolom (bootstrap row) */
         border: none;
         background: transparent;
         border-radius: 20px;
         overflow: hidden;
         transition: transform 0.3s ease;
-        cursor: pointer;
-        margin-bottom: 15px;
-    }
-
-    .product-card:hover {
-        transform: translateY(-5px);
     }
 
     .product-img {
         width: 100%;
-        height: 200px;
+        aspect-ratio: 4 / 3; /* Memastikan semua gambar punya tinggi yang sama */
         object-fit: cover;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        border-radius: 20px 20px 0 0;
     }
 
     .product-info {
         background-color: #ffdad6;
         padding: 15px 10px;
         text-align: center;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        border-radius: 0 0 20px 20px;
         color: #444;
+        
+        /* KUNCI KONSISTENSI */
+        flex-grow: 1; /* Mengisi sisa ruang jika ada card yang lebih pendek */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Menjaga tombol tetap di bawah */
+        min-height: 160px; /* Atur tinggi minimum area teks */
     }
 
     .product-name {
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: 5px;
+        min-height: 40px; /* Memberi ruang untuk 2 baris teks agar tidak jomplang */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
     }
 
     .product-price {
@@ -96,13 +107,12 @@
 
     .page-bg {
     background-color: #FFFDEB;
-    min-height: 100vh;
     width: 100%;
-    padding: 60px 0;
+    padding: 0;
     }
 
     .container {
-        padding: 60px 20px;
+        padding: 30px 20px;
         font-family: 'nunito', sans-serif;
     }
 

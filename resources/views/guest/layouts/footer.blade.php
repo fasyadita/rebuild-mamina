@@ -1,49 +1,74 @@
-<style>
+<footer class="footer-container">
 
+    <div class="footer-left">
+        2024 &copy; <a href="#">mamina.id</a>
+    </div>
+
+    <div class="footer-right">
+        <span>
+            <i class="fab fa-instagram"></i> @maminaa_
+        </span>
+        <span>
+            <i class="fab fa-instagram"></i> @mamina.kediri
+        </span>
+        <span>
+            <i class="fab fa-instagram"></i> @konselormenyusui.mamina
+        </span>
+        <span>
+            <i class="fab fa-instagram"></i> @mamina.academy
+        </span>
+    </div>
+
+</footer>
+<style>
     .footer-container {
         background-color: #FFFDEB;
         color: #757575;
-        padding: 20px 40px;
+        padding: 30px 50px; /* Padding lebih luas agar nafas desain lebih lega */
+        
+        /* KOREKSI UTAMA: Tambahkan display flex */
+        display: flex; 
         justify-content: space-between;
         align-items: center;
         font-size: 12px;
+        font-family: 'Nunito', sans-serif;
+        border-top: 1px solid rgba(0,0,0,0.05); /* Garis tipis pembatas */
     }
 
     .footer-left a {
         color: #757575;
-        text-decoration: underline;
+        text-decoration: none; /* Hilangkan underline agar lebih modern */
+        font-weight: 600;
+    }
+
+    .footer-left a:hover {
+        color: #4db6ac; /* Warna tosca saat hover */
     }
 
     .footer-right {
         display: flex;
-        gap: 30px;
+        gap: 20px;
+        flex-wrap: wrap; /* Agar jika teks IG kepanjangan, otomatis turun rapi */
+        justify-content: center;
     }
 
-    @media (max-width: 768px) {
+    .footer-right span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    /* Responsif Mobile */
+    @media (max-width: 992px) {
         .footer-container {
             flex-direction: column;
-            gap: 15px;
             text-align: center;
+            gap: 20px;
+            padding: 20px;
         }
 
         .footer-right {
-            flex-direction: column;
-            gap: 10px;
+            gap: 10px 20px; /* Jarak antar item IG */
         }
     }
 </style>
-
-<footer class="footer-container">
-
-    <div class="footer-left">
-        2024&copy; <a href="#">mamina.id</a>
-    </div>
-
-    <div class="footer-right">
-        <span>IG @maminaa_</span>
-        <span>IG @mamina.kediri</span>
-        <span>IG @konselormenyusui mamina</span>
-        <span>IG @mamina.academy</span>
-    </div>
-
-</footer>
