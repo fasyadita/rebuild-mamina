@@ -271,6 +271,7 @@
 
         .data-card {
             padding: 20px;
+            background-color: #fffdf9;
         }
 
         .data-header {

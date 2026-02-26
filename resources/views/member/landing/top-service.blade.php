@@ -1,8 +1,6 @@
 <style>
     .favorite-section {
         background-color: #d1f2eb;
-        background-color: #FFFDEB;
-        /* Hijau tosca muda pastel */
         border-radius: 30px;
         padding: 40px 50px;
         position: relative;

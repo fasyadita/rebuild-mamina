@@ -2,11 +2,13 @@
 @section('title', 'Edit Profile')
 
 <style>
-    html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #fffdeb !important;
-}
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #fffdeb !important;
+    }
+
     body {
         background-color: #FFFDEB;
         font-family: 'Nunito', sans-serif;
@@ -15,7 +17,6 @@
 
     * {
         box-sizing: border-box;
-        background-color: #FFFDEB;
         /* Memastikan padding tidak merusak lebar elemen */
     }
 
@@ -285,6 +286,7 @@
 
         .data-card {
             padding: 20px;
+            background-color: #fffdf9;
         }
 
         .data-header {
