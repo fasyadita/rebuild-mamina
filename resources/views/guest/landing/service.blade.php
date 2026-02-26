@@ -74,9 +74,8 @@
 
     .layanan-index {
         background: #FFFDEB; /* Cream page background */
-        padding: 60px 20px;
+        padding: 10px 20px 40px;
         font-family: 'nunito', sans-serif;
-        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -108,39 +107,40 @@
         justify-content: center;
     }
 
+    /* Update pada .kategori-card */
     .kategori-card {
         background: #FFFFFF; 
         border-radius: 20px;
-        padding: 25px 15px; 
+        padding: 15px; /* Kurangi sedikit padding agar lebih proporsional */
         text-align: center;
         text-decoration: none;
         color: #000;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
         transition: all 0.3s ease;
+        
+        /* KUNCI KONSISTENSI */
         aspect-ratio: 1 / 1; 
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%; /* Pastikan mengisi kolom grid */
+    }
+
+    .kategori-card i {
+        font-size: 28px; /* Sedikit dikecilkan agar seimbang */
+        margin-bottom: 8px;
+    }
+
+    .kategori-card span {
+        font-size: 14px;
+        line-height: 1.2;
+        word-break: break-word; /* Mencegah teks panjang merusak kotak */
     }
 
     .kategori-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .kategori-card i {
-        font-size: 32px;
-        color: #000; 
-        margin-bottom: 12px;
-        display: block;
-    }
-
-    .kategori-card span {
-        display: block;
-        font-size: 15px;
-        font-weight: 700;
-        color: #000;
     }
 
     @media (max-width: 992px) {

@@ -1,65 +1,67 @@
 <style>
-    /* --- Styling Area Utama (Background Hijau) --- */
     .favorite-section {
         background-color: #d1f2eb;
-        /* Hijau tosca muda pastel */
         border-radius: 30px;
         padding: 40px 50px;
         position: relative;
-        /* Agar panah bisa diposisikan absolute */
-        margin: 40px auto;
+        margin: 20px auto 0px;
         max-width: 1200px;
-        /* Batas lebar agar tidak terlalu melar */
     }
 
     .section-title {
         color: #fca5a5;
-        /* Warna pink teks judul */
         font-weight: bold;
         text-align: center;
         font-size: 24px;
         margin-bottom: 30px;
     }
 
-    /* --- Styling Card Produk --- */
+    /* Update pada .product-card */
     .product-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%; /* Memaksa card mengisi tinggi kolom (bootstrap row) */
         border: none;
         background: transparent;
         border-radius: 20px;
         overflow: hidden;
         transition: transform 0.3s ease;
-        cursor: pointer;
-        margin-bottom: 15px;
-    }
-
-    .product-card:hover {
-        transform: translateY(-5px);
-        /* Efek naik dikit pas di-hover */
     }
 
     .product-img {
         width: 100%;
-        height: 200px;
-        /* Tinggi gambar fix agar rapi */
+        aspect-ratio: 4 / 3; /* Memastikan semua gambar punya tinggi yang sama */
         object-fit: cover;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+        border-radius: 20px 20px 0 0;
     }
 
     .product-info {
         background-color: #ffdad6;
-        /* Warna pink background info */
         padding: 15px 10px;
         text-align: center;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        border-radius: 0 0 20px 20px;
         color: #444;
+        
+        /* KUNCI KONSISTENSI */
+        flex-grow: 1; /* Mengisi sisa ruang jika ada card yang lebih pendek */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Menjaga tombol tetap di bawah */
+        min-height: 160px; /* Atur tinggi minimum area teks */
     }
 
     .product-name {
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: 5px;
+        min-height: 40px; /* Memberi ruang untuk 2 baris teks agar tidak jomplang */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .product-card:hover {
+        transform: translateY(-5px);
     }
 
     .product-price {
@@ -73,7 +75,6 @@
         color: #666;
     }
 
-    /* --- Panah Navigasi (Hiasan) --- */
     .nav-arrow-right {
         position: absolute;
         right: 20px;
@@ -89,15 +90,6 @@
         opacity: 1;
     }
 
-    /* --- Text Footer --- */
-    .click-hint {
-        text-align: center;
-        color: #888;
-        font-size: 14px;
-        margin-top: 20px;
-        font-weight: 300;
-    }
-
     .btn-tambah {
         background: #4FA8A6;
         color: #fff;
@@ -106,18 +98,24 @@
         border-radius: 20px;
         font-size: 12px;
         cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        transition: background 0.2s ease;
-        margin: 10px;
+        margin-top: 10px;
     }
 
     .btn-tambah:hover {
-        background: #3B8F8D;
+        background: #3b7d7b;
     }
 
-    /* Responsif untuk Mobile */
+    .page-bg {
+    background-color: #FFFDEB;
+    width: 100%;
+    padding: 0;
+    }
+
+    .container {
+        padding: 30px 20px;
+        font-family: 'nunito', sans-serif;
+    }
+
     @media (max-width: 768px) {
         .favorite-section {
             padding: 30px 20px;
@@ -126,27 +124,27 @@
 
         .nav-arrow-right {
             display: none;
-            /* Hilangkan panah di HP */
         }
     }
 </style>
 
-<div class="container">
-    <div class="favorite-section">
+<div class="page-bg">
+    <div id="top-service" class="container">
+        <div class="favorite-section">
 
-        <h3 class="section-title">Paling disukai, nih</h3>
+            <h3 class="section-title">Paling disukai, nih</h3>
 
-        <div class="row g-4">
-            <div class="col-6 col-lg-3">
-                <div class="product-card">
-                    <img src="{{ asset('img/baby.jpeg') }}" class="product-img" alt="Pijat Bayi">
-                    <div class="product-info">
-                        <div class="product-name">Pijat Bayi</div>
-                        <div class="product-price">Rp 88.000</div>
-                        <div class="product-details">
-                            4050+ suka<br>
-                            Cabang Malang
-                        </div>
+            <div class="row g-4">
+                <div class="col-6 col-lg-3">
+                    <div class="product-card">
+                        <img src="{{ asset('img/baby.jpeg') }}" class="product-img" alt="Pijat Bayi">
+                        <div class="product-info">
+                            <div class="product-name">Pijat Bayi</div>
+                            <div class="product-price">Rp 88.000</div>
+                            <div class="product-details">
+                                4050+ suka<br>
+                                Cabang Malang
+                            </div>
                         <button class="btn-tambah">
                             <i class="fas fa-plus"></i> Tambah
                         </button>
@@ -200,12 +198,10 @@
                         </div>
                         <button class="btn-tambah">
                             <i class="fas fa-plus"></i> Tambah
-                        </button>
                     </div>
                 </div>
             </div>
-
         </div> <i class="fas fa-chevron-right nav-arrow-right"></i>
-
+        </div>
     </div>
 </div>

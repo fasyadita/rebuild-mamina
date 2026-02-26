@@ -5,6 +5,11 @@
 @section('content')
 
 <style>
+    html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffdeb !important;
+}
     /* 2. Layout Utama (Grid 2 Kolom) */
     .main-layout {
         display: grid;

@@ -1,101 +1,119 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
-
-    .slider-container {
-        max-width: 1000px;
-        margin: 150px auto
+    html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffdeb !important;
+}
+    /* Section Utama */
+    .slider-section {
+        background: #FFFDEB; 
+        padding: 30px 20px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
     }
 
-    /* --- Styling Card Slider --- */
-    .swiper-slide {
+    .slider-container {
         width: 100%;
-        height: 100%;
-        background: #fff;
+        max-width: 1100px; 
+    }
+
+    /* Wrapper Background Pink */
+    .banner-wrapper {
+        background-color: #FCE8E2; 
         border-radius: 20px;
+        padding: 60px 0; 
+        position: relative;
+    }
+
+    .swiper {
+        width: 100%;
+        padding: 40px 0; /* Memberi ruang untuk scale dan shadow agar tidak terpotong */
+    }
+
+    /* Gaya Slide Default (Samping/Buram) */
+    .swiper-slide {
+        width: auto; 
+        max-width: 800px;
+        transition: all 0.6s ease-in-out; /* Transisi lebih halus */
+        filter: blur(8px);
+        opacity: 0.5;
+        transform: scale(0.8);
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden;
-
-        /* TRANSISI & EFEK NON-AKTIF (SAMPING) */
-        transition: all 0.4s ease;
-        transform: scale(0.85);
-        /* Mengecil */
-        opacity: 0.6;
-        /* Pudar */
-        filter: blur(2px) grayscale(20%);
-        /* Blur & agak abu */
+        z-index: 1; /* Slide samping berada di layer bawah */
     }
 
     .swiper-slide img {
         width: 100%;
-        height: 100%;
+        height: auto;
         object-fit: cover;
-        /* Gambar full memenuhi kotak */
+        border-radius: 20px;
+        display: block;
+        backface-visibility: hidden; /* Mencegah getaran saat animasi */
     }
 
-    /* --- KONDISI AKTIF (TENGAH) --- */
+    /* KUNCI: Slide Aktif (Tengah/Pop Up) */
     .swiper-slide.swiper-slide-active {
-        transform: scale(1.1);
-        /* Zoom In */
+        filter: blur(0);
         opacity: 1;
-        /* Jelas */
-        filter: blur(0) grayscale(0);
-        /* Tajam */
-        z-index: 10;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        /* Bayangan biar pop-up */
+        transform: scale(1.05); /* Efek pop up lebih terasa */
+        z-index: 10 !important; /* Paksa agar selalu di depan saat Next maupun Prev */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
 
-    /* --- Navigasi Panah --- */
+    /* Memastikan slide sebelah kiri dan kanan tetap di bawah slide utama */
+    .swiper-slide-next, 
+    .swiper-slide-prev {
+        z-index: 5;
+    }
+
+    /* Navigasi Panah */
     .swiper-button-next,
     .swiper-button-prev {
         color: #555;
-        background: rgba(255, 255, 255, 0.7);
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        backdrop-filter: blur(4px);
+        z-index: 20;
     }
 
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        font-size: 18px;
-        font-weight: bold;
+    .swiper-button-prev { left: 20px; }
+    .swiper-button-next { right: 20px; }
+
+    /* Responsif Mobile */
+    @media (max-width: 768px) {
+        .swiper-slide { width: 85%; }
+        .banner-wrapper { padding: 40px 0; }
+        .swiper-slide.swiper-slide-active { transform: scale(1.03); }
     }
 </style>
 
 <div id="home" class="slider-section">
     <div class="slider-container">
-
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                    <img src="{{ asset('img/banner1.png') }}" alt="Produk 1">
+        <div class="banner-wrapper">
+            
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{ asset('img/banner1.png') }}" alt="Banner 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('img/benner2.png') }}" alt="Banner 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('img/banner3.png') }}" alt="Banner 3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('img/banner4.png') }}" alt="Banner 4">
+                    </div>
                 </div>
-
-                <div class="swiper-slide">
-                    <img src="{{ asset('img/benner2.png') }}" alt="Produk 2">
-                </div>
-
-                <div class="swiper-slide">
-                    <img src="{{ asset('img/banner3.png') }}" alt="Produk 3">
-                </div>
-
-                <div class="swiper-slide">
-                    <img src="{{ asset('img/banner4.png') }}" alt="Produk 4">
-                </div>
-
             </div>
 
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
 
-            <div class="swiper-pagination"></div>
         </div>
-
     </div>
 </div>
 
@@ -104,40 +122,22 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
+            slidesPerView: 1.5,
+            centeredSlides: true,
+            spaceBetween: -80,
+            loop: true,
             grabCursor: true,
-            centeredSlides: true, // PENTING: Agar fokus di tengah
-            slidesPerView: "auto", // PENTING: Agar lebar mengikuti CSS
-            loop: true, // Infinite scroll
-            spaceBetween: 30, // Jarak antar slide
-
+            speed: 800,
+            slideToClickedSlide: true,
             autoplay: {
-                delay: 3000,                // 5000ms = 5 detik
-                disableOnInteraction: false, // Tetap jalan walau sudah digeser manual user
-                pauseOnMouseEnter: true,     // (Opsional) Berhenti pas kursor nempel (biar user bisa baca)
+                delay: 4500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
             },
-
-            // Konfigurasi Efek 3D/Zoom
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: false, // Matikan shadow bawaan krn kita pakai CSS
-            },
-
-            // Navigasi
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-
-            // (Opsional) Titik navigasi bawah
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
         });
-
     });
 </script>

@@ -35,21 +35,26 @@
 </section>
 
 <style>
+    html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffdeb !important;
+}
     /* 1. Container Utama */
     .reservasi-section {
-        padding: 60px 20px;
-        background-color: #fffaf3;
+        padding: 140px 20px 30px;
+        background-color: #fffdeb;
         /* Cream Background (sama dengan section lain) */
         display: flex;
         justify-content: center;
-        margin-top: 90px;
+        align-items: flex-start;
     }
 
     /* 2. Kartu Hijau Mint */
     .reservasi-card {
         background-color: #d0f0e4;
         /* Warna Mint Pastel */
-        padding: 50px;
+        padding: 35px 25px;
         border-radius: 20px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         /* Bayangan lembut */
@@ -74,7 +79,7 @@
     /* 4. Styling Dropdown (Select) */
     .form-group {
         position: relative;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         border-radius: 50%;
     }
 
@@ -132,7 +137,7 @@
     /* Responsif untuk HP */
     @media (max-width: 768px) {
         .reservasi-card {
-            padding: 30px 20px;
+            padding: 25px 20px;
         }
 
         .reservasi-title {

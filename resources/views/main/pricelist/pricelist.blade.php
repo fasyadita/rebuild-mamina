@@ -34,9 +34,16 @@
 </div>
 
 <style>
+    
     * {
         box-sizing: border-box; /* Mencegah padding merusak ukuran elemen */
     }
+
+    html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffdeb !important;
+}
 
     .pricelist-wrapper {
         display: flex;

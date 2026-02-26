@@ -103,6 +103,12 @@
     }
 
     /* ===== Global Section ===== */
+     html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffdeb !important;
+}
+
 .tim-section {
     padding: 30px 80px;
     /* background: linear-gradient(180deg, #FFDAD1 0%, #fff7ec 100%); */
