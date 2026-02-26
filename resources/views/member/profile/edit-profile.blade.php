@@ -15,6 +15,7 @@
 
     * {
         box-sizing: border-box;
+        background-color: #FFFDEB;
         /* Memastikan padding tidak merusak lebar elemen */
     }
 

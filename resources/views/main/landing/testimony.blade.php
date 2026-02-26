@@ -192,10 +192,15 @@
 </section>
 
 <style>
+    body {
+        background-color: #FFFDEB;
+    }
+
     .testimommy-section {
         padding: 60px 0;
         background-color: #fffaf3;
         overflow: hidden;
+        background-color: #FFFDEB;
     }
 
     .testi-title {
@@ -246,6 +251,7 @@
         0% {
             transform: translateX(-50%);
         }
+
         100% {
             transform: translateX(0);
         }

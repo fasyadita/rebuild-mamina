@@ -78,11 +78,16 @@
         font-style: normal;
     }
 
+    body{
+        background-color: #FFFDEB;
+    }
+
     /* 1. Container Utama */
     .info-section {
         width: 100%;
         background-color: #fffaf3;
         padding-bottom: 40px;
+        background-color: #FFFDEB;
     }
 
     .info-header {

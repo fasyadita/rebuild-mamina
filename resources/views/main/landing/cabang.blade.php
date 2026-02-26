@@ -116,8 +116,10 @@
 </section>
 
 <style>
+
     * {
-        box-sizing: border-box; /* Mencegah elemen keluar jalur */
+        box-sizing: border-box;
+        /* Mencegah elemen keluar jalur */
     }
 
     @font-face {
@@ -143,13 +145,14 @@
 
     .cabang-section {
         padding: 60px 0px;
-        background-color: #fffaf3;
+        background-color: #fffdeb;
         width: 100%;
         overflow-x: hidden;
     }
 
     .container {
-        max-width: 1100px; /* Diubah dari 90% menjadi pixel agar lebih rapi di monitor besar, margin auto akan membuatnya ke tengah */
+        max-width: 1100px;
+        /* Diubah dari 90% menjadi pixel agar lebih rapi di monitor besar, margin auto akan membuatnya ke tengah */
         width: 90%;
         margin: 0 auto;
     }
@@ -160,13 +163,15 @@
         font-size: 32px;
         color: #333;
         margin-top: 0;
-        margin-bottom: 30px; /* Jarak bawah judul diperbesar sedikit */
+        margin-bottom: 30px;
+        /* Jarak bawah judul diperbesar sedikit */
     }
 
     .cabang-content {
         display: grid;
         gap: 30px;
-        grid-template-columns: 1fr 1fr; /* 2 Kolom di Desktop */
+        grid-template-columns: 1fr 1fr;
+        /* 2 Kolom di Desktop */
     }
 
     .cabang-card {
@@ -179,7 +184,8 @@
 
     .card-img-wrapper {
         width: 35%;
-        flex-shrink: 0; /* Mencegah gambar menyusut aneh di flexbox */
+        flex-shrink: 0;
+        /* Mencegah gambar menyusut aneh di flexbox */
     }
 
     .card-img-wrapper img {
@@ -207,13 +213,15 @@
     .info-details {
         list-style: none;
         padding: 0;
-        margin: 0 0 15px 0; /* Jarak sebelum tombol */
+        margin: 0 0 15px 0;
+        /* Jarak sebelum tombol */
     }
 
     .info-details li {
         display: flex;
         align-items: flex-start;
-        gap: 8px; /* Gap ikon dan teks diperbesar sedikit */
+        gap: 8px;
+        /* Gap ikon dan teks diperbesar sedikit */
         margin-bottom: 10px;
         font-family: 'nunito-r', sans-serif;
         font-size: 13px;
@@ -224,13 +232,15 @@
     .info-details i {
         color: #3fb6a8;
         margin-top: 3px;
-        min-width: 14px; /* Agar ikon tidak gepeng */
+        min-width: 14px;
+        /* Agar ikon tidak gepeng */
     }
 
     .card-buttons {
         display: flex;
         gap: 10px;
-        flex-wrap: wrap; /* PENTING: Agar tombol turun ke bawah kalau layar terlalu sempit */
+        flex-wrap: wrap;
+        /* PENTING: Agar tombol turun ke bawah kalau layar terlalu sempit */
     }
 
     .btn-contact,
@@ -243,7 +253,8 @@
         font-weight: 600;
         text-align: center;
         transition: 0.3s;
-        flex-grow: 1; /* Membuat tombol seimbang panjangnya */
+        flex-grow: 1;
+        /* Membuat tombol seimbang panjangnya */
     }
 
     .btn-contact {
@@ -269,28 +280,33 @@
     /* --- Responsif (HP) --- */
     @media (max-width: 900px) {
         .cabang-content {
-            grid-template-columns: 1fr; /* PERBAIKAN: Jadikan 1 kolom penuh ke bawah */
+            grid-template-columns: 1fr;
+            /* PERBAIKAN: Jadikan 1 kolom penuh ke bawah */
         }
 
         .cabang-card {
-            flex-direction: column; /* Gambar di atas, info di bawah */
+            flex-direction: column;
+            /* Gambar di atas, info di bawah */
         }
 
         .card-img-wrapper,
         .card-info {
-            width: 100%; /* Lebar penuh */
+            width: 100%;
+            /* Lebar penuh */
         }
 
         .card-img-wrapper {
-            height: 200px; /* Tinggi gambar dibatasi di HP */
+            height: 200px;
+            /* Tinggi gambar dibatasi di HP */
         }
-        
+
         .card-info {
             padding: 24px 20px;
         }
 
         .card-buttons {
-            flex-direction: column; /* Tombol ditumpuk ke bawah di HP agar tidak kekecilan */
+            flex-direction: column;
+            /* Tombol ditumpuk ke bawah di HP agar tidak kekecilan */
         }
     }
 </style>
