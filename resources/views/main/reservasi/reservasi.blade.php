@@ -45,8 +45,6 @@
         padding: 140px 20px 30px;
         background-color: #fffdeb;
         /* Cream Background (sama dengan section lain) */
-        padding: 60px 20px;
-        background-color: #fffdeb;
         display: flex;
         justify-content: center;
         align-items: flex-start;
