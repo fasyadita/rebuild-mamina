@@ -17,7 +17,7 @@ Route::get('/reservasi/outlet', fn() => view('main.reservasi.form-reservasi-outl
 Route::get('/pricelist', fn() => view('main.pricelist.pricelist'));
 Route::get('/tim-mamina', [TimMaminaController::class, 'index']);
 Route::get('/event/detail-event', fn() => view('main.event.detail-event'))->name('event.detail');
-Route::get('/layanan', fn() => view('main.pricelist.pricelist'));
+Route::get('/layanan', fn() => view('main.layanan.index'))->name('layanan.index');
 Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
 Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');
 Route::get('/layanan-ibu', [LayananController::class, 'ibu'])->name('layanan.ibu');
