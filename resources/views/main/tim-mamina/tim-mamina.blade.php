@@ -13,17 +13,19 @@
 
 
     <div class="tim-grid">
-        @for ($i = 0; $i < 4; $i++)
+        @foreach ($timMalang as $tim)
         <div class="tim-card">
-            <img src="{{ asset('img/tim-mamina.jpeg') }}" alt="Tim Mamina">
-            <h3>Intania Putri W., S.Tr.Keb, CPHT</h3>
-            <p>Terapis & Fasilitator Prenatal Yoga</p>
+            <img src="{{ !empty($tim->thumb) ? asset($tim->thumb) : asset('img/tim-mamina.jpeg') }}" 
+                 alt="{{ $tim->name }}" 
+                 onerror="this.onerror=null;this.src='{{ asset('img/tim-mamina.jpeg') }}';">
+            <h3>{{ $tim->name }}</h3>
+            <p>{{ $tim->display ?? 'Terapis' }}</p>
 
-            <a href="#" class="ig-btn">
+            <a href="{{ $tim->ig ? 'https://instagram.com/' . ltrim($tim->ig, '@') : '#' }}" class="ig-btn" target="_blank">
                 <img src="{{ asset('img/instagram.jpeg') }}">
             </a>
         </div>
-        @endfor
+        @endforeach
     </div>
 </section>
 
@@ -33,17 +35,19 @@
     </div>
 
     <div class="tim-grid">
-        @for ($i = 0; $i < 4; $i++)
+        @foreach ($timKediri as $tim)
         <div class="tim-card">
-            <img src="{{ asset('img/tim-mamina.jpeg') }}" alt="Tim Mamina">
-            <h3>Intania Putri W., S.Tr.Keb, CPHT</h3>
-            <p>Terapis & Fasilitator Prenatal Yoga</p>
+            <img src="{{ !empty($tim->thumb) ? asset($tim->thumb) : asset('img/tim-mamina.jpeg') }}" 
+                 alt="{{ $tim->name }}" 
+                 onerror="this.onerror=null;this.src='{{ asset('img/tim-mamina.jpeg') }}';">
+            <h3>{{ $tim->name }}</h3>
+            <p>{{ $tim->display ?? 'Terapis' }}</p>
 
-            <a href="#" class="ig-btn">
+            <a href="{{ $tim->ig ? 'https://instagram.com/' . ltrim($tim->ig, '@') : '#' }}" class="ig-btn" target="_blank">
                 <img src="{{ asset('img/instagram.jpeg') }}">
             </a>
         </div>
-        @endfor
+        @endforeach
     </div>
 </section>
 
@@ -53,17 +57,19 @@
     </div>
 
     <div class="tim-grid">
-        @for ($i = 0; $i < 4; $i++)
+        @foreach ($konselor as $tim)
         <div class="tim-card">
-            <img src="{{ asset('img/tim-mamina.jpeg') }}" alt="Tim Mamina">
-            <h3>Intania Putri W., S.Tr.Keb, CPHT</h3>
-            <p>Terapis & Fasilitator Prenatal Yoga</p>
+            <img src="{{ !empty($tim->thumb) ? asset($tim->thumb) : asset('img/tim-mamina.jpeg') }}" 
+                 alt="{{ $tim->name }}" 
+                 onerror="this.onerror=null;this.src='{{ asset('img/tim-mamina.jpeg') }}';">
+            <h3>{{ $tim->name }}</h3>
+            <p>{{ $tim->display ?? 'Konselor' }}</p>
 
-            <a href="#" class="ig-btn">
+            <a href="{{ $tim->ig ? 'https://instagram.com/' . ltrim($tim->ig, '@') : '#' }}" class="ig-btn" target="_blank">
                 <img src="{{ asset('img/instagram.jpeg') }}">
             </a>
         </div>
-        @endfor
+        @endforeach
     </div>
 </section>
 
@@ -73,17 +79,19 @@
     </div>
 
     <div class="tim-grid">
-        @for ($i = 0; $i < 4; $i++)
+        @foreach ($timExtend as $tim)
         <div class="tim-card">
-            <img src="{{ asset('img/tim-mamina.jpeg') }}" alt="Tim Mamina">
-            <h3>Intania Putri W., S.Tr.Keb, CPHT</h3>
-            <p>Terapis & Fasilitator Prenatal Yoga</p>
+            <img src="{{ !empty($tim->thumb) ? asset($tim->thumb) : asset('img/tim-mamina.jpeg') }}" 
+                 alt="{{ $tim->name }}" 
+                 onerror="this.onerror=null;this.src='{{ asset('img/tim-mamina.jpeg') }}';">
+            <h3>{{ $tim->name }}</h3>
+            <p>{{ $tim->display ?? 'Terapis' }}</p>
 
-            <a href="#" class="ig-btn">
+            <a href="{{ $tim->ig ? 'https://instagram.com/' . ltrim($tim->ig, '@') : '#' }}" class="ig-btn" target="_blank">
                 <img src="{{ asset('img/instagram.jpeg') }}">
             </a>
         </div>
-        @endfor
+        @endforeach
     </div>
 </section>
 

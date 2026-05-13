@@ -5,7 +5,7 @@
         <div class="cabang-content">
             <div class="cabang-card">
                 <div class="card-img-wrapper">
-                    <img src="img/bg1.jpeg" alt="Cabang Malang">
+                    <img src="{{ asset('img/cabang-mlg.jpg') }}" alt="Cabang Malang">
                 </div>
                 <div class="card-info">
                     <h3>Mamina Cabang Malang</h3>
@@ -32,14 +32,14 @@
 
             <div class="cabang-card">
                 <div class="card-img-wrapper">
-                    <img src="img/bg1.jpeg" alt="Cabang Malang">
+                    <img src="{{ asset('img/cabang-sht.jpeg') }}" alt="Cabang Malang">
                 </div>
                 <div class="card-info">
                     <h3>Mamina Cabang Malang</h3>
                     <ul class="info-details">
                         <li>
                             <i class="fa-solid fa-location-dot"></i>
-                            <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
+                            <span>1-2, Jl. Soekarno Hatta Indah, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</span>
                         </li>
                         <li>
                             <i class="fa-regular fa-clock"></i>
@@ -52,21 +52,21 @@
                     </ul>
                     <div class="card-buttons">
                         <a href="https://wa.me/6281329913203?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
-                        <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+                        <a href="https://maps.app.goo.gl/sT3BM3YnzyeJ1zF28" target="_blank" class="btn-maps">Lihat di Google Maps</a>
                     </div>
                 </div>
             </div>
 
             <div class="cabang-card">
                 <div class="card-img-wrapper">
-                    <img src="img/bg1.jpeg" alt="Cabang Kediri">
+                    <img src="{{ asset('img/cabang-kdr.jpeg') }}" alt="Cabang Kediri">
                 </div>
                 <div class="card-info">
                     <h3>Mamina Cabang Kediri</h3>
                     <ul class="info-details">
                         <li>
                             <i class="fa-solid fa-location-dot"></i>
-                            <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
+                            <span>Jl. Dr. Sahardjo No.88B, Campurejo, Kec. Mojoroto, Kota Kediri, Jawa Timur 64116</span>
                         </li>
                         <li>
                             <i class="fa-regular fa-clock"></i>
