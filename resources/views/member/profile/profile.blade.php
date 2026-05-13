@@ -9,13 +9,17 @@
 
             <div class="referral-box">
                 Kode Referral :
-                <span id="kodeReferral">ABC123456</span>
+                <span id="kodeReferral">{{ $customer->code ?? '-' }}</span>
                 <i class="far fa-copy" style="cursor: pointer;" onclick="salinReferral()"></i>
             </div>
 
             <div class="col-md-auto text-center">
                 <div class="profile-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Profile" class="profile-img">
+                    @php
+                        $fallbackImg = 'https://ui-avatars.com/api/?name=' . urlencode($customer->name ?? 'User') . '&background=ffdad1&color=3fb6a8';
+                        $profileImg = $customer->image ? asset('storage/' . $customer->image) : $fallbackImg;
+                    @endphp
+                    <img src="{{ $profileImg }}" alt="Profile" class="profile-img" onerror="this.onerror=null;this.src='{{ $fallbackImg }}';">
                     <div class="edit-icon-badge">
                         <i class="fas fa-pencil-alt"></i>
                     </div>
@@ -23,9 +27,9 @@
             </div>
 
             <div class="col-md text-center text-md-start mt-3 mt-md-0">
-                <div class="user-name">Nadira Azzahra</div>
-                <div class="user-detail">nadira@gmail.com</div>
-                <div class="user-detail mb-3">081234567898</div>
+                <div class="user-name">{{ $customer->name ?? 'Belum diatur' }}</div>
+                <div class="user-detail">{{ $customer->email ?? 'Belum diatur' }}</div>
+                <div class="user-detail mb-3">{{ $customer->phone ?? 'Belum diatur' }}</div>
                 <a href="{{ url('/member/reset-password') }}" class="btn-reset-pass">Reset Password</a>
             </div>
 
@@ -33,11 +37,11 @@
                 <div class="stats-container">
                     <div class="stat-box">
                         <div class="stat-label">Level</div>
-                        <div class="stat-value">Newborn</div>
+                        <div class="stat-value">{{ $customer->level ?? 'Newborn' }}</div>
                     </div>
                     <div class="stat-box">
                         <div class="stat-label">Point</div>
-                        <div class="stat-value">0</div>
+                        <div class="stat-value">{{ $customer->points ?? 0 }}</div>
                     </div>
                 </div>
             </div>
@@ -56,62 +60,62 @@
         <div class="row">
             <div class="col-6 col-md-3">
                 <div class="data-label">Nama</div>
-                <div class="data-value">Nadira Azzahra</div>
+                <div class="data-value">{{ $customer->name ?? '-' }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">No. Hp</div>
-                <div class="data-value">081234567898</div>
+                <div class="data-value">{{ $customer->phone ?? '-' }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">Email</div>
-                <div class="data-value">nadira@gmail.com</div>
+                <div class="data-value">{{ $customer->email ?? '-' }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">Outlet Mamina Terdekat</div>
-                <div class="data-value">Malang</div>
+                <div class="data-value">-</div>
             </div>
 
             <div class="col-6 col-md-3">
                 <div class="data-label">Alamat</div>
-                <div class="data-value">Jln. Bunga Mawar No 1</div>
+                <div class="data-value">{{ $customer->address ?? '-' }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">Provinsi</div>
-                <div class="data-value">Jawa Timur</div>
+                <div class="data-value">{{ $customer->province_id ?? '-' }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">Kota</div>
-                <div class="data-value">Malang</div>
+                <div class="data-value">{{ $customer->city_id ?? '-' }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">Kecamatan</div>
-                <div class="data-value">Lowokwaru</div>
+                <div class="data-value">{{ $customer->district_id ?? '-' }}</div>
             </div>
 
             <div class="col-6 col-md-3">
                 <div class="data-label">Kelurahan</div>
-                <div class="data-value">Jatimulyo</div>
+                <div class="data-value">{{ $customer->village_id ?? '-' }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">Jenis Kelamin</div>
-                <div class="data-value">Perempuan</div>
+                <div class="data-value">{{ $customer->sex == 'L' ? 'Laki-laki' : ($customer->sex == 'P' ? 'Perempuan' : '-') }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">Tgl Lahir</div>
-                <div class="data-value">12 Januari 1995</div>
+                <div class="data-value">{{ $customer->birthdate ? \Carbon\Carbon::parse($customer->birthdate)->translatedFormat('d F Y') : '-' }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">Instagram</div>
-                <div class="data-value">@nadira_azza</div>
+                <div class="data-value">{{ $customer->ig ?? '-' }}</div>
             </div>
 
             <div class="col-6 col-md-3">
                 <div class="data-label">Pekerjaan</div>
-                <div class="data-value">Ibu Rumah Tangga</div>
+                <div class="data-value">{{ $customer->occupation ?? '-' }}</div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="data-label">Agama</div>
-                <div class="data-value">Islam</div>
+                <div class="data-value">{{ $customer->religion ?? '-' }}</div>
             </div>
         </div>
     </div>

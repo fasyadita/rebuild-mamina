@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TimMaminaController;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LayananController;
+use App\Http\Controllers\UserController;
 // MAIN
 // landing page 
 Route::get('/', fn() => view('welcome'))->name('beranda');
@@ -14,16 +17,16 @@ Route::get('/reservasi/outlet', fn() => view('main.reservasi.form-reservasi-outl
 Route::get('/pricelist', fn() => view('main.pricelist.pricelist'));
 Route::get('/tim-mamina', [TimMaminaController::class, 'index']);
 Route::get('/event/detail-event', fn() => view('main.event.detail-event'))->name('event.detail');
-Route::get('/layanan/anak', fn() => view('main.layanan.detail-layanan-anak'))->name('layanan.anak');
-Route::get('/layanan/bayi', fn() => view('main.layanan.detail-layanan-bayi'))->name('layanan.bayi');
-Route::get('/layanan/toddler', fn() => view('main.layanan.detail-layanan-toddler'))->name('layanan.toddler');
-Route::get('/layanan/ibu', fn() => view('main.layanan.detail-layanan-ibu'))->name('layanan.ibu');
-Route::get('/layanan/imunisasi', fn() => view('main.layanan.detail-layanan-imunisasi'))->name('layanan.imunisasi');
-Route::get('/layanan/kelas', fn() => view('main.layanan.detail-layanan-kelas'))->name('layanan.kelas');
-Route::get('/layanan/konsultasi', fn() => view('main.layanan.detail-layanan-konsultasi'))->name('layanan.konsultasi');
-Route::get('/layanan/lainnya', fn() => view('main.layanan.detail-layanan-lainnya'))->name('layanan.lainnya');
-Route::get('/layanan/paket', fn() => view('main.layanan.detail-layanan-paket'))->name('layanan.paket');
-Route::get('/layanan/umum', fn() => view('main.layanan.detail-layanan-umum'))->name('layanan.umum');
+Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
+Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');
+Route::get('/layanan-ibu', [LayananController::class, 'ibu'])->name('layanan.ibu');
+Route::get('/layanan-toddler', [LayananController::class, 'toddler'])->name('layanan.toddler');
+Route::get('/layanan-imunisasi', [LayananController::class, 'imunisasi'])->name('layanan.imunisasi');
+Route::get('/layanan-kelas', [LayananController::class, 'kelas'])->name('layanan.kelas');
+Route::get('/layanan-konsultasi', [LayananController::class, 'konsultasi'])->name('layanan.konsultasi');
+Route::get('/layanan-lainnya', [LayananController::class, 'lainnya'])->name('layanan.lainnya');
+Route::get('/layanan-paket', [LayananController::class, 'paket'])->name('layanan.paket');
+Route::get('/layanan-umum', [LayananController::class, 'umum'])->name('layanan.umum');
 
 
 // GUEST
@@ -33,24 +36,26 @@ Route::prefix('guest')->name('guest.')->group(function () {
     Route::get('/terapis', fn() => view('guest.terapis.terapis'))->name('terapis');
     Route::get('/cabang', fn() => view('guest.cabang.cabang'))->name('cabang');
     Route::get('/login', fn() => view('guest.login-regist.login'))->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
     Route::get('/regist', fn() => view('guest.login-regist.regist'))->name('regist');
 
-    Route::get('/layanan-anak', fn() => view('guest.layanan.layanan-anak'))->name('layanan.anak');
-    Route::get('/layanan-bayi', fn() => view('guest.layanan.layanan-bayi'))->name('layanan.bayi');
-    Route::get('/layanan-ibu', fn() => view('guest.layanan.layanan-ibu'))->name('layanan.ibu');
-    Route::get('/layanan-imunisasi', fn() => view('guest.layanan.layanan-imunisasi'))->name('layanan.imunisasi');
-    Route::get('/layanan-kelas', fn() => view('guest.layanan.layanan-kelas'))->name('layanan.kelas');
-    Route::get('/layanan-konsultasi', fn() => view('guest.layanan.layanan-konsultasi'))->name('layanan.konsultasi');
-    Route::get('/layanan-paket', fn() => view('guest.layanan.layanan-paket'))->name('layanan.paket');
-    Route::get('/layanan-toddler', fn() => view('guest.layanan.layanan-toddler'))->name('layanan.toddler');
-    Route::get('/layanan-umum', fn() => view('guest.layanan.layanan-umum'))->name('layanan.umum');
-    Route::get('/layanan-lainnya', fn() => view('guest.layanan.layanan-lainnya'))->name('layanan.lainnya');
+    Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
+    Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');
+    Route::get('/layanan-ibu', [LayananController::class, 'ibu'])->name('layanan.ibu');
+    Route::get('/layanan-imunisasi', [LayananController::class, 'imunisasi'])->name('layanan.imunisasi');
+    Route::get('/layanan-kelas', [LayananController::class, 'kelas'])->name('layanan.kelas');
+    Route::get('/layanan-konsultasi', [LayananController::class, 'konsultasi'])->name('layanan.konsultasi');
+    Route::get('/layanan-paket', [LayananController::class, 'paket'])->name('layanan.paket');
+    Route::get('/layanan-toddler', [LayananController::class, 'toddler'])->name('layanan.toddler');
+    Route::get('/layanan-umum', [LayananController::class, 'umum'])->name('layanan.umum');
+    Route::get('/layanan-lainnya', [LayananController::class, 'lainnya'])->name('layanan.lainnya');
 
 });
 
 
 // MEMBER
-Route::prefix('member')->name('member.')->group(function () {
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::prefix('member')->name('member.')->middleware('auth')->group(function () {
 
     Route::get('/', fn() => view('welcome-member'))->name('home');
 
@@ -60,20 +65,21 @@ Route::prefix('member')->name('member.')->group(function () {
     Route::get('/riwayat-reservasi', fn() => view('member.reservasi.reservasi'))->name('reservasi');
     Route::get('/anak', fn() => view('member.anak.anak'))->name('anak');
 
-    Route::get('/profile', fn() => view('member.profile.profile'))->name('profile');
-    Route::get('/edit-profile', fn() => view('member.profile.edit-profile'))->name('edit-profile');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('edit-profile');
+    Route::put('/edit-profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('/change-password', fn() => view('member.profile.change-password'))->name('change-password');
     Route::get('/reset-password', fn() => view('member.profile.reset-password'))->name('reset-password');
 
-    Route::get('/layanan-anak', fn() => view('member.layanan.layanan-anak'))->name('layanan.anak');
-    Route::get('/layanan-bayi', fn() => view('member.layanan.layanan-bayi'))->name('layanan.bayi');
-    Route::get('/layanan-ibu', fn() => view('member.layanan.layanan-ibu'))->name('layanan.ibu');
-    Route::get('/layanan-imunisasi', fn() => view('member.layanan.layanan-imunisasi'))->name('layanan.imunisasi');
-    Route::get('/layanan-kelas', fn() => view('member.layanan.layanan-kelas'))->name('layanan.kelas');
-    Route::get('/layanan-konsultasi', fn() => view('member.layanan.layanan-konsultasi'))->name('layanan.konsultasi');
-    Route::get('/layanan-paket', fn() => view('member.layanan.layanan-paket'))->name('layanan.paket');
-    Route::get('/layanan-toddler', fn() => view('member.layanan.layanan-toddler'))->name('layanan.toddler');
-    Route::get('/layanan-umum', fn() => view('member.layanan.layanan-umum'))->name('layanan.umum');
-    Route::get('/layanan-lainnya', fn() => view('member.layanan.layanan-lainnya'))->name('layanan.lainnya');
+    Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
+    Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');
+    Route::get('/layanan-ibu', [LayananController::class, 'ibu'])->name('layanan.ibu');
+    Route::get('/layanan-imunisasi', [LayananController::class, 'imunisasi'])->name('layanan.imunisasi');
+    Route::get('/layanan-kelas', [LayananController::class, 'kelas'])->name('layanan.kelas');
+    Route::get('/layanan-konsultasi', [LayananController::class, 'konsultasi'])->name('layanan.konsultasi');
+    Route::get('/layanan-paket', [LayananController::class, 'paket'])->name('layanan.paket');
+    Route::get('/layanan-toddler', [LayananController::class, 'toddler'])->name('layanan.toddler');
+    Route::get('/layanan-umum', [LayananController::class, 'umum'])->name('layanan.umum');
+    Route::get('/layanan-lainnya', [LayananController::class, 'lainnya'])->name('layanan.lainnya');
 
 });

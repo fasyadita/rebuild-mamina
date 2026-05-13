@@ -313,13 +313,17 @@
 
                 <div class="referral-box">
                     Kode Referral :
-                    <span id="kodeReferral">ABC123456</span>
+                    <span id="kodeReferral">{{ $customer->code ?? '-' }}</span>
                     <i class="far fa-copy" style="cursor: pointer;" onclick="salinReferral()"></i>
                 </div>
 
                 <div class="col-md-auto text-center">
-                    <div class="profile-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Profile" class="profile-img">
+                    <div class="profile-img-wrapper" style="cursor: pointer;" onclick="document.getElementById('profileInput').click()">
+                        @php
+                            $fallbackImg = 'https://ui-avatars.com/api/?name=' . urlencode($customer->name ?? 'User') . '&background=ffdad1&color=3fb6a8';
+                            $profileImg = $customer->image ? asset('storage/' . $customer->image) : $fallbackImg;
+                        @endphp
+                        <img src="{{ $profileImg }}" id="profilePreview" alt="Profile" class="profile-img" onerror="this.onerror=null;this.src='{{ $fallbackImg }}';">
                         <div class="edit-icon-badge">
                             <i class="fas fa-pencil-alt"></i>
                         </div>
@@ -327,20 +331,20 @@
                 </div>
 
                 <div class="col-md text-center text-md-start mt-3 mt-md-0">
-                    <div class="user-name">Nadira Azzahra</div>
-                    <div class="user-detail">nadira@gmail.com</div>
-                    <div class="user-detail mb-3">081234567898</div>
+                    <div class="user-name">{{ $customer->name ?? 'Belum diatur' }}</div>
+                    <div class="user-detail">{{ $customer->email ?? 'Belum diatur' }}</div>
+                    <div class="user-detail mb-3">{{ $customer->phone ?? 'Belum diatur' }}</div>
                 </div>
 
                 <div class="col-md-auto mt-4 mt-md-0">
                     <div class="stats-container">
                         <div class="stat-box">
                             <div class="stat-label">Level</div>
-                            <div class="stat-value">Newborn</div>
+                            <div class="stat-value">{{ $customer->level ?? 'Newborn' }}</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-label">Point</div>
-                            <div class="stat-value">0</div>
+                            <div class="stat-value">{{ $customer->points ?? 0 }}</div>
                         </div>
                     </div>
                 </div>
@@ -353,7 +357,11 @@
                 <h4 class="form-title">Data Pribadi</h4>
                 <div class="divider"></div>
 
-                <form action="#" method="POST">
+                <form action="{{ route('member.profile.update') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    
+                    <input type="file" name="image" id="profileInput" style="display: none;" onchange="previewImage(event)">
 
                     <div class="row">
 
@@ -361,42 +369,48 @@
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Nama <span class="required-star">*</span></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="nama" required>
+                                    <input type="text" class="custom-input" name="nama" value="{{ old('nama', $customer->name) }}" required>
+                                    @error('nama') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">No. Hp <span class="required-star">*</span></label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="no_hp" required>
+                                    <input type="text" class="custom-input" name="no_hp" value="{{ old('no_hp', $customer->phone) }}" required>
+                                    @error('no_hp') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Email <span class="required-star">*</span></label>
                                 <div class="col-sm-8">
-                                    <input type="email" class="custom-input" name="email" required>
+                                    <input type="email" class="custom-input" name="email" value="{{ old('email', $customer->email) }}" required>
+                                    @error('email') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Alamat</label>
                                 <div class="col-sm-8">
-                                    <textarea class="custom-input" name="alamat"></textarea>
+                                    <textarea class="custom-input" name="alamat">{{ old('alamat', $customer->address) }}</textarea>
+                                    @error('alamat') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Provinsi</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="provinsi">
+                                    <input type="text" class="custom-input" name="provinsi" value="{{ old('provinsi', $customer->province_id) }}">
+                                    @error('provinsi') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Agama</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="agama">
+                                    <input type="text" class="custom-input" name="agama" value="{{ old('agama', $customer->religion) }}">
+                                    @error('agama') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
@@ -407,61 +421,71 @@
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Kota</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="kota">
+                                    <input type="text" class="custom-input" name="kota" value="{{ old('kota', $customer->city_id) }}">
+                                    @error('kota') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Kecamatan</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="kecamatan">
+                                    <input type="text" class="custom-input" name="kecamatan" value="{{ old('kecamatan', $customer->district_id) }}">
+                                    @error('kecamatan') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Kelurahan</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="kelurahan">
+                                    <input type="text" class="custom-input" name="kelurahan" value="{{ old('kelurahan', $customer->village_id) }}">
+                                    @error('kelurahan') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Jenis Kelamin</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="jenis_kelamin" list="genderList">
+                                    @php
+                                        $currentSex = old('jenis_kelamin', ($customer->sex == 'L' ? 'Laki-laki' : ($customer->sex == 'P' ? 'Perempuan' : '')));
+                                    @endphp
+                                    <input type="text" class="custom-input" name="jenis_kelamin" list="genderList" value="{{ $currentSex }}">
                                     <datalist id="genderList">
                                         <option value="Laki-laki">
                                         <option value="Perempuan">
                                     </datalist>
+                                    @error('jenis_kelamin') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Tgl Lahir</label>
                                 <div class="col-sm-8">
-                                    <input type="date" class="custom-input" name="tgl_lahir">
+                                    <input type="date" class="custom-input" name="tgl_lahir" value="{{ old('tgl_lahir', $customer->birthdate) }}">
+                                    @error('tgl_lahir') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Instagram</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="instagram">
+                                    <input type="text" class="custom-input" name="instagram" value="{{ old('instagram', $customer->ig) }}">
+                                    @error('instagram') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row form-group-row">
                                 <label class="col-sm-4 form-label">Pekerjaan</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="custom-input" name="pekerjaan">
+                                    <input type="text" class="custom-input" name="pekerjaan" value="{{ old('pekerjaan', $customer->occupation) }}">
+                                    @error('pekerjaan') <small class="text-danger">{{ $message }}</small> @enderror
                                 </div>
                             </div>
 
                             <div class="row mt-5">
                                 <div class="col-12 text-end">
-                                    <a href="/member/profile" class="btn-simpan">
+                                    <button type="submit" class="btn-simpan">
                                         <i class="fas fa-check"></i> Simpan
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
 
@@ -472,3 +496,23 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profilePreview').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function salinReferral() {
+            const kode = document.getElementById('kodeReferral').innerText;
+            navigator.clipboard.writeText(kode).then(() => {
+                alert('Kode referral berhasil disalin ✨');
+            });
+        }
+    </script>
