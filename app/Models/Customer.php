@@ -32,6 +32,10 @@ class Customer extends Authenticatable
         'code',
         'level',
         'points',
+        'branch_id',
+        'referrer',
+        'is_active',
+        'register_via',
     ];
 
     /**

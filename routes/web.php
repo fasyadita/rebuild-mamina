@@ -17,6 +17,7 @@ Route::get('/reservasi/outlet', fn() => view('main.reservasi.form-reservasi-outl
 Route::get('/pricelist', fn() => view('main.pricelist.pricelist'));
 Route::get('/tim-mamina', [TimMaminaController::class, 'index']);
 Route::get('/event/detail-event', fn() => view('main.event.detail-event'))->name('event.detail');
+Route::get('/layanan', fn() => view('main.pricelist.pricelist'));
 Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
 Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');
 Route::get('/layanan-ibu', [LayananController::class, 'ibu'])->name('layanan.ibu');
@@ -38,6 +39,8 @@ Route::prefix('guest')->name('guest.')->group(function () {
     Route::get('/login', fn() => view('guest.login-regist.login'))->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
     Route::get('/regist', fn() => view('guest.login-regist.regist'))->name('regist');
+    Route::post('/regist', [AuthController::class, 'register'])->name('regist.post');
+
 
     Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
     Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');
