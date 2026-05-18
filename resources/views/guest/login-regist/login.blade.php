@@ -13,8 +13,17 @@
         <div class="login-card">
             <h2 class="login-title">Masuk</h2>
 
-            <form action="/member" method="GET"> <input type="text" placeholder="Telp" required>
-                <input type="password" placeholder="Password" required>
+            <form action="{{ route('guest.login.post') }}" method="POST">
+                @csrf
+                <input type="text" name="phone" placeholder="Telp" value="{{ old('phone') }}" required>
+                @error('phone')
+                    <div style="color: #EE9F9B; font-size: 12px; margin-bottom: 10px; margin-top: -10px;">{{ $message }}</div>
+                @enderror
+
+                <input type="password" name="password" placeholder="password" required>
+                @error('password')
+                    <div style="color: #EE9F9B; font-size: 12px; margin-bottom: 10px; margin-top: -10px;">{{ $message }}</div>
+                @enderror
 
                 <div class="reset-password">
                     <a href="#">Reset Password</a>

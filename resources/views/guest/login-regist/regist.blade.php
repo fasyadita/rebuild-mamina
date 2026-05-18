@@ -9,31 +9,57 @@
 
         <h2 class="auth-title">Registrasi Member</h2>
 
-        <form action="#" method="POST">
+        <form action="{{ route('guest.regist.post') }}" method="POST">
             @csrf
 
-            <select class="auth-input">
+            <select name="branch_id" class="auth-input" required>
                 <option selected disabled>Cabang Terdekat</option>
-                <option>Malang</option>
-                <option>Kediri</option>
+                <option value="1" {{ old('branch_id') == '1' ? 'selected' : '' }}>Malang</option>
+                <option value="2" {{ old('branch_id') == '2' ? 'selected' : '' }}>Kediri</option>
             </select>
+            @error('branch_id')
+                <div style="color: #e74c3c; font-size: 11px; margin-top: -8px; margin-bottom: 8px; text-align: left; padding-left: 10px;">{{ $message }}</div>
+            @enderror
 
-            <input type="text" class="auth-input" placeholder="Nama">
-            <input type="text" class="auth-input" placeholder="Telp">
-            <input type="email" class="auth-input" placeholder="Email">
-            <input type="password" class="auth-input" placeholder="Password (minimal 6 karakter)">
-            <input type="password" class="auth-input" placeholder="Konfirmasi Password">
-            <input type="text" class="auth-input" placeholder="Kode Referral (opsional)">
+            <input type="text" name="name" class="auth-input" placeholder="Nama" value="{{ old('name') }}" required>
+            @error('name')
+                <div style="color: #e74c3c; font-size: 11px; margin-top: -8px; margin-bottom: 8px; text-align: left; padding-left: 10px;">{{ $message }}</div>
+            @enderror
+
+            <input type="text" name="phone" class="auth-input" placeholder="Telp" value="{{ old('phone') }}" required>
+            @error('phone')
+                <div style="color: #e74c3c; font-size: 11px; margin-top: -8px; margin-bottom: 8px; text-align: left; padding-left: 10px;">{{ $message }}</div>
+            @enderror
+
+            <input type="email" name="email" class="auth-input" placeholder="Email" value="{{ old('email') }}" required>
+            @error('email')
+                <div style="color: #e74c3c; font-size: 11px; margin-top: -8px; margin-bottom: 8px; text-align: left; padding-left: 10px;">{{ $message }}</div>
+            @enderror
+
+            <input type="password" name="password" class="auth-input" placeholder="Password (minimal 6 karakter)" required>
+            @error('password')
+                <div style="color: #e74c3c; font-size: 11px; margin-top: -8px; margin-bottom: 8px; text-align: left; padding-left: 10px;">{{ $message }}</div>
+            @enderror
+
+            <input type="password" name="password_confirmation" class="auth-input" placeholder="Konfirmasi Password" required>
+
+            <input type="text" name="referrer" class="auth-input" placeholder="Kode Referral (opsional)" value="{{ old('referrer') }}">
+            @error('referrer')
+                <div style="color: #e74c3c; font-size: 11px; margin-top: -8px; margin-bottom: 8px; text-align: left; padding-left: 10px;">{{ $message }}</div>
+            @enderror
 
             <label class="auth-checkbox">
-                <input type="checkbox">
+                <input type="checkbox" name="terms" required>
                 <span>Saya menyetujui <a href="#">Kebijakan Privasi</a></span>
             </label>
+            @error('terms')
+                <div style="color: #e74c3c; font-size: 11px; margin-top: -14px; margin-bottom: 12px; text-align: left; padding-left: 10px;">{{ $message }}</div>
+            @enderror
 
-            <a href="/guest/login" class="btn-login">Daftar</a>
+            <button type="submit" class="auth-btn">Daftar</button>
 
             <p class="auth-footer">
-                Sudah punya akun? <a href="/guest/login">Login</a>
+                Sudah punya akun? <a href="{{ route('guest.login') }}">Login</a>
             </p>
 
         </form>

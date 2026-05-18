@@ -6,8 +6,15 @@
 
 <style>
 
+    @font-face {
+        font-family: 'fredoka';
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body {
-        background-color: #FFFDEB;
+        background-color: #FFFDEB !important;
         margin: 0;
         padding: 0;
     }
@@ -26,10 +33,11 @@
     }
 
     .header h1 {
+        font-family: 'Fredoka', sans-serif;
         color: #F09A9D;
         font-size: 28px;
         font-weight: 700;
-        margin: 0;
+        margin-top: 50px;
     }
 
     /* Area Konten Hijau Mint */
