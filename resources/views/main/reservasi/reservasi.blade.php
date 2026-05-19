@@ -1,38 +1,38 @@
 @extends('main.layouts.app')
 
+@section('title', 'Reservasi Treatment')
+
+@section('content')
 <section id="reservasi" class="reservasi-section">
     <div class="container">
         <div class="reservasi-card">
 
             <h2 class="reservasi-title">Reservasi Treatment Mamina</h2>
 
-            <form action="#" class="reservasi-form">
+            <form action="{{ route('reservasi.select') }}" method="GET" class="reservasi-form">
                 <div class="form-group">
-                    <select class="form-select custom-dropdown" required>
-                        <option value="" selected disabled>Pilih reservasi</option>
-                        <option value="baby-spa">Baby Spa</option>
-                        <option value="pijat-laktasi">Pijat Laktasi</option>
-                        <option value="kids-treatment">Perawatan Anak</option>
-                        <option value="home-care">Layanan Kunjungan ke Rumah</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select class="form-select custom-dropdown" required>
-                        <option value="" selected disabled>Pilih Outlet</option>
+                    <select name="branch" class="form-select custom-dropdown" required>
+                        <option value="" selected disabled>Pilih Cabang</option>
                         <option value="malang">Malang</option>
-                        <option value="surabaya">Surabaya</option>
-                        <option value="sidoarjo">Sidoarjo</option>
-                        <option value="jember">Jember</option>
+                        <option value="kediri">Kediri</option>
                     </select>
                 </div>
-                    <div class="btn-wrapper">
-                        <a href="/reservasi/outlet" class="btn-next">Lanjutkan</a>
-                    </div>
+                <div class="form-group">
+                    <select name="service" class="form-select custom-dropdown" required>
+                        <option value="" selected disabled>Pilih Layanan</option>
+                        <option value="outlet">Outlet</option>
+                        <option value="homecare">Homecare</option>
+                    </select>
+                </div>
+                <div class="btn-wrapper">
+                    <button type="submit" class="btn-next">Lanjutkan</button>
+                </div>
             </form>
 
         </div>
     </div>
 </section>
+@endsection
 
 <style>
     html, body {
