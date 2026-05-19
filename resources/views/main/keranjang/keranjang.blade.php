@@ -282,53 +282,114 @@
 
     <div class="cart-content">
 
-        <div class="product-card">
-            <div class="product-left">
-                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Bayi" class="product-img">
-                <div class="product-info">
-                    <h3>Pijat Bayi</h3>
-                    <p class="duration">±45 menit</p>
-                    <p class="price">Rp 88.000</p>
-                </div>
-            </div>
-            <div class="product-controls">
-                <button class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
-                <div class="qty-wrapper">
-                    <button class="qty-btn">-</button>
-                    <div class="qty-display">1</div>
-                    <button class="qty-btn">+</button>
-                </div>
-            </div>
-        </div>
+        @php
+            $total = 0;
+            $totalItems = 0;
+        @endphp
 
-        <div class="product-card">
-            <div class="product-left">
-                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Bayi" class="product-img">
-                <div class="product-info">
-                    <h3>Pijat Bayi</h3>
-                    <p class="duration">±45 menit</p>
-                    <p class="price">Rp 88.000</p>
+        @forelse(session('cart', []) as $item)
+
+            @php
+                $subtotal = $item['price'] * $item['qty'];
+
+                $total += $subtotal;
+                $totalItems += $item['qty'];
+
+                $productImg = $item['image']
+                    ? asset('storage/' . $item['image'])
+                    : 'https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80';
+            @endphp
+
+            <div class="product-card">
+
+                <div class="product-left">
+
+                    <img src="{{ $productImg }}"
+                        alt="{{ $item['name'] }}"
+                        class="product-img"
+                        onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80';">
+
+                    <div class="product-info">
+                        <h3>{{ $item['name'] }}</h3>
+
+                        <p class="duration">Qty {{ $item['qty'] }}</p>
+
+                        <p class="price">
+                            Rp {{ number_format($subtotal, 0, ',', '.') }}
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="product-controls">
+
+                    {{-- HAPUS --}}
+                    <form action="{{ route('cart.remove', $item['id']) }}" method="POST">
+                        @csrf
+
+                        <button type="submit" class="delete-btn">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </form>
+
+                    {{-- QTY --}}
+                    <div class="qty-wrapper">
+
+                        {{-- MINUS --}}
+                        <form action="{{ route('cart.decrease', $item['id']) }}" method="POST">
+                            @csrf
+
+                            <button class="qty-btn">-</button>
+                        </form>
+
+                        <div class="qty-display">
+                            {{ $item['qty'] }}
+                        </div>
+
+                        {{-- PLUS --}}
+                        <form action="{{ route('cart.add', $item['id']) }}" method="POST">
+                            @csrf
+
+                            <button class="qty-btn">+</button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        @empty
+
+            <div style="text-align:center; padding:50px;">
+                Keranjang masih kosong ✨
+            </div>
+
+        @endforelse
+
+
+        {{-- SUMMARY --}}
+        @if(session('cart'))
+
+            <div class="summary-bar">
+                <div class="total-label-btn">Total Belanja</div>
+
+                <div class="total-items">
+                    {{ $totalItems }} items
+                </div>
+
+                <div class="total-price">
+                    Rp {{ number_format($total, 0, ',', '.') }}
                 </div>
             </div>
-            <div class="product-controls">
-                <button class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
-                <div class="qty-wrapper">
-                    <button class="qty-btn">-</button>
-                    <div class="qty-display">1</div>
-                    <button class="qty-btn">+</button>
-                </div>
+
+            <div class="action-area">
+                <a href="{{ route('reservasi') }}" class="checkout-btn">
+                    Lanjutkan Reservasi
+                </a>
             </div>
-        </div>
 
-        <div class="summary-bar">
-            <div class="total-label-btn">Total Belanja</div>
-            <div class="total-items">2 items</div>
-            <div class="total-price">Rp 176.000</div>
-        </div>
-
-        <div class="action-area">
-            <a href="/reservasi" class="checkout-btn">Lanjutkan Reservasi</a>
-        </div>
+        @endif
 
     </div>
 </div>

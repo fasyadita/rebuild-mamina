@@ -186,49 +186,84 @@
         <div class="form-header">
             <h1>Form Reservasi Outlet</h1>
             <p>Buka Setiap Hari<br>Jam Operasional Mamina : 09.00 - 20.00 WIB</p>
+            <p style="color:#555; font-size:14px; margin-top:8px;">Cabang: {{ $branches[$branch] ?? ucfirst($branch ?? 'malang') }}</p>
         </div>
 
-        <form action="#">
-            <div class="form-group">
-                <input type="text" class="custom-input" placeholder="Nama bunda">
-            </div>
+        <form action="{{ route('reservasi.submit') }}" method="POST">
+            @csrf
+            <input type="hidden" name="service" value="outlet">
+            <input type="hidden" name="branch" value="{{ $branch ?? 'malang' }}">
 
             <div class="form-group">
-                <input type="text" class="custom-input" placeholder="Usia kehamilan bunda">
-            </div>
-
-            <div class="form-group">
-                <input type="text" class="custom-input" placeholder="Nama anak">
-            </div>
-
-            <div class="form-group">
-                <select class="custom-select">
-                    <option value="" disabled selected>Jenis perawatan</option>
-                    <option value="pijat">Pijat Bayi</option>
-                    <option value="spa">Baby Spa</option>
+                <select name="outlet_choice" class="custom-select" required>
+                    <option value="" disabled selected>Pilihan Outlet</option>
+                    <option value="Sawojajar" {{ old('outlet_choice') == 'Sawojajar' ? 'selected' : '' }}>Sawojajar</option>
+                    <option value="Suhat" {{ old('outlet_choice') == 'Suhat' ? 'selected' : '' }}>Suhat</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <select class="custom-select">
-                    <option value="" disabled selected>Tanggal perawatan</option>
+                <input type="text" name="name" value="{{ old('name') }}" class="custom-input" placeholder="Nama Bunda" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="pregnancy_age" value="{{ old('pregnancy_age') }}" class="custom-input" placeholder="Usia Kehamilan (jika bumil)">
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="baby_nickname" value="{{ old('baby_nickname') }}" class="custom-input" placeholder="Nama Panggilan Bayi">
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="baby_age" value="{{ old('baby_age') }}" class="custom-input" placeholder="Usia Bayi">
+            </div>
+
+            <div class="form-group">
+                <textarea name="complaint" class="custom-input" placeholder="Keluhan (jika ada)">{{ old('complaint') }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="date" name="date" value="{{ old('date') }}" class="custom-input" required>
+            </div>
+
+            <div class="form-group">
+                <select name="time" class="custom-select" required>
+                    <option value="" disabled selected>Jam Treatment</option>
+                    <option value="09:00" {{ old('time') == '09:00' ? 'selected' : '' }}>09:00</option>
+                    <option value="10:00" {{ old('time') == '10:00' ? 'selected' : '' }}>10:00</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <select class="custom-select">
-                    <option value="" disabled selected>Jam perawatan</option>
-                    <option value="09:00">09:00</option>
-                    <option value="10:00">10:00</option>
+                <select name="payment_method" class="custom-select" required>
+                    <option value="" disabled selected>Jenis Pembayaran</option>
+                    <option value="Tunai" {{ old('payment_method') == 'Tunai' ? 'selected' : '' }}>Tunai</option>
+                    <option value="Transfer" {{ old('payment_method') == 'Transfer' ? 'selected' : '' }}>Transfer</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <textarea class="custom-input" placeholder="Alamat domisili"></textarea>
+                <select name="previous_treatment" class="custom-select">
+                    <option value="" disabled selected>Pernah Treatment atau Baru Pertama Kali</option>
+                    <option value="Pernah" {{ old('previous_treatment') == 'Pernah' ? 'selected' : '' }}>Pernah</option>
+                    <option value="Baru" {{ old('previous_treatment') == 'Baru' ? 'selected' : '' }}>Baru</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <input type="text" class="custom-input" placeholder="Kenal mamina dari?">
+                <select name="is_member" class="custom-select">
+                    <option value="" disabled selected>Sudah Mendaftar Member?</option>
+                    <option value="Sudah" {{ old('is_member') == 'Sudah' ? 'selected' : '' }}>Sudah</option>
+                    <option value="Belum" {{ old('is_member') == 'Belum' ? 'selected' : '' }}>Belum</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <textarea name="address" class="custom-input" placeholder="Alamat domisili">{{ old('address') }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="referral" value="{{ old('referral') }}" class="custom-input" placeholder="Kenal mamina dari?">
             </div>
 
             <button type="submit" class="submit-btn">Lanjutkan Pembayaran</button>
@@ -246,26 +281,28 @@
         </div>
 
         <div class="card-panel">
-            <h3 class="sidebar-title">Ringkasan Harga</h3>
+            <h3 class="sidebar-title">Ringkasan Keranjang</h3>
+            @php
+                $cartItems = $cart ?? session('cart', []);
+                $cartTotalDisplay = $cartTotal ?? 0;
+            @endphp
             <div class="price-list">
-                <div class="price-row">
-                    <span>Pijat Bayi</span>
-                    <span>Rp 88.000</span>
-                </div>
-                <div class="price-row">
-                    <span>Pijat Bayi</span>
-                    <span>Rp 88.000</span>
-                </div>
-                <div class="price-row">
-                    <span>Promo Kode Diskon</span>
-                    <span>Rp xxxxxx</span>
-                </div>
+                @forelse($cartItems as $item)
+                    <div class="price-row">
+                        <span>{{ $item['name'] }} x{{ $item['qty'] }}</span>
+                        <span>Rp {{ number_format(($item['price'] ?? 0) * ($item['qty'] ?? 1), 0, ',', '.') }}</span>
+                    </div>
+                @empty
+                    <div class="price-row">
+                        <span>Keranjang kosong</span>
+                    </div>
+                @endforelse
 
                 <div class="divider"></div>
 
                 <div class="total-row">
                     <span>Total</span>
-                    <span>Rp 176.000</span>
+                    <span>Rp {{ number_format($cartTotalDisplay, 0, ',', '.') }}</span>
                 </div>
             </div>
         </div>

@@ -5,15 +5,22 @@ use App\Http\Controllers\TimMaminaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LayananController;
+use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\UserController;
 // MAIN
 // landing page 
 Route::get('/', fn() => view('welcome'))->name('beranda');
 Route::get('/event', fn() => view('main.event.event'))->name('event');
 Route::get('/guest', fn() => view('welcome-guest'))->name('guest');
-Route::get('/keranjang', fn() => view('main.keranjang.keranjang'))->name('keranjang');
-Route::get('/reservasi', fn() => view('main.reservasi.reservasi'));
-Route::get('/reservasi/outlet', fn() => view('main.reservasi.form-reservasi-outlet'));
+Route::get('/keranjang', [KeranjangController::class, 'index'])->name('keranjang');
+Route::post('/cart/add/{id}', [KeranjangController::class, 'add'])->name('cart.add');
+Route::post('/cart/remove/{id}', [KeranjangController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/decrease/{id}', [KeranjangController::class, 'decrease'])->name('cart.decrease');
+Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi');
+Route::get('/reservasi/select', [ReservasiController::class, 'select'])->name('reservasi.select');
+Route::get('/reservasi/{service}', [ReservasiController::class, 'form'])->name('reservasi.form');
+Route::post('/reservasi/submit', [ReservasiController::class, 'submit'])->name('reservasi.submit');
 Route::get('/pricelist', fn() => view('main.pricelist.pricelist'));
 Route::get('/tim-mamina', [TimMaminaController::class, 'index']);
 Route::get('/event/detail-event', fn() => view('main.event.detail-event'))->name('event.detail');

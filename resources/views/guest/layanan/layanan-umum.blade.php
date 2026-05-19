@@ -1,4 +1,4 @@
-@extends('guest.layouts.app')
+@extends('main.layouts.app')
 
 @section('title', 'join member')
 
@@ -29,9 +29,12 @@
                             <p class="suka"><i class="fas fa-heart" aria-hidden="true"></i> 4000+ suka</p>
                             <span class="cabang">Tersedia</span>
 
-                            <button class="btn-tambah">
-                                <i class="fas fa-plus"></i> Tambah
-                            </button>
+                            <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn-tambah">
+                                    <i class="fas fa-plus"></i> Tambah
+                                </button>
+                            </form>
                         </div>
                     </div>
                 @empty

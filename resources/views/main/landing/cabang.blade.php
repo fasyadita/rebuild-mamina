@@ -20,7 +20,7 @@
                         </li>
                         <li>
                             <i class="fa-solid fa-phone"></i>
-                            <span>08131234567</span>
+                            <span>081329913203</span>
                         </li>
                     </ul>
                     <div class="card-buttons">
@@ -47,7 +47,7 @@
                         </li>
                         <li>
                             <i class="fa-solid fa-phone"></i>
-                            <span>08131234567</span>
+                            <span>081329913203</span>
                         </li>
                     </ul>
                     <div class="card-buttons">
@@ -74,34 +74,7 @@
                         </li>
                         <li>
                             <i class="fa-solid fa-phone"></i>
-                            <span>08131234567</span>
-                        </li>
-                    </ul>
-                    <div class="card-buttons">
-                        <a href="https://wa.me/6282131090283?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
-                        <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87" target="_blank" class="btn-maps">Lihat di Google Maps</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cabang-card">
-                <div class="card-img-wrapper">
-                    <img src="img/bg1.jpeg" alt="Cabang Kediri">
-                </div>
-                <div class="card-info">
-                    <h3>Mamina Cabang Kediri</h3>
-                    <ul class="info-details">
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-clock"></i>
-                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span>08131234567</span>
+                            <span>082131090283</span>
                         </li>
                     </ul>
                     <div class="card-buttons">
