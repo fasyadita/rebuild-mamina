@@ -1,28 +1,44 @@
-@extends('guest.layouts.app')
+@extends('member.layouts.app')
 
-@section('title', 'join member')
+@section('title', 'member')
 
 @section('content')
 
 <section class="tim-section">
     <div class="section-title-wrapper">
-        <h2 class="section-title">
-            Cabang Mamina <span class="subtitle-span">Baby SPA & Mom</span> Treatment
-        </h2>
-    </div>
+    <h2 class="section-title">
+        Cabang Mamina <span class="subtitle-span">Baby SPA & Mom</span> Treatment
+    </h2>
+</div>
 
     <div class="tim-grid">
-        @for ($i = 0; $i < 4; $i++)
-            <div class="tim-card">
-            <img src="{{ asset('img/cabang.jpeg') }}" alt="Tim Mamina">
+        <div class="tim-card">
+            <img src="{{ asset('img/cabang-mlg.jpg') }}" alt="cabang malang">
             <h3>Ruko WOW Blok SH, 1 Jl. Raya Sawojajar No.3 Kota Malang, Jawa Timur 65139</h3>
             <p>0813-2991-3203</p>
 
             <a href="#" class="ig-btn">
                 <img src="{{ asset('img/instagram.jpeg') }}">
             </a>
-    </div>
-    @endfor
+        </div>
+        <div class="tim-card">
+            <img src="{{ asset('img/cabang-sht.jpeg') }}" alt="cabang suhat">
+            <h3>1-2, Jl. Soekarno Hatta Indah, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</h3>
+            <p>0813-2991-3203</p>
+
+            <a href="#" class="ig-btn">
+                <img src="{{ asset('img/instagram.jpeg') }}">
+            </a>
+        </div>
+        <div class="tim-card">
+            <img src="{{ asset('img/cabang-kdr.jpeg') }}" alt="cabang kediri">
+            <h3>Jl. Dr. Sahardjo No.88B, Campurejo, Kec. Mojoroto, Kota Kediri, Jawa Timur 64116</h3>
+            <p>082131090283</p>
+
+            <a href="#" class="ig-btn">
+                <img src="{{ asset('img/instagram.jpeg') }}">
+            </a>
+        </div>
     </div>
 </section>
 
@@ -41,108 +57,122 @@
         font-style: normal;
     }
 
-    .tim-section {
-        padding: 30px 80px;
-        background: #FFFDEB;
-        text-align: center;
-    }
+    /* ===== Global Section ===== */
+.tim-section {
+    padding: 30px 80px;
+    background: #FFFDEB;
+    text-align: center;
+}
 
-    .tim-section:nth-child(even) {
-        background: transparent;
-    }
+.tim-section:nth-child(even) {
+    background: transparent;
+}
 
-    .section-title-wrapper {
-        background: linear-gradient(90deg, #CBF1E8 0%, #FFDBD1 100%);
-        padding: 14px 0;
-        margin-bottom: 40px;
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
-        border-radius: 6px;
-        display: block;
-    }
+/* ===== Judul ===== */
+.section-title-wrapper {
+    background: linear-gradient(90deg, #CBF1E8 0%, #FFDBD1 100%);
+    padding: 14px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    display: block;
+}
 
-    .section-title {
-        font-family: 'fredoka', sans-serif;
-        font-size: 34px;
-        color: #f29aa0;
-        display: inline-block;
-        margin: 0;
-        line-height: 1;
-        padding: 6px 18px;
-    }
+.section-title {
+    font-family: 'fredoka', sans-serif;
+    font-size: 34px;
+    color: #f29aa0;
+    display: inline-block;
+    margin: 0;
+    line-height: 1;
+    padding: 6px 18px;
+}
 
-    .subtitle-span {
-        color: #3D9F9E;
-    }
+.subtitle-span {
+    color: #3D9F9E;
+}
 
+/* ===== Grid ===== */
+.tim-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== Card ===== */
+.tim-card {
+    background-color: #FFDAD1;
+    padding: 20px 16px 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,15%);
+    transition: transform 0.3s ease;
+}
+
+.tim-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ===== Foto ===== */
+.tim-card img {
+    width: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto 16px;
+    display: block;
+    border-radius: 8px;
+    /* background-color: #fff; */
+    padding: 8px;
+}
+
+/* ===== Nama ===== */
+.tim-card h3 {
+    
+    font-size: 14px;
+    font-weight: 600;
+    color: #303030;
+    margin-bottom: 6px;
+}
+
+/* ===== Jabatan ===== */
+.tim-card p {
+    font-size: 12px;
+    color: #303030;
+    margin-bottom: 12px;
+}
+
+/* ===== Instagram Button ===== */
+.ig-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.ig-btn img {
+    width: 45px;
+    height: 45px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
     .tim-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .tim-grid {
+        grid-template-columns: 1fr;
     }
 
-    .tim-card {
-        background-color: #FFDAD1;
-        padding: 20px 16px 24px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 15%);
-        transition: transform 0.3s ease;
+    .tim-section {
+        padding: 40px 20px;
     }
+}
 
-    .tim-card:hover {
-        transform: translateY(-6px);
-    }
-
-    .tim-card img {
-        width: 100%;
-        max-width: 250px;
-        margin: 0 auto 16px;
-        display: block;
-        border-radius: 8px;
-        padding: 8px;
-    }
-
-    .tim-card h3 {
-        font-size: 14px;
-        font-weight: 600;
-        color: #303030;
-        margin-bottom: 6px;
-    }
-
-    .tim-card p {
-        font-size: 12px;
-        color: #303030;
-        margin-bottom: 12px;
-    }
-
-    .ig-btn {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin: 0 auto;
-    }
-
-    .ig-btn img {
-        width: 45px;
-        height: 45px;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 1024px) {
-        .tim-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 600px) {
-        .tim-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .tim-section {
-            padding: 40px 20px;
-        }
-    }
 </style>
 @endsection

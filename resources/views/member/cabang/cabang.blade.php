@@ -12,9 +12,8 @@
 </div>
 
     <div class="tim-grid">
-        @for ($i = 0; $i < 4; $i++)
         <div class="tim-card">
-            <img src="{{ asset('img/cabang.jpeg') }}" alt="Tim Mamina">
+            <img src="{{ asset('img/cabang-mlg.jpg') }}" alt="cabang malang">
             <h3>Ruko WOW Blok SH, 1 Jl. Raya Sawojajar No.3 Kota Malang, Jawa Timur 65139</h3>
             <p>0813-2991-3203</p>
 
@@ -22,7 +21,24 @@
                 <img src="{{ asset('img/instagram.jpeg') }}">
             </a>
         </div>
-        @endfor
+        <div class="tim-card">
+            <img src="{{ asset('img/cabang-sht.jpeg') }}" alt="cabang suhat">
+            <h3>1-2, Jl. Soekarno Hatta Indah, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</h3>
+            <p>0813-2991-3203</p>
+
+            <a href="#" class="ig-btn">
+                <img src="{{ asset('img/instagram.jpeg') }}">
+            </a>
+        </div>
+        <div class="tim-card">
+            <img src="{{ asset('img/cabang-kdr.jpeg') }}" alt="cabang kediri">
+            <h3>Jl. Dr. Sahardjo No.88B, Campurejo, Kec. Mojoroto, Kota Kediri, Jawa Timur 64116</h3>
+            <p>082131090283</p>
+
+            <a href="#" class="ig-btn">
+                <img src="{{ asset('img/instagram.jpeg') }}">
+            </a>
+        </div>
     </div>
 </section>
 
@@ -79,8 +95,10 @@
 /* ===== Grid ===== */
 .tim-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ===== Card ===== */
@@ -99,6 +117,7 @@
 .tim-card img {
     width: 100%;
     max-width: 250px;
+    max-height: 250px;
     margin: 0 auto 16px;
     display: block;
     border-radius: 8px;
