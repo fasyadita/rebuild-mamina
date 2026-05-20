@@ -6,10 +6,13 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\JadwalTerapisController;
 // MAIN
 // landing page 
 Route::get('/', fn() => view('welcome'))->name('beranda');
 Route::get('/event', fn() => view('main.event.event'))->name('event');
+Route::get('/artikel', fn() => view('main.artikel.artikel-page'))->name('artikel');
+Route::get('/artikel/detail', fn() => view('main.artikel.content-artikel'))->name('artikel.detail');
 Route::get('/guest', fn() => view('welcome-guest'))->name('guest');
 Route::get('/keranjang', fn() => view('main.keranjang.keranjang'))->name('keranjang');
 Route::get('/reservasi', fn() => view('main.reservasi.reservasi'));
@@ -28,6 +31,8 @@ Route::get('/layanan-konsultasi', [LayananController::class, 'konsultasi'])->nam
 Route::get('/layanan-lainnya', [LayananController::class, 'lainnya'])->name('layanan.lainnya');
 Route::get('/layanan-paket', [LayananController::class, 'paket'])->name('layanan.paket');
 Route::get('/layanan-umum', [LayananController::class, 'umum'])->name('layanan.umum');
+Route::get('/jadwal-terapis', [JadwalTerapisController::class, 'index'])->name('jadwal-terapis');
+Route::get('/jadwal-terapis/detail', [JadwalTerapisController::class, 'detail'])->name('jadwal-terapis.detail');
 
 
 // GUEST

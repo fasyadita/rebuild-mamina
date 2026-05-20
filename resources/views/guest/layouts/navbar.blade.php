@@ -131,6 +131,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/guest/cabang">Cabang</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/guest#faq-section">FAQ</a>
+                </li>
 
                 <li class="nav-item ms-3">
                     <a href="/guest/login" class="btn btn-primary btn-join">

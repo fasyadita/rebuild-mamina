@@ -4,12 +4,13 @@
 
 @section('content')
     @include('main.landing.home')
-    @include('main.landing.our-service')
     @include('main.landing.about')
     @include('main.landing.why')
     @include('main.landing.info')
     @include('main.landing.testimony')
     @include('main.landing.cabang')
+    @include('main.landing.artikel')
+    @include('main.landing.faq')
     {{-- Tambahkan bagian lain yang diperlukan --}}
 @endsection
 
