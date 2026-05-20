@@ -89,7 +89,7 @@
 
                         {{-- Button --}}
                         <button
-                            class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-6 py-3 rounded-full text-sm font-semibold transition">
+                            class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-6 py-3 rounded-full text-xl font-semibold transition">
                             Baca Selanjutnya
                         </button>
 
@@ -186,8 +186,8 @@
                 {{-- Bottom Button --}}
                 <div class="flex justify-end mt-2">
                     <a href="{{ route('artikel') }}"
-                        class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-8 py-4 rounded-full text-xl font-semibold transition inline-block text-center no-underline">
-                        Baca Artikel Lain
+                        class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-6 py-3 rounded-full text-xl font-semibold transition inline-block text-center no-underline">
+                        Baca Artikel Lain →
                     </a>
                 </div>
 

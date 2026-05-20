@@ -1,285 +1,247 @@
-<section id="cabang" class="cabang-section">
-    <div class="container">
-        <h2 class="cabang-title">Cabang Mamina</h2>
+<section id="cabang" class="branch-section">
 
-        <div class="cabang-content">
-            <div class="cabang-card">
-                <div class="card-img-wrapper">
-                    <img src="{{ asset('img/cabang-mlg.jpg') }}" alt="Cabang Malang">
-                </div>
-                <div class="card-info">
-                    <h3>Mamina Cabang Malang</h3>
-                    <ul class="info-details">
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-clock"></i>
-                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span>081329913203</span>
-                        </li>
-                    </ul>
-                    <div class="card-buttons">
-                        <a href="https://wa.me/6281329913203?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
-                        <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+    <div class="branch-container">
+
+        <h2 class="branch-title">Cabang Mamina</h2>
+
+        <div class="branch-list">
+
+            {{-- CARD 1 --}}
+            <div class="branch-card">
+                <img src="{{ asset('img/cabang-mlg.jpg') }}" alt="Malang">
+
+                <div class="branch-info">
+
+                    <span class="branch-region">
+                        MALANG
+                    </span>
+
+                    <h3>Mamina Sawojajar</h3>
+
+                    <p>
+                        Ruko Wow, Samping Guardian dan Superindo,
+                        Jl. Raya Sawojajar SH-1 No.3
+                    </p>
+
+                    <div class="branch-bottom">
+                        <span>08.00 - 19.00</span>
+
+                        <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A"
+                            target="_blank">
+                            Detail →
+                        </a>
                     </div>
+
                 </div>
             </div>
 
-            <div class="cabang-card">
-                <div class="card-img-wrapper">
-                    <img src="{{ asset('img/cabang-sht.jpeg') }}" alt="Cabang Malang">
-                </div>
-                <div class="card-info">
-                    <h3>Mamina Cabang Malang</h3>
-                    <ul class="info-details">
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>1-2, Jl. Soekarno Hatta Indah, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-clock"></i>
-                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span>081329913203</span>
-                        </li>
-                    </ul>
-                    <div class="card-buttons">
-                        <a href="https://wa.me/6281329913203?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
-                        <a href="https://maps.app.goo.gl/sT3BM3YnzyeJ1zF28" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+            {{-- CARD 2 --}}
+            <div class="branch-card">
+                <img src="{{ asset('img/cabang-sht.jpeg') }}" alt="Soehat">
+
+                <div class="branch-info">
+
+                    <span class="branch-region">
+                        MALANG
+                    </span>
+
+                    <h3>Mamina Soehat</h3>
+
+                    <p>
+                        Jl. Soekarno Hatta Indah,
+                        Mojolangu, Lowokwaru
+                    </p>
+
+                    <div class="branch-bottom">
+                        <span>08.00 - 19.00</span>
+
+                        <a href="https://maps.app.goo.gl/sT3BM3YnzyeJ1zF28"
+                            target="_blank">
+                            Detail →
+                        </a>
                     </div>
+
                 </div>
             </div>
 
-            <div class="cabang-card">
-                <div class="card-img-wrapper">
-                    <img src="{{ asset('img/cabang-kdr.jpeg') }}" alt="Cabang Kediri">
-                </div>
-                <div class="card-info">
-                    <h3>Mamina Cabang Kediri</h3>
-                    <ul class="info-details">
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Jl. Dr. Sahardjo No.88B, Campurejo, Kec. Mojoroto, Kota Kediri, Jawa Timur 64116</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-clock"></i>
-                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span>082131090283</span>
-                        </li>
-                    </ul>
-                    <div class="card-buttons">
-                        <a href="https://wa.me/6282131090283?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
-                        <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+            {{-- CARD 3 --}}
+            <div class="branch-card">
+                <img src="{{ asset('img/cabang-kdr.jpeg') }}" alt="Kediri">
+
+                <div class="branch-info">
+
+                    <span class="branch-region">
+                        KEDIRI
+                    </span>
+
+                    <h3>Mamina Kediri</h3>
+
+                    <p>
+                        Jl. Dr. Sahardjo No.88B,
+                        Campurejo, Mojoroto
+                    </p>
+
+                    <div class="branch-bottom">
+                        <span>08.00 - 19.00</span>
+
+                        <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87"
+                            target="_blank">
+                            Detail →
+                        </a>
                     </div>
+
                 </div>
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 <style>
 
-    * {
-        box-sizing: border-box;
-        /* Mencegah elemen keluar jalur */
-    }
-
     @font-face {
         font-family: 'fredoka';
-        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'nunito-m';
-        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf');
     }
 
     @font-face {
         font-family: 'nunito-r';
-        src: url('/fonts/nunito/static/Nunito-Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
+        src: url('/fonts/nunito/static/Nunito-Regular.ttf');
     }
 
-    .cabang-section {
-        padding: 60px 0px;
-        background-color: #fffdeb;
-        width: 100%;
-        overflow-x: hidden;
+    * {
+        box-sizing: border-box;
     }
 
-    .container {
-        max-width: 1100px;
-        /* Diubah dari 90% menjadi pixel agar lebih rapi di monitor besar, margin auto akan membuatnya ke tengah */
-        width: 90%;
-        margin: 0 auto;
+    .branch-section {
+        background: #FFFDEB;
+        padding: 80px 0;
     }
 
-    .cabang-title {
+    .branch-container {
+        width: 92%;
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    .branch-title {
         text-align: center;
-        font-family: 'fredoka', sans-serif;
-        font-size: 32px;
-        color: #333;
-        margin-top: 0;
-        margin-bottom: 30px;
-        /* Jarak bawah judul diperbesar sedikit */
+        font-family: 'fredoka';
+        font-size: 52px;
+        color: #1f2937;
+        margin-bottom: 50px;
     }
 
-    .cabang-content {
-        display: grid;
-        gap: 30px;
-        grid-template-columns: 1fr 1fr;
-        /* 2 Kolom di Desktop */
-    }
-
-    .cabang-card {
+    .branch-list {
         display: flex;
-        background-color: #d8f5ef;
-        border-radius: 20px;
+        gap: 28px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .branch-card {
+        width: 360px;
+        background: white;
+        border-radius: 28px;
         overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+        transition: 0.35s ease;
     }
 
-    .card-img-wrapper {
-        width: 35%;
-        flex-shrink: 0;
-        /* Mencegah gambar menyusut aneh di flexbox */
+    .branch-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.12);
     }
 
-    .card-img-wrapper img {
+    .branch-card img {
         width: 100%;
-        height: 100%;
+        height: 240px;
         object-fit: cover;
     }
 
-    .card-info {
-        width: 65%;
-        padding: 20px;
+    .branch-info {
+        padding: 28px;
+    }
+
+    .branch-region {
+        font-family: 'nunito-r';
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        color: #9ca3af;
+    }
+
+    .branch-info h3 {
+        font-family: 'fredoka';
+        font-size: 30px;
+        color: #1f2937;
+
+        margin-top: 10px;
+        margin-bottom: 16px;
+    }
+
+    .branch-info p {
+        font-family: 'nunito-r';
+        font-size: 15px;
+        line-height: 1.8;
+        color: #6b7280;
+
+        margin-bottom: 28px;
+    }
+
+    .branch-bottom {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .card-info h3 {
-        font-family: 'fredoka', sans-serif;
-        font-size: 20px;
-        color: #ff8e8e;
-        margin-top: 0;
-        margin-bottom: 15px;
+    .branch-bottom span {
+        font-family: 'nunito-r';
+        font-size: 14px;
+        color: #888;
     }
 
-    .info-details {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 15px 0;
-        /* Jarak sebelum tombol */
-    }
-
-    .info-details li {
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        /* Gap ikon dan teks diperbesar sedikit */
-        margin-bottom: 10px;
-        font-family: 'nunito-r', sans-serif;
-        font-size: 13px;
-        color: #555;
-        line-height: 1.4;
-    }
-
-    .info-details i {
-        color: #3fb6a8;
-        margin-top: 3px;
-        min-width: 14px;
-        /* Agar ikon tidak gepeng */
-    }
-
-    .card-buttons {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        /* PENTING: Agar tombol turun ke bawah kalau layar terlalu sempit */
-    }
-
-    .btn-contact,
-    .btn-maps {
-        padding: 8px 16px;
-        border-radius: 20px;
+    .branch-bottom a {
         text-decoration: none;
-        font-family: sans-serif;
-        font-size: 11px;
-        font-weight: 600;
-        text-align: center;
+
+        background: #5AA6A5;
+        color: #FFFDEB;
+
+        padding: 10px 18px;
+        border-radius: 999px;
+
+        font-size: 13px;
+        font-weight: 700;
+
         transition: 0.3s;
-        flex-grow: 1;
-        /* Membuat tombol seimbang panjangnya */
     }
 
-    .btn-contact {
-        background-color: #f0fcf9;
-        color: #3fb6a8;
-        border: 1px solid #ccece6;
+    .branch-bottom a:hover {
+        background: #4B9594;
     }
 
-    .btn-contact:hover {
-        background-color: #e0f8f3;
-    }
+    /* MOBILE */
 
-    .btn-maps {
-        background-color: #3fb6a8;
-        color: white;
-        border: 1px solid #3fb6a8;
-    }
+    @media (max-width: 768px) {
 
-    .btn-maps:hover {
-        background-color: #2e9488;
-    }
-
-    /* --- Responsif (HP) --- */
-    @media (max-width: 900px) {
-        .cabang-content {
-            grid-template-columns: 1fr;
-            /* PERBAIKAN: Jadikan 1 kolom penuh ke bawah */
+        .branch-title {
+            font-size: 38px;
         }
 
-        .cabang-card {
-            flex-direction: column;
-            /* Gambar di atas, info di bawah */
-        }
-
-        .card-img-wrapper,
-        .card-info {
+        .branch-card {
             width: 100%;
-            /* Lebar penuh */
         }
 
-        .card-img-wrapper {
-            height: 200px;
-            /* Tinggi gambar dibatasi di HP */
+        .branch-card img {
+            height: 220px;
         }
 
-        .card-info {
-            padding: 24px 20px;
-        }
-
-        .card-buttons {
-            flex-direction: column;
-            /* Tombol ditumpuk ke bawah di HP agar tidak kekecilan */
+        .branch-info h3 {
+            font-size: 24px;
         }
     }
+
 </style>
