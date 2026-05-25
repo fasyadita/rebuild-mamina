@@ -39,6 +39,7 @@
         align-items: center;
         text-align: center;
         padding: 0 20px;
+        margin-top: 50px;
     }
 
     .banner-text h2 {
