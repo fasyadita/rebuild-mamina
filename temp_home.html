@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="64LehgvGLgrdEn2yVTdrrBLK8gUdKP9FMLa7mH0u">
+
+    <title>Mamina</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/navbar.css">
+
+
+    <!-- Additional Styles Section -->
+        <!-- Tailwind Play CDN for processing the user's Tailwind v4 classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        fredoka: ['fredoka', 'sans-serif'],
+                        nunito: ['nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: 'fredoka';
+            src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'nunito';
+            src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <!-- Styles khusus untuk landing page -->
+    <style>
+        /* Tambahan styles untuk landing page */
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background: #fffdeb;
+        /* putih/cream */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        height: 90px;
+    }
+
+    .fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: #fffdeb;
+    }
+
+    .mamina-navbar {
+        background-color: #fffdeb !important;
+    }
+
+    .navbar .container {
+        max-width: 1300px;
+        padding: 0 32px;
+    }
+
+    .navbar-nav {
+        gap: 28px;
+    }
+
+    .nav-link {
+        color: #333 !important;
+        font-weight: 500;
+        font-size: 15px;
+        transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        color: #3fb6a8 !important;
+    }
+
+    .cart-icon {
+        position: relative;
+        padding-right: 10px;
+    }
+
+    .cart-icon .badge {
+        top: -5px;
+        right: 0;
+        font-size: 11px;
+        padding: 2px 6px;
+        min-width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-join {
+        background: #3fb6a8;
+        border: none;
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .btn-join:hover {
+        background: #359c8f;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(63, 182, 168, 0.2);
+        color: #fff;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 991.98px) {
+        .navbar {
+            height: auto;
+            padding: 15px 0;
+        }
+
+        .navbar-nav {
+            padding: 20px 0;
+            gap: 15px;
+        }
+
+        .nav-item {
+            text-align: center;
+        }
+
+        .cart-icon {
+            justify-content: center;
+            padding-right: 0;
+        }
+
+        .btn-join {
+            margin-top: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar .container {
+            padding: 0 20px;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-lg fixed-top mamina-navbar">
+    <div class="container">
+        <!-- Logo di Kiri -->
+        <a class="navbar-brand" href="/">
+            <img src="http://127.0.0.1:8000/img/logo.png" alt="Mamina" height="60">
+        </a>
+
+        <!-- Tombol Hamburger untuk Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu di Kanan -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000">Beranda</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000#services">Layanan Kami</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000#about">Tentang Kami</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000#testimony">Testimoni</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/event">Kegiatan</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000#cabang">Cabang</a>
+                </li>
+
+                <li class="nav-item position-relative ms-3">
+                    <a class="nav-link cart-icon" href="http://127.0.0.1:8000/keranjang">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        
+                        <span class="badge bg-danger rounded-circle position-absolute">
+                            0
+                        </span>
+                    </a>
+                </li>
+
+                <li class="nav-item ms-3">
+                    <a href="http://127.0.0.1:8000/guest" class="btn btn-primary btn-join">
+                        Daftar Member
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- Main Content -->
+    <main style="margin-top: 90px;"> <!-- Tambahkan margin karena navbar fixed -->
+        <!-- Flash Messages -->
+        
+        
+        
+        <!-- Dynamic Content -->
+            <section id="home" class="home">
+    <div class="home-container">
+        <div class="home-content">
+
+            <h1 class="home-title">
+                mam<span class="i-letter">i</span>na
+            </h1>
+
+            <div class="home-subtitle">
+                Baby <span class="subtitle-span">Spa & Pijat </span> Laktasi
+            </div>
+
+            <p>
+                Mamina Baby Spa dan Pijat Laktasi merupakan penyedia
+                layanan kebidanan komplementer berpusat di Kota Malang
+                berupa layanan ibu dan bayi. Saat ini, Mamina telah membuka
+                cabang di luar Kota Malang, yaitu Kota Kediri untuk outlet dan
+                beberapa kota di Indonesia untuk layanan homecare.
+            </p>
+
+            <a href="/layanan" class="btn-reservasi">Reservasi</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    @font-face {
+        font-family: 'fredoka';
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito';
+        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+.home {
+    min-height: 90vh;
+    background:
+        linear-gradient(to right,
+            rgba(255, 218, 209, 1) 0%,
+            rgba(255, 218, 209, 0.95) 30%,
+            rgba(255, 218, 209, 0.6) 55%,
+            rgba(255, 218, 209, 0) 100%),
+        url("/img/home.jpeg") center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    padding: 120px 20px 80px 20px; 
+}
+
+.home-container {
+    max-width: 1200px;
+    margin: auto; 
+    width: 100%;
+}
+
+.home-content {
+    max-width: 520px;
+}
+
+.home-title {
+    font-family: 'fredoka', sans-serif;
+    font-size: 90px;
+    color: #f29aa0;
+    margin-bottom: 6px;
+    line-height: 1;
+}
+
+.home-title .i-letter {
+    color: #3fa19f;
+}
+
+.home-subtitle {
+    font-size: 28px;
+    font-family: 'fredoka', sans-serif;
+    color: #f29aa0;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.home-subtitle .subtitle-span {
+    color: #3fa19f;
+}
+
+.home-content p {
+    font-family: 'nunito', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    color: #303030;
+}
+
+.btn-reservasi {
+    display: inline-block;
+    background: #3fb6a8;
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-reservasi:hover {
+    background: #2e9488;
+}
+
+@media (max-width: 992px) {
+
+    .home {
+        padding: 100px 30px 60px 30px;
+    }
+
+    .home-title {
+        font-size: 70px;
+    }
+
+    .home-subtitle {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .home {
+        min-height: auto;
+        padding: 80px 20px;
+        background:
+            linear-gradient(to bottom,
+                rgba(255, 218, 209, 0.95),
+                rgba(255, 218, 209, 0.85)),
+            url("/img/home.jpeg") center/cover no-repeat;
+    }
+
+    .home-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .home-title {
+        font-size: 52px;
+    }
+
+    .home-subtitle {
+        font-size: 20px;
+    }
+
+    .home-content p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .btn-reservasi {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+}
+</style>    <section id="about" class="about-banner">
+    <div class="banner-text">
+        <h2>Tentang Mamina Baby Spa</h2>
+        <p>Comforting You</p>
+    </div>
+</section>
+
+<style>
+    /* --- FONT FACE --- */
+    @font-face {
+        font-family: 'fredoka-m';
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'fredoka-sm';
+        src: url('/fonts/Fredoka/static/Fredoka-SemiBold.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito';
+        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .about-banner {
+        background: url('img/about.png');
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .banner-text h2 {
+        font-family: 'fredoka-sm', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #333;
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .banner-text p {
+        font-family: 'fredoka-m', sans-serif;
+        font-size: 25px;
+        font-weight: 500;
+        color: #555;
+        margin: 0;
+    }
+
+    /* --- MEDIA QUERIES UNTUK RESPONSIVE (TAMPILAN HP) --- */
+    @media (max-width: 768px) {
+        .about-banner {
+            height: 160px;
+        }
+
+        .banner-text h2 {
+            font-size: 24px;
+        }
+
+        .banner-text p {
+            font-size: 18px;
+        }
+    }
+</style>    <section id="why" class="why-choose">
+    <div class="container">
+        <h2 class="section-title">Kenapa memilih Mamina?</h2>
+
+        <div class="benefits-grid">
+
+            <div class="benefit-card">
+                <img src="img/bayi.jpeg" alt="Gentle Care">
+                <div class="card-content">
+                    <h3>Gentle Care</h3>
+                    <p>Perawatan lembut & aman untuk ibu dan anak</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <img src="img/bayi.jpeg" alt="Lengkap & Terpadu">
+                <div class="card-content">
+                    <h3>Lengkap & Terpadu</h3>
+                    <p>Dari masa hamil, nifas, hingga anak usia 0-7 tahun</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <img src="img/bayi.jpeg" alt="Terapis Bersertifikat">
+                <div class="card-content">
+                    <h3>Terapis Bersertifikat</h3>
+                    <p>Ditangani tenaga profesional & berpengalaman</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <img src="img/bayi.jpeg" alt="Nyaman & Menenangkan">
+                <div class="card-content">
+                    <h3>Nyaman & Menenangkan</h3>
+                    <p>Fokus pada kenyamanan ibu dan buah hati</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    @font-face {
+        font-family: 'fredoka-m';
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito';
+        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body{
+        background-color: #FFFDEB;
+    }
+
+    .why-choose {
+        padding: 60px 20px;
+        background-color: #fffdeb;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        text-align: center;
+        font-family: 'fredoka-m', sans-serif;
+        font-size: 30px;
+        color: #333;
+        margin-bottom: 40px;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .benefit-card {
+        background: transparent;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .benefit-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .card-content {
+        background-color: #d1f2eb;
+        padding: 20px;
+        text-align: center;
+        height: 100%;
+    }
+
+    .card-content h3 {
+        font-family: 'nunito-m', sans-serif;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .card-content p {
+        font-family: 'nunito-m';
+        font-size: 14px;
+        color: #666;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* --- RESPONSIF (Agar di HP tidak gepeng/rusak) --- */
+    @media (max-width: 1024px) {
+        .benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+            /* Tablet jadi 2 kolom */
+        }
+
+        .section-title {
+            font-size: 24px; /* Judul sedikit dikecilkan */
+        }
+    }
+
+    @media (max-width: 600px) {
+        .benefits-grid {
+            grid-template-columns: 1fr;
+            /* HP jadi 1 kolom ke bawah */
+        }
+    }
+</style>    <section id="info" class="info-section">
+    <div class="info-header">
+        <p>Perawatan lengkap, edukatif, dan terpercaya untuk ibu & buah hati</p>
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-box pink-bg">
+            <div class="icon-circle teal-icon">
+                <i class="fa-solid fa-baby-carriage"></i>
+            </div>
+            <div class="box-content">
+                <h3>Layanan</h3>
+                <ul class="check-list">
+                    <li><i class="fa-regular fa-circle-check"></i> Ibu Hamil</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Baby Spa</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Ibu Nifas</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Kids Treatment</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box blue-bg">
+            <div class="icon-circle pink-icon">
+                <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <div class="box-content">
+                <h3>Kepercayaan</h3>
+                <ul class="check-list">
+                    <li><i class="fa-regular fa-circle-check"></i> Prosedur berstandar</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Fokus kenyamanan</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Gentle care approach</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Terapis profesional</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box blue-bg">
+            <div class="icon-circle pink-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="box-content">
+                <h3>Edukasi</h3>
+                <ul class="check-list">
+                    <li><i class="fa-regular fa-circle-check"></i> Kelas menyusui</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Edukasi ibu & anak</li>
+                    <li><i class="fa-regular fa-circle-check"></i> Perawatan bayi</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-box pink-bg">
+            <div class="icon-circle teal-icon">
+                <i class="fa-solid fa-user-nurse"></i>
+            </div>
+            <div class="box-content">
+                <h3>Ditangani Terapis Profesional</h3>
+                <p class="desc-text">Semua treatment dilakukan oleh terapis bersertifikat dengan standar perawatan terbaik.</p>
+                <a href="/tim-mamina" class="btn-info">Kenali Tim Mamina</a>
+                <a href="/jadwal-terapis" class="btn-info">Lihat Jadwal Terapis</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @font-face {
+        font-family: 'fredoka';
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito';
+        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body{
+        background-color: #FFFDEB;
+    }
+
+    /* 1. Container Utama */
+    .info-section {
+        width: 100%;
+        background-color: #fffaf3;
+        margin-top: 80px;
+        padding-bottom: 40px;
+        background-color: #FFFDEB;
+    }
+
+    .info-header {
+        text-align: center;
+        padding-bottom: 20px;
+        padding-top: 50px;
+    }
+
+    .info-header p {
+        font-family: 'nunito', sans-serif;
+        font-style: italic;
+        font-size: 25px;
+        color: #555;
+        margin: 0;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info-box {
+        padding: 50px 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+
+    .box-content {
+        flex: 1;
+    }
+
+    .pink-bg {
+        background-color: #ffdcd1;
+    }
+
+    .blue-bg {
+        background-color: #bcede6;
+    }
+
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        margin-top: 25px;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        color: #fff;
+        flex-shrink: 0;
+    }
+
+    .teal-icon {
+        background-color: #3fb6a8;
+    }
+
+    .pink-icon {
+        background-color: #fa9d9d;
+    }
+
+
+    .info-box h3 {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 24px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        column-gap: 10px;
+        row-gap: 12px;
+    }
+
+    .check-list li {
+        font-family: 'nunito', sans-serif;
+        font-size: 18px;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .pink-bg .check-list i {
+        color: #3fb6a8;
+    }
+
+    .blue-bg .check-list i {
+        color: #fa9d9d;
+    }
+
+    .desc-text {
+        font-family: sans-serif;
+        font-size: 18px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .btn-info {
+        display: inline-block;
+        background-color: #3fb6a8;
+        color: white;
+        padding: 10px 24px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .btn-info:hover {
+        background-color: #2e8b80;
+    }
+
+    /* --- Responsif HP --- */
+    @media (max-width: 900px) {
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .info-box {
+            padding: 40px 30px;
+        }
+
+        .info-header p {
+            font-size: 20px;
+        }
+
+        .check-list li {
+            font-size: 16px;
+        }
+
+        .desc-text {
+            font-size: 16px;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            margin-top: 40px;
+        }
+
+    }
+</style>    <section id="testimony" class="testimommy-section">
+    <div class="container-fluid">
+        <h2 class="testi-title">Testimommy</h2>
+
+        <div class="testi-slider">
+            <div class="testi-track scroll-left">
+
+                <div class="testi-card">
+                    <p class="review-text">"Anak pertama urusan pijet, laktasi, potong rambut di mamina. Anak kedua baru
+                        lahir
+                        langsung contact mamina buat perawatan newborn care”</p>
+                    <div class="user-profile">
+                        <img src="img/g1.png" alt="User">
+                        <div class="user-info">
+                            <h5>Agnestiasanti Zuliana</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“Saya sangat puas dengan Layanan baby spa di sini sangat bagus! Fasilitasnya
+                        bersih dan nyaman, dan terapisnya sangat berpengalaman. Saya sangat merekomendasikan baby spa
+                        ini, Bayi saya menjadi lebih tenang dan tidur lebih nyenyak setelah sesi spa dimamina”</p>
+                    <div class="user-profile">
+                        <img src="img/g2.png" alt="User">
+                        <div class="user-info">
+                            <h5>Shintia Lutica</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“Sejak anak pertamaku umur 5 hari, aku sudah pakai jasa Mamina. Mulai
+                        treatment newborn, pijat bulanan, sampai hamil anak ke 2 pijat bumil, pijat nifas, treatment
+                        newborn anak ke 2 masih setia di Mamina. Bidan super ramah dan telaten, outlet juga bersih dan
+                        banyak mainan/buku yg bikin anak makin betah. Mamina TOP!”
+                    </p>
+                    <div class="user-profile">
+                        <img src="img/g3.png" alt="User">
+                        <div class="user-info">
+                            <h5>Galuh Mahanani</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“mulai dari newborn smpe skrng mau 7 bln selalu pergi ke sini, gk pernah
+                        kecewa sma pelayanannya yg sgt baik, semua aunty nya ramah dan super sabar, stelah pijat jg baby
+                        bobonya jdi lebih nyenyak.. rekomen bgt 🩷🩷🩷 …”
+                    </p>
+                    <div class="user-profile">
+                        <img src="img/g4.png" alt="User">
+                        <div class="user-info">
+                            <h5>Hildha Dea</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“Highly recomended, ditangani oleh onty2 bidan yg profesional. Tempat nyaman,
+                        pelayanan selalu memuaskan. Pricelist treatmentnya juga affordable🫶🏼”</p>
+                    <div class="user-profile">
+                        <img src="img/g5.png" alt="User">
+                        <div class="user-info">
+                            <h5>Ailynn</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“Sangat merekomendasikan mamina buat bunda², paketnya lengkap, terapisnya
+                        profesional semua, dan ga hanya treatment yang didapat tapi juga ada ilmu² parenting yang
+                        dishare melalui medsosnya . Happy banget dimalang ada mamina.”
+                    </p>
+                    <div class="user-profile">
+                        <img src="img/g6.png" alt="User">
+                        <div class="user-info">
+                            <h5>Eka Nurvita</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“Baby spa yg treatmentnya lengkap dan tempatnya nyaman dan bersih pastinya.
+                        Bidan yg ramah dan adminnya informatif sekali. Pokoknya kl hbs treatment disini sudah dipastikan
+                        sikecil Ibh rileks dan boboknya pules bgt”
+                    </p>
+                    <div class="user-profile">
+                        <img src="img/g7.png" alt="User">
+                        <div class="user-info">
+                            <h5>Imaa</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“sudah 2x ke mamina memang sebagus itu layananannya, pertama coba pijat bayi
+                        dan babyku bener” nyaman ga nangis, setelah pijat dari mamina tidurnya jadi pulas banget
+                    </p>
+                    <div class="user-profile">
+                        <img src="img/g8.png" alt="User">
+                        <div class="user-info">
+                            <h5>Adilla Rosida</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="testi-slider">
+            <div class="testi-track scroll-right">
+
+                <div class="testi-card">
+                    <p class="review-text">“Harga terjangkau untuk pelayanan se-premium ini. Bakal langganan terus!”</p>
+                    <div class="user-profile">
+                        <img src="img/mom.jpg" alt="User">
+                        <div class="user-info">
+                            <h5>Bunda Fia</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“Kali ke 2 kesini. Staffnya semua ramah. Baby jg happyyy pijatnya.. tempat
+                        nyaman & bersih, banyak sofa untuk ruang tunggu. Service oke & reservasi mudah”</p>
+                    <div class="user-profile">
+                        <img src="img/g9.png" alt="User">
+                        <div class="user-info">
+                            <h5>Ipin</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“pelayanannya baik dan ramah, tempatnya selalu bersih bikin bayi dan ibu
+                        nyaman buat menjalani treatment disini..”</p>
+                    <div class="user-profile">
+                        <img src="img/g10.png" alt="User">
+                        <div class="user-info">
+                            <h5>Dea Athaya Z</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <p class="review-text">“pelayanannya bagus banget, terapisnya juga menyenangkan, jadi anak juga
+                        nyaman waktu dipijat, pijatnya juga bagus, ngefek banget ke anak.”</p>
+                    <div class="user-profile">
+                        <img src="img/g11.png" alt="User">
+                        <div class="user-info">
+                            <h5>Naufal Adrianto Nur</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“Tempat pijat dan spa baby and mommy yg oke banget, tempat bersih, staff
+                        ramah, cozy, overall pelayanan oke banget, dan harga masih affordable”</p>
+                    <div class="user-profile">
+                        <img src="img/g12.png" alt="User">
+                        <div class="user-info">
+                            <h5>Nadine Aulia</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“selalu langgganan, nyaman bangeet, semua treatmentny good😍✨ Lovee mamimaaa”
+                    </p>
+                    <div class="user-profile">
+                        <img src="img/g13.png" alt="User">
+                        <div class="user-info">
+                            <h5>Delphine Jasmine</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card">
+                    <p class="review-text">“Bagus sekali pelayanan dan treatment bayi di Mamina 😇 adminnya ramah,
+                        terapisnya sabar dan telaten”</p>
+                    <div class="user-profile">
+                        <img src="img/g14.png" alt="User">
+                        <div class="user-info">
+                            <h5>Annisa Rachmawati</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <p class="review-text">“Pengalaman pijat pd bengkak disini membantu sekali sangat puass, apalagi
+                        bisa homecare juga. Terimakasih mamina🫶🏻”</p>
+                    <div class="user-profile">
+                        <img src="img/g15.png" alt="User">
+                        <div class="user-info">
+                            <h5>Astrid Puspita</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    body {
+        background-color: #FFFDEB;
+    }
+
+    .testimommy-section {
+        padding: 60px 0;
+        background-color: #fffaf3;
+        overflow: hidden;
+        background-color: #FFFDEB;
+    }
+
+    .testi-title {
+        text-align: center;
+        font-family: 'Fredoka', sans-serif;
+        font-size: 32px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 40px;
+    }
+
+    .testi-slider {
+        width: 100%;
+        overflow: hidden;
+        padding: 15px 0;
+        display: flex;
+    }
+
+    .testi-track {
+        display: flex;
+        gap: 24px;
+        width: max-content;
+    }
+
+    .scroll-left {
+        animation: moveLeft 30s linear infinite;
+    }
+
+    .scroll-right {
+        animation: moveRight 30s linear infinite;
+    }
+
+    .testi-track:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes moveLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes moveRight {
+        0% {
+            transform: translateX(-50%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .testi-card {
+        background-color: #ffdcd1;
+        min-width: 320px;
+        max-width: 320px;
+        border-radius: 20px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s;
+        white-space: normal;
+    }
+
+    .testi-card:hover {
+        transform: translateY(-5px);
+        background-color: #ffcfc2;
+    }
+
+    .review-text {
+        font-family: sans-serif;
+        font-size: 16px;
+        font-style: italic;
+        color: #444;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .user-profile {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .user-profile img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #fff;
+    }
+
+    .user-info h5 {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 16px;
+        margin: 0;
+        color: #333;
+    }
+
+    .user-info span {
+        font-family: sans-serif;
+        font-size: 12px;
+        color: #666;
+    }
+</style>    <section id="cabang" class="cabang-section">
+    <div class="container">
+        <h2 class="cabang-title">Cabang Mamina</h2>
+
+        <div class="cabang-content">
+            <div class="cabang-card">
+                <div class="card-img-wrapper">
+                    <img src="http://127.0.0.1:8000/img/cabang-mlg.jpg" alt="Cabang Malang">
+                </div>
+                <div class="card-info">
+                    <h3>Mamina Cabang Malang</h3>
+                    <ul class="info-details">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Ruko Wow, Samping Guardian dan Superindo, Jl. Raya Sawojajar SH-1 No.3, Kota Malang, Jawa Timur 65139</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>081329913203</span>
+                        </li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/6281329913203?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
+                        <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cabang-card">
+                <div class="card-img-wrapper">
+                    <img src="http://127.0.0.1:8000/img/cabang-sht.jpeg" alt="Cabang Malang">
+                </div>
+                <div class="card-info">
+                    <h3>Mamina Cabang Malang</h3>
+                    <ul class="info-details">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>1-2, Jl. Soekarno Hatta Indah, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>081329913203</span>
+                        </li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/6281329913203?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
+                        <a href="https://maps.app.goo.gl/sT3BM3YnzyeJ1zF28" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cabang-card">
+                <div class="card-img-wrapper">
+                    <img src="http://127.0.0.1:8000/img/cabang-kdr.jpeg" alt="Cabang Kediri">
+                </div>
+                <div class="card-info">
+                    <h3>Mamina Cabang Kediri</h3>
+                    <ul class="info-details">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Jl. Dr. Sahardjo No.88B, Campurejo, Kec. Mojoroto, Kota Kediri, Jawa Timur 64116</span>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <span>Senin - Minggu <br> 08.00 - 19.00</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <span>082131090283</span>
+                        </li>
+                    </ul>
+                    <div class="card-buttons">
+                        <a href="https://wa.me/6282131090283?text=Halo%20Admin" target="_blank" class="btn-contact">Hubungi Cabang</a>
+                        <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87" target="_blank" class="btn-maps">Lihat di Google Maps</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        /* Mencegah elemen keluar jalur */
+    }
+
+    @font-face {
+        font-family: 'fredoka';
+        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito-m';
+        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'nunito-r';
+        src: url('/fonts/nunito/static/Nunito-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .cabang-section {
+        padding: 60px 0px;
+        background-color: #fffdeb;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1100px;
+        /* Diubah dari 90% menjadi pixel agar lebih rapi di monitor besar, margin auto akan membuatnya ke tengah */
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .cabang-title {
+        text-align: center;
+        font-family: 'fredoka', sans-serif;
+        font-size: 32px;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 30px;
+        /* Jarak bawah judul diperbesar sedikit */
+    }
+
+    .cabang-content {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        /* 2 Kolom di Desktop */
+    }
+
+    .cabang-card {
+        display: flex;
+        background-color: #d8f5ef;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-img-wrapper {
+        width: 35%;
+        flex-shrink: 0;
+        /* Mencegah gambar menyusut aneh di flexbox */
+    }
+
+    .card-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-info {
+        width: 65%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-info h3 {
+        font-family: 'fredoka', sans-serif;
+        font-size: 20px;
+        color: #ff8e8e;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
+    .info-details {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 15px 0;
+        /* Jarak sebelum tombol */
+    }
+
+    .info-details li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        /* Gap ikon dan teks diperbesar sedikit */
+        margin-bottom: 10px;
+        font-family: 'nunito-r', sans-serif;
+        font-size: 13px;
+        color: #555;
+        line-height: 1.4;
+    }
+
+    .info-details i {
+        color: #3fb6a8;
+        margin-top: 3px;
+        min-width: 14px;
+        /* Agar ikon tidak gepeng */
+    }
+
+    .card-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        /* PENTING: Agar tombol turun ke bawah kalau layar terlalu sempit */
+    }
+
+    .btn-contact,
+    .btn-maps {
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        text-align: center;
+        transition: 0.3s;
+        flex-grow: 1;
+        /* Membuat tombol seimbang panjangnya */
+    }
+
+    .btn-contact {
+        background-color: #f0fcf9;
+        color: #3fb6a8;
+        border: 1px solid #ccece6;
+    }
+
+    .btn-contact:hover {
+        background-color: #e0f8f3;
+    }
+
+    .btn-maps {
+        background-color: #3fb6a8;
+        color: white;
+        border: 1px solid #3fb6a8;
+    }
+
+    .btn-maps:hover {
+        background-color: #2e9488;
+    }
+
+    /* --- Responsif (HP) --- */
+    @media (max-width: 900px) {
+        .cabang-content {
+            grid-template-columns: 1fr;
+            /* PERBAIKAN: Jadikan 1 kolom penuh ke bawah */
+        }
+
+        .cabang-card {
+            flex-direction: column;
+            /* Gambar di atas, info di bawah */
+        }
+
+        .card-img-wrapper,
+        .card-info {
+            width: 100%;
+            /* Lebar penuh */
+        }
+
+        .card-img-wrapper {
+            height: 200px;
+            /* Tinggi gambar dibatasi di HP */
+        }
+
+        .card-info {
+            padding: 24px 20px;
+        }
+
+        .card-buttons {
+            flex-direction: column;
+            /* Tombol ditumpuk ke bawah di HP agar tidak kekecilan */
+        }
+    }
+</style>    <section class="bg-[#fffdeb] py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+
+        
+        <div class="mb-10">
+            <h2 class="text-5xl font-bold text-[#2F2F2F] mb-4">
+                Artikel Pilihan
+            </h2>
+
+            <div class="w-full h-[1px] bg-[#CFC8B7]"></div>
+        </div>
+
+        
+        <div class="grid lg:grid-cols-[2fr_1fr] gap-8 items-start">
+
+            
+            <div class="bg-[#DCE8E2] rounded-[28px] shadow-md overflow-hidden h-fit">
+
+                
+                <img
+                    src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1200&auto=format&fit=crop"
+                    class="w-full h-[340px] object-cover"
+                    alt="baby spa">
+
+                
+                <div class="p-8">
+
+                    
+                    <div class="flex items-center justify-between mb-5">
+
+                        <span
+                            class="border border-[#89A69B] text-[#7D8F87] text-sm px-5 py-2 rounded-full">
+                            Perawatan Bayi
+                        </span>
+
+                        <div class="flex items-center gap-2 text-[#7B7B7B] text-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="w-5 h-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="1.7"
+                                    d="M8 7V3m8 4V3m-9 8h10m-11 9h12a2 2 0 002-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v11a2 2 0 002 2z" />
+                            </svg>
+
+                            <span>27/02/2026</span>
+                        </div>
+
+                    </div>
+
+                    
+                    <h3
+                        class="text-[28px] leading-tight font-bold text-[#5E9B98] mb-5">
+                        Manfaat Baby Spa untuk Bayi: Rahasia Stimulasi
+                        Tumbuh Kembang dan Kualitas Tidur yang Lebih Optimal
+                    </h3>
+
+                    
+                    <p class="text-[#4D4D4D] text-lg leading-relaxed mb-8">
+                        Baby spa membantu relaksasi dan stimulasi tumbuh kembang
+                        bayi melalui pijat lembut dan terapi air hangat.
+                        Manfaatnya meliputi ....
+                    </p>
+
+                    
+                    <div class="flex items-center justify-between">
+
+                        
+                        <div class="flex items-center gap-4">
+
+                            <img
+                                src="https://randomuser.me/api/portraits/women/65.jpg"
+                                class="w-14 h-14 rounded-full object-cover"
+                                alt="author">
+
+                            <div>
+                                <h4 class="font-semibold text-[#2F2F2F]">
+                                    Nadira Azzahra
+                                </h4>
+
+                                <p class="text-sm text-[#777]">
+                                    Mamina Care Team
+                                </p>
+                            </div>
+
+                        </div>
+
+                        
+                        <button
+                            class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-6 py-3 rounded-full text-sm font-semibold transition">
+                            Baca Selanjutnya
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <div class="flex flex-col gap-5">
+
+                
+                <div class="flex gap-4 items-start">
+                    <img
+                        src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop"
+                        class="w-[230px] h-[160px] rounded-3xl object-cover"
+                        alt="artikel">
+
+                    <div class="flex flex-col justify-center">
+
+                        <span
+                            class="border border-[#89A69B] text-[#7D8F87] text-xs px-4 py-1 rounded-full w-fit mb-3">
+                            Kesehatan Ibu Hamil
+                        </span>
+
+                        <h3
+                            class="text-[18px] leading-snug font-bold text-[#5E9B98] mb-2">
+                            Konsultasi Kehamilan: Langkah Awal Menjamin
+                            Tumbuh Kembang Janin yang Optimal
+                        </h3>
+
+                        <p class="text-[#8A8A8A] text-sm">
+                            Fasya Dita | 27 Februari 2026
+                        </p>
+
+                    </div>
+                </div>
+
+                
+                <div class="flex gap-4 items-start">
+                    <img
+                        src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop"
+                        class="w-[230px] h-[160px] rounded-3xl object-cover"
+                        alt="artikel">
+
+                    <div class="flex flex-col justify-center">
+
+                        <span
+                            class="border border-[#89A69B] text-[#7D8F87] text-xs px-4 py-1 rounded-full w-fit mb-3">
+                            Kesehatan Ibu Hamil
+                        </span>
+
+                        <h3
+                            class="text-[18px] leading-snug font-bold text-[#5E9B98] mb-2">
+                            Konsultasi Kehamilan: Langkah Awal Menjamin
+                            Tumbuh Kembang Janin yang Optimal
+                        </h3>
+
+                        <p class="text-[#8A8A8A] text-sm">
+                            Fasya Dita | 27 Februari 2026
+                        </p>
+
+                    </div>
+                </div>
+
+                
+                <div class="flex gap-4 items-start">
+                    <img
+                        src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop"
+                        class="w-[230px] h-[160px] rounded-3xl object-cover"
+                        alt="artikel">
+
+                    <div class="flex flex-col justify-center">
+
+                        <span
+                            class="border border-[#89A69B] text-[#7D8F87] text-xs px-4 py-1 rounded-full w-fit mb-3">
+                            Kesehatan Ibu Hamil
+                        </span>
+
+                        <h3
+                            class="text-[18px] leading-snug font-bold text-[#5E9B98] mb-2">
+                            Konsultasi Kehamilan: Langkah Awal Menjamin
+                            Tumbuh Kembang Janin yang Optimal
+                        </h3>
+
+                        <p class="text-[#8A8A8A] text-sm">
+                            Fasya Dita | 27 Februari 2026
+                        </p>
+
+                    </div>
+                </div>
+
+                
+                <div class="flex justify-end mt-2">
+                    <a href="http://127.0.0.1:8000/artikel"
+                        class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-8 py-4 rounded-full text-xl font-semibold transition inline-block text-center no-underline">
+                        Baca Artikel Lain
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>    <section class="bg-[#fffdeb] py-16 px-6 relative" id="faq-section">
+    <div class="max-w-6xl mx-auto">
+
+        
+        <div class="flex justify-center mb-4">
+            <span class="bg-[#F3EEDB] text-[#4A4A4A] px-5 py-2 rounded-full shadow text-sm font-semibold">
+                FAQ
+            </span>
+        </div>
+
+        
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-[#2F2F2F] mb-3 font-fredoka">
+                Ada pertanyaan?
+            </h2>
+            <p class="text-[#4A4A4A] text-lg font-nunito">
+                Berikut jawaban atas pertanyaan yang paling umum diajukan
+            </p>
+        </div>
+
+        
+        <div class="grid md:grid-cols-2 gap-6 items-start font-nunito">
+
+            
+            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="true">
+                <div class="flex justify-between items-start gap-4">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold text-[#2F2F2F] mb-4 faq-question transition-all duration-300">
+                            Baby Spa bisa untuk usia berapa?
+                        </h3>
+
+                        <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 200px; opacity: 1;">
+                            <p class="text-[#4A4A4A] leading-relaxed text-base">
+                                Untuk pijat bayi saja bisa dari 0 bulan, jika sama
+                                dengan berenang minimal usia 3 bulan dengan BB minimal
+                                5 kg. Jadi, untuk baby spa karena paketannya berisi
+                                pijat, gymball, scrub dan berenang bisa dimulai usia
+                                3 bulan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                        -
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-4">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                            Beda baby spa dengan pijat swim?
+                        </h3>
+
+                        <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
+                            <p class="text-[#4A4A4A] leading-relaxed text-base mt-4">
+                                Pijat swim berfokus pada stimulasi motorik lewat berenang dan pijat ringan, sedangkan baby spa menyertakan sesi spa lengkap termasuk gymball, scrub/pijat lulur bayi, dan berenang.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                        +
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-4">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                            Syarat bayi boleh baby swim?
+                        </h3>
+
+                        <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
+                            <p class="text-[#4A4A4A] leading-relaxed text-base mt-4">
+                                Bayi minimal berusia 3 bulan, memiliki berat badan minimal 5 kg, leher sudah tegak (bisa menopang kepala sendiri), dan dalam kondisi sehat (tidak demam).
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                        +
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-4">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                            Apakah Pijat Swim mendapat treatment gymball?
+                        </h3>
+
+                        <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
+                            <p class="text-[#4A4A4A] leading-relaxed text-base mt-4">
+                                Tidak, treatment gymball biasanya hanya termasuk dalam paket lengkap Baby Spa atau sesi stimulasi tumbuh kembang khusus.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                        +
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-4">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                            Apakah demam boleh dipijat?
+                        </h3>
+
+                        <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
+                            <p class="text-[#7A7A7A] leading-relaxed text-base mt-4">
+                                Sebisa mungkin tidak dipijat saat bayi sedang demam, karena pijat dapat meningkatkan suhu tubuh. Tunggu hingga demamnya reda minimal 24 jam.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="text-3xl text-[#7A7A7A] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                        +
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-4">
+                    <div class="flex-grow">
+                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                            Apakah demam boleh dipijat?
+                        </h3>
+
+                        <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
+                            <p class="text-[#4A4A4A] leading-relaxed text-base mt-4">
+                                Sebisa mungkin tidak dipijat saat bayi sedang demam, karena pijat dapat meningkatkan suhu tubuh. Tunggu hingga demamnya reda minimal 24 jam.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                        +
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="flex justify-center mt-12">
+            <button id="btn-lihat-semua"
+                class="bg-[#5AA6A5] hover:bg-[#4B9493] text-white px-8 py-3 rounded-full text-lg font-semibold transition duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                Lihat Semua Pertanyaan
+            </button>
+        </div>
+
+    </div>
+</section>
+
+
+    
+    </main>
+
+    <!-- Footer -->
+    <footer class="mamina-footer">
+    <div class="container">
+        
+        <div class="footer-row">
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Layanan Kami</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Testimommy</a></li>
+                    <li><a href="#">Kegiatan</a></li>
+                    <li><a href="#">Cabang</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Extra Links</h4>
+                <ul>
+                    <li><a href="#">Kenali Tim Mamina</a></li>
+                    <li><a href="#">Daftar Member</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Lokasi</h4>
+                <ul>
+                    <li><a href="#">Malang</a></li>
+                    <li><a href="#">Kediri</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kontak Info</h4>
+                <ul>
+                    <li><a href="#">0812-3456-7890</a></li>
+                    <li><a href="#">admin@mamina.id</a></li>
+                    <li><a href="#">ig : @maminaa_</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-copyright">
+            <p>Created by Mamina | All rights reserved</p>
+        </div>
+
+    </div>
+</footer>
+
+<style>
+    /* 1. Container Utama Footer */
+    .mamina-footer {
+        background-color: #e6f7f4; /* Warna Mint Pastel Lembut */
+        padding: 60px 20px 30px 20px;
+        font-family: sans-serif;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* 2. Grid Layout untuk 4 Kolom */
+    .footer-row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Agar responsif turun ke bawah */
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    /* 3. Styling Judul Kolom (h4) */
+    .footer-col h4 {
+        font-family: 'Fredoka', sans-serif; /* Font bulat lucu */
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    /* 4. Styling List Link */
+    .footer-col ul {
+        list-style: none; /* Hilangkan titik bullet */
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 12px;
+    }
+
+    .footer-col ul li a {
+        text-decoration: none;
+        color: #666; /* Abu-abu tua */
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    /* Efek Hover (Warna berubah saat mouse mendekat) */
+    .footer-col ul li a:hover {
+        color: #3fb6a8; /* Hijau Tosca Mamina */
+    }
+
+    /* 5. Bagian Copyright (Garis Bawah) */
+    .footer-copyright {
+        border-top: 1px solid #ccece6; /* Garis pemisah tipis */
+        padding-top: 25px;
+        text-align: center;
+    }
+
+    .footer-copyright p {
+        font-size: 14px;
+        color: #777;
+        margin: 0;
+    }
+
+    /* --- Responsif (Tampilan HP) --- */
+    @media (max-width: 768px) {
+        .footer-row {
+            flex-direction: column; /* Kolom jadi turun ke bawah */
+            gap: 30px;
+            text-align: center; /* Teks jadi rata tengah di HP */
+        }
+    }
+</style>    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery (optional) -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="http://127.0.0.1:8000/js/app.js"></script>
+
+    <!-- Additional Scripts Section -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqItems = document.querySelectorAll(".faq-item");
+            const btnLihatSemua = document.getElementById("btn-lihat-semua");
+
+            faqItems.forEach((item) => {
+                const wrapper = item.querySelector(".faq-answer-wrapper");
+                const h3 = item.querySelector("h3");
+                const btn = item.querySelector(".faq-btn");
+
+                // Click event listener
+                item.addEventListener("click", function (e) {
+                    // Prevent button clicking from triggering twice
+                    if (e.target.tagName === 'BUTTON') return;
+
+                    const isActive = item.getAttribute("data-active") === "true";
+
+                    // Collapse all others
+                    faqItems.forEach((other) => {
+                        if (other !== item && other.getAttribute("data-active") === "true") {
+                            other.setAttribute("data-active", "false");
+                            const otherWrapper = other.querySelector(".faq-answer-wrapper");
+                            const otherH3 = other.querySelector("h3");
+                            const otherBtn = other.querySelector(".faq-btn");
+                            
+                            otherWrapper.style.maxHeight = "0px";
+                            otherWrapper.style.opacity = "0";
+                            otherH3.classList.remove("mb-4");
+                            otherBtn.innerText = "+";
+                        }
+                    });
+
+                    // Toggle current
+                    if (isActive) {
+                        item.setAttribute("data-active", "false");
+                        wrapper.style.maxHeight = "0px";
+                        wrapper.style.opacity = "0";
+                        h3.classList.remove("mb-4");
+                        btn.innerText = "+";
+                    } else {
+                        item.setAttribute("data-active", "true");
+                        wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+                        wrapper.style.opacity = "1";
+                        h3.classList.add("mb-4");
+                        btn.innerText = "-";
+                    }
+                });
+
+                // Toggle directly on button click as well
+                btn.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    const isActive = item.getAttribute("data-active") === "true";
+
+                    // Collapse all others
+                    faqItems.forEach((other) => {
+                        if (other !== item && other.getAttribute("data-active") === "true") {
+                            other.setAttribute("data-active", "false");
+                            const otherWrapper = other.querySelector(".faq-answer-wrapper");
+                            const otherH3 = other.querySelector("h3");
+                            const otherBtn = other.querySelector(".faq-btn");
+                            
+                            otherWrapper.style.maxHeight = "0px";
+                            otherWrapper.style.opacity = "0";
+                            otherH3.classList.remove("mb-4");
+                            otherBtn.innerText = "+";
+                        }
+                    });
+
+                    if (isActive) {
+                        item.setAttribute("data-active", "false");
+                        wrapper.style.maxHeight = "0px";
+                        wrapper.style.opacity = "0";
+                        h3.classList.remove("mb-4");
+                        btn.innerText = "+";
+                    } else {
+                        item.setAttribute("data-active", "true");
+                        wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+                        wrapper.style.opacity = "1";
+                        h3.classList.add("mb-4");
+                        btn.innerText = "-";
+                    }
+                });
+            });
+
+            // "Lihat Semua Pertanyaan" Button toggles all open
+            if (btnLihatSemua) {
+                btnLihatSemua.addEventListener("click", function () {
+                    faqItems.forEach((item) => {
+                        item.setAttribute("data-active", "true");
+                        const wrapper = item.querySelector(".faq-answer-wrapper");
+                        const h3 = item.querySelector("h3");
+                        const btn = item.querySelector(".faq-btn");
+                        
+                        wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+                        wrapper.style.opacity = "1";
+                        h3.classList.add("mb-4");
+                        btn.innerText = "-";
+                    });
+                    
+                    // Smoothly fade out the button since all are now visible and open
+                    btnLihatSemua.style.opacity = "0";
+                    btnLihatSemua.style.transform = "scale(0.95)";
+                    btnLihatSemua.style.pointerEvents = "none";
+                });
+            }
+        });
+    </script>
+    <!-- Scripts khusus untuk landing page -->
+    <script>
+        // Script untuk landing page
+    </script>
+</body>
+
+</html>
