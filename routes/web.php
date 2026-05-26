@@ -9,6 +9,8 @@ use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\JadwalTerapisController;
+use App\Http\Controllers\AnakController;
+
 // MAIN
 // landing page 
 Route::get('/', fn() => view('welcome'))->name('beranda');
@@ -78,7 +80,9 @@ Route::prefix('member')->name('member.')->middleware('auth')->group(function () 
     Route::get('/cabang', fn() => view('member.cabang.cabang'))->name('cabang');
 
     Route::get('/riwayat-reservasi', fn() => view('member.reservasi.reservasi'))->name('reservasi');
-    Route::get('/anak', fn() => view('member.anak.anak'))->name('anak');
+    Route::get('/anak', [AnakController::class, 'index'])->name('anak');
+    Route::post('/anak/store', [AnakController::class, 'storeKids'])->name('anak.store');
+    Route::post('/anak/store-growth', [AnakController::class, 'storeGrowth'])->name('growth.store');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/edit-profile', [ProfileController::class, 'edit'])->name('edit-profile');
