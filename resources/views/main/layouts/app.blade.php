@@ -64,6 +64,9 @@
 
     <!-- Additional Scripts Section -->
     @stack('scripts')
+    
+    <!-- Chatbot Widget -->
+    @include('components.chatbot')
 </body>
 
 </html>

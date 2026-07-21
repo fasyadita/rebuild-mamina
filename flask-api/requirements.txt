@@ -1,0 +1,10 @@
+flask
+openai
+langchain
+faiss-cpu
+PyMuPDF
+python-dotenv
+langchain-community
+flask-cors
+pymysql
+langchain-openai
