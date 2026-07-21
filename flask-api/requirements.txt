@@ -7,4 +7,4 @@ python-dotenv
 langchain-community
 flask-cors
 pymysql
-langchain-openai
+langchain-google-genai

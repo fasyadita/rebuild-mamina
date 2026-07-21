@@ -1,11 +1,9 @@
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import OpenAIEmbeddings
-from langchain.text_splitter import CharacterTextSplitter
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_text_splitters import CharacterTextSplitter
+from config_manager import get_gemini_key
 import os, sys
-
-from dotenv import load_dotenv
-load_dotenv()
 
 def build_index(file_path, index_dir):
     loader = PyMuPDFLoader(file_path)
@@ -14,7 +12,7 @@ def build_index(file_path, index_dir):
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     docs = text_splitter.split_documents(documents)
 
-    embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-2", google_api_key=get_gemini_key())
     db = FAISS.from_documents(docs, embeddings)
     db.save_local(index_dir)
     

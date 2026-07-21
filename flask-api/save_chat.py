@@ -3,6 +3,8 @@ from db_connection import get_connection
 def save_chat_history(session_id, user_msg, bot_msg):
     conn = get_connection()
     try:
+        print(f"types: session_id={type(session_id)}, user_msg={type(user_msg)}, bot_msg={type(bot_msg)}", flush=True)
+        print(f"bot_msg value: {bot_msg}", flush=True)
         with conn.cursor() as cursor:
             sql = "INSERT INTO tb_chat_history (session_id, user_msg, bot_reply) VALUES (%s, %s, %s)"
             cursor.execute(sql, (session_id, user_msg, bot_msg))

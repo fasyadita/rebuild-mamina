@@ -1,3 +1,10 @@
+import os
+from dotenv import load_dotenv
+
+# Load dari laravel root .env
+dotenv_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+load_dotenv(dotenv_path)
+
 from db_connection import get_connection
 
 def get_setting(key):
@@ -31,3 +38,8 @@ def get_openai_key():
     finally:
         conn.close()
 
+def get_gemini_key():
+    key = os.environ.get('GEMINI_API_KEY')
+    if not key:
+        raise ValueError("GEMINI_API_KEY is not set in the .env file")
+    return key

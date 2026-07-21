@@ -1,7 +1,7 @@
 from langchain_community.vectorstores import FAISS
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
-from config_manager import get_setting, get_openai_key
+from config_manager import get_setting, get_gemini_key
 from db_connection import get_connection
 import os
 
@@ -14,9 +14,10 @@ prompt = PromptTemplate(
 )
 
 # Load embedding model sekali saja
-embeddings = OpenAIEmbeddings(
-    model="text-embedding-3-small",
-    openai_api_key=get_openai_key()
+gemini_api_key = get_gemini_key()
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-2",
+    google_api_key=gemini_api_key
 )
 
 def get_history(session_id):
@@ -75,9 +76,10 @@ def get_answer(query, session_id):
                 docs = retriever.invoke(query)
                 context = "\n".join([doc.page_content for doc in docs])
 
-                llm = ChatOpenAI(
-                    model_name="gpt-3.5-turbo",
-                    openai_api_key=get_openai_key()
+                llm = ChatGoogleGenerativeAI(
+                    model="gemini-3.5-flash",
+                    google_api_key=gemini_api_key,
+                    temperature=0
                 )
 
                 history_text = get_history(session_id)
@@ -91,11 +93,20 @@ def get_answer(query, session_id):
                 answers.append(response)
 
             except Exception as e:
-                print(f"Gagal load {index_path}: {e}")
+                import traceback
+                print(f"Gagal load {index_path}: {e}", flush=True)
+                traceback.print_exc()
 
     if answers:
         # Ambil jawaban paling panjang (atau kamu bisa ubah jadi yang pertama saja)
-        answer_texts = [ans.content for ans in answers]
+        answer_texts = []
+        for ans in answers:
+            if isinstance(ans.content, list):
+                text = "".join([part.get("text", "") for part in ans.content if isinstance(part, dict) and part.get("type") == "text"])
+                answer_texts.append(text)
+            else:
+                answer_texts.append(str(ans.content))
+                
         best_answer = max(answer_texts, key=len)
         return best_answer
     else:
