@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MaminaCare</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='chatbot.css') }}"
+    />
+  </head>
+  <body>
+    <div id="chatbot-toggle">🗨️</div>
+
+    <div id="chatbot-container">
+      <div id="chatbot-header">MaminaCare 🤖</div>
+
+      <div id="chatbot-body">
+        <div id="chatbot-messages"></div>
+        <div
+          id="chatbot-typing"
+          class="chatbot-message bot-msg typing-indicator"
+          style="display: none"
+        >
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Bagian Footer Chatbot -->
+      <div id="chatbot-footer">
+        <input type="text" id="chatbot-input" placeholder="Tanyakan.." />
+        <button id="chatbot-send">Kirim</button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+  </body>
+</html>
