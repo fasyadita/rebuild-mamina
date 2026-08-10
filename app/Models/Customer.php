@@ -44,4 +44,9 @@ class Customer extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function kids()
+    {
+        return $this->hasMany(Kid::class, 'customer_id');
+    }
 }
