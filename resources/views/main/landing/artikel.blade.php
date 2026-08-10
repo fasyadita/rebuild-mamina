@@ -1,4 +1,4 @@
-<section class="bg-[#F7F4E8] py-16 px-6">
+<section class="bg-[#fffdeb] py-16 px-6">
     <div class="max-w-7xl mx-auto">
 
         {{-- Heading --}}

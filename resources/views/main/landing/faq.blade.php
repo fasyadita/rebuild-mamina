@@ -1,4 +1,4 @@
-<section class="bg-[#F6F3E8] py-16 px-6 relative" id="faq-section">
+<section class="bg-[#fffdeb] py-16 px-6 relative" id="faq-section">
     <div class="max-w-6xl mx-auto">
 
         {{-- Badge --}}

@@ -1,4 +1,7 @@
 <style>
+    .navbar-collapse.collapse {
+    visibility: visible !important;
+}
     .navbar {
         position: fixed;
         top: 0;
@@ -8,7 +11,8 @@
         /* putih/cream */
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         height: 90px;
-    }
+        width: 100%;
+    } 
 
     .fixed-top {
         position: fixed;
@@ -76,6 +80,14 @@
         color: #fff;
     }
 
+    .navbar-toggler {
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
     /* Mobile Responsive */
     @media (max-width: 991.98px) {
         .navbar {
@@ -108,7 +120,7 @@
         }
     }
 </style>
-<nav class="navbar navbar-expand-lg fixed-top mamina-navbar">
+<nav class="navbar navbar-expand-lg fixed-top mamina-navbar navbar-light">
     <div class="container">
         <!-- Logo di Kiri -->
         <a class="navbar-brand" href="/">
@@ -116,7 +128,7 @@
         </a>
 
         <!-- Tombol Hamburger untuk Mobile -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -126,10 +138,6 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#services">Layanan Kami</a>
                 </li>
 
                 <li class="nav-item">

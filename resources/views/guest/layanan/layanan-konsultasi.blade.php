@@ -18,10 +18,10 @@
                 @forelse ($konsulProducts as $product)
                     <div class="layanan-card">
                         @php
-                            $productImg = $product->image ? asset('storage/' . $product->image) : asset('img/event.jpeg');
+                            $productImg = $product->image ? asset('storage/' . $product->image) : asset('img/mamina.png');
                         @endphp
                         <img src="{{ $productImg }}" alt="{{ $product->name }}"
-                            onerror="this.onerror=null;this.src='{{ asset('img/event.jpeg') }}';">
+                            onerror="this.onerror=null;this.src='{{ asset('img/mamina.png') }}';">
 
                         <div class="layanan-content">
                             <h3>{{ $product->name }}</h3>
