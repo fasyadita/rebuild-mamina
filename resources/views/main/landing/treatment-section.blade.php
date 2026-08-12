@@ -1,18 +1,18 @@
 <!-- Treatment Section -->
-<section class="relative py-24 bg-gradient-to-b from-[#FFF8EA] via-[#FFFDF7] to-white overflow-hidden">
+<section id="treatment" class="relative py-16 bg-gradient-to-b from-[#FFF8EA] via-[#FFFDF7] to-white overflow-hidden">
 
     <!-- Glow Background -->
-    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[650px] h-[650px] rounded-full bg-[#FFF2B8]/60 blur-[170px]"></div>
+    <div class="absolute top-8 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-[#FFF2B8]/60 blur-[120px]"></div>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="relative max-w-7xl mx-auto px-5 lg:px-10">
 
         <!-- Badge -->
-        <div class="flex items-center gap-3 mb-5">
+        <div class="flex items-center gap-2 mb-4">
 
-            <div class="w-6 h-6 rounded-full bg-[#FFD6CC]"></div>
+            <div class="w-5 h-5 rounded-full bg-[#FFD6CC]"></div>
 
             <span
-                class="px-5 py-2 rounded-full
+                class="px-4 py-1 rounded-full
                 bg-[#FFE8E2]
                 text-[#F08B71]
                 text-xs
@@ -27,52 +27,52 @@
         </div>
 
         <!-- Heading -->
-        <h2 class="text-4xl lg:text-5xl font-bold text-[#2D2D2D]">
+        <h2 class="text-3xl lg:text-4xl font-bold text-[#2D2D2D]">
             Treatment
             <span class="text-[#5CC8C5]">
                 Mamina
             </span>
         </h2>
 
-        <p class="mt-4 max-w-2xl text-[#6F6F6F] leading-8">
+        <p class="mt-3 max-w-2xl text-[#6F6F6F] leading-7 text-sm">
             Ditangani terapis bersertifikat dengan prosedur standar —
             nyaman, aman, dan gentle untuk ibu & si kecil.
         </p>
 
         <!-- Card -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
 
             <!-- Card 1 -->
-            <div class="bg-white rounded-[28px] shadow-xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <div class="bg-white rounded-[22px] shadow-lg overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-xl">
 
-                <div class="h-60 bg-gray-200">
-                    <img src="{{ asset('assets/images/treatment.jpg') }}"
+                <div class="h-48 bg-gray-200">
+                    <img src="{{ asset('img/bayi.jpeg') }}"
                         class="w-full h-full object-cover">
                 </div>
 
-                <div class="p-8">
+                <div class="p-6">
 
-                    <h3 class="text-2xl font-semibold text-[#333]">
+                    <h3 class="text-xl font-semibold text-[#333]">
                         Pijat Bayi
                     </h3>
 
-                    <p class="text-sm text-gray-500 leading-7 mt-4">
+                    <p class="text-sm text-gray-500 leading-6 mt-3">
                         Memperlancar ASI, mencegah mastitis,
                         meningkatkan let-down reflex.
                         Ditangani bidan & konselor laktasi
                         bersertifikat.
                     </p>
 
-                    <div class="mt-8">
+                    <div class="mt-6">
 
-                        <span class="text-[#46C8C3] text-2xl font-bold">
+                        <span class="text-[#46C8C3] text-xl font-bold">
                             Mulai Rp 120.000
                         </span>
 
                     </div>
 
                     <a href="#"
-                        class="inline-block mt-4 text-sm text-[#46C8C3] hover:underline">
+                        class="inline-block mt-2 text-sm text-[#46C8C3] hover:underline">
 
                         Pelajari lebih lanjut
 
@@ -83,36 +83,36 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="bg-white rounded-[28px] shadow-xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <div class="bg-white rounded-[22px] shadow-lg overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-xl">
 
-                <div class="h-60 bg-gray-200">
-                    <img src="{{ asset('assets/images/treatment.jpg') }}"
+                <div class="h-48 bg-gray-200">
+                    <img src="{{ asset('img/bayi.jpeg') }}"
                         class="w-full h-full object-cover">
                 </div>
 
-                <div class="p-8">
+                <div class="p-6">
 
-                    <h3 class="text-2xl font-semibold text-[#333]">
+                    <h3 class="text-xl font-semibold text-[#333]">
                         Pijat Bayi
                     </h3>
 
-                    <p class="text-sm text-gray-500 leading-7 mt-4">
+                    <p class="text-sm text-gray-500 leading-6 mt-3">
                         Memperlancar ASI, mencegah mastitis,
                         meningkatkan let-down reflex.
                         Ditangani bidan & konselor laktasi
                         bersertifikat.
                     </p>
 
-                    <div class="mt-8">
+                    <div class="mt-6">
 
-                        <span class="text-[#46C8C3] text-2xl font-bold">
+                        <span class="text-[#46C8C3] text-xl font-bold">
                             Mulai Rp 120.000
                         </span>
 
                     </div>
 
                     <a href="#"
-                        class="inline-block mt-4 text-sm text-[#46C8C3] hover:underline">
+                        class="inline-block mt-2 text-sm text-[#46C8C3] hover:underline">
 
                         Pelajari lebih lanjut
 
@@ -123,36 +123,36 @@
             </div>
 
             <!-- Card 3 -->
-            <div class="bg-white rounded-[28px] shadow-xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <div class="bg-white rounded-[22px] shadow-lg overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-xl">
 
-                <div class="h-60 bg-gray-200">
-                    <img src="{{ asset('assets/images/treatment.jpg') }}"
+                <div class="h-48 bg-gray-200">
+                    <img src="{{ asset('img/bayi.jpeg') }}"
                         class="w-full h-full object-cover">
                 </div>
 
-                <div class="p-8">
+                <div class="p-6">
 
-                    <h3 class="text-2xl font-semibold text-[#333]">
+                    <h3 class="text-xl font-semibold text-[#333]">
                         Pijat Bayi
                     </h3>
 
-                    <p class="text-sm text-gray-500 leading-7 mt-4">
+                    <p class="text-sm text-gray-500 leading-6 mt-3">
                         Memperlancar ASI, mencegah mastitis,
                         meningkatkan let-down reflex.
                         Ditangani bidan & konselor laktasi
                         bersertifikat.
                     </p>
 
-                    <div class="mt-8">
+                    <div class="mt-6">
 
-                        <span class="text-[#46C8C3] text-2xl font-bold">
+                        <span class="text-[#46C8C3] text-xl font-bold">
                             Mulai Rp 120.000
                         </span>
 
                     </div>
 
                     <a href="#"
-                        class="inline-block mt-4 text-sm text-[#46C8C3] hover:underline">
+                        class="inline-block mt-2 text-sm text-[#46C8C3] hover:underline">
 
                         Pelajari lebih lanjut
 

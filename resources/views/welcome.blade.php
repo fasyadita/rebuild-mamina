@@ -4,16 +4,15 @@
 
 @section('content')
     @include('main.landing.home')
-    @include('main.landing.treatment-section')  
     @include('main.landing.about')
-    @include('main.landing.why')
-    @include('main.landing.info')
-    @include('main.landing.maminago')
+    @include('main.landing.artikel')
+    @include('main.landing.treatment-section')
+    @include('main.landing.mamina-essentials')
     @include('main.landing.gentle-living')
-    @include('main.landing.lactasi-class')
+    @include('main.landing.lactasi-class').
+    @include('main.landing.maminago')
     @include('main.landing.testimony')
     @include('main.landing.cabang')
-    @include('main.landing.artikel')
     @include('main.landing.faq')
     {{-- Tambahkan bagian lain yang diperlukan --}}
 @endsection

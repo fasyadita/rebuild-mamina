@@ -1,36 +1,36 @@
-<section class="bg-[#fffdeb] py-16 px-6 relative" id="faq-section">
+<section class="bg-[#fffdeb] py-12 px-5 relative" id="faq-section">
     <div class="max-w-6xl mx-auto">
 
         {{-- Badge --}}
-        <div class="flex justify-center mb-4">
-            <span class="bg-[#F3EEDB] text-[#4A4A4A] px-5 py-2 rounded-full shadow text-sm font-semibold">
+        <div class="flex justify-center mb-3">
+            <span class="bg-[#F3EEDB] text-[#4A4A4A] px-4 py-1 rounded-full shadow text-xs font-semibold">
                 FAQ
             </span>
         </div>
 
         {{-- Title --}}
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-[#2F2F2F] mb-3 font-fredoka">
+        <div class="text-center mb-9">
+            <h2 class="text-3xl font-bold text-[#2F2F2F] mb-2 font-fredoka">
                 Ada pertanyaan?
             </h2>
-            <p class="text-[#4A4A4A] text-lg font-nunito">
+            <p class="text-[#4A4A4A] text-base font-nunito">
                 Berikut jawaban atas pertanyaan yang paling umum diajukan
             </p>
         </div>
 
         {{-- FAQ Grid --}}
-        <div class="grid md:grid-cols-2 gap-6 items-start font-nunito">
+        <div class="grid md:grid-cols-2 gap-5 items-start font-nunito">
 
             {{-- FAQ Item 1 (Baby Spa bisa untuk usia berapa? - Active/Open by default) --}}
-            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="true">
-                <div class="flex justify-between items-start gap-4">
+            <div class="faq-item bg-[#DDE8E2] rounded-xl shadow-sm p-5 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="true">
+                <div class="flex justify-between items-start gap-3">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-[#2F2F2F] mb-4 faq-question transition-all duration-300">
+                        <h3 class="text-lg font-bold text-[#2F2F2F] mb-3 faq-question transition-all duration-300">
                             Baby Spa bisa untuk usia berapa?
                         </h3>
 
                         <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 200px; opacity: 1;">
-                            <p class="text-[#4A4A4A] leading-relaxed text-base">
+                            <p class="text-[#4A4A4A] leading-relaxed text-sm">
                                 Untuk pijat bayi saja bisa dari 0 bulan, jika sama
                                 dengan berenang minimal usia 3 bulan dengan BB minimal
                                 5 kg. Jadi, untuk baby spa karena paketannya berisi
@@ -40,112 +40,112 @@
                         </div>
                     </div>
 
-                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                    <button class="text-2xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
                         -
                     </button>
                 </div>
             </div>
 
             {{-- FAQ Item 2 (Beda baby spa dengan pijat swim?) --}}
-            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
-                <div class="flex justify-between items-start gap-4">
+            <div class="faq-item bg-[#DDE8E2] rounded-xl shadow-sm p-5 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-3">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                        <h3 class="text-lg font-bold text-[#2F2F2F] faq-question transition-all duration-300">
                             Beda baby spa dengan pijat swim?
                         </h3>
 
                         <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
-                            <p class="text-[#4A4A4A] leading-relaxed text-base mt-4">
+                            <p class="text-[#4A4A4A] leading-relaxed text-sm mt-3">
                                 Pijat swim berfokus pada stimulasi motorik lewat berenang dan pijat ringan, sedangkan baby spa menyertakan sesi spa lengkap termasuk gymball, scrub/pijat lulur bayi, dan berenang.
                             </p>
                         </div>
                     </div>
 
-                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                    <button class="text-2xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
                         +
                     </button>
                 </div>
             </div>
 
             {{-- FAQ Item 3 (Syarat bayi boleh baby swim?) --}}
-            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
-                <div class="flex justify-between items-start gap-4">
+            <div class="faq-item bg-[#DDE8E2] rounded-xl shadow-sm p-5 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-3">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                        <h3 class="text-lg font-bold text-[#2F2F2F] faq-question transition-all duration-300">
                             Syarat bayi boleh baby swim?
                         </h3>
 
                         <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
-                            <p class="text-[#4A4A4A] leading-relaxed text-base mt-4">
+                            <p class="text-[#4A4A4A] leading-relaxed text-sm mt-3">
                                 Bayi minimal berusia 3 bulan, memiliki berat badan minimal 5 kg, leher sudah tegak (bisa menopang kepala sendiri), dan dalam kondisi sehat (tidak demam).
                             </p>
                         </div>
                     </div>
 
-                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                    <button class="text-2xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
                         +
                     </button>
                 </div>
             </div>
 
             {{-- FAQ Item 4 (Apakah Pijat Swim mendapat treatment gymball?) --}}
-            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
-                <div class="flex justify-between items-start gap-4">
+            <div class="faq-item bg-[#DDE8E2] rounded-xl shadow-sm p-5 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-3">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                        <h3 class="text-lg font-bold text-[#2F2F2F] faq-question transition-all duration-300">
                             Apakah Pijat Swim mendapat treatment gymball?
                         </h3>
 
                         <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
-                            <p class="text-[#4A4A4A] leading-relaxed text-base mt-4">
+                            <p class="text-[#4A4A4A] leading-relaxed text-sm mt-3">
                                 Tidak, treatment gymball biasanya hanya termasuk dalam paket lengkap Baby Spa atau sesi stimulasi tumbuh kembang khusus.
                             </p>
                         </div>
                     </div>
 
-                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                    <button class="text-2xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
                         +
                     </button>
                 </div>
             </div>
 
             {{-- FAQ Item 5 (Apakah demam boleh dipijat? - Muted/Disabled) --}}
-            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
-                <div class="flex justify-between items-start gap-4">
+            <div class="faq-item bg-[#DDE8E2] rounded-xl shadow-sm p-5 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-3">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                        <h3 class="text-lg font-bold text-[#2F2F2F] faq-question transition-all duration-300">
                             Apakah demam boleh dipijat?
                         </h3>
 
                         <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
-                            <p class="text-[#7A7A7A] leading-relaxed text-base mt-4">
+                            <p class="text-[#7A7A7A] leading-relaxed text-sm mt-3">
                                 Sebisa mungkin tidak dipijat saat bayi sedang demam, karena pijat dapat meningkatkan suhu tubuh. Tunggu hingga demamnya reda minimal 24 jam.
                             </p>
                         </div>
                     </div>
 
-                    <button class="text-3xl text-[#7A7A7A] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                    <button class="text-2xl text-[#7A7A7A] font-light focus:outline-none faq-btn w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
                         +
                     </button>
                 </div>
             </div>
 
             {{-- FAQ Item 6 (Apakah demam boleh dipijat? - Normal) --}}
-            <div class="faq-item bg-[#DDE8E2] rounded-2xl shadow-sm p-6 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
-                <div class="flex justify-between items-start gap-4">
+            <div class="faq-item bg-[#DDE8E2] rounded-xl shadow-sm p-5 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="false">
+                <div class="flex justify-between items-start gap-3">
                     <div class="flex-grow">
-                        <h3 class="text-xl font-bold text-[#2F2F2F] faq-question transition-all duration-300">
+                        <h3 class="text-lg font-bold text-[#2F2F2F] faq-question transition-all duration-300">
                             Apakah demam boleh dipijat?
                         </h3>
 
                         <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="max-height: 0px; opacity: 0;">
-                            <p class="text-[#4A4A4A] leading-relaxed text-base mt-4">
+                            <p class="text-[#4A4A4A] leading-relaxed text-sm mt-3">
                                 Sebisa mungkin tidak dipijat saat bayi sedang demam, karena pijat dapat meningkatkan suhu tubuh. Tunggu hingga demamnya reda minimal 24 jam.
                             </p>
                         </div>
                     </div>
 
-                    <button class="text-3xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
+                    <button class="text-2xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-7 h-7 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300">
                         +
                     </button>
                 </div>
@@ -154,9 +154,9 @@
         </div>
 
         {{-- Button --}}
-        <div class="flex justify-center mt-12">
+        <div class="flex justify-center mt-9">
             <button id="btn-lihat-semua"
-                class="bg-[#5AA6A5] hover:bg-[#4B9493] text-white px-8 py-3 rounded-full text-lg font-semibold transition duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                class="bg-[#5AA6A5] hover:bg-[#4B9493] text-white px-6 py-2 rounded-full text-base font-semibold transition duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
                 Lihat Semua Pertanyaan
             </button>
         </div>
@@ -224,7 +224,7 @@
                             
                             otherWrapper.style.maxHeight = "0px";
                             otherWrapper.style.opacity = "0";
-                            otherH3.classList.remove("mb-4");
+                            otherH3.classList.remove("mb-3");
                             otherBtn.innerText = "+";
                         }
                     });
@@ -234,13 +234,13 @@
                         item.setAttribute("data-active", "false");
                         wrapper.style.maxHeight = "0px";
                         wrapper.style.opacity = "0";
-                        h3.classList.remove("mb-4");
+                        h3.classList.remove("mb-3");
                         btn.innerText = "+";
                     } else {
                         item.setAttribute("data-active", "true");
                         wrapper.style.maxHeight = wrapper.scrollHeight + "px";
                         wrapper.style.opacity = "1";
-                        h3.classList.add("mb-4");
+                        h3.classList.add("mb-3");
                         btn.innerText = "-";
                     }
                 });
@@ -260,7 +260,7 @@
                             
                             otherWrapper.style.maxHeight = "0px";
                             otherWrapper.style.opacity = "0";
-                            otherH3.classList.remove("mb-4");
+                            otherH3.classList.remove("mb-3");
                             otherBtn.innerText = "+";
                         }
                     });
@@ -269,13 +269,13 @@
                         item.setAttribute("data-active", "false");
                         wrapper.style.maxHeight = "0px";
                         wrapper.style.opacity = "0";
-                        h3.classList.remove("mb-4");
+                        h3.classList.remove("mb-3");
                         btn.innerText = "+";
                     } else {
                         item.setAttribute("data-active", "true");
                         wrapper.style.maxHeight = wrapper.scrollHeight + "px";
                         wrapper.style.opacity = "1";
-                        h3.classList.add("mb-4");
+                        h3.classList.add("mb-3");
                         btn.innerText = "-";
                     }
                 });
@@ -292,7 +292,7 @@
                         
                         wrapper.style.maxHeight = wrapper.scrollHeight + "px";
                         wrapper.style.opacity = "1";
-                        h3.classList.add("mb-4");
+                        h3.classList.add("mb-3");
                         btn.innerText = "-";
                     });
                     
