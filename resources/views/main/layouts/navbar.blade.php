@@ -1,7 +1,21 @@
 <style>
+    body {
+        background: linear-gradient(90deg,
+                #FADCD5 0%,
+                #FFF3EF 50%,
+                #EAF8F6 100%);
+    }
+
     .navbar-collapse.collapse {
-    visibility: visible !important;
-}
+        visibility: visible !important;
+    }
+
+    nav.navbar.mamina-navbar {
+        margin: 10px 20px;
+        border-radius: 50px;
+        width: calc(100% - 40px);
+    }
+
     .navbar {
         position: fixed;
         top: 0;
@@ -11,14 +25,14 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         height: 90px;
         width: 100%;
-    } 
+    }
 
     .fixed-top {
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
-        background-color: #fffdeb;
+        background: #fffdeb;
     }
 
     .mamina-navbar {
@@ -27,11 +41,10 @@
 
     .navbar .container {
         max-width: 1300px;
-        padding: 0 32px;
     }
 
     .navbar-nav {
-        gap: 28px;
+        gap: 20x;
     }
 
     .nav-link {
@@ -123,7 +136,7 @@
     <div class="container">
         <!-- Logo di Kiri -->
         <a class="navbar-brand" href="/">
-            <img src="{{ asset('img/logo.png') }}" alt="Mamina" height="60">
+            <img src="{{ asset('img/logo.png') }}" alt="Mamina" height="50">
         </a>
 
         <!-- Tombol Hamburger untuk Mobile -->
@@ -136,36 +149,44 @@
             <ul class="navbar-nav align-items-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}">Beranda</a>
+                    <a class="nav-link" href="{{ route('beranda') }}">Tentang Mamina</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#about">Tentang Kami</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#about">Artikel</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#testimony">Testimoni</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#testimony">Treatment</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('event') }}">Kegiatan</a>
+                    <a class="nav-link" href="{{ route('event') }}">Essentials</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#cabang">Cabang</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#cabang">Gentle Living</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('beranda') }}#cabang">Kelas Pro</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('beranda') }}#cabang">Mamina Go</a>
                 </li>
 
                 <li class="nav-item position-relative ms-3">
                     <a class="nav-link cart-icon" href="{{ route('keranjang') }}">
                         <i class="fas fa-shopping-cart fa-lg"></i>
                         @php
-                            $cart = session('cart', []);
+                        $cart = session('cart', []);
 
-                            $totalCart = 0;
+                        $totalCart = 0;
 
-                            foreach ($cart as $item) {
-                                $totalCart += $item['qty'];
-                            }
+                        foreach ($cart as $item) {
+                        $totalCart += $item['qty'];
+                        }
                         @endphp
 
                         <span class="badge bg-danger rounded-circle position-absolute">

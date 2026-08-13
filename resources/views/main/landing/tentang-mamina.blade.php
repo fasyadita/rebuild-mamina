@@ -65,6 +65,9 @@
 
     .icon {
         font-size: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .service-item {
@@ -83,13 +86,11 @@
     .service-icon {
         width: 50px;
         height: 50px;
-        border-radius: 50%;
-        background: #FFF6E5;
-
+        border: 2px solid #3D9F9E;
+        border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-
         font-size: 24px;
         flex-shrink: 0;
     }
@@ -183,10 +184,14 @@
 
             {{-- Right --}}
             <div class="col-lg-7">
+                <div class="flex items-center gap-2 mb-4">
 
-                <span class="badge-about">
-                    TENTANG MAMINA
-                </span>
+                    <div class="w-6 h-6 rounded-full bg-[#CBF1E8]"></div>
+
+                    <span class="badge-about">
+                        TENTANG MAMINA
+                    </span>
+                </div>
 
                 <h2 class="title mt-2">
                     Kenapa Bunda percaya
@@ -245,6 +250,9 @@
                 </div>
 
                 <div class="text-end mt-3">
+                    <a href="#" class="btn-service">
+                        Lihat Semua Terapis
+                    </a>
                     <a href="#" class="btn-service">
                         Lihat Semua Layanan
                     </a>

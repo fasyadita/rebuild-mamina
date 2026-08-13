@@ -58,12 +58,11 @@
     }
 
     .icon {
-      width: 28px;
       height: 28px;
       border-radius: 50%;
       display: flex;
-      align-items: start;
-      justify-content: start;
+      align-items: center;
+      justify-content: center;
       color: #4f8b8b;
       font-weight: 700;
       font-size: 16px;
