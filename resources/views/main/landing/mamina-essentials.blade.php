@@ -281,18 +281,29 @@
     }
 </style>
 
-<section id="essentials" class="product-section">
-    <div class="container">
+<section id="essenials" class="product-section">
+    <div class="max-w-6xl mx-auto">
 
         {{-- Heading --}}
         <div class="section-header mb-5">
 
-            <div class="d-flex align-items-center mb-3">
-                <div class="circle"></div>
+            <div class="flex items-center gap-2 mb-3">
 
-                <span class="section-badge ms-3">
+                <div class="w-6 h-6 rounded-full bg-[#FFE8E2]"></div>
+
+                <span
+                    class="px-3 py-1 rounded-full
+                bg-[#FFE8E2]
+                text-[#F08B71]
+                text-[12px]
+                font-semibold
+                uppercase
+                tracking-widest">
+
                     MAMINA ESSENTIALS
+
                 </span>
+
             </div>
 
             <h2 class="section-title">

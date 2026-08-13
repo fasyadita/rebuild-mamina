@@ -127,8 +127,8 @@
     }
 </style>
 
-<section id="about" class="about-mamina py-4">
-    <div class="container">
+<section id="tentang" class="tentang-mamina py-4">
+    <div class="max-w-6xl mx-auto">
         <div class="row align-items-center">
 
             {{-- Left --}}
@@ -184,15 +184,24 @@
 
             {{-- Right --}}
             <div class="col-lg-7">
-                <div class="flex items-center gap-2 mb-4">
+                <div class="flex items-center gap-2 mb-3">
 
                     <div class="w-6 h-6 rounded-full bg-[#CBF1E8]"></div>
 
-                    <span class="badge-about">
-                        TENTANG MAMINA
-                    </span>
-                </div>
+                    <span
+                        class="px-3 py-1 rounded-full
+                bg-[#CBF1E8]
+                text-[#3D9F9E]
+                text-[12px]
+                font-semibold
+                uppercase
+                tracking-widest">
 
+                        TENTANG MAMINA
+
+                    </span>
+
+                </div>
                 <h2 class="title mt-2">
                     Kenapa Bunda percaya
                     <span>Mamina?</span>

@@ -193,10 +193,24 @@
 
   <section id="kelas-pro" class="section">
     <div class="left">
-      <div class="badge">
-        <span class="dot"></span>
-        Untuk Tenaga Kesehatan
-      </div>
+      <div class="flex items-center gap-2 mb-3">
+
+            <div class="w-6 h-6 rounded-full bg-[#FFE8E2]"></div>
+
+            <span
+                class="px-3 py-1 rounded-full
+                bg-[#FFE8E2]
+                text-[#F08B71]
+                text-[12px]
+                font-semibold
+                uppercase
+                tracking-widest">
+
+                UNTUK TENAGA KESEHATAN
+
+            </span>
+
+        </div>
 
       <h1>Tingkatkan Kompetensi Laktasimu</h1>
 

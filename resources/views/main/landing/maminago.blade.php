@@ -9,24 +9,27 @@
     <div class="relative max-w-7xl mx-auto px-5 lg:px-9">
 
         <!-- Badge -->
-        <div class="flex items-center gap-2 mb-4">
+        <div class="section-heading">
 
-            <div class="w-6 h-6 rounded-full bg-[#FFD8D2] flex items-center justify-center text-lg">
-                🤱
-            </div>
+            <div class="flex items-center gap-2 mb-3">
 
-            <span class="px-4 py-1 rounded-full
-                bg-[#FFE7E2]
-                text-[#F48B83]
-                text-xs
+            <div class="w-6 h-6 rounded-full bg-[#CBF1E8]"></div>
+
+            <span
+                class="px-3 py-1 rounded-full
+                bg-[#CBF1E8]
+                text-[#3D9F9E]
+                text-[12px]
                 font-semibold
-                uppercase">
+                uppercase
+                tracking-widest">
 
-                MaminaGo! - Mitra Homecare
+                MAMINAGO - MITRA HOMECARE
 
             </span>
 
         </div>
+
 
         <!-- Heading -->
         <div class="text-center max-w-3xl mx-auto">

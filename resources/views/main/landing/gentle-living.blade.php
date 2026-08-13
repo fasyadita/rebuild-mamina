@@ -347,15 +347,24 @@
 
         <div class="section-heading">
 
-            <div class="d-flex align-items-center mb-2">
+            <div class="flex items-center gap-2 mb-3">
 
-                <div class="heading-circle"></div>
+            <div class="w-6 h-6 rounded-full bg-[#CBF1E8]"></div>
 
-                <span class="heading-badge ms-2">
-                    GENTLE LIVING
-                </span>
+            <span
+                class="px-3 py-1 rounded-full
+                bg-[#CBF1E8]
+                text-[#3D9F9E]
+                text-[12px]
+                font-semibold
+                uppercase
+                tracking-widest">
 
-            </div>
+                GENTLE LIVING
+
+            </span>
+
+        </div>
 
 
             <h2 class="section-title">

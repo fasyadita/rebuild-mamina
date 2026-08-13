@@ -1,19 +1,24 @@
-<section class="bg-[#fffdeb] py-6 px-4">
+<section id="artikel" class="bg-[#fffdeb] py-6 px-4">
     <div class="max-w-6xl mx-auto">
 
         {{-- Heading --}}
-        <div class="mb-6">
-            <div class="flex items-center gap-2 mb-3">
+        <div class="flex items-center gap-2 mb-3">
 
-                <div class="w-5 h-5 rounded-full bg-[#FFDAD1]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#FFE8E2]"></div>
 
-                <span class="badge-artikel text-[#E18883] bg-[#FFDAD1] px-2.5 py-1 rounded-[14px] text-xs">
-                    ARTIKEL PILIHAN
-                </span>
+            <span
+                class="px-3 py-1 rounded-full
+                bg-[#FFE8E2]
+                text-[#F08B71]
+                text-[12px]
+                font-semibold
+                uppercase
+                tracking-widest">
 
-            </div>
+                ARTIKEL PILIHAN
 
-            <div class="w-full h-[1px] bg-[#CFC8B7]"></div>
+            </span>
+
         </div>
 
 
