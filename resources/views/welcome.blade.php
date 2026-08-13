@@ -9,7 +9,7 @@
     @include('main.landing.layanan-unggulan')
     @include('main.landing.mamina-essentials')
     @include('main.landing.gentle-living')
-    @include('main.landing.lactasi-class').
+    @include('main.landing.lactasi-class')
     @include('main.landing.maminago')
     @include('main.landing.testimony')
     @include('main.landing.cabang')

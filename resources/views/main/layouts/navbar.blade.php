@@ -149,31 +149,31 @@
             <ul class="navbar-nav align-items-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}">Tentang Mamina</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#tentang">Tentang Mamina</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#about">Artikel</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#artikel">Artikel</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#testimony">Treatment</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#layanan-unggulan">Treatment</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('event') }}">Essentials</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#essentials">Essentials</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#cabang">Gentle Living</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#gentle-living">Gentle Living</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#cabang">Kelas Pro</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#kelas-pro">Kelas Pro</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#cabang">Mamina Go</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#maminago">Mamina Go</a>
                 </li>
 
                 <li class="nav-item position-relative ms-3">

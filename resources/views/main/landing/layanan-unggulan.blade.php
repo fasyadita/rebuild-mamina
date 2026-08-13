@@ -1,26 +1,26 @@
 <!-- Treatment Section -->
-<section id="treatment"
-    class="relative py-12 bg-gradient-to-b from-[#FFF8EA] via-[#FFFDF7] to-white overflow-hidden">
+<section id="layanan-unggulan" class="relative py-12 bg-gradient-to-b from-[#FFF8EA] via-[#FFFDF7] to-white overflow-hidden">
 
     <!-- Glow Background -->
     <div
         class="absolute top-8 left-1/2 -translate-x-1/2
-        w-[400px] h-[400px]
-        rounded-full bg-[#FFF2B8]/60 blur-[110px]">
+    w-[400px] h-[400px]
+    rounded-full bg-[#FFF2B8]/60 blur-[110px]">
     </div>
 
-    <div class="relative max-w-6xl mx-auto px-5 lg:px-8">
+
+    <div class="max-w-6xl mx-auto">
 
         <!-- Badge -->
         <div class="flex items-center gap-2 mb-3">
 
-            <div class="w-4 h-4 rounded-full bg-[#FFD6CC]"></div>
+            <div class="w-6 h-6 rounded-full bg-[#CBF1E8]"></div>
 
             <span
                 class="px-3 py-1 rounded-full
-                bg-[#FFE8E2]
-                text-[#F08B71]
-                text-[10px]
+                bg-[#CBF1E8]
+                text-[#3D9F9E]
+                text-[12px]
                 font-semibold
                 uppercase
                 tracking-widest">
@@ -47,8 +47,7 @@
 
         <!-- Card -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-                    gap-4 mt-7 max-w-5xl mx-auto">
-
+            gap-4 mt-7">
 
             <!-- Card 1 -->
             <div
@@ -362,6 +361,7 @@
 
         </div>
 
+    </div>
     </div>
 
 </section>
