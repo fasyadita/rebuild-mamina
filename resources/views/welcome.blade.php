@@ -4,9 +4,9 @@
 
 @section('content')
     @include('main.landing.home')
-    @include('main.landing.about')
+    @include('main.landing.tentang-mamina')
     @include('main.landing.artikel')
-    @include('main.landing.treatment-section')
+    @include('main.landing.layanan-unggulan')
     @include('main.landing.mamina-essentials')
     @include('main.landing.gentle-living')
     @include('main.landing.lactasi-class').
