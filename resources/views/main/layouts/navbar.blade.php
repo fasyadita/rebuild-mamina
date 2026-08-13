@@ -8,7 +8,6 @@
         left: 0;
         z-index: 999;
         background: #fffdeb;
-        /* putih/cream */
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         height: 90px;
         width: 100%;

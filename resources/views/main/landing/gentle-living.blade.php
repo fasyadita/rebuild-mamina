@@ -1,144 +1,205 @@
-<!-- ================= Gentle Living ================= -->
-<section class="relative py-24 bg-[#FFFBEF] overflow-hidden">
+<style>
+    .gentle-living {
+        background: #FFFDF4;
+    }
 
-    <!-- Glow -->
-    <div class="absolute left-1/2 top-20 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[#FFF5CC] blur-[180px] opacity-60"></div>
+    .heading-circle {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #D9F2EC;
+    }
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+    .heading-badge {
+        background: #DDF5EF;
+        padding: 10px 24px;
+        border-radius: 30px;
+        color: #4F9D9A;
+        font-weight: 700;
+    }
 
-        <!-- Badge -->
-        <div class="flex items-center gap-3 mb-5">
+    .section-title {
+        font-size: 58px;
+        font-weight: 800;
+        line-height: 1.2;
+    }
 
-            <div class="w-7 h-7 rounded-full bg-[#FFD6CF]"></div>
+    .section-title .pink {
+        color: #E89A96;
+    }
 
-            <span
-                class="px-5 py-2 rounded-full
-                bg-[#FFE8E2]
-                text-[#F48E85]
-                text-xs
-                font-semibold uppercase">
+    .section-title .green {
+        color: #4F9D9A;
+    }
 
-                GENTLE LIVING
+    .section-description {
+        color: #777;
+        font-size: 20px;
+        max-width: 760px;
+    }
 
-            </span>
+    .living-card {
+        background: linear-gradient(135deg, #E7F4FA, #F7EEF8);
+        border-radius: 28px;
+        padding: 35px;
+        height: 100%;
+        text-align: center;
+    }
+
+    .living-logo {
+        width: 220px;
+    }
+
+    .living-card h4 {
+        color: #4F9D9A;
+        font-weight: 700;
+    }
+
+    .living-card p {
+        color: #6f6f6f;
+        margin-top: 15px;
+    }
+
+    .feature-box {
+        background: white;
+        border: 1px solid #C8E8E4;
+        border-radius: 12px;
+        padding: 18px;
+        height: 100%;
+    }
+
+    .feature-box strong {
+        display: block;
+        color: #4F9D9A;
+    }
+
+    .feature-box small {
+        color: #666;
+    }
+
+    .living-product {
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        border: 2px solid #56A6A2;
+        border-radius: 18px;
+
+        background: #FFFDF5;
+
+        padding: 18px;
+
+        transition: .3s;
+    }
+
+    .living-product:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
+    }
+
+    .product-thumb {
+
+        width: 58px;
+        height: 58px;
+
+        border-radius: 12px;
+        background: #FFEFA3;
+        object-fit: cover;
+    }
+
+    .living-product h5 {
+        margin-bottom: 6px;
+        font-weight: 700;
+    }
+
+    .living-product p {
+        margin: 0;
+        color: #666;
+    }
+
+    .product-price {
+
+        min-width: 120px;
+        text-align: right;
+
+        color: #4F9D9A;
+        font-weight: 700;
+        font-size: 22px;
+    }
+</style>
+
+<section id="gentle-living" class="gentle-living py-5">
+    <div class="container">
+
+        {{-- Heading --}}
+        <div class="section-heading mb-5">
+
+            <div class="d-flex align-items-center mb-3">
+                <div class="heading-circle"></div>
+
+                <span class="heading-badge ms-3">
+                    GENTLE LIVING
+                </span>
+            </div>
+
+            <h2 class="section-title">
+                Hidup Lebih <span class="pink">Gentle,</span><br>
+                Lebih <span class="green">Alami</span>
+            </h2>
+
+            <p class="section-description">
+                Koleksi produk perawatan natural yang dikurasi khusus oleh tim
+                Mamina — untuk ibu, bayi, dan keluarga yang memilih cara hidup
+                lebih gentle.
+            </p>
 
         </div>
 
-        <!-- Heading -->
-        <h2 class="text-5xl font-bold leading-tight">
+        <div class="row g-4 align-items-stretch">
 
-            <span class="text-[#F48E85]">
-                Hidup Lebih
-            </span>
+            {{-- Left Card --}}
+            <div class="col-lg-5">
 
-            <span class="text-[#43B7BB]">
-                Gentle,
-            </span>
+                <div class="living-card">
 
-            <br>
+                    <img src="{{ asset('images/gentleliving-logo.png') }}" class="living-logo mb-3" alt="Gentle Living">
 
-            <span class="text-[#F48E85]">
-                Lebih Alami
-            </span>
+                    <h4>Gentle Living by Mamina</h4>
 
-        </h2>
+                    <p>
+                        Alam menyediakan yang terbaik. Kami meraciknya
+                        dengan penuh cinta untuk Bunda dan Si Kecil.
+                    </p>
 
-        <p class="mt-4 text-gray-500 max-w-3xl leading-8">
+                    <div class="row g-3 mt-3">
 
-            Koleksi produk perawatan natural yang dikurasi khusus oleh tim
-            Mamina — untuk ibu, bayi, dan keluarga yang memilih cara hidup
-            lebih gentle.
-
-        </p>
-
-        <!-- Content -->
-        <div class="grid lg:grid-cols-2 gap-10 mt-14">
-
-            <!-- LEFT CARD -->
-            <div
-                class="bg-gradient-to-br
-                from-[#DFF7E4]
-                to-[#FFF5BF]
-                rounded-[28px]
-                shadow-xl
-                p-8">
-
-                <h3 class="text-center text-[#43B7BB] text-2xl font-bold">
-
-                    Gentle Living by Mamina
-
-                </h3>
-
-                <p class="text-center text-sm text-gray-500 mt-2">
-
-                    Alam menyediakan yang terbaik.
-                    Kami meraciknya dengan penuh cinta
-                    untuk Bunda dan Si Kecil.
-
-                </p>
-
-                <div class="grid grid-cols-2 gap-5 mt-8">
-
-                    <div class="bg-white rounded-xl p-5 text-center">
-
-                        <div class="text-[#43B7BB] font-bold">
-
-                            100% Natural
-
+                        <div class="col-6">
+                            <div class="feature-box">
+                                <strong>100% Natural</strong>
+                                <small>Bebas bahan kimia</small>
+                            </div>
                         </div>
 
-                        <div class="text-xs text-gray-500 mt-2">
-
-                            Bahan berkualitas
-
+                        <div class="col-6">
+                            <div class="feature-box">
+                                <strong>Derm Tested</strong>
+                                <small>Aman kulit sensitif</small>
+                            </div>
                         </div>
 
-                    </div>
-
-                    <div class="bg-white rounded-xl p-5 text-center">
-
-                        <div class="text-[#43B7BB] font-bold">
-
-                            Dermatology Tested
-
+                        <div class="col-6">
+                            <div class="feature-box">
+                                <strong>Produk Lokal</strong>
+                                <small>Made in Indonesia</small>
+                            </div>
                         </div>
 
-                        <div class="text-xs text-gray-500 mt-2">
-
-                            Aman untuk kulit sensitif
-
-                        </div>
-
-                    </div>
-
-                    <div class="bg-white rounded-xl p-5 text-center">
-
-                        <div class="text-[#43B7BB] font-bold">
-
-                            Produk Lokal
-
-                        </div>
-
-                        <div class="text-xs text-gray-500 mt-2">
-
-                            Made in Indonesia
-
-                        </div>
-
-                    </div>
-
-                    <div class="bg-white rounded-xl p-5 text-center">
-
-                        <div class="text-[#43B7BB] font-bold">
-
-                            Terdaftar BPOM
-
-                        </div>
-
-                        <div class="text-xs text-gray-500 mt-2">
-
-                            Terverifikasi resmi
-
+                        <div class="col-6">
+                            <div class="feature-box">
+                                <strong>Terdaftar BPOM</strong>
+                                <small>Tersertifikasi resmi</small>
+                            </div>
                         </div>
 
                     </div>
@@ -147,125 +208,72 @@
 
             </div>
 
-            <!-- RIGHT -->
-            <div class="space-y-5">
+            {{-- Right Product List --}}
 
-                <!-- Product -->
-                <div
-                    class="bg-white
-                    rounded-2xl
-                    border
-                    border-[#43B7BB]
-                    p-4
-                    flex
-                    items-center
-                    justify-between">
+            <div>
 
-                    <div class="flex items-center gap-4">
+                {{-- Product 1 --}}
+                <div class="living-product mb-3">
 
-                        <div class="w-16 h-16 rounded-xl bg-[#FFF2B6]"></div>
+                    <img src="{{ asset('assets/images/product-1.jpg') }}" alt="Nama Produk 1" class="product-thumb">
 
-                        <div>
+                    <div class="flex-grow-1">
 
-                            <h4 class="font-semibold">
+                        <h5>Nama Produk 1</h5>
 
-                                Calming Sleep Lotion
-
-                            </h4>
-
-                            <p class="text-sm text-gray-500">
-
-                                Lavender & chamomile —
-                                rutinitas tidur si kecil
-
-                            </p>
-
-                        </div>
+                        <p>Deskripsi singkat produk 1.</p>
 
                     </div>
 
-                    <div class="text-[#43B7BB] font-bold">
-
-                        Rp 95.000
-
+                    <div class="product-price">
+                        Rp 50.000
                     </div>
 
                 </div>
 
-                <!-- Product -->
-                <div
-                    class="bg-white rounded-2xl border border-[#43B7BB] p-4 flex items-center justify-between">
 
-                    <div class="flex items-center gap-4">
+                {{-- Product 2 --}}
+                <div class="living-product mb-3">
 
-                        <div class="w-16 h-16 rounded-xl bg-[#FFF2B6]"></div>
+                    <img src="{{ asset('assets/images/product-2.jpg') }}" alt="Nama Produk 2" class="product-thumb">
 
-                        <div>
+                    <div class="flex-grow-1">
 
-                            <h4 class="font-semibold">
+                        <h5>Nama Produk 2</h5>
 
-                                Calming Sleep Lotion
-
-                            </h4>
-
-                            <p class="text-sm text-gray-500">
-
-                                Lavender & chamomile —
-                                rutinitas tidur si kecil
-
-                            </p>
-
-                        </div>
+                        <p>Deskripsi singkat produk 2.</p>
 
                     </div>
 
-                    <div class="text-[#43B7BB] font-bold">
-
-                        Rp 95.000
-
+                    <div class="product-price">
+                        Rp 75.000
                     </div>
 
                 </div>
 
-                <!-- Product -->
-                <div
-                    class="bg-white rounded-2xl border border-[#43B7BB] p-4 flex items-center justify-between">
+                {{-- Product 3 --}}
+                <div class="living-product mb-3">
 
-                    <div class="flex items-center gap-4">
+                    <img src="{{ asset('assets/images/product-3.jpg') }}" alt="Nama Produk 3" class="product-thumb">
 
-                        <div class="w-16 h-16 rounded-xl bg-[#FFF2B6]"></div>
+                    <div class="flex-grow-1">
 
-                        <div>
+                        <h5>Nama Produk 3</h5>
 
-                            <h4 class="font-semibold">
-
-                                Calming Sleep Lotion
-
-                            </h4>
-
-                            <p class="text-sm text-gray-500">
-
-                                Lavender & chamomile —
-                                rutinitas tidur si kecil
-
-                            </p>
-
-                        </div>
+                        <p>Deskripsi singkat produk 3.</p>
 
                     </div>
 
-                    <div class="text-[#43B7BB] font-bold">
-
-                        Rp 95.000
-
+                    <div class="product-price">
+                        Rp 100.000
                     </div>
 
                 </div>
 
             </div>
+
 
         </div>
 
     </div>
-
 </section>
