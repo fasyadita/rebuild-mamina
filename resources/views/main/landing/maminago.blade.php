@@ -1,5 +1,5 @@
 <!-- ================= MaminaGo ================= -->
-<section id="maminago" class="relative py-16 bg-[#FFFBEF] overflow-hidden">
+<section id="maminago" class="relative py-16" style="background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);">
 
     <!-- Background Glow -->
     <div

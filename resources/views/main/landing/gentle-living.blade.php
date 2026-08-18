@@ -4,7 +4,7 @@
     ===================================== */
 
     .gentle-living {
-        background: #FFFDF4;
+        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
         padding: 50px 0 !important;
     }
 

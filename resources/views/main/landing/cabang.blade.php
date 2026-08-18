@@ -261,7 +261,7 @@
 
         padding: 57px 0;
 
-        background: #FFFDEB;
+        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
 
         width: 100%;
 
