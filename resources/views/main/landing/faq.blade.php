@@ -1,4 +1,10 @@
-<section class="bg-[#fffdeb] py-10 px-5 relative" id="faq-section">
+<style>
+    .faq{
+        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
+    }
+</style>
+
+<section class="faq py-10 px-5 relative" id="faq-section">
     <div class="max-w-6xl mx-auto">
 
         {{-- Header FAQ --}}
@@ -8,11 +14,11 @@
             <div class="flex items-center gap-2 mb-2">
 
                 {{-- Lingkaran --}}
-                <div class="w-7 h-7 rounded-full bg-[#FFD9D2]"></div>
+                <div class="w-7 h-7 rounded-full bg-[#FFC6B5]"></div>
 
                 {{-- Badge FAQ --}}
-                <span class="bg-[#FFE1DB]
-            text-[#E9958F]
+                <span class="bg-[#FFC6B5]
+            text-[#B5706C]
             px-3 py-1.5
             rounded-full
             text-xs

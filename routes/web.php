@@ -19,11 +19,12 @@ Route::get('/artikel', fn() => view('main.artikel.artikel-page'))->name('artikel
 Route::get('/artikel/detail', fn() => view('main.artikel.content-artikel'))->name('artikel.detail');
 Route::get('/guest', fn() => view('welcome-guest'))->name('guest');
 Route::get('/keranjang', [KeranjangController::class, 'index'])->name('keranjang');
+Route::get('/reservasi/form-input', [ReservasiController::class, 'formInput'])->name('reservasi.form-input');
 Route::post('/cart/add/{id}', [KeranjangController::class, 'add'])->name('cart.add');
 Route::post('/cart/remove/{id}', [KeranjangController::class, 'remove'])->name('cart.remove');
 Route::post('/cart/decrease/{id}', [KeranjangController::class, 'decrease'])->name('cart.decrease');
 Route::get('/reservasi', [ReservasiController::class, 'index'])->name('reservasi');
-Route::get('/reservasi/select', [ReservasiController::class, 'select'])->name('reservasi.select');
+Route::post('/reservasi/select', [ReservasiController::class, 'select'])->name('reservasi.select');
 Route::get('/reservasi/{service}', [ReservasiController::class, 'form'])->name('reservasi.form');
 Route::post('/reservasi/submit', [ReservasiController::class, 'submit'])->name('reservasi.submit');
 Route::get('/pricelist', fn() => view('main.pricelist.pricelist'));

@@ -33,7 +33,7 @@
     }
 
     .feature-card {
-        background: #F9EEDF;
+        background: #FFC6B5;
         border-radius: 16px;
         padding: 18px;
         height: 100%;

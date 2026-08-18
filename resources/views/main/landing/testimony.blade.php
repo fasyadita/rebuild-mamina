@@ -1,4 +1,6 @@
 <!-- ================= TESTIMOMMY ================= -->
+
+
 <section id="testimony" class="testimommy-section">
 
     <div class="container-fluid">
@@ -11,12 +13,12 @@
 
                 <div class="flex items-center gap-2 mb-3">
 
-                    <div class="w-6 h-6 rounded-full bg-[#FFE8E2]"></div>
+                    <div class="w-6 h-6 rounded-full bg-[#FFC6B5]"></div>
 
                     <span
                         class="px-3 py-1 rounded-full
-                bg-[#FFE8E2]
-                text-[#F08B71]
+                bg-[#FFC6B5]
+                text-[#B5706C]
                 text-[12px]
                 font-semibold
                 uppercase
@@ -441,9 +443,8 @@
 
 <style>
     body {
-        background-color: #FFFDEB;
+        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
     }
-
 
     /* ================= SECTION ================= */
 
@@ -451,7 +452,7 @@
 
         padding: 60px 0;
 
-        background-color: #FFFDEB;
+        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
 
         overflow: hidden;
 
@@ -677,7 +678,8 @@
 
     .testi-card {
 
-        background-color: #FFDCD1;
+        background-color: #CBF1E8;
+        opacity: 80%;
 
         min-width: 320px;
 
