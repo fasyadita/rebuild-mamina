@@ -90,129 +90,82 @@ class ReservasiController extends Controller
     {
         $service = $request->input('service');
         $branch  = $request->input('branch');
-        $cart    = $request->session()->get('cart', []);
+
+        // Fallback to session if hidden inputs are empty
+        if (empty($service)) $service = session('reservasi.service', 'outlet');
+        if (empty($branch))  $branch  = session('reservasi.branch', 'malang');
+
+        $cart = $request->session()->get('cart', []);
 
         if (empty($cart)) {
             return back()->with('error', 'Keranjang masih kosong. Tambahkan layanan terlebih dahulu.');
         }
 
+        // Validate branch
+        if (!array_key_exists($branch, $this->branches)) {
+            return back()->with('error', 'Cabang tidak valid.')->withInput();
+        }
+
         $rules = [
-            'service'            => ['required', 'in:outlet,homecare'],
-            'branch'             => ['required', 'in:malang,kediri'],
             'name'               => ['required', 'string', 'max:255'],
+            'no_tlp'             => ['required', 'string', 'max:20'],
             'pregnancy_age'      => ['nullable', 'string', 'max:100'],
-            'child_name'         => ['nullable', 'string', 'max:255'],
+            'baby_nickname'      => ['nullable', 'string', 'max:255'],
             'baby_age'           => ['nullable', 'string', 'max:50'],
             'complaint'          => ['nullable', 'string', 'max:500'],
-            'previous_treatment' => ['nullable', 'string', 'max:255'],
-            'address'            => ['nullable', 'string', 'max:500'],
+            'address'            => ['nullable', 'string', 'max:1000'],
             'referral'           => ['nullable', 'string', 'max:255'],
-            'is_member'          => ['nullable', 'in:Sudah,Belum'],
-            'payment_method'     => ['required', 'in:Tunai,Transfer'],
-            'date'               => ['required', 'date'],
+            'is_member'          => ['nullable', 'string', 'max:10'],
         ];
-
-        if ($service === 'homecare') {
-            $rules['address'] = ['required', 'string', 'max:500'];
-        }
-
-        if ($service === 'outlet') {
-            $rules['outlet_choice'] = ['required', 'in:Sawojajar,Suhat'];
-            $rules['time']          = ['required', 'string', 'max:50'];
-            $rules['baby_nickname'] = ['nullable', 'string', 'max:255'];
-            $rules['baby_age']      = ['nullable', 'string', 'max:50'];
-            $rules['complaint']     = ['nullable', 'string', 'max:500'];
-        }
 
         $validated = $request->validate($rules);
 
-        if (!array_key_exists($branch, $this->branches)) {
-            abort(404);
-        }
+        // Get date & time — prefer form input, fallback to session
+        $date = $request->input('date') ?: session('reservasi.date', date('Y-m-d'));
+        $time = $request->input('time') ?: session('reservasi.time', '');
 
-        $cart      = session()->get('cart', []);
-        $cartText  = '';
-        $total     = 0;
+        // Save to Database
+        try {
+            $branchId = ($branch === 'kediri') ? 2 : 1;
 
-        if (!empty($cart)) {
+            $reservasi = \App\Models\Reservasi::create([
+                'id_number'      => 'RES-' . date('YmdHis') . rand(100, 999),
+                'branch_id'      => $branchId,
+                'sale_type'      => $service,
+                'nama_cust'      => $validated['name'] ?? '',
+                'nama_anak'      => $validated['baby_nickname'] ?? '',
+                'usia_kehamilan' => $validated['pregnancy_age'] ?? '',
+                'usia_anak'      => $validated['baby_age'] ?? '',
+                'no_tlp'         => $validated['no_tlp'] ?? '-',
+                'tanggal'        => $date,
+                'sesi'           => $time,
+                'status'         => 'Pending',
+                'note'           => $validated['complaint'] ?? '',
+                'user_id'        => auth()->id(),
+            ]);
+
             foreach ($cart as $item) {
-                $subtotal  = ($item['price'] ?? 0) * ($item['qty'] ?? 1);
-                $total    += $subtotal;
-                $cartText .= sprintf(
-                    "- %s x%s: Rp %s\n",
-                    $item['name'] ?? 'Layanan',
-                    $item['qty']  ?? 1,
-                    number_format($subtotal, 0, ',', '.')
-                );
+                \App\Models\Detail::create([
+                    'reservation_id' => $reservasi->id,
+                    'product_id'     => $item['id'] ?? null,
+                    'service_name'   => $item['name'] ?? 'Layanan',
+                    'therapist_id'   => null,
+                    'qty'            => $item['qty'] ?? 1,
+                    'note'           => '',
+                ]);
             }
-            $cartText .= "\nTotal Keranjang: Rp " . number_format($total, 0, ',', '.') . "\n";
-        } else {
-            $cartText = "- Tidak ada layanan di keranjang saat ini.\n";
+
+            // Clear session setelah berhasil
+            $request->session()->forget(['cart', 'reservasi']);
+
+            return redirect()->route('beranda')->with('success', 'Pengajuan reservasi berhasil dikirim! ✅');
+
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Error saving reservasi: ' . $e->getMessage());
+            return back()
+                ->with('error', 'Gagal menyimpan reservasi: ' . $e->getMessage())
+                ->withInput();
         }
-
-        if ($service === 'outlet') {
-            $dayEng  = Carbon::parse($validated['date'])->format('l');
-            $dayMap  = [
-                'Monday'    => 'Senin',
-                'Tuesday'   => 'Selasa',
-                'Wednesday' => 'Rabu',
-                'Thursday'  => 'Kamis',
-                'Friday'    => 'Jumat',
-                'Saturday'  => 'Sabtu',
-                'Sunday'    => 'Minggu',
-            ];
-            $dayIndo = $dayMap[$dayEng] ?? $dayEng;
-
-            $message  = "Mohon Diisi Dengan Lengkap Bunda dan Memakai Format yang Kami Kirimkan\n\n";
-            $message .= "🥦 *Reservasi OUTLET Mamina " . $this->branches[$branch] . "* 🥦 \n\n";
-            $message .= "*Pilihan Outlet* :";
-            $message .= "(" . ($validated['outlet_choice'] ?? '-') . ")\n\n";
-            $message .= "*Nama Bunda* : "              . ($validated['name']               ?? '-') . "\n";
-            $message .= "*Usia Kehamilan* : "          . ($validated['pregnancy_age']      ?: '-') . "\n";
-            $message .= "(Jika treatment bumil) \n";
-            $message .= "*Nama Panggilan Bayi* : "     . ($validated['baby_nickname']      ?: '-') . "\n";
-            $message .= "*Usia Bayi* : "               . ($validated['baby_age']           ?: '-') . "\n";
-            $message .= "*Keluhan* : "                 . ($validated['complaint']          ?: '-') . "\n";
-            $message .= "*Tanggal Treatment* : "       . ($validated['date']               ?? '-') . "\n";
-            $message .= "*Hari Treatment* : "          . $dayIndo                                  . "\n";
-            $message .= "*Jam Treatment* : "           . ($validated['time']               ?? '-') . "\n";
-            $message .= "*Jenis Pembayaran* : "        . ($validated['payment_method']     ?? '-') . "\n";
-            $message .= "(Tunai/Transfer) \n";
-            $message .= "*Tau Mamina dari* : "         . ($validated['referral']           ?: '-') . "\n";
-            $message .= "*Pernah Treatment atau Baru Pertama Kali* : " . ($validated['previous_treatment'] ?: '-') . "\n";
-            $message .= "*Sudah Mendaftar Member*: "   . ($validated['is_member']          ?: '-') . "\n\n";
-            $message .= "*MOHON DI ISI DENGAN LENGKAP NGGIH*🙏\n\n";
-            $message .= "🌸 *Jika form tidak diisi dalam waktu 10 menit maka akan kami berikan slotnya ke bunda lain jika ada yang reservasi lebih dahulu*🌸\n\n";
-            $message .= "🌸 *Harap Datang Tepat Waktu Sesuai Dengan Jam Reservasi Nggih Bunda, Konfirmasi Telat Maksimal 2 Jam Sebelum Jadwal Treatment, Apabila Telat Tanpa Konfirmasi Lebih Dari 10 Menit Akan Kami Anggap Cancel*🌸\n\n";
-            $message .= "🌸 *TERIMAKASIH* 🌸\n";
-            $message .= "🌸 *MAMINA " . $this->branches[$branch] . "* 🌸\n\n";
-            $message .= "*Detail Keranjang*\n" . $cartText;
-        } else {
-            $message  = "Mohon Diisi Dengan Lengkap Bunda dan Memakai Format yang Kami Kirimkan\n\n";
-            $message .= "🥦 *Reservasi HOMECARE Mamina " . $this->branches[$branch] . "* 🥦 \n\n";
-            $message .= "*Nama Bunda* : "              . ($validated['name']               ?? '-') . "\n";
-            $message .= "*Usia Kehamilan* : "          . ($validated['pregnancy_age']      ?: '-') . "\n";
-            $message .= "(Jika treatment bumil) \n";
-            $message .= "*Usia Bayi* : "               . ($validated['baby_age']           ?: '-') . "\n";
-            $message .= "*Keluhan* : "                 . ($validated['complaint']          ?: '-') . "\n";
-            $message .= "*Tanggal Treatment* : "       . ($validated['date']               ?? '-') . "\n";
-            $message .= "*Jenis Pembayaran* : "        . ($validated['payment_method']     ?? '-') . "\n";
-            $message .= "(Tunai/Transfer) \n";
-            $message .= "*Tau Mamina dari* : "         . ($validated['referral']           ?: '-') . "\n";
-            $message .= "*Pernah Treatment atau Baru Pertama Kali* : " . ($validated['previous_treatment'] ?: '-') . "\n";
-            $message .= "*Sudah Mendaftar Member*: "   . ($validated['is_member']          ?: '-') . "\n\n";
-            $message .= "*MOHON DI ISI DENGAN LENGKAP NGGIH*🙏\n\n";
-            $message .= "🌸 *Jika form tidak diisi dalam waktu 10 menit maka akan kami berikan slotnya ke bunda lain jika ada yang reservasi lebih dahulu*🌸\n\n";
-            $message .= "🌸 *Harap Datang Tepat Waktu Sesuai Dengan Jam Reservasi Nggih Bunda, Konfirmasi Telat Maksimal 2 Jam Sebelum Jadwal Treatment, Apabila Telat Tanpa Konfirmasi Lebih Dari 10 Menit Akan Kami Anggap Cancel*🌸\n\n";
-            $message .= "🌸 *TERIMAKASIH* 🌸\n";
-            $message .= "🌸 *MAMINA " . $this->branches[$branch] . "* 🌸\n\n";
-            $message .= "*Detail Keranjang*\n" . $cartText;
-        }
-
-        $phone       = $this->adminPhones[$branch] ?? reset($this->adminPhones);
-        $whatsappUrl = 'https://wa.me/' . $phone . '?text=' . urlencode($message);
-
-        return redirect()->away($whatsappUrl);
     }
 
     public function formInput(Request $request)

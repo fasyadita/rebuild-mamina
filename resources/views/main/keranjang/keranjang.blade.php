@@ -19,7 +19,7 @@
         padding: 0;
     }
 
-    .container {
+    .cart-container {
         max-width: 1100px;
         margin: 0 auto;
         padding-top: 100px;
@@ -42,7 +42,6 @@
 
     /* Area Konten Hijau Mint */
     .cart-content {
-        background-color: #CFF3EB;
         /* Warna hijau mint background */
         padding: 40px;
         min-height: 400px;
@@ -275,7 +274,7 @@
     }
 </style>
 
-<div class="container">
+<div class="container cart-container">
     <div class="header">
         <h1>Keranjang Kamu</h1>
     </div>

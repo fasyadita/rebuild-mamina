@@ -1,8 +1,7 @@
-
 <style>
     * {
         box-sizing: border-box;
-        margin : 0;
+        margin: 0;
     }
 
     .form-reservasi-page {
@@ -53,7 +52,7 @@
     .form-sidebar-description {
         width: 270px;
         margin: 10px 0 28px;
-        color: rgba(255,255,255,0.9);
+        color: rgba(255, 255, 255, 0.9);
         font-size: 12px;
         line-height: 1.6;
     }
@@ -64,8 +63,8 @@
         margin-bottom: 20px;
         padding: 14px 16px;
 
-        background: rgba(255,255,255,0.18);
-        border: 1px solid rgba(255,255,255,0.4);
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.4);
         border-radius: 14px;
     }
 
@@ -78,7 +77,7 @@
         margin-bottom: 8px;
 
         font-size: 11px;
-        color: rgba(255,255,255,0.85);
+        color: rgba(255, 255, 255, 0.85);
     }
 
     .info-reservasi-row:last-child {
@@ -101,10 +100,10 @@
 
         padding: 14px;
 
-        border: 1px solid rgba(255,255,255,0.6);
+        border: 1px solid rgba(255, 255, 255, 0.6);
         border-radius: 17px;
 
-        background: rgba(255,255,255,0.25);
+        background: rgba(255, 255, 255, 0.25);
 
         display: flex;
         align-items: center;
@@ -158,7 +157,7 @@
 
     .form-cart-qty {
         margin: 0 0 2px;
-        color: rgba(60,60,60,0.65);
+        color: rgba(60, 60, 60, 0.65);
         font-size: 11px;
     }
 
@@ -174,7 +173,7 @@
     .form-cart-empty {
         padding: 24px 0;
 
-        color: rgba(255,255,255,0.7);
+        color: rgba(255, 255, 255, 0.7);
         font-size: 12px;
         text-align: center;
     }
@@ -188,10 +187,10 @@
         margin-top: auto;
         padding: 18px;
 
-        border: 1px solid rgba(255,255,255,0.45);
+        border: 1px solid rgba(255, 255, 255, 0.45);
         border-radius: 17px;
 
-        background: rgba(255,255,255,0.12);
+        background: rgba(255, 255, 255, 0.12);
     }
 
     .form-summary-row {
@@ -201,7 +200,7 @@
 
         margin-bottom: 10px;
 
-        color: rgba(255,255,255,0.9);
+        color: rgba(255, 255, 255, 0.9);
 
         font-size: 11px;
     }
@@ -214,7 +213,7 @@
         margin-top: 5px;
         padding-top: 13px;
 
-        border-top: 1px solid rgba(255,255,255,0.35);
+        border-top: 1px solid rgba(255, 255, 255, 0.35);
 
         color: #fff;
         font-size: 15px;
@@ -397,7 +396,7 @@
     .form-submit:hover {
         background: #438f91;
         transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(85,163,164,0.3);
+        box-shadow: 0 4px 12px rgba(85, 163, 164, 0.3);
     }
 
 
@@ -460,7 +459,6 @@
             width: 100%;
         }
     }
-
 </style>
 
 
@@ -515,46 +513,45 @@
 
             {{-- DAFTAR ITEM KERANJANG --}}
             @php
-                $subtotalAll = 0;
-                $totalQty    = 0;
+            $subtotalAll = 0;
+            $totalQty = 0;
             @endphp
 
             @forelse($cart as $item)
-                @php
-                    $subtotal     = ($item['price'] ?? 0) * ($item['qty'] ?? 1);
-                    $subtotalAll += $subtotal;
-                    $totalQty    += ($item['qty'] ?? 1);
+            @php
+            $subtotal = ($item['price'] ?? 0) * ($item['qty'] ?? 1);
+            $subtotalAll += $subtotal;
+            $totalQty += ($item['qty'] ?? 1);
 
-                    $imgSrc = !empty($item['image'])
-                        ? asset('storage/' . $item['image'])
-                        : 'https://placehold.co/100x100/f7d9d4/b08080?text=✨';
-                @endphp
+            $imgSrc = !empty($item['image'])
+            ? asset('storage/' . $item['image'])
+            : 'https://placehold.co/100x100/f7d9d4/b08080?text=✨';
+            @endphp
 
-                <div class="form-cart-item">
+            <div class="form-cart-item">
 
-                    <div class="form-cart-image">
-                        <img
-                            src="{{ $imgSrc }}"
-                            alt="{{ $item['name'] }}"
-                            onerror="this.src='https://placehold.co/100x100/f7d9d4/b08080?text=✨'"
-                        >
-                    </div>
-
-                    <div class="form-cart-info">
-                        <h3 class="form-cart-name">{{ $item['name'] }}</h3>
-                        @if(($item['qty'] ?? 1) > 1)
-                            <p class="form-cart-qty">Qty {{ $item['qty'] }}</p>
-                        @endif
-                        <p class="form-cart-price">Rp {{ number_format($subtotal, 0, ',', '.') }}</p>
-                    </div>
-
+                <div class="form-cart-image">
+                    <img
+                        src="{{ $imgSrc }}"
+                        alt="{{ $item['name'] }}"
+                        onerror="this.src='https://placehold.co/100x100/f7d9d4/b08080?text=✨'">
                 </div>
+
+                <div class="form-cart-info">
+                    <h3 class="form-cart-name">{{ $item['name'] }}</h3>
+                    @if(($item['qty'] ?? 1) > 1)
+                    <p class="form-cart-qty">Qty {{ $item['qty'] }}</p>
+                    @endif
+                    <p class="form-cart-price">Rp {{ number_format($subtotal, 0, ',', '.') }}</p>
+                </div>
+
+            </div>
 
             @empty
 
-                <div class="form-cart-empty">
-                    🛒 Keranjang kosong
-                </div>
+            <div class="form-cart-empty">
+                🛒 Keranjang kosong
+            </div>
 
             @endforelse
 
@@ -584,8 +581,8 @@
 
 
         {{-- =========================================
-             FORM DETAIL RESERVASI
-        ========================================== --}}
+     FORM DETAIL RESERVASI
+========================================== --}}
 
         <main class="form-content">
 
@@ -594,200 +591,186 @@
             </h2>
 
             @if($errors->any())
-                <div style="background:#fff7f0;border:1px solid #f5c2a0;border-radius:11px;padding:12px 16px;font-size:12px;color:#b5703a;margin-bottom:18px;">
-                    ⚠️ Mohon periksa kembali isian di bawah ini.
-                    <ul style="margin:6px 0 0 15px;">
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div style="
+            background:#fff7f0;
+            border:1px solid #f5c2a0;
+            border-radius:11px;
+            padding:12px 16px;
+            font-size:12px;
+            color:#b5703a;
+            margin-bottom:18px;
+        ">
+                ⚠️ Mohon periksa kembali isian di bawah ini.
+
+                <ul style="margin:6px 0 0 15px;">
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
             @endif
+
 
             <form action="{{ route('reservasi.submit') }}" method="POST">
                 @csrf
 
-                {{-- Hidden fields --}}
-                <input type="hidden" name="branch"  value="{{ $branch }}">
-                <input type="hidden" name="service" value="{{ $service }}">
-                <input type="hidden" name="date"    value="{{ $date }}">
-                <input type="hidden" name="time"    value="{{ $time }}">
 
-                {{-- NAMA BUNDA & NOMOR WA --}}
+                {{-- =========================================
+             DATA RESERVASI YANG SUDAH DIPILIH
+        ========================================== --}}
+
+                <input type="hidden" name="branch" value="{{ $branch }}">
+                <input type="hidden" name="service" value="{{ $service }}">
+                <input type="hidden" name="date" value="{{ $date }}">
+                <input type="hidden" name="time" value="{{ $time }}">
+
+
+                {{-- =========================================
+             NAMA CUSTOMER & NOMOR TELEPON
+        ========================================== --}}
+
                 <div class="form-row">
 
+                    {{-- NAMA CUSTOMER --}}
                     <div class="form-field">
-                        <label class="form-label" for="name">Nama Bunda *</label>
+
+                        <label class="form-label" for="name">
+                            Nama Customer *
+                        </label>
+
                         <input
                             type="text"
                             id="name"
                             name="name"
                             class="form-input"
-                            placeholder="Nama lengkap"
+                            placeholder="Masukkan nama lengkap"
                             value="{{ old('name') }}"
-                            required
-                        >
+                            required>
+
                     </div>
 
+
+                    {{-- NOMOR TELEPON --}}
                     <div class="form-field">
-                        <label class="form-label" for="payment_method">Pembayaran *</label>
-                        <div class="select-wrapper-form">
-                            <select id="payment_method" name="payment_method" class="form-select form-input" required>
-                                <option value="" disabled {{ old('payment_method') ? '' : 'selected' }}>Pilih metode...</option>
-                                <option value="Tunai"    {{ old('payment_method') == 'Tunai'    ? 'selected' : '' }}>Tunai</option>
-                                <option value="Transfer" {{ old('payment_method') == 'Transfer' ? 'selected' : '' }}>Transfer</option>
-                            </select>
-                            <span class="arrow">▼</span>
-                        </div>
+
+                        <label class="form-label" for="no_tlp">
+                            Nomor Telepon *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="no_tlp"
+                            name="no_tlp"
+                            class="form-input"
+                            placeholder="Contoh: 081234567890"
+                            value="{{ old('no_tlp') }}"
+                            required>
+
                     </div>
 
                 </div>
 
 
-                {{-- USIA KEHAMILAN & NAMA BAYI --}}
+                {{-- =========================================
+             USIA KEHAMILAN & NAMA ANAK
+        ========================================== --}}
+
                 <div class="form-row">
 
+                    {{-- USIA KEHAMILAN --}}
                     <div class="form-field">
-                        <label class="form-label" for="pregnancy_age">Usia Kehamilan</label>
+
+                        <label class="form-label" for="pregnancy_age">
+                            Usia Kehamilan
+                        </label>
+
                         <input
                             type="text"
                             id="pregnancy_age"
                             name="pregnancy_age"
                             class="form-input"
-                            placeholder="Isi jika treatment bumil"
-                            value="{{ old('pregnancy_age') }}"
-                        >
+                            placeholder="Contoh: 7 bulan"
+                            value="{{ old('pregnancy_age') }}">
+
                     </div>
 
+
+                    {{-- NAMA ANAK --}}
                     <div class="form-field">
-                        <label class="form-label" for="baby_nickname">Nama Panggilan Bayi</label>
+
+                        <label class="form-label" for="baby_nickname">
+                            Nama Anak
+                        </label>
+
                         <input
                             type="text"
                             id="baby_nickname"
                             name="baby_nickname"
                             class="form-input"
-                            placeholder="Nama panggilan bayi"
-                            value="{{ old('baby_nickname') }}"
-                        >
+                            placeholder="Masukkan nama anak"
+                            value="{{ old('baby_nickname') }}">
+
                     </div>
 
                 </div>
 
 
-                {{-- USIA BAYI & SUDAH MEMBER --}}
-                <div class="form-row">
+                {{-- =========================================
+             USIA ANAK
+        ========================================== --}}
 
-                    <div class="form-field">
-                        <label class="form-label" for="baby_age">Usia Bayi</label>
-                        <input
-                            type="text"
-                            id="baby_age"
-                            name="baby_age"
-                            class="form-input"
-                            placeholder="Contoh: 3 Bulan"
-                            value="{{ old('baby_age') }}"
-                        >
-                    </div>
-
-                    <div class="form-field">
-                        <label class="form-label" for="is_member">Sudah Daftar Member?</label>
-                        <div class="select-wrapper-form">
-                            <select id="is_member" name="is_member" class="form-select form-input">
-                                <option value="" disabled selected>Pilih...</option>
-                                <option value="Sudah" {{ old('is_member') == 'Sudah' ? 'selected' : '' }}>Sudah</option>
-                                <option value="Belum" {{ old('is_member') == 'Belum' ? 'selected' : '' }}>Belum</option>
-                            </select>
-                            <span class="arrow">▼</span>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                {{-- OUTLET CHOICE (hanya untuk outlet) --}}
-                @if($service === 'outlet')
                 <div class="form-field">
-                    <label class="form-label" for="outlet_choice">Pilihan Lokasi Outlet *</label>
-                    <div class="select-wrapper-form">
-                        <select id="outlet_choice" name="outlet_choice" class="form-select form-input" required>
-                            <option value="" disabled selected>Pilih outlet...</option>
-                            <option value="Sawojajar" {{ old('outlet_choice') == 'Sawojajar' ? 'selected' : '' }}>Sawojajar</option>
-                            <option value="Suhat"     {{ old('outlet_choice') == 'Suhat'     ? 'selected' : '' }}>Suhat</option>
-                        </select>
-                        <span class="arrow">▼</span>
-                    </div>
+
+                    <label class="form-label" for="baby_age">
+                        Usia Anak
+                    </label>
+
+                    <input
+                        type="text"
+                        id="baby_age"
+                        name="baby_age"
+                        class="form-input"
+                        placeholder="Contoh: 3 bulan"
+                        value="{{ old('baby_age') }}">
+
                 </div>
-                @endif
 
 
-                {{-- ALAMAT (hanya untuk homecare) --}}
-                @if($service === 'homecare')
+                {{-- =========================================
+             ALAMAT LENGKAP
+        ========================================== --}}
+
                 <div class="form-field">
-                    <label class="form-label" for="address">Alamat Lengkap *</label>
+
+                    <label class="form-label" for="address">
+                        Alamat Lengkap *
+                    </label>
+
                     <textarea
                         id="address"
                         name="address"
                         class="form-textarea"
-                        placeholder="Masukkan alamat lengkap untuk homecare"
-                        required
-                    >{{ old('address') }}</textarea>
-                </div>
-                @endif
-
-
-                {{-- KELUHAN & TAU MAMINA --}}
-                <div class="form-row">
-
-                    <div class="form-field">
-                        <label class="form-label" for="complaint">Keluhan</label>
-                        <input
-                            type="text"
-                            id="complaint"
-                            name="complaint"
-                            class="form-input"
-                            placeholder="Keluhan yang ingin ditangani"
-                            value="{{ old('complaint') }}"
-                        >
-                    </div>
-
-                    <div class="form-field">
-                        <label class="form-label" for="referral">Tau Mamina Dari?</label>
-                        <input
-                            type="text"
-                            id="referral"
-                            name="referral"
-                            class="form-input"
-                            placeholder="Instagram, teman, dll."
-                            value="{{ old('referral') }}"
-                        >
-                    </div>
+                        placeholder="Masukkan alamat lengkap...">{{ old('address') }}</textarea>
 
                 </div>
 
 
-                {{-- PERNAH TREATMENT --}}
-                <div class="form-field">
-                    <label class="form-label" for="previous_treatment">Pernah Treatment atau Baru Pertama Kali?</label>
-                    <input
-                        type="text"
-                        id="previous_treatment"
-                        name="previous_treatment"
-                        class="form-input"
-                        placeholder="Contoh: Sudah pernah / Baru pertama kali"
-                        value="{{ old('previous_treatment') }}"
-                    >
-                </div>
+                {{-- =========================================
+             FOOTER BUTTONS
+        ========================================== --}}
 
-
-                {{-- FOOTER BUTTONS --}}
                 <div class="form-footer">
 
-                    <a href="{{ route('reservasi') }}" class="btn-back">
+                    <a
+                        href="{{ route('reservasi') }}"
+                        class="btn-back">
                         Kembali
                     </a>
 
-                    <button type="submit" class="form-submit">
-                        Kirim Reservasi via WhatsApp ✨
+                    <button
+                        type="submit"
+                        class="form-submit">
+                        Kirim Pengajuan Reservasi ✨
                     </button>
 
                 </div>
@@ -799,4 +782,3 @@
     </div>
 
 </section>
-
