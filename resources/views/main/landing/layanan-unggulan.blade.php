@@ -1,14 +1,6 @@
 <!-- Treatment Section -->
 <section id="layanan-unggulan" class="relative py-12 overflow-hidden" style="background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);">
 
-    <!-- Glow Background -->
-    <div
-        class="absolute top-8 left-1/2 -translate-x-1/2
-    w-[400px] h-[400px]
-    rounded-full bg-[#FFF2B8]/60 blur-[110px]" >
-    </div>
-
-
     <div class="max-w-6xl mx-auto">
 
         <!-- Badge -->

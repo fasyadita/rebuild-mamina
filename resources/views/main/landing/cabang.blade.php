@@ -1,251 +1,251 @@
 <!-- ================= CABANG MAMINA ================= -->
 <section id="cabang" class="cabang-section">
-    
 
-        <div class="max-w-6xl mx-auto">
 
-            <!-- ================= BADGE ================= -->
-            <div class="cabang-heading">
+    <div class="max-w-6xl mx-auto">
 
-                <div class="heading-circle"></div>
+        <!-- ================= BADGE ================= -->
+        <div class="cabang-heading">
 
-                <span class="heading-badge">
-                    CABANG MAMINA
-                </span>
+            <div class="heading-circle"></div>
+
+            <span class="heading-badge">
+                CABANG MAMINA
+            </span>
+
+        </div>
+
+
+        <!-- ================= CABANG LIST ================= -->
+        <div class="cabang-content">
+
+
+            <!-- ================= CABANG 1 ================= -->
+            <div class="cabang-card">
+
+                <!-- IMAGE -->
+                <div class="card-img-wrapper">
+
+                    <img src="{{ asset('img/cabang-mlg.jpg') }}"
+                        alt="Mamina Cabang Malang">
+
+                </div>
+
+
+                <!-- INFO -->
+                <div class="card-info">
+
+                    <h3>
+                        Mamina Cabang Malang
+                    </h3>
+
+                    <ul class="info-details">
+
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span>
+                                Ruko Wow, Samping Guardian dan Superindo,
+                                Jl. Raya Sawojajar SH-1 No.3,
+                                Kota Malang, Jawa Timur 65139
+                            </span>
+                        </li>
+
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+
+                            <span>
+                                Senin - Minggu | 08.00–19.00
+                            </span>
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+
+                            <span>
+                                081329913203
+                            </span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- BUTTON -->
+                <div class="card-buttons">
+
+                    <a href="https://wa.me/6281329913203?text=Halo%20Admin"
+                        target="_blank"
+                        class="btn-contact">
+
+                        Hubungi Cabang
+
+                    </a>
+
+                    <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A"
+                        target="_blank"
+                        class="btn-maps">
+
+                        Lihat di Google Maps
+
+                    </a>
+
+                </div>
 
             </div>
 
 
-            <!-- ================= CABANG LIST ================= -->
-            <div class="cabang-content">
 
+            <!-- ================= CABANG 2 ================= -->
+            <div class="cabang-card">
 
-                <!-- ================= CABANG 1 ================= -->
-                <div class="cabang-card">
+                <div class="card-img-wrapper">
 
-                    <!-- IMAGE -->
-                    <div class="card-img-wrapper">
-
-                        <img src="{{ asset('img/cabang-mlg.jpg') }}"
-                            alt="Mamina Cabang Malang">
-
-                    </div>
-
-
-                    <!-- INFO -->
-                    <div class="card-info">
-
-                        <h3>
-                            Mamina Cabang Malang
-                        </h3>
-
-                        <ul class="info-details">
-
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-
-                                <span>
-                                    Ruko Wow, Samping Guardian dan Superindo,
-                                    Jl. Raya Sawojajar SH-1 No.3,
-                                    Kota Malang, Jawa Timur 65139
-                                </span>
-                            </li>
-
-                            <li>
-                                <i class="fa-regular fa-clock"></i>
-
-                                <span>
-                                    Senin - Minggu | 08.00–19.00
-                                </span>
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-phone"></i>
-
-                                <span>
-                                    081329913203
-                                </span>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <!-- BUTTON -->
-                    <div class="card-buttons">
-
-                        <a href="https://wa.me/6281329913203?text=Halo%20Admin"
-                            target="_blank"
-                            class="btn-contact">
-
-                            Hubungi Cabang
-
-                        </a>
-
-                        <a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A"
-                            target="_blank"
-                            class="btn-maps">
-
-                            Lihat di Google Maps
-
-                        </a>
-
-                    </div>
+                    <img src="{{ asset('img/cabang-sht.jpeg') }}"
+                        alt="Mamina Cabang Soekarno Hatta">
 
                 </div>
 
 
+                <div class="card-info">
 
-                <!-- ================= CABANG 2 ================= -->
-                <div class="cabang-card">
+                    <h3>
+                        Mamina Cabang Malang
+                    </h3>
 
-                    <div class="card-img-wrapper">
+                    <ul class="info-details">
 
-                        <img src="{{ asset('img/cabang-sht.jpeg') }}"
-                            alt="Mamina Cabang Soekarno Hatta">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
 
-                    </div>
+                            <span>
+                                1-2, Jl. Sukarno Hatta Indah,
+                                Mojolangu, Kec. Lowokwaru,
+                                Kota Malang, Jawa Timur 65141
+                            </span>
+                        </li>
 
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
 
-                    <div class="card-info">
+                            <span>
+                                Senin - Minggu | 08.00–19.00
+                            </span>
+                        </li>
 
-                        <h3>
-                            Mamina Cabang Malang
-                        </h3>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
 
-                        <ul class="info-details">
+                            <span>
+                                081329913203
+                            </span>
+                        </li>
 
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-
-                                <span>
-                                    1-2, Jl. Sukarno Hatta Indah,
-                                    Mojolangu, Kec. Lowokwaru,
-                                    Kota Malang, Jawa Timur 65141
-                                </span>
-                            </li>
-
-                            <li>
-                                <i class="fa-regular fa-clock"></i>
-
-                                <span>
-                                    Senin - Minggu | 08.00–19.00
-                                </span>
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-phone"></i>
-
-                                <span>
-                                    081329913203
-                                </span>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="card-buttons">
-
-                        <a href="https://wa.me/6281329913203?text=Halo%20Admin"
-                            target="_blank"
-                            class="btn-contact">
-
-                            Hubungi Cabang
-
-                        </a>
-
-                        <a href="https://maps.app.goo.gl/sT3BM3YnzyeJ1zF28"
-                            target="_blank"
-                            class="btn-maps">
-
-                            Lihat di Google Maps
-
-                        </a>
-
-                    </div>
+                    </ul>
 
                 </div>
 
 
+                <div class="card-buttons">
 
-                <!-- ================= CABANG 3 ================= -->
-                <div class="cabang-card">
+                    <a href="https://wa.me/6281329913203?text=Halo%20Admin"
+                        target="_blank"
+                        class="btn-contact">
 
-                    <div class="card-img-wrapper">
+                        Hubungi Cabang
 
-                        <img src="{{ asset('img/cabang-kdr.jpeg') }}"
-                            alt="Mamina Cabang Kediri">
+                    </a>
 
-                    </div>
+                    <a href="https://maps.app.goo.gl/sT3BM3YnzyeJ1zF28"
+                        target="_blank"
+                        class="btn-maps">
 
+                        Lihat di Google Maps
 
-                    <div class="card-info">
+                    </a>
 
-                        <h3>
-                            Mamina Cabang Kediri
-                        </h3>
+                </div>
 
-                        <ul class="info-details">
-
-                            <li>
-                                <i class="fa-solid fa-location-dot"></i>
-
-                                <span>
-                                    Jl. Sahardjo No.88B, Campurejo,
-                                    Kec. Mojoroto, Kota Kediri,
-                                    Jawa Timur 64116
-                                </span>
-                            </li>
-
-                            <li>
-                                <i class="fa-regular fa-clock"></i>
-
-                                <span>
-                                    Senin - Minggu | 08.00–19.00
-                                </span>
-                            </li>
-
-                            <li>
-                                <i class="fa-solid fa-phone"></i>
-
-                                <span>
-                                    082131090283
-                                </span>
-                            </li>
-
-                        </ul>
-
-                    </div>
+            </div>
 
 
-                    <div class="card-buttons">
 
-                        <a href="https://wa.me/6282131090283?text=Halo%20Admin"
-                            target="_blank"
-                            class="btn-contact">
+            <!-- ================= CABANG 3 ================= -->
+            <div class="cabang-card">
 
-                            Hubungi Cabang
+                <div class="card-img-wrapper">
 
-                        </a>
+                    <img src="{{ asset('img/cabang-kdr.jpeg') }}"
+                        alt="Mamina Cabang Kediri">
 
-                        <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87"
-                            target="_blank"
-                            class="btn-maps">
+                </div>
 
-                            Lihat di Google Maps
 
-                        </a>
+                <div class="card-info">
 
-                    </div>
+                    <h3>
+                        Mamina Cabang Kediri
+                    </h3>
+
+                    <ul class="info-details">
+
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <span>
+                                Jl. Sahardjo No.88B, Campurejo,
+                                Kec. Mojoroto, Kota Kediri,
+                                Jawa Timur 64116
+                            </span>
+                        </li>
+
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+
+                            <span>
+                                Senin - Minggu | 08.00–19.00
+                            </span>
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+
+                            <span>
+                                082131090283
+                            </span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="card-buttons">
+
+                    <a href="https://wa.me/6282131090283?text=Halo%20Admin"
+                        target="_blank"
+                        class="btn-contact">
+
+                        Hubungi Cabang
+
+                    </a>
+
+                    <a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87"
+                        target="_blank"
+                        class="btn-maps">
+
+                        Lihat di Google Maps
+
+                    </a>
 
                 </div>
 
             </div>
 
         </div>
+
+    </div>
     </div>
 
 </section>
@@ -516,19 +516,13 @@
 ========================================= */
 
     .card-buttons {
-
+        margin-right: 10px;
         width: 240px;
-
         min-width: 240px;
-
         display: flex;
-
         align-items: center;
-
         justify-content: center;
-
         gap: 9px;
-
         padding: 12px 16px;
 
     }

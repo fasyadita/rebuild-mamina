@@ -32,11 +32,11 @@
         top: 0;
         right: 0;
         left: 0;
-        background: #fffdeb;
+        background: #ffffff;
     }
 
     .mamina-navbar {
-        background-color: #fffdeb !important;
+        background-color: #ffffff !important;
     }
 
     .navbar .container {

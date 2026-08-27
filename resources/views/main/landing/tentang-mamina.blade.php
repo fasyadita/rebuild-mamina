@@ -259,10 +259,10 @@
                 </div>
 
                 <div class="text-end mt-3">
-                    <a href="#" class="btn-service">
+                    <a href="{{ route('tim-mamina') }}" class="btn-service">
                         Lihat Semua Terapis
                     </a>
-                    <a href="#" class="btn-service">
+                    <a href="{{ route('layanan.index') }}" class="btn-service">
                         Lihat Semua Layanan
                     </a>
                 </div>

@@ -28,7 +28,7 @@ Route::post('/reservasi/select', [ReservasiController::class, 'select'])->name('
 Route::get('/reservasi/{service}', [ReservasiController::class, 'form'])->name('reservasi.form');
 Route::post('/reservasi/submit', [ReservasiController::class, 'submit'])->name('reservasi.submit');
 Route::get('/pricelist', fn() => view('main.pricelist.pricelist'));
-Route::get('/tim-mamina', [TimMaminaController::class, 'index']);
+Route::get('/tim-mamina', [TimMaminaController::class, 'index'])->name('tim-mamina');
 Route::get('/event/detail-event', fn() => view('main.event.detail-event'))->name('event.detail');
 Route::get('/layanan', fn() => view('main.layanan.index'))->name('layanan.index');
 Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
