@@ -352,7 +352,7 @@
 </style>
 
 
-<section class="kelas-section ">
+<section class="kelas-section" id="kelas-pro">
   <div class="section-heading">
     <div class="flex items-center gap-2 mb-3">
 

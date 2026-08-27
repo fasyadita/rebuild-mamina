@@ -281,7 +281,7 @@
     }
 </style>
 
-<section id="essenials" class="product-section">
+<section id="essentials" class="product-section">
     <div class="max-w-6xl mx-auto">
 
         {{-- Heading --}}

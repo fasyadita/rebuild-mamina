@@ -1,11 +1,6 @@
 <!-- ================= MaminaGo ================= -->
 <section id="maminago" class="relative py-16" style="background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);">
 
-    <!-- Background Glow -->
-    <div
-        class="absolute top-8 left-1/2 -translate-x-1/2 w-[550px] h-[550px] rounded-full bg-[#FFF5CF] blur-[130px] opacity-60">
-    </div>
-
     <div class="relative max-w-7xl mx-auto px-5 lg:px-9">
 
         <!-- Badge -->
