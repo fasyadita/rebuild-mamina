@@ -51,10 +51,10 @@ Route::prefix('guest')->name('guest.')->group(function () {
     Route::get('/', fn() => view('welcome-guest'))->name('home');
     Route::get('/terapis', fn() => view('guest.terapis.terapis'))->name('terapis');
     Route::get('/cabang', fn() => view('guest.cabang.cabang'))->name('cabang');
-    Route::get('/login', fn() => view('guest.login-regist.login'))->name('login');
+    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
-    Route::get('/regist', fn() => view('guest.login-regist.regist'))->name('regist');
-    Route::post('/regist', [AuthController::class, 'register'])->name('regist.post');
+    Route::get('/regist', [AuthController::class, 'showRegistrationForm'])->name('register');
+    Route::post('/regist', [AuthController::class, 'register'])->name('register.post');
 
 
     Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');

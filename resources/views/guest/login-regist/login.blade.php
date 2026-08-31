@@ -531,7 +531,7 @@
 
                 {{-- FORM --}}
                 <form
-                    action="#"
+                    action="{{ route('guest.login.post') }}"
                     method="POST"
                 >
 
@@ -543,28 +543,32 @@
                         <div class="form-label-row">
 
                             <label
-                                for="phone"
+                                for="email"
                                 class="form-label"
                             >
-                                Nomor Telepon
+                                Email
                             </label>
 
                         </div>
 
                         <div class="input-wrapper">
 
-                            <i class="fa-solid fa-phone input-icon"></i>
+                            <i class="fa-solid fa-envelope input-icon"></i>
 
                             <input
-                                type="text"
-                                id="phone"
-                                name="phone"
+                                type="email"
+                                id="email"
+                                name="email"
                                 class="form-input"
-                                placeholder="Contoh: 08123456789"
-                                autocomplete="tel"
+                                placeholder="Contoh: email@anda.com"
+                                autocomplete="email"
+                                value="{{ old('email') }}"
                             >
 
                         </div>
+                        @error('email')
+                            <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
+                        @enderror
 
                     </div>
 
@@ -614,18 +618,20 @@
                             </button>
 
                         </div>
+                        @error('password')
+                            <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
+                        @enderror
 
                     </div>
 
 
                     {{-- BUTTON --}}
-                    <a
-                        href="{{ route('guest.home') }}"
+                    <button
+                        type="submit"
                         class="login-button"
-                        style="display: flex; align-items: center; justify-content: center; text-decoration: none;"
                     >
                         Masuk
-                    </a>
+                    </button>
 
                 </form>
 
@@ -636,7 +642,7 @@
                     Belum punya akun?
 
                     <a
-                        href="#"
+                        href="{{ route('guest.register') }}"
                         class="register-link"
                     >
                         Daftar Sekarang

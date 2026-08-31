@@ -1,151 +1,476 @@
 <style>
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        background: #fffdeb;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        min-height: 90px;
+    * {
+        box-sizing: border-box;
     }
 
-    .fixed-top {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        background-color: #fffdeb;
-    }
+    /* =========================================
+       NAVBAR
+    ========================================= */
 
     .mamina-navbar {
-        background-color: #fffdeb !important;
+        position: fixed;
+        top: 10px;
+        left: 12px;
+        right: 12px;
+
+        width: auto;
+        min-height: 78px;
+
+        z-index: 9999;
+
+        background: #fffdeb !important;
+
+        border: 1px solid rgba(0, 0, 0, 0.08);
+
+        border-radius: 50px;
+
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+
+        padding: 0;
     }
 
-    .navbar .container {
+
+    /* =========================================
+       CONTAINER
+    ========================================= */
+
+    .mamina-navbar .container {
         max-width: 1300px;
-        padding: 0 32px;
+        width: 100%;
+
+        height: 78px;
+
+        padding: 0 28px;
+
+        display: flex;
+        align-items: center;
     }
 
-    .navbar-nav {
+
+    /* =========================================
+       LOGO
+    ========================================= */
+
+    .mamina-navbar .navbar-brand {
+        display: flex;
+        align-items: center;
+
+        padding: 0;
+
+        margin-right: auto;
+    }
+
+    .mamina-navbar .navbar-brand img {
+        height: 58px;
+        width: auto;
+
+        display: block;
+    }
+
+
+    /* =========================================
+       MENU
+    ========================================= */
+
+    .mamina-navbar .navbar-collapse {
+        flex-grow: 0;
+    }
+
+    .mamina-navbar .navbar-nav {
+        display: flex;
+        align-items: center;
+
         gap: 28px;
+
+        margin: 0;
     }
 
-    .nav-link {
-        color: #333 !important;
-        font-weight: 500;
+    .mamina-navbar .nav-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .mamina-navbar .nav-link {
+        padding: 8px 0 !important;
+
+        color: #222 !important;
+
+        font-family: 'Nunito', sans-serif;
+
         font-size: 15px;
-        transition: color 0.3s ease;
+        font-weight: 500;
+
+        white-space: nowrap;
+
+        transition: all 0.25s ease;
     }
 
-    .nav-link:hover {
-        color: #3fb6a8 !important;
+    .mamina-navbar .nav-link:hover {
+        color: #3fa7a5 !important;
+
+        transform: translateY(-1px);
     }
 
-    .cart-icon {
-        position: relative;
-        padding-right: 10px;
-    }
 
-    .cart-icon .badge {
-        top: -5px;
-        right: 0;
-        font-size: 11px;
-        padding: 2px 6px;
-        min-width: 18px;
-        height: 18px;
+    /* =========================================
+       ICON BUTTON
+    ========================================= */
+
+    .navbar-icon-btn {
+        width: 50px;
+        height: 50px;
+
+        border-radius: 50%;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
+        text-decoration: none;
+
+        background: #ffd9cf;
+
+        border: 1px solid #efbcb1;
+
+        color: #222;
+
+        font-size: 23px;
+
+        transition: all 0.25s ease;
     }
 
-    .btn-join {
-        background: #3fb6a8;
-        border: none;
-        color: #fff;
-        padding: 10px 24px;
-        border-radius: 50px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
+    .navbar-icon-btn:hover {
+        background: #f7c8bd;
 
-    .btn-join:hover {
-        background: #359c8f;
+        color: #222;
+
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(63, 182, 168, 0.2);
-        color: #fff;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
     }
+
+
+    /* ICON USER */
+    .navbar-user-btn {
+        margin-left: -8px;
+    }
+
+
+    /* =========================================
+       CART BADGE
+    ========================================= */
+
+    .navbar-cart {
+        position: relative;
+    }
+
+    .navbar-cart .cart-badge {
+        position: absolute;
+
+        top: -3px;
+        right: -2px;
+
+        min-width: 17px;
+        height: 17px;
+
+        padding: 0 4px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #3fa7a5;
+
+        color: white;
+
+        border-radius: 50%;
+
+        font-size: 9px;
+        font-weight: 700;
+    }
+
+
+    /* =========================================
+       MOBILE TOGGLER
+    ========================================= */
+
+    .mamina-navbar .navbar-toggler {
+        width: 45px;
+        height: 45px;
+
+        padding: 0;
+
+        border: none;
+
+        border-radius: 50%;
+
+        background: #ffd9cf;
+    }
+
+    .mamina-navbar .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1100px) {
+
+        .mamina-navbar .navbar-nav {
+            gap: 18px;
+        }
+
+        .mamina-navbar .nav-link {
+            font-size: 14px;
+        }
+
+        .navbar-icon-btn {
+            width: 45px;
+            height: 45px;
+
+            font-size: 20px;
+        }
+    }
+
 
     @media (max-width: 991px) {
 
-        .navbar {
-            padding: 10px 0;
-            min-height: auto;
+        .mamina-navbar {
+            top: 8px;
+            left: 8px;
+            right: 8px;
+
+            border-radius: 30px;
+
+            padding: 5px 0;
         }
 
-        .navbar .container {
-            padding: 0 16px;
+        .mamina-navbar .container {
+            height: auto;
+
+            min-height: 68px;
+
+            padding: 0 18px;
+
+            flex-wrap: wrap;
         }
 
-        .navbar-nav {
-            gap: 12px;
-            padding-top: 12px;
+        .mamina-navbar .navbar-brand img {
+            height: 48px;
         }
 
-        .nav-link {
-            font-size: 14px;
-            padding: 8px 0;
-            justify-content: center;
-        }
-
-        .btn-join {
+        .mamina-navbar .navbar-collapse {
             width: 100%;
-            text-align: center;
-            padding: 10px;
+
+            padding: 15px 0 10px;
         }
 
-        .navbar-brand img {
-            height: 45px;
+        .mamina-navbar .navbar-nav {
+            width: 100%;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 8px;
         }
+
+        .mamina-navbar .nav-link {
+            padding: 6px 0 !important;
+        }
+
+        .navbar-icon-btn {
+            width: 44px;
+            height: 44px;
+        }
+
+        .navbar-user-btn {
+            margin-left: 0;
+        }
+
     }
+
+
+    @media (max-width: 500px) {
+
+        .mamina-navbar {
+            top: 6px;
+            left: 6px;
+            right: 6px;
+        }
+
+        .mamina-navbar .container {
+            padding: 0 14px;
+        }
+
+        .mamina-navbar .navbar-brand img {
+            height: 43px;
+        }
+
+        .navbar-icon-btn {
+            width: 40px;
+            height: 40px;
+
+            font-size: 18px;
+        }
+
+    }
+
 </style>
 
-<nav class="navbar navbar-expand-lg fixed-top mamina-navbar">
+
+<nav class="navbar navbar-expand-lg mamina-navbar">
+
     <div class="container">
+
+        {{-- ================================
+             LOGO
+        ================================= --}}
+
         <a class="navbar-brand" href="/">
-            <img src="{{ asset('img/logo.png') }}" alt="Mamina" height="60">
+            <img
+                src="{{ asset('img/logo.png') }}"
+                alt="Mamina"
+            >
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+
+        {{-- ================================
+             MOBILE TOGGLER
+        ================================= --}}
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
+        {{-- ================================
+             MENU
+        ================================= --}}
+
+        <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+        >
+
             <ul class="navbar-nav align-items-center">
+
+
+                {{-- LAYANAN --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Layanan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/guest/terapis">Terapis</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/guest/cabang">Cabang</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/guest#faq-section">FAQ</a>
+                    <a
+                        class="nav-link"
+                        href="#home"
+                    >
+                        Layanan
+                    </a>
                 </li>
 
-                <li class="nav-item ms-3">
-                    <a href="/guest/login" class="btn btn-primary btn-join">
-                        Login
+
+                {{-- TERAPIS --}}
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="/guest/terapis"
+                    >
+                        Terapis
                     </a>
                 </li>
-                <li class="nav-item ms-3">
-                    <a href="/guest/regist" class="btn btn-primary btn-join">
-                        Daftar
+
+
+                {{-- CABANG --}}
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="/guest/cabang"
+                    >
+                        Cabang
                     </a>
                 </li>
+
+
+                {{-- RIWAYAT RESERVASI --}}
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="/guest/riwayat-reservasi"
+                    >
+                        Riwayat Reservasi
+                    </a>
+                </li>
+
+
+                {{-- ANAK --}}
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="/guest/anak"
+                    >
+                        Anak
+                    </a>
+                </li>
+
+
+                {{-- ================================
+                     CART
+                ================================= --}}
+
+                <li class="nav-item ms-2">
+
+                    <a
+                        href="{{ route('keranjang') }}"
+                        class="navbar-icon-btn navbar-cart"
+                        title="Keranjang"
+                    >
+
+                        <i class="fas fa-shopping-basket"></i>
+
+                        @if(session('cart') && count(session('cart')) > 0)
+
+                            <span class="cart-badge">
+                                {{ count(session('cart')) }}
+                            </span>
+
+                        @endif
+
+                    </a>
+
+                </li>
+
+
+                {{-- ================================
+                     USER / PROFILE
+                ================================= --}}
+
+                <li class="nav-item">
+
+                    <a
+                        href="/guest/login"
+                        class="navbar-icon-btn navbar-user-btn"
+                        title="Akun"
+                    >
+
+                        <i class="far fa-user-circle"></i>
+
+                    </a>
+
+                </li>
+
+
             </ul>
+
         </div>
+
     </div>
+
 </nav>
