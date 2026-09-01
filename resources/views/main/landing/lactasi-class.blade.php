@@ -147,19 +147,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 360px;
+    width: 100%;
   }
 
   .kelas-price {
     color: #50a1a3;
     font-size: 14px;
     font-weight: 900;
-    gap : 50px;
+    gap: 50px;
   }
 
   .kelas-actions {
     display: flex;
-    align-items: end;
+    align-items: center;
+    justify-content: flex-end;
     gap: 8px;
     margin-left: auto;
   }
@@ -336,13 +337,18 @@
     }
 
     .kelas-card-bottom {
-      flex-wrap: wrap;
-      gap: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
     }
 
     .kelas-actions {
-      width: 100%;
+      display: flex;
+      align-items: center;
       justify-content: flex-end;
+      gap: 8px;
+      margin-left: auto;
     }
 
     .kelas-buttons {

@@ -198,7 +198,7 @@
                         rounded-full
                         text-sm">
 
-                        Daftar Mitra
+                        <a href="{{ route('maminago') }}" class="text-white">Daftar Mitra</a>
 
                     </button>
 
