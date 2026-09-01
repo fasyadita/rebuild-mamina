@@ -1,4 +1,9 @@
-<section  id="service" class="layanan-index">
+@extends('guest.layouts.app')
+
+@section('title', 'Layanan - Mamina')
+
+@section('content')
+<section id="service" class="layanan-index">
     <div class="container">
         
         <div class="services-box">
@@ -57,7 +62,7 @@
                 </a>
             </div>
         </div>
-        </div>
+    </div>
 </section>
 
 <style>
@@ -74,11 +79,12 @@
 
     .layanan-index {
         background: #FFFDEB; /* Cream page background */
-        padding: 10px 20px 40px;
+        padding: 40px 20px 80px;
         font-family: 'nunito', sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
+        min-height: calc(100vh - 180px);
     }
 
     .services-box {
@@ -96,7 +102,7 @@
         color: #4db6ac; 
         font-size: 26px;
         font-weight: 600;
-        /* margin-bottom: 40px; */
+        margin-bottom: 30px;
         letter-spacing: 0.5px;
     }
 
@@ -168,3 +174,4 @@
         }
     }
 </style>
+@endsection

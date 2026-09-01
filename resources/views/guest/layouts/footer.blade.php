@@ -22,7 +22,7 @@
 </footer>
 <style>
     .footer-container {
-        background-color: #FFFDEB;
+        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
         color: #757575;
         padding: 30px 50px; /* Padding lebih luas agar nafas desain lebih lega */
         

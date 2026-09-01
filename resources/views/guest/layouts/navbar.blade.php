@@ -370,7 +370,7 @@
                 <li class="nav-item">
                     <a
                         class="nav-link"
-                        href="#home"
+                        href="{{ route('guest.service') }}"
                     >
                         Layanan
                     </a>
