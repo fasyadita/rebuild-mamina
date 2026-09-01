@@ -53,6 +53,7 @@ Route::prefix('guest')->name('guest.')->group(function () {
     Route::get('/', fn() => view('welcome-guest'))->name('home');
     Route::get('/service', fn() => view('guest.layanan.service'))->name('service');
     Route::get('/terapis', fn() => view('guest.terapis.terapis'))->name('terapis');
+    Route::get('/terapis', [TimMaminaController::class, 'guestIndex'])->name('terapis');
     Route::get('/cabang', fn() => view('guest.cabang.cabang'))->name('cabang');
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
