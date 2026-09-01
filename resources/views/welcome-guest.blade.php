@@ -3,10 +3,9 @@
 @section('title', 'join member')
 
 @section('content')
+    @include('guest.landing.hero')
     @include('guest.landing.home')
     @include('guest.landing.top-service')
-    @include('guest.landing.service')
-    
 @endsection
 
 @push('styles')

@@ -1,207 +1,401 @@
 <style>
-    .favorite-section {
-        background-color: #d1f2eb;
-        border-radius: 30px;
-        padding: 40px 50px;
+    /* =========================================
+       TREATMENT / TOP SERVICE SECTION
+    ========================================= */
+    .treatment-section {
+        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
+        padding: 50px 20px 60px;
         position: relative;
-        margin: 20px auto 0px;
-        max-width: 1200px;
-    }
-
-    .section-title {
-        color: #fca5a5;
-        font-weight: bold;
-        text-align: center;
-        font-size: 24px;
-        margin-bottom: 30px;
-    }
-
-    /* Update pada .product-card */
-    .product-card {
-        display: flex;
-        flex-direction: column;
-        height: 100%; /* Memaksa card mengisi tinggi kolom (bootstrap row) */
-        border: none;
-        background: transparent;
-        border-radius: 20px;
         overflow: hidden;
-        transition: transform 0.3s ease;
+        font-family: 'Nunito', sans-serif;
     }
 
-    .product-img {
+    .treatment-container {
+        max-width: 1140px;
+        margin: 0 auto;
         width: 100%;
-        aspect-ratio: 4 / 3; /* Memastikan semua gambar punya tinggi yang sama */
-        object-fit: cover;
-        border-radius: 20px 20px 0 0;
     }
 
-    .product-info {
-        background-color: #ffdad6;
-        padding: 15px 10px;
-        text-align: center;
-        border-radius: 0 0 20px 20px;
-        color: #444;
-        
-        /* KUNCI KONSISTENSI */
-        flex-grow: 1; /* Mengisi sisa ruang jika ada card yang lebih pendek */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Menjaga tombol tetap di bawah */
-        min-height: 160px; /* Atur tinggi minimum area teks */
-    }
-
-    .product-name {
-        font-size: 14px;
-        font-weight: 700;
-        margin-bottom: 5px;
-        min-height: 40px; /* Memberi ruang untuk 2 baris teks agar tidak jomplang */
+    /* =========================
+       BADGE
+    ========================= */
+    .treatment-badge-wrapper {
         display: flex;
         align-items: center;
-        justify-content: center;
-    }
-    
-    .product-card:hover {
-        transform: translateY(-5px);
+        gap: 8px;
+        margin-bottom: 12px;
     }
 
-    .product-price {
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 5px;
+    .treatment-badge-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: #CBF1E8;
+        flex-shrink: 0;
     }
 
-    .product-details {
-        font-size: 11px;
-        color: #666;
-    }
-
-    .nav-arrow-right {
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 24px;
-        color: #555;
-        cursor: pointer;
-        opacity: 0.6;
-    }
-
-    .nav-arrow-right:hover {
-        opacity: 1;
-    }
-
-    .btn-tambah {
-        background: #4FA8A6;
-        color: #fff;
-        border: none;
-        padding: 6px 16px;
-        border-radius: 20px;
+    .treatment-badge-text {
+        padding: 4px 14px;
+        border-radius: 9999px;
+        background-color: #CBF1E8;
+        color: #3D9F9E;
         font-size: 12px;
-        cursor: pointer;
-        margin-top: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        display: inline-block;
     }
 
-    .btn-tambah:hover {
-        background: #3b7d7b;
+    /* =========================
+       HEADING
+    ========================= */
+    .treatment-heading {
+        font-size: clamp(24px, 3vw, 32px);
+        font-weight: 800;
+        color: #2D2D2D;
+        margin: 0 0 8px;
+        line-height: 1.2;
+        font-family: 'Fredoka', 'Nunito', sans-serif;
     }
 
-    .page-bg {
-    background-color: #FFFDEB;
-    width: 100%;
-    padding: 0;
+    .treatment-heading span {
+        color: #5CC8C5;
     }
 
-    .container {
-        padding: 30px 20px;
-        font-family: 'nunito', sans-serif;
+    .treatment-subheading {
+        font-size: 13px;
+        color: #6F6F6F;
+        line-height: 1.6;
+        max-width: 580px;
+        margin: 0 0 28px;
     }
 
-    @media (max-width: 768px) {
-        .favorite-section {
-            padding: 30px 20px;
-            border-radius: 15px;
+    /* =========================
+       GRID & CARDS
+    ========================= */
+    .treatment-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 24px;
+    }
+
+    .treatment-card {
+        background-color: #ffffff;
+        border-radius: 17px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .treatment-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .treatment-img-box {
+        height: 155px;
+        width: 100%;
+        background-color: #f3f4f6;
+        overflow: hidden;
+    }
+
+    .treatment-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+    .treatment-card:hover .treatment-img-box img {
+        transform: scale(1.04);
+    }
+
+    .treatment-body {
+        padding: 18px 20px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .treatment-card-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #333333;
+        margin: 0 0 8px;
+        line-height: 1.3;
+    }
+
+    .treatment-card-desc {
+        font-size: 12px;
+        color: #6b7280;
+        line-height: 1.55;
+        margin: 0 0 16px;
+        flex-grow: 1;
+    }
+
+    .treatment-price-wrap {
+        margin-top: auto;
+        margin-bottom: 6px;
+    }
+
+    .treatment-price {
+        color: #46C8C3;
+        font-size: 16px;
+        font-weight: 800;
+        display: block;
+    }
+
+    .treatment-link {
+        display: inline-block;
+        font-size: 12px;
+        color: #46C8C3;
+        font-weight: 700;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .treatment-link:hover {
+        color: #309893;
+        text-decoration: underline;
+    }
+
+    /* =========================
+       BUTTON LIHAT SEMUA
+    ========================= */
+    .all-service-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 32px;
+    }
+
+    .btn-all-service {
+        background-color: #5AA7A5;
+        color: #ffffff;
+        border-radius: 30px;
+        padding: 9px 22px;
+        font-size: 13px;
+        font-weight: 700;
+        font-family: 'Nunito', sans-serif;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(90, 167, 165, 0.25);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .btn-all-service:hover {
+        background-color: #438F8D;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(90, 167, 165, 0.35);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+    @media (max-width: 991px) {
+        .treatment-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .treatment-section {
+            padding: 35px 16px 45px;
         }
 
-        .nav-arrow-right {
-            display: none;
+        .treatment-grid {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .treatment-img-box {
+            height: 175px;
+        }
+
+        .all-service-wrapper {
+            justify-content: center;
         }
     }
 </style>
 
-<div class="page-bg">
-    <div id="top-service" class="container">
-        <div class="favorite-section">
+<!-- Treatment Section -->
+<section id="top-service" class="treatment-section">
 
-            <h3 class="section-title">Paling disukai, nih</h3>
+    <div class="treatment-container">
 
-            <div class="row g-4">
-                <div class="col-6 col-lg-3">
-                    <div class="product-card">
-                        <img src="{{ asset('img/baby.jpeg') }}" class="product-img" alt="Pijat Bayi">
-                        <div class="product-info">
-                            <div class="product-name">Pijat Bayi</div>
-                            <div class="product-price">Rp 88.000</div>
-                            <div class="product-details">
-                                4050+ suka<br>
-                                Cabang Malang
-                            </div>
-                        <button class="btn-tambah">
-                            <i class="fas fa-plus"></i> Tambah
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-                <div class="product-card">
-                    <img src="{{ asset('img/baby.jpeg') }}" class="product-img" alt="Pijat Bayi">
-                    <div class="product-info">
-                        <div class="product-name">Pijat Bayi</div>
-                        <div class="product-price">Rp 88.000</div>
-                        <div class="product-details">
-                            4050+ suka<br>
-                            Cabang Malang
-                        </div>
-                        <button class="btn-tambah">
-                            <i class="fas fa-plus"></i> Tambah
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-                <div class="product-card">
-                    <img src="{{ asset('img/baby.jpeg') }}" class="product-img" alt="Pijat Bayi">
-                    <div class="product-info">
-                        <div class="product-name">Pijat Bayi</div>
-                        <div class="product-price">Rp 88.000</div>
-                        <div class="product-details">
-                            4050+ suka<br>
-                            Cabang Malang
-                        </div>
-                        <button class="btn-tambah">
-                            <i class="fas fa-plus"></i> Tambah
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3">
-                <div class="product-card">
-                    <img src="{{ asset('img/baby.jpeg') }}" class="product-img" alt="Pijat Bayi">
-                    <div class="product-info">
-                        <div class="product-name">Pijat Bayi</div>
-                        <div class="product-price">Rp 88.000</div>
-                        <div class="product-details">
-                            4050+ suka<br>
-                            Cabang Malang
-                        </div>
-                        <button class="btn-tambah">
-                            <i class="fas fa-plus"></i> Tambah
-                    </div>
-                </div>
-            </div>
-        </div> <i class="fas fa-chevron-right nav-arrow-right"></i>
+        <!-- Badge -->
+        <div class="treatment-badge-wrapper">
+            <div class="treatment-badge-dot"></div>
+            <span class="treatment-badge-text">
+                LAYANAN UNGGULAN
+            </span>
         </div>
+
+        <!-- Heading -->
+        <h2 class="treatment-heading">
+            Treatment
+            <span>Mamina</span>
+        </h2>
+
+        <p class="treatment-subheading">
+            Ditangani terapis bersertifikat dengan prosedur standar —
+            nyaman, aman, dan gentle untuk ibu & si kecil.
+        </p>
+
+        <!-- Card Grid -->
+        <div class="treatment-grid">
+
+            <!-- Card 1 -->
+            <div class="treatment-card">
+                <div class="treatment-img-box">
+                    <img src="{{ asset('img/pijat.png') }}" alt="Pijat Bayi">
+                </div>
+                <div class="treatment-body">
+                    <h3 class="treatment-card-title">Pijat Bayi</h3>
+                    <p class="treatment-card-desc">
+                        Memperlancar ASI, mencegah mastitis,
+                        meningkatkan let-down reflex.
+                        Ditangani bidan & konselor laktasi
+                        bersertifikat.
+                    </p>
+                    <div class="treatment-price-wrap">
+                        <span class="treatment-price">Mulai Rp 120.000</span>
+                    </div>
+                    <a href="{{ route('guest.service') }}" class="treatment-link">
+                        Pelajari lebih lanjut
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="treatment-card">
+                <div class="treatment-img-box">
+                    <img src="{{ asset('img/pijat1.png') }}" alt="Pijat Bayi">
+                </div>
+                <div class="treatment-body">
+                    <h3 class="treatment-card-title">Pijat Bayi</h3>
+                    <p class="treatment-card-desc">
+                        Memperlancar ASI, mencegah mastitis,
+                        meningkatkan let-down reflex.
+                        Ditangani bidan & konselor laktasi
+                        bersertifikat.
+                    </p>
+                    <div class="treatment-price-wrap">
+                        <span class="treatment-price">Mulai Rp 120.000</span>
+                    </div>
+                    <a href="{{ route('guest.service') }}" class="treatment-link">
+                        Pelajari lebih lanjut
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="treatment-card">
+                <div class="treatment-img-box">
+                    <img src="{{ asset('img/spa.png') }}" alt="Pijat Bayi">
+                </div>
+                <div class="treatment-body">
+                    <h3 class="treatment-card-title">Pijat Bayi</h3>
+                    <p class="treatment-card-desc">
+                        Memperlancar ASI, mencegah mastitis,
+                        meningkatkan let-down reflex.
+                        Ditangani bidan & konselor laktasi
+                        bersertifikat.
+                    </p>
+                    <div class="treatment-price-wrap">
+                        <span class="treatment-price">Mulai Rp 120.000</span>
+                    </div>
+                    <a href="{{ route('guest.service') }}" class="treatment-link">
+                        Pelajari lebih lanjut
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="treatment-card">
+                <div class="treatment-img-box">
+                    <img src="{{ asset('img/pijat1.png') }}" alt="Pijat Bayi">
+                </div>
+                <div class="treatment-body">
+                    <h3 class="treatment-card-title">Pijat Bayi</h3>
+                    <p class="treatment-card-desc">
+                        Memperlancar ASI, mencegah mastitis,
+                        meningkatkan let-down reflex.
+                        Ditangani bidan & konselor laktasi
+                        bersertifikat.
+                    </p>
+                    <div class="treatment-price-wrap">
+                        <span class="treatment-price">Mulai Rp 120.000</span>
+                    </div>
+                    <a href="{{ route('guest.service') }}" class="treatment-link">
+                        Pelajari lebih lanjut
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="treatment-card">
+                <div class="treatment-img-box">
+                    <img src="{{ asset('img/pijat1.png') }}" alt="Pijat Bayi">
+                </div>
+                <div class="treatment-body">
+                    <h3 class="treatment-card-title">Pijat Bayi</h3>
+                    <p class="treatment-card-desc">
+                        Memperlancar ASI, mencegah mastitis,
+                        meningkatkan let-down reflex.
+                        Ditangani bidan & konselor laktasi
+                        bersertifikat.
+                    </p>
+                    <div class="treatment-price-wrap">
+                        <span class="treatment-price">Mulai Rp 120.000</span>
+                    </div>
+                    <a href="{{ route('guest.service') }}" class="treatment-link">
+                        Pelajari lebih lanjut
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="treatment-card">
+                <div class="treatment-img-box">
+                    <img src="{{ asset('img/spa.png') }}" alt="Pijat Bayi">
+                </div>
+                <div class="treatment-body">
+                    <h3 class="treatment-card-title">Pijat Bayi</h3>
+                    <p class="treatment-card-desc">
+                        Memperlancar ASI, mencegah mastitis,
+                        meningkatkan let-down reflex.
+                        Ditangani bidan & konselor laktasi
+                        bersertifikat.
+                    </p>
+                    <div class="treatment-price-wrap">
+                        <span class="treatment-price">Mulai Rp 120.000</span>
+                    </div>
+                    <a href="{{ route('guest.service') }}" class="treatment-link">
+                        Pelajari lebih lanjut
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        {{-- =========================
+             BUTTON LIHAT SEMUA
+        ========================= --}}
+        <div class="all-service-wrapper">
+            <a href="{{ route('guest.service') }}" class="btn-all-service">
+                Lihat Semua Layanan
+            </a>
+        </div>
+
     </div>
-</div>
+
+</section>

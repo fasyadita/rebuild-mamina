@@ -49,6 +49,7 @@ Route::get('/jadwal-terapis/detail', [JadwalTerapisController::class, 'detail'])
 Route::prefix('guest')->name('guest.')->group(function () {
 
     Route::get('/', fn() => view('welcome-guest'))->name('home');
+    Route::get('/service', fn() => view('guest.layanan.service'))->name('service');
     Route::get('/terapis', fn() => view('guest.terapis.terapis'))->name('terapis');
     Route::get('/cabang', fn() => view('guest.cabang.cabang'))->name('cabang');
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
