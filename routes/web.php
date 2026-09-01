@@ -28,6 +28,8 @@ Route::post('/reservasi/select', [ReservasiController::class, 'select'])->name('
 Route::get('/reservasi/{service}', [ReservasiController::class, 'form'])->name('reservasi.form');
 Route::post('/reservasi/submit', [ReservasiController::class, 'submit'])->name('reservasi.submit');
 Route::get('/pricelist', fn() => view('main.pricelist.pricelist'));
+Route::get('/maminago', fn() => view('main.maminago.form'))->name('maminago');
+Route::post('/maminago/submit', [\App\Http\Controllers\MaminaGoController::class, 'submit'])->name('maminago.submit');
 Route::get('/tim-mamina', [TimMaminaController::class, 'index'])->name('tim-mamina');
 Route::get('/event/detail-event', fn() => view('main.event.detail-event'))->name('event.detail');
 Route::get('/layanan', fn() => view('main.layanan.index'))->name('layanan.index');

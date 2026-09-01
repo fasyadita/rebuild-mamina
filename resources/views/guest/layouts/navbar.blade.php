@@ -18,7 +18,7 @@
 
         z-index: 9999;
 
-        background: #fffdeb !important;
+        background: #ffffff !important;
 
         border: 1px solid rgba(0, 0, 0, 0.08);
 
@@ -150,45 +150,59 @@
     }
 
 
-    /* ICON USER */
-    .navbar-user-btn {
-        margin-left: -8px;
-    }
+    /* ================================
+   LOGIN & DAFTAR
+================================= */
 
-
-    /* =========================================
-       CART BADGE
-    ========================================= */
-
-    .navbar-cart {
-        position: relative;
-    }
-
-    .navbar-cart .cart-badge {
-        position: absolute;
-
-        top: -3px;
-        right: -2px;
-
-        min-width: 17px;
-        height: 17px;
-
-        padding: 0 4px;
-
-        display: flex;
+    .btn-login,
+    .btn-daftar {
+        display: inline-flex;
         align-items: center;
         justify-content: center;
 
-        background: #3fa7a5;
+        height: 38px;
+        padding: 0 22px;
 
-        color: white;
+        border-radius: 22px;
 
-        border-radius: 50%;
-
-        font-size: 9px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
         font-weight: 700;
+
+        text-decoration: none !important;
+
+        transition: all 0.25s ease;
     }
 
+    /* LOGIN */
+
+    .btn-login {
+        color: #55a3a4;
+        background: transparent;
+        border: 1.5px solid #55a3a4;
+    }
+
+    .btn-login:hover {
+        color: #ffffff;
+        background: #55a3a4;
+        transform: translateY(-1px);
+    }
+
+
+    /* DAFTAR */
+
+    .btn-daftar {
+        color: #ffffff;
+        background: #55a3a4;
+        border: 1.5px solid #55a3a4;
+    }
+
+    .btn-daftar:hover {
+        color: #ffffff;
+        background: #438f91;
+        border-color: #438f91;
+        transform: translateY(-1px);
+    }
 
     /* =========================================
        MOBILE TOGGLER
@@ -317,7 +331,6 @@
         }
 
     }
-
 </style>
 
 
@@ -332,8 +345,7 @@
         <a class="navbar-brand" href="/">
             <img
                 src="{{ asset('img/logo.png') }}"
-                alt="Mamina"
-            >
+                alt="Mamina">
         </a>
 
 
@@ -348,8 +360,7 @@
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
+            aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
 
@@ -360,8 +371,7 @@
 
         <div
             class="collapse navbar-collapse justify-content-end"
-            id="navbarNav"
-        >
+            id="navbarNav">
 
             <ul class="navbar-nav align-items-center">
 
@@ -371,7 +381,6 @@
                     <a
                         class="nav-link"
                         href="{{ route('guest.service') }}"
-                    >
                         Layanan
                     </a>
                 </li>
@@ -381,8 +390,7 @@
                 <li class="nav-item">
                     <a
                         class="nav-link"
-                        href="/guest/terapis"
-                    >
+                        href="/guest/terapis">
                         Terapis
                     </a>
                 </li>
@@ -392,80 +400,35 @@
                 <li class="nav-item">
                     <a
                         class="nav-link"
-                        href="/guest/cabang"
-                    >
+                        href="/guest/cabang">
                         Cabang
                     </a>
                 </li>
 
-
-                {{-- RIWAYAT RESERVASI --}}
-                <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        href="/guest/riwayat-reservasi"
-                    >
-                        Riwayat Reservasi
-                    </a>
-                </li>
-
-
-                {{-- ANAK --}}
-                <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        href="/guest/anak"
-                    >
-                        Anak
-                    </a>
-                </li>
-
-
                 {{-- ================================
-                     CART
-                ================================= --}}
+     LOGIN
+================================= --}}
 
                 <li class="nav-item ms-2">
-
                     <a
-                        href="{{ route('keranjang') }}"
-                        class="navbar-icon-btn navbar-cart"
-                        title="Keranjang"
-                    >
-
-                        <i class="fas fa-shopping-basket"></i>
-
-                        @if(session('cart') && count(session('cart')) > 0)
-
-                            <span class="cart-badge">
-                                {{ count(session('cart')) }}
-                            </span>
-
-                        @endif
-
+                        href="/guest/login"
+                        class="btn-login">
+                        Login
                     </a>
-
                 </li>
 
 
                 {{-- ================================
-                     USER / PROFILE
-                ================================= --}}
+     DAFTAR
+================================= --}}
 
-                <li class="nav-item">
-
+                <li class="nav-item ms-2">
                     <a
-                        href="/guest/login"
-                        class="navbar-icon-btn navbar-user-btn"
-                        title="Akun"
-                    >
-
-                        <i class="far fa-user-circle"></i>
-
+                        href="/guest/regist"
+                        class="btn-daftar">
+                        Daftar
                     </a>
-
                 </li>
-
 
             </ul>
 
