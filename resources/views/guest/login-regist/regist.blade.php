@@ -511,7 +511,7 @@
 
                 {{-- FORM --}}
                 <form
-                    action="{{ route('guest.regist.post') }}"
+                    action="{{ route('guest.register.post') }}"
                     method="POST"
                 >
 
@@ -734,7 +734,7 @@
                 <p class="register-text">
                     Sudah punya akun?
                     <a
-                        href="http://127.0.0.1:8000/guest/login"
+                        href="{{ route('guest.login') }}"
                         class="register-link"
                     >
                         Login

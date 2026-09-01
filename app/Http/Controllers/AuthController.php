@@ -8,16 +8,26 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    public function showLoginForm()
+    {
+        return view('guest.login-regist.login');
+    }
+
+    public function showRegistrationForm()
+    {
+        return view('guest.login-regist.regist');
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'phone' => ['required'],
+            'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-        $user = \App\Models\Customer::where('phone', $credentials['phone'])->first();
+        $user = \App\Models\Customer::where('email', $credentials['email'])->first();
 
-        if ($user && Hash::check($credentials['password'], $user->password)) {
+        if ($user && md5($credentials['password']) === $user->password) {
             Auth::login($user);
             $request->session()->regenerate();
 
@@ -25,8 +35,8 @@ class AuthController extends Controller
         }
 
         return back()->withErrors([
-            'phone' => 'No Telepon atau password salah.',
-        ])->onlyInput('phone');
+            'email' => 'Email atau password salah.',
+        ])->onlyInput('email');
     }
 
     public function register(Request $request)
@@ -43,12 +53,12 @@ class AuthController extends Controller
             'terms.accepted' => 'Anda harus menyetujui Kebijakan Privasi untuk mendaftar.',
         ]);
 
-        $customer = \App\Models\Customer::create([
+        $user = \App\Models\Customer::create([
             'branch_id' => $request->branch_id,
             'name' => $request->name,
             'phone' => $request->phone,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => md5($request->password),
             'referrer' => $request->referrer,
             'code' => strtoupper(\Illuminate\Support\Str::random(6)),
             'register_via' => 'Web',
@@ -57,7 +67,7 @@ class AuthController extends Controller
             'points' => 0,
         ]);
 
-        Auth::login($customer);
+        Auth::login($user);
         $request->session()->regenerate();
 
         return redirect()->route('member.profile')->with('success', 'Registrasi berhasil! Selamat datang ✨');

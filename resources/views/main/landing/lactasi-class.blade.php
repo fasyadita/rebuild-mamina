@@ -147,7 +147,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     max-width: 360px;
   }
 
@@ -155,12 +154,14 @@
     color: #50a1a3;
     font-size: 14px;
     font-weight: 900;
+    gap : 50px;
   }
 
   .kelas-actions {
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 8px;
+    margin-left: auto;
   }
 
   .kelas-type {
