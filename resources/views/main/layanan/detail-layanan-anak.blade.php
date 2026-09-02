@@ -4,683 +4,326 @@
 
 @section('content')
 
-<section class="detail-layanan-section">
+<style>
+    /* =========================
+       GLOBAL
+    ========================= */
+    .layanan-page {
+        background: #fffbea;
+        min-height: 100vh;
+        padding: 35px 0 60px;
+        font-family: 'Nunito', sans-serif;
+    }
 
-    <div class="detail-container">
+    .layanan-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-        {{-- HEADER --}}
-        <div class="layanan-header">
+    /* =========================
+       SECTION LAYANAN
+    ========================= */
+    .layanan-section {
+        background: #e2f6e8;
+        border-radius: 32px;
+        padding: 34px 35px 35px;
+        margin-bottom: 45px;
+        min-height: 300px;
+        box-sizing: border-box;
+    }
 
-            <h2 class="judul-layanan">
-                Layanan Anak
-            </h2>
+    .layanan-section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 32px;
+    }
 
-            <div class="slider-navigation">
+    .layanan-title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 
-                <button type="button" class="nav-btn prev-btn">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
+    .layanan-title-line {
+        width: 7px;
+        height: 28px;
+        background: #3ca5a5;
+        border-radius: 8px;
+    }
 
-                <button type="button" class="nav-btn next-btn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+    .layanan-title {
+        margin: 0;
+        color: #2c2c2c;
+        font-size: 25px;
+        font-weight: 800;
+        line-height: 1.2;
+    }
 
+    /* =========================
+       ARROW
+    ========================= */
+    .layanan-arrows {
+        display: flex;
+        gap: 7px;
+    }
+
+    .arrow-button {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid #d7eeee;
+        background: #ffffff;
+        color: #3ca5a5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .arrow-button.next {
+        background: #3ca5a5;
+        color: white;
+        border-color: #3ca5a5;
+    }
+
+    .arrow-button:hover {
+        transform: scale(1.05);
+    }
+
+    .layanan-cards {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    /* =========================
+       CARD
+    ========================= */
+    .layanan-card {
+        width: calc((100% - 72px) / 5);
+        /* 5 items per row */
+        min-width: 0;
+        background: #ffffff;
+        border-radius: 17px;
+        overflow: hidden;
+        box-shadow: 0 7px 18px rgba(0, 0, 0, 0.05);
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-space {
+        width: 100%;
+        height: 120px;
+        background: #f4f4f4;
+        /* Placeholder for image */
+        flex-shrink: 0;
+    }
+
+    .layanan-card-body {
+        padding: 14px 15px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .layanan-card-name {
+        margin: 0 0 4px;
+        color: #303030;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+
+    .cabang {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 10px;
+        font-weight: 600;
+        color: #7d7d7d;
+    }
+
+    .harga {
+        margin-bottom: 4px;
+        font-size: 14px;
+        font-weight: 800;
+        color: #3ca5a5;
+    }
+
+    .durasi {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 12px;
+        font-size: 10px;
+        font-weight: 600;
+        color: #7d7d7d;
+    }
+
+    .btn-tambah {
+        width: 100%;
+        height: 32px;
+        margin-top: auto;
+        border: none;
+        border-radius: 8px;
+        background: #3ca5a5;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-family: 'Nunito', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        transition: 0.2s;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .btn-tambah:hover {
+        background: #2f9191;
+    }
+
+    .icon-plus {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .text-tambah {
+        flex: 1;
+        text-align: center;
+        padding-right: 32px;
+        /* Balance the icon width */
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+    @media (max-width: 1000px) {
+        .layanan-container {
+            width: 94%;
+        }
+
+        .layanan-card {
+            width: calc((100% - 54px) / 4);
+            /* 4 items per row */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .layanan-page {
+            padding-top: 20px;
+        }
+
+        .layanan-section {
+            padding: 25px 20px;
+            border-radius: 25px;
+        }
+
+        .layanan-title {
+            font-size: 20px;
+        }
+
+        .layanan-card {
+            width: 220px;
+        }
+
+        .layanan-cards {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .layanan-container {
+            width: 94%;
+        }
+
+        .layanan-section {
+            margin-bottom: 25px;
+        }
+
+        .layanan-title {
+            font-size: 17px;
+        }
+
+        .layanan-title-line {
+            width: 5px;
+            height: 22px;
+        }
+
+        .layanan-card {
+            width: 200px;
+        }
+    }
+</style>
+
+<div class="layanan-page">
+
+    <main class="layanan-container">
+
+        <section class="layanan-section">
+
+            <div class="layanan-section-header">
+                <div class="layanan-title-wrapper">
+                    <div class="layanan-title-line"></div>
+                    <h2 class="layanan-title">
+                        Layanan Anak
+                    </h2>
+                </div>
+
+                <div class="layanan-arrows">
+                    <button type="button" class="arrow-button">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button type="button" class="arrow-button next">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
 
-        </div>
-
-
-        {{-- GRID LAYANAN --}}
-        <div class="layanan-grid">
-
-            @for ($i = 0; $i < 12; $i++)
-
-                <div class="layanan-card">
+            <div class="layanan-cards">
+                @for ($i = 0; $i < 12; $i++)
+                    <div class="layanan-card">
 
                     {{-- AREA KOSONG BAGIAN ATAS --}}
-                    <div class="card-space"></div>
-
+                    <div class="card-spacez"></div>
 
                     {{-- INFORMASI LAYANAN --}}
-                    <div class="layanan-content">
-
-                        <h3>Pijat Bayi</h3>
-
-                        <span class="cabang">
-                            Cabang Malang
-                        </span>
-
-                        <div class="harga">
-                            Rp 88.000
-                        </div>
-
+                    <div class="layanan-card-body">
+                        <h3 class="layanan-card-name">Pijat Bayi</h3>
+                        <span class="cabang">Cabang Malang</span>
+                        <div class="harga">Rp 88.000</div>
                         <div class="durasi">
                             <i class="far fa-clock"></i>
                             4050* s/d...
                         </div>
 
-
                         {{-- BUTTON --}}
                         <button type="button" class="btn-tambah">
-
                             <span class="icon-plus">
                                 <i class="fas fa-plus"></i>
                             </span>
-
-                            <span class="text-tambah">
-                                Tambah
-                            </span>
-
+                            <span class="text-tambah">Tambah</span>
                         </button>
-
                     </div>
 
-                </div>
-
+            </div>
             @endfor
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
+</main>
+
+</div>
+
 @endsection
-
-
-<style>
-
-/* =========================================================
-   FONT
-========================================================= */
-
-@font-face {
-    font-family: 'Fredoka';
-    src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: 'Nunito';
-    src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
-    font-weight: 500;
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-.detail-layanan-section *,
-.detail-layanan-section *::before,
-.detail-layanan-section *::after {
-    box-sizing: border-box;
-}
-
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-.detail-layanan-section {
-    width: 100%;
-    min-height: 100vh;
-
-    background: #FFFDEB;
-
-    padding: 30px 30px;
-
-    font-family: 'Nunito', sans-serif;
-}
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.detail-container {
-
-    /*
-     * Desktop:
-     * menggunakan sekitar 75% lebar layar
-     */
-
-    width: 75%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    background: #E5F5EA;
-
-    border-radius: 17px;
-
-    padding: 25px 20px 20px;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.layanan-header {
-
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    margin-bottom: 18px;
-}
-
-
-/* =========================================================
-   JUDUL
-========================================================= */
-
-.judul-layanan {
-
-    position: relative;
-
-    margin: 0;
-
-    padding-left: 10px;
-
-    font-family: 'Fredoka', sans-serif;
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    color: #303030;
-
-    line-height: 1;
-}
-
-
-.judul-layanan::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 3px;
-    height: 17px;
-
-    border-radius: 5px;
-
-    background: #58A8A5;
-}
-
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-.slider-navigation {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 4px;
-}
-
-
-.nav-btn {
-
-    width: 17px;
-    height: 17px;
-
-    padding: 0;
-
-    border: none;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-
-    transition: .2s ease;
-}
-
-
-.prev-btn {
-
-    background: #FFFFFF;
-
-    color: #58A8A5;
-}
-
-
-.next-btn {
-
-    background: #58A8A5;
-
-    color: #FFFFFF;
-}
-
-
-.nav-btn i {
-
-    font-size: 7px;
-}
-
-
-.nav-btn:hover {
-
-    transform: scale(1.08);
-}
-
-
-/* =========================================================
-   GRID
-========================================================= */
-
-.layanan-grid {
-
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    column-gap: 13px;
-
-    row-gap: 14px;
-}
-
-
-/* =========================================================
-   CARD
-========================================================= */
-
-.layanan-card {
-
-    width: 100%;
-
-    /*
-     * Card dibuat tinggi supaya memanjang
-     * seperti screenshot
-     */
-
-    height: 185px;
-
-    background: #FFFFFF;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    display: flex;
-
-    flex-direction: column;
-
-    box-shadow:
-        0 3px 8px rgba(0, 0, 0, 0.035);
-}
-
-
-/* =========================================================
-   AREA KOSONG BAGIAN ATAS
-========================================================= */
-
-.card-space {
-
-    width: 100%;
-
-    height: 98px;
-
-    background: #FFFFFF;
-
-    flex-shrink: 0;
-}
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.layanan-content {
-
-    width: 100%;
-
-    height: 87px;
-
-    padding: 7px 10px 9px;
-
-    background: #FFFFFF;
-
-    display: flex;
-
-    flex-direction: column;
-}
-
-
-/* =========================================================
-   NAMA LAYANAN
-========================================================= */
-
-.layanan-content h3 {
-
-    margin: 0 0 2px;
-
-    font-family: 'Nunito', sans-serif;
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    color: #292929;
-
-    line-height: 1.2;
-}
-
-
-/* =========================================================
-   CABANG
-========================================================= */
-
-.cabang {
-
-    display: block;
-
-    margin-bottom: 4px;
-
-    font-family: 'Nunito', sans-serif;
-
-    font-size: 6px;
-
-    font-weight: 500;
-
-    color: #777777;
-
-    line-height: 1.2;
-}
-
-
-/* =========================================================
-   HARGA
-========================================================= */
-
-.harga {
-
-    margin-bottom: 2px;
-
-    font-family: 'Nunito', sans-serif;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    color: #58A8A5;
-
-    line-height: 1.2;
-}
-
-
-/* =========================================================
-   DURASI
-========================================================= */
-
-.durasi {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 3px;
-
-    margin-bottom: auto;
-
-    font-family: 'Nunito', sans-serif;
-
-    font-size: 5.5px;
-
-    font-weight: 500;
-
-    color: #777777;
-
-    line-height: 1.2;
-}
-
-
-.durasi i {
-
-    font-size: 5px;
-}
-
-
-/* =========================================================
-   BUTTON TAMBAH
-========================================================= */
-
-.btn-tambah {
-
-    width: 100%;
-
-    height: 20px;
-
-    margin-top: 6px;
-
-    padding: 0 7px;
-
-    border: none;
-
-    border-radius: 20px;
-
-    background: #58A8A5;
-
-    color: #FFFFFF;
-
-    display: flex;
-
-    align-items: center;
-
-    cursor: pointer;
-
-    font-family: 'Nunito', sans-serif;
-
-    font-size: 6px;
-
-    transition: .2s ease;
-}
-
-
-.btn-tambah:hover {
-
-    background: #478F8D;
-}
-
-
-/* =========================================================
-   ICON PLUS
-========================================================= */
-
-.icon-plus {
-
-    width: 15px;
-    height: 15px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-}
-
-
-.icon-plus i {
-
-    font-size: 8px;
-}
-
-
-/* =========================================================
-   TEXT TAMBAH
-========================================================= */
-
-.text-tambah {
-
-    flex: 1;
-
-    text-align: center;
-
-    padding-right: 15px;
-}
-
-
-/* =========================================================
-   DESKTOP BESAR
-========================================================= */
-
-@media (min-width: 1400px) {
-
-    .detail-container {
-
-        width: 72%;
-
-        max-width: 1250px;
-
-        padding: 27px 22px 22px;
-    }
-
-    .layanan-card {
-
-        height: 190px;
-    }
-
-    .card-space {
-
-        height: 102px;
-    }
-
-}
-
-
-/* =========================================================
-   LAPTOP
-========================================================= */
-
-@media (max-width: 1200px) {
-
-    .detail-container {
-
-        width: 82%;
-    }
-
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .detail-layanan-section {
-
-        padding: 25px 20px;
-    }
-
-    .detail-container {
-
-        width: 90%;
-
-        padding: 22px 16px 18px;
-    }
-
-    .layanan-grid {
-
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-    .detail-layanan-section {
-
-        padding: 20px 10px;
-    }
-
-    .detail-container {
-
-        width: 100%;
-
-        padding: 18px 12px 15px;
-
-        border-radius: 15px;
-    }
-
-    .layanan-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
-        column-gap: 10px;
-
-        row-gap: 12px;
-    }
-
-    .layanan-card {
-
-        height: 175px;
-    }
-
-    .card-space {
-
-        height: 90px;
-    }
-
-    .layanan-content {
-
-        height: 85px;
-
-        padding: 6px 8px 8px;
-    }
-
-    .layanan-content h3 {
-
-        font-size: 8px;
-    }
-
-    .cabang {
-
-        font-size: 5.5px;
-    }
-
-    .harga {
-
-        font-size: 9px;
-    }
-
-    .durasi {
-
-        font-size: 5px;
-    }
-
-    .btn-tambah {
-
-        height: 19px;
-
-        font-size: 5.5px;
-    }
-
-}
-
-</style>

@@ -1,6 +1,6 @@
 @extends('main.layouts.app')
 
-@section('title', 'Tim Mamina')
+@section('title', 'Detail Layanan')
 
 @section('content')
 
@@ -8,52 +8,59 @@
     /* =========================
        GLOBAL
     ========================= */
-    .tim-page {
+
+    .layanan-page {
         background: #fffbea;
         min-height: 100vh;
         padding: 35px 0 60px;
         font-family: 'Nunito', sans-serif;
     }
 
-    .tim-container {
-        width: 100%;
+    .layanan-container {
+        width: 94%;
         max-width: 1200px;
         margin: 0 auto;
     }
 
+
     /* =========================
-       SECTION TIM
+       SECTION LAYANAN
     ========================= */
-    .tim-section {
+
+    .layanan-section {
         background: #e2f6e8;
         border-radius: 32px;
         padding: 34px 35px 35px;
         margin-bottom: 45px;
-        min-height: 300px;
         box-sizing: border-box;
     }
 
-    .tim-section-header {
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .layanan-section-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 32px;
     }
 
-    .tim-title-wrapper {
+    .layanan-title-wrapper {
         display: flex;
         align-items: center;
         gap: 12px;
     }
 
-    .tim-title-line {
+    .layanan-title-line {
         width: 7px;
         height: 28px;
         background: #3ca5a5;
         border-radius: 8px;
     }
 
-    .tim-title {
+    .layanan-title {
         margin: 0;
         color: #2c2c2c;
         font-size: 25px;
@@ -61,10 +68,12 @@
         line-height: 1.2;
     }
 
+
     /* =========================
        ARROW
     ========================= */
-    .tim-arrows {
+
+    .layanan-arrows {
         display: flex;
         gap: 7px;
     }
@@ -76,17 +85,19 @@
         border: 1px solid #d7eeee;
         background: #ffffff;
         color: #3ca5a5;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
         font-size: 15px;
         cursor: pointer;
-        transition: 0.2s;
+        transition: 0.2s ease;
     }
 
     .arrow-button.next {
         background: #3ca5a5;
-        color: white;
+        color: #ffffff;
         border-color: #3ca5a5;
     }
 
@@ -94,432 +105,444 @@
         transform: scale(1.05);
     }
 
-    .tim-cards {
+
+    /* =========================
+       CARD CONTAINER
+    ========================= */
+
+    .layanan-cards {
         display: flex;
         gap: 18px;
         flex-wrap: wrap;
     }
 
+
     /* =========================
        CARD
+       Dibuat mengikuti style tim-card
     ========================= */
-    .tim-card {
+
+    .layanan-card {
         width: calc((100% - 72px) / 5);
         min-width: 0;
+
         background: #ffffff;
         border-radius: 17px;
         overflow: hidden;
+
         box-shadow: 0 7px 18px rgba(0, 0, 0, 0.05);
+
+        flex-shrink: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        transition: 0.2s ease;
+    }
+
+    .layanan-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* =========================
+       IMAGE / AREA ATAS
+    ========================= */
+
+    .card-space {
+        width: 100%;
+        height: 155px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #e5f2ed,
+                #f5f7f1
+            );
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         flex-shrink: 0;
     }
 
-    .tim-card-image {
-        width: 100%;
-        height: 155px;
-        object-fit: cover;
-        object-position: center;
-        display: block;
+    /*
+       Icon sederhana sebagai placeholder
+       karena backend saat ini belum menyediakan
+       field gambar layanan.
+    */
+
+    .card-space::before {
+        content: "\f1d8";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+
+        font-size: 38px;
+        color: #3ca5a5;
+        opacity: 0.45;
     }
 
-    .tim-card-body {
+
+    /* =========================
+       CARD BODY
+    ========================= */
+
+    .layanan-card-body {
         padding: 16px 17px 15px;
+
+        display: flex;
+        flex-direction: column;
+
+        flex: 1;
     }
 
-    .tim-card-name {
+
+    /* =========================
+       NAMA LAYANAN
+    ========================= */
+
+    .layanan-card-name {
         margin: 0 0 5px;
+
         color: #303030;
         font-size: 15px;
         font-weight: 800;
         line-height: 1.15;
     }
 
-    .tim-card-position {
-        margin: 0 0 17px;
+
+    /* =========================
+       CABANG
+    ========================= */
+
+    .cabang {
+        display: block;
+
+        margin-bottom: 10px;
+
         color: #7d7d7d;
+
         font-size: 10px;
+        font-weight: 600;
+
         line-height: 1.3;
     }
 
-    .instagram-button {
+
+    /* =========================
+       HARGA
+    ========================= */
+
+    .harga {
+        margin-bottom: 5px;
+
+        color: #3ca5a5;
+
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+
+    /* =========================
+       DURASI
+    ========================= */
+
+    .durasi {
+        display: flex;
+        align-items: center;
+
+        gap: 4px;
+
+        margin-bottom: 17px;
+
+        color: #7d7d7d;
+
+        font-size: 10px;
+        font-weight: 600;
+    }
+
+    .durasi i {
+        color: #3ca5a5;
+        font-size: 10px;
+    }
+
+
+    /* =========================
+       BUTTON TAMBAH
+    ========================= */
+
+    .btn-tambah {
         width: 100%;
         height: 36px;
+
+        margin-top: auto;
+
+        padding: 0;
+
         border: none;
         border-radius: 8px;
+
         background: #3ca5a5;
         color: #ffffff;
-        font-size: 11px;
-        font-weight: 800;
+
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
-        text-decoration: none;
-        transition: 0.2s;
-        box-sizing: border-box;
+
+        font-family: 'Nunito', sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+
+        cursor: pointer;
+
+        transition: 0.2s ease;
+        overflow: hidden;
     }
 
-    .instagram-button:hover {
+    .btn-tambah:hover {
         background: #2f9191;
-        color: #ffffff;
     }
+
 
     /* =========================
-       CARD SECTION KECIL
+       ICON PLUS
     ========================= */
-    .tim-section.small {
-        min-height: 360px;
+
+    .icon-plus {
+        width: 36px;
+        height: 36px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(0, 0, 0, 0.08);
+
+        flex-shrink: 0;
     }
+
+    .icon-plus i {
+        font-size: 11px;
+    }
+
+
+    /* =========================
+       TEXT BUTTON
+    ========================= */
+
+    .text-tambah {
+        flex: 1;
+        text-align: center;
+
+        padding-right: 36px;
+    }
+
 
     /* =========================
        RESPONSIVE
     ========================= */
-    @media (max-width: 1000px) {
 
-        .tim-navbar {
+    @media (max-width: 1100px) {
+
+        .layanan-container {
             width: 94%;
         }
 
-        .tim-container {
-            width: 94%;
+        .layanan-section {
+            padding: 30px;
         }
 
-        .tim-nav-menu {
-            gap: 14px;
+        .layanan-cards {
+            gap: 15px;
         }
 
-        .tim-nav-menu a {
-            font-size: 11px;
-        }
-
-        .tim-logo {
-            width: 125px;
-        }
-
-        .tim-card {
-            width: calc((100% - 36px) / 3);
+        .layanan-card {
+            width: calc((100% - 45px) / 4);
         }
     }
 
+
+    @media (max-width: 900px) {
+
+        .layanan-card {
+            width: calc((100% - 30px) / 3);
+        }
+    }
+
+
     @media (max-width: 768px) {
 
-        .tim-page {
+        .layanan-page {
             padding-top: 20px;
         }
 
-        .tim-navbar {
-            height: auto;
-            min-height: 70px;
-            border-radius: 30px;
-            padding: 15px 20px;
-        }
-
-        .tim-logo {
-            width: 110px;
-        }
-
-        .tim-nav-menu {
-            gap: 10px;
-        }
-
-        .tim-nav-menu a {
-            display: none;
-        }
-
-        .cart-button {
-            margin-left: auto;
-        }
-
-        .tim-section {
+        .layanan-section {
             padding: 25px 20px;
             border-radius: 25px;
         }
 
-        .tim-title {
+        .layanan-title {
             font-size: 20px;
         }
 
-        .tim-card {
+        .layanan-card {
             width: 220px;
         }
 
-        .tim-cards {
+        .layanan-cards {
             flex-wrap: nowrap;
             overflow-x: auto;
             padding-bottom: 8px;
         }
+
+        .layanan-cards::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .layanan-cards::-webkit-scrollbar-thumb {
+            background: #a8ceca;
+            border-radius: 10px;
+        }
     }
+
 
     @media (max-width: 480px) {
 
-        .tim-container,
-        .tim-navbar {
+        .layanan-container {
             width: 94%;
         }
 
-        .tim-section {
+        .layanan-section {
             margin-bottom: 25px;
         }
 
-        .tim-title {
+        .layanan-title {
             font-size: 17px;
         }
 
-        .tim-title-line {
+        .layanan-title-line {
             width: 5px;
             height: 22px;
         }
 
-        .member-button {
-            padding: 8px 12px;
-            font-size: 10px !important;
+        .layanan-card {
+            width: 200px;
         }
 
-        .tim-card {
-            width: 200px;
+        .layanan-section-header {
+            margin-bottom: 22px;
+        }
+
+        .arrow-button {
+            width: 30px;
+            height: 30px;
+            font-size: 13px;
         }
     }
 </style>
 
 
-<div class="tim-page">
+<div class="layanan-page">
 
-    <main class="tim-container">
+    <main class="layanan-container">
 
+        {{-- =========================
+             SECTION LAYANAN ANAK
+        ========================== --}}
 
-        {{-- =====================================================
-             TIM MAMINA MALANG
-        ====================================================== --}}
-        <section class="tim-section">
+        <section class="layanan-section">
 
-            <div class="tim-section-header">
+            {{-- HEADER --}}
+            <div class="layanan-section-header">
 
-                <div class="tim-title-wrapper">
-                    <div class="tim-title-line"></div>
+                <div class="layanan-title-wrapper">
 
-                    <h2 class="tim-title">
-                        Tim Mamina Malang
+                    <div class="layanan-title-line"></div>
+
+                    <h2 class="layanan-title">
+                        Layanan Anak
                     </h2>
+
                 </div>
 
-                <div class="tim-arrows">
-                    <button class="arrow-button">
+
+                <div class="layanan-arrows">
+
+                    <button type="button" class="arrow-button">
                         <i class="fa-solid fa-chevron-left"></i>
                     </button>
 
-                    <button class="arrow-button next">
+                    <button type="button" class="arrow-button next">
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
+
                 </div>
 
             </div>
 
 
-            <div class="tim-cards">
-                @forelse($timMalang as $user)
-                <div class="tim-card">
-                    <img
-                        src="{{ asset('img/logo-2.png') }}"
-                        alt="{{ $user->name }}"
-                        class="tim-card-image"
-                    >
-                    <div class="tim-card-body">
-                        <h3 class="tim-card-name">
-                            {{ $user->name }}
-                        </h3>
-                        <p class="tim-card-position">
-                            {{ ucfirst($user->roles) }}
-                        </p>
-                        @if($user->ig)
-                        <a href="https://instagram.com/{{ ltrim($user->ig, '@') }}" class="instagram-button" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
-                            {{ $user->ig }}
-                        </a>
-                        @endif
+            {{-- =========================
+                 CARDS
+            ========================== --}}
+
+            <div class="layanan-cards">
+
+                @for ($i = 0; $i < 12; $i++)
+
+                    <div class="layanan-card">
+
+                        {{-- AREA GAMBAR --}}
+                        <div class="card-space"></div>
+
+
+                        {{-- INFORMASI LAYANAN --}}
+                        <div class="layanan-card-body">
+
+                            <h3 class="layanan-card-name">
+                                Pijat Bayi
+                            </h3>
+
+                            <span class="cabang">
+                                Cabang Malang
+                            </span>
+
+                            <div class="harga">
+                                Rp 88.000
+                            </div>
+
+                            <div class="durasi">
+
+                                <i class="far fa-clock"></i>
+
+                                4050* s/d...
+
+                            </div>
+
+
+                            {{-- BUTTON TAMBAH --}}
+                            <button
+                                type="button"
+                                class="btn-tambah"
+                            >
+
+                                <span class="icon-plus">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+
+                                <span class="text-tambah">
+                                    Tambah
+                                </span>
+
+                            </button>
+
+                        </div>
+
                     </div>
-                </div>
-                @empty
-                <p style="padding: 0 15px; color: #7d7d7d;">Belum ada data tim.</p>
-                @endforelse
-            </div>
 
-        </section>
+                @endfor
 
-
-
-        {{-- =====================================================
-             TIM MAMINA KEDIRI
-        ====================================================== --}}
-        <section class="tim-section">
-
-            <div class="tim-section-header">
-
-                <div class="tim-title-wrapper">
-                    <div class="tim-title-line"></div>
-
-                    <h2 class="tim-title">
-                        Tim Mamina Kediri
-                    </h2>
-                </div>
-
-                <div class="tim-arrows">
-                    <button class="arrow-button">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-
-                    <button class="arrow-button next">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-
-            </div>
-
-
-            <div class="tim-cards">
-                @forelse($timKediri as $user)
-                <div class="tim-card">
-                    <img
-                        src="{{ asset('img/logo-2.png') }}"
-                        alt="{{ $user->name }}"
-                        class="tim-card-image"
-                    >
-                    <div class="tim-card-body">
-                        <h3 class="tim-card-name">
-                            {{ $user->name }}
-                        </h3>
-                        <p class="tim-card-position">
-                            {{ ucfirst($user->roles) }}
-                        </p>
-                        @if($user->ig)
-                        <a href="https://instagram.com/{{ ltrim($user->ig, '@') }}" class="instagram-button" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
-                            {{ $user->ig }}
-                        </a>
-                        @endif
-                    </div>
-                </div>
-                @empty
-                <p style="padding: 0 15px; color: #7d7d7d;">Belum ada data tim.</p>
-                @endforelse
-            </div>
-
-        </section>
-
-
-
-        {{-- =====================================================
-             KONSELOR MENYUSUI
-        ====================================================== --}}
-        <section class="tim-section small">
-
-            <div class="tim-section-header">
-
-                <div class="tim-title-wrapper">
-                    <div class="tim-title-line"></div>
-
-                    <h2 class="tim-title">
-                        Konselor Menyusui Mamina
-                    </h2>
-                </div>
-
-                <div class="tim-arrows">
-                    <button class="arrow-button">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-
-                    <button class="arrow-button next">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-
-            </div>
-
-
-            <div class="tim-cards">
-                @forelse($konselor as $user)
-                <div class="tim-card">
-                    <img
-                        src="{{ asset('img/logo-2.png') }}"
-                        alt="{{ $user->name }}"
-                        class="tim-card-image"
-                    >
-                    <div class="tim-card-body">
-                        <h3 class="tim-card-name">
-                            {{ $user->name }}
-                        </h3>
-                        <p class="tim-card-position">
-                            {{ ucfirst($user->roles) }}
-                        </p>
-                        @if($user->ig)
-                        <a href="https://instagram.com/{{ ltrim($user->ig, '@') }}" class="instagram-button" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
-                            {{ $user->ig }}
-                        </a>
-                        @endif
-                    </div>
-                </div>
-                @empty
-                <p style="padding: 0 15px; color: #7d7d7d;">Belum ada data tim.</p>
-                @endforelse
-            </div>
-
-        </section>
-
-
-
-        {{-- =====================================================
-             TIM MAMINA EXTEND
-        ====================================================== --}}
-        <section class="tim-section small">
-
-            <div class="tim-section-header">
-
-                <div class="tim-title-wrapper">
-                    <div class="tim-title-line"></div>
-
-                    <h2 class="tim-title">
-                        Tim Mamina Extend
-                    </h2>
-                </div>
-
-                <div class="tim-arrows">
-                    <button class="arrow-button">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-
-                    <button class="arrow-button next">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-
-            </div>
-
-
-            <div class="tim-cards">
-                @forelse($timExtend as $user)
-                <div class="tim-card">
-                    <img
-                        src="{{ asset('img/logo-2.png') }}"
-                        alt="{{ $user->name }}"
-                        class="tim-card-image"
-                    >
-                    <div class="tim-card-body">
-                        <h3 class="tim-card-name">
-                            {{ $user->name }}
-                        </h3>
-                        <p class="tim-card-position">
-                            {{ ucfirst($user->roles) }}
-                        </p>
-                        @if($user->ig)
-                        <a href="https://instagram.com/{{ ltrim($user->ig, '@') }}" class="instagram-button" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
-                            {{ $user->ig }}
-                        </a>
-                        @endif
-                    </div>
-                </div>
-                @empty
-                <p style="padding: 0 15px; color: #7d7d7d;">Belum ada data tim.</p>
-                @endforelse
             </div>
 
         </section>

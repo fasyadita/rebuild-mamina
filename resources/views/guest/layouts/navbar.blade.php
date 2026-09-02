@@ -1,6 +1,14 @@
 <style>
     * {
         box-sizing: border-box;
+
+    }
+
+    body {
+        background: linear-gradient(90deg,
+                #FADCD5 0%,
+                #FFF3EF 50%,
+                #EAF8F6 100%);
     }
 
     /* =========================================
@@ -342,7 +350,7 @@
              LOGO
         ================================= --}}
 
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/guest/">
             <img
                 src="{{ asset('img/logo.png') }}"
                 alt="Mamina">
@@ -382,7 +390,7 @@
                         class="nav-link"
                         href="{{ route('guest.service') }}"
                         Layanan
-                    </a>
+                        </a>
                 </li>
 
 
