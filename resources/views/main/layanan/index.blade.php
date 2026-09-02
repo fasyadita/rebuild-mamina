@@ -85,7 +85,7 @@
     }
     
 .layanan-index {
-    background: #FFFDEB;
+     background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
     padding: 60px 80px;
     font-family: 'nunito', sans-serif;
     min-height: 100vh;
