@@ -391,7 +391,7 @@
              BUTTON LIHAT SEMUA
         ========================= --}}
         <div class="all-service-wrapper">
-            <a href="{{ route('guest.service') }}" class="btn-all-service">
+            <a href="{{ route('guest.login') }}" class="btn-all-service">
                 Lihat Semua Layanan
             </a>
         </div>

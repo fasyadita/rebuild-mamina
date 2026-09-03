@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kid extends Model
 {
-    protected $table = 'kids';
+    protected $table = 'children';
 
     public $timestamps = true;
 

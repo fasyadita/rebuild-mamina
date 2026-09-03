@@ -22,8 +22,7 @@ class AnakController extends Controller
             $kids = Kid::where('customer_id', $user->id)->get();
 
             $kidIds = $kids->pluck('id');
-
-            $growths = Growth::whereIn('kid_id', $kidIds)
+            $growths = Growth::whereIn('child_id', $kidIds)
                 ->latest()
                 ->get();
         }
@@ -69,12 +68,19 @@ class AnakController extends Controller
             'head' => 'required',
         ]);
 
+        $kid = Kid::find($request->kid_id);
+        $age = null;
+        if ($kid && $kid->birthdate) {
+            $age = \Carbon\Carbon::parse($kid->birthdate)->diffInMonths(\Carbon\Carbon::parse($request->date));
+        }
+
         Growth::create([
-            'kid_id' => $request->kid_id,
-            'date' => $request->date,
+            'child_id' => $request->kid_id,
+            'record_date' => $request->date,
+            'age' => $age,
             'weight' => $request->weight,
             'height' => $request->height,
-            'head' => $request->head,
+            'head_circumference' => $request->head,
         ]);
 
         return back()->with('success', 'Data pertumbuhan berhasil ditambahkan');
