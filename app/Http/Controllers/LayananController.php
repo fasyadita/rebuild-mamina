@@ -18,7 +18,8 @@ class LayananController extends Controller
             ->where('is_active', '1')
             ->get();
 
-        return view('guest.layanan.layanan-anak', compact('products'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-anak", compact('products'));
     }
     public function bayi()
     {
@@ -26,7 +27,8 @@ class LayananController extends Controller
             ->where('is_active', '1')
             ->get();
 
-        return view('guest.layanan.layanan-bayi', compact('babyProducts'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-bayi", compact('babyProducts'));
     }
     public function ibu()
     {
@@ -34,7 +36,8 @@ class LayananController extends Controller
             ->where('is_active', '1')
             ->get();
 
-        return view('guest.layanan.layanan-ibu', compact('momProducts'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-ibu", compact('momProducts'));
     }
     public function imunisasi()
     {
@@ -42,7 +45,8 @@ class LayananController extends Controller
             ->where('is_active', '1')
             ->get();
 
-        return view('guest.layanan.layanan-imunisasi', compact('imunProducts'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-imunisasi", compact('imunProducts'));
     }
     public function kelas()
     {
@@ -50,7 +54,8 @@ class LayananController extends Controller
             ->where('is_active', '1')
             ->get();
 
-        return view('guest.layanan.layanan-kelas', compact('classProducts'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-kelas", compact('classProducts'));
     }
     public function konsultasi()
     {
@@ -58,7 +63,8 @@ class LayananController extends Controller
             ->where('is_active', '1')
             ->get();
 
-        return view('guest.layanan.layanan-konsultasi', compact('konsulProducts'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-konsultasi", compact('konsulProducts'));
     }
     public function paket()
     {
@@ -66,7 +72,8 @@ class LayananController extends Controller
         ->where('is_active', '1')
         ->get();
         
-        return view('guest.layanan.layanan-paket', compact('packageProducts'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-paket", compact('packageProducts'));
     }
     public function toddler()
     {
@@ -74,7 +81,8 @@ class LayananController extends Controller
             ->where('is_active', '1')
             ->get();
 
-        return view('guest.layanan.layanan-toddler', compact('todlerProducts'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-toddler", compact('todlerProducts'));
     }
     public function lainnya()
     {
@@ -82,7 +90,8 @@ class LayananController extends Controller
             ->where('is_active', '1')
             ->get();
 
-        return view('guest.layanan.layanan-lainnya', compact('otherProducts'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-lainnya", compact('otherProducts'));
     }
 
 
@@ -92,7 +101,8 @@ class LayananController extends Controller
             ->where('is_active', '1')
             ->get();
 
-        return view('guest.layanan.layanan-umum', compact('umumProducts'));
+        $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
+        return view("{$viewPrefix}.layanan.layanan-umum", compact('umumProducts'));
     }
 }
 

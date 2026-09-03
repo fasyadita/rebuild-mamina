@@ -16,35 +16,36 @@ class Growth extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'kid_id',
-        'date',
+        'child_id',
+        'record_date',
+        'age',
         'height',
         'weight',
-        'head',
-        'photo',
+        'head_circumference',
     ];
 
     protected $casts = [
-        'date' => 'date',
+        'record_date' => 'date',
         'height' => 'float',
         'weight' => 'float',
-        'head' => 'float',
+        'head_circumference' => 'float',
     ];
 
     public function kid()
     {
-        return $this->belongsTo(Kid::class, 'kid_id');
+        return $this->belongsTo(Kid::class, 'child_id');
     }
 
     // Accessor so the view can use $growth->check_date
     public function getCheckDateAttribute()
     {
-        return $this->date ? Carbon::parse($this->date) : null;
+        return $this->record_date ? Carbon::parse($this->record_date) : null;
     }
 
     // Accessor so the view can use $growth->head_circumference
-    public function getHeadCircumferenceAttribute()
+    // (This is not strictly needed anymore since the column is head_circumference, but kept for compatibility just in case)
+    public function getHeadAttribute()
     {
-        return $this->head;
+        return $this->head_circumference;
     }
 }
