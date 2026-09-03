@@ -264,7 +264,7 @@
     <div class="container">
 
         <!-- Logo di Kiri -->
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="member/">
             <img src="{{ asset('img/logo.png') }}" alt="Mamina" height="60">
         </a>
 

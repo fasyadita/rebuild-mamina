@@ -1,29 +1,20 @@
 @extends('member.layouts.app')
 @section('title', 'Edit Profile')
 
+@section('content')
 <style>
-    html, body {
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
-}
-
-    body {
-        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
-        font-family: 'Nunito', sans-serif;
-        color: #333;
-    }
-
-    * {
-        box-sizing: border-box;
-        /* Memastikan padding tidak merusak lebar elemen */
-    }
-
     .profile-container {
         max-width: 1100px;
         margin: 140px auto 60px;
         /* Tambahkan margin bawah agar tidak mentok */
         padding: 0 20px;
+    }
+
+    .profile-img-wrapper {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
     }
 
     .page-title {
@@ -141,7 +132,7 @@
         color: #333;
     }
 
-    .container {
+    .reset-container {
         max-width: 1100px;
         margin-top: 50px;
     }
@@ -286,104 +277,130 @@
         }
     }
 </style>
-</head>
 
-<body>
 
-    <div class="profile-container">
-        <div class="page-title">Profile Saya</div>
+<div class="profile-container">
+    <div class="page-title">Profile Saya</div>
 
-        <div class="profile-header-card">
-            <div class="row align-items-center">
+    <div class="profile-header-card">
+        <div class="row align-items-center">
 
-                <div class="referral-box">
-                    Kode Referral :
-                    <span id="kodeReferral">ABC123456</span>
-                    <i class="far fa-copy" style="cursor: pointer;" onclick="salinReferral()"></i>
-                </div>
-
-                <div class="col-md-auto text-center">
-                    <div class="profile-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Profile" class="profile-img">
-                        <div class="edit-icon-badge">
-                            <i class="fas fa-pencil-alt"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md text-center text-md-start mt-3 mt-md-0">
-                    <div class="user-name">Nadira Azzahra</div>
-                    <div class="user-detail">nadira@gmail.com</div>
-                    <div class="user-detail mb-3">081234567898</div>
-                </div>
-
-                <div class="col-md-auto mt-4 mt-md-0">
-                    <div class="stats-container">
-                        <div class="stat-box">
-                            <div class="stat-label">Level</div>
-                            <div class="stat-value">Newborn</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-label">Point</div>
-                            <div class="stat-value">0</div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="referral-box">
+                Kode Referral :
+                <span id="kodeReferral">{{ Auth::user()->code ?? '-' }}</span>
+                <i class="far fa-copy" style="cursor: pointer;" onclick="salinReferral()"></i>
             </div>
-        </div>
 
-
-        <div class="container">
-            <div class="form-card">
-
-                <h4 class="form-title">Reset Password</h4>
-                <div class="divider"></div>
-
-                <form action="#" method="POST">
-                    @csrf
-
-                    <div class="row">
-
-                        <div class="col-lg-6 pe-lg-5">
-                            <div class="row form-group-row">
-                                <label class="col-sm-4 form-label">Password Lama <span class="required-star">*</span></label>
-                                <div class="col-sm-8">
-                                    <input type="password" class="custom-input" name="current_password" required>
-                                </div>
-                            </div>
-
-                            <div class="row form-group-row">
-                                <label class="col-sm-4 form-label">Password Baru <span class="required-star">*</span></label>
-                                <div class="col-sm-8">
-                                    <input type="password" class="custom-input" name="password" required>
-                                </div>
-                            </div>
-
-                            <div class="row form-group-row">
-                                <label class="col-sm-4 form-label">Konfirmasi Password <span class="required-star">*</span></label>
-                                <div class="col-sm-8">
-                                    <input type="password" class="custom-input" name="password_confirmation" required>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-lg-6 ps-lg-4">
-
-                            <div class="row mt-5">
-                                <div class="col-12 text-end">
-                                    <button type="submit" class="btn-simpan">
-                                        <i class="fas fa-check"></i> Ubah Password
-                                    </button>
-                                </div>
-                            </div>
-
-                        </div>
+            <div class="col-md-auto text-center">
+                <div class="profile-img-wrapper">
+                    @php
+                    $fallbackImg = 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name ?? 'User') . '&background=ffdad1&color=3fb6a8';
+                    $profileImg = Auth::user()->image ? asset('storage/' . Auth::user()->image) : $fallbackImg;
+                    @endphp
+                    <img src="{{ $profileImg }}" alt="Profile" class="profile-img" onerror="this.onerror=null;this.src='{{ $fallbackImg }}';">
+                    <div class="edit-icon-badge">
+                        <i class="fas fa-pencil-alt"></i>
                     </div>
-
-                </form>
+                </div>
             </div>
+            <div class="col-md text-center text-md-start mt-3 mt-md-0">
+                <div class="user-name">{{ Auth::user()->name ?? 'Nama Pengguna' }}</div>
+                <div class="user-detail">{{ Auth::user()->email ?? 'email@example.com' }}</div>
+                <div class="user-detail mb-3">{{ Auth::user()->phone ?? '08xxxxxxxx' }}</div>
+            </div>
+
+            <div class="col-md-auto mt-4 mt-md-0">
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-label">Level</div>
+                        <div class="stat-value">Newborn</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Point</div>
+                        <div class="stat-value">0</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+
+    <div class="reset-container">
+        <div class="form-card">
+
+            <h4 class="form-title">Reset Password</h4>
+            <div class="divider"></div>
+
+            @if (session('success'))
+            <div class="alert alert-success" style="background-color: #d4edda; color: #155724; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger" style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                <ul class="mb-0" style="margin-bottom: 0;">
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
+            <form action="{{ route('member.password.update') }}" method="POST">
+                @csrf
+
+                <div class="row">
+
+                    <div class="col-lg-6 pe-lg-5">
+                        <div class="row form-group-row">
+                            <label class="col-sm-4 form-label">Password Lama <span class="required-star">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="password" class="custom-input" name="current_password" required>
+                            </div>
+                        </div>
+
+                        <div class="row form-group-row">
+                            <label class="col-sm-4 form-label">Password Baru <span class="required-star">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="password" class="custom-input" name="password" required>
+                            </div>
+                        </div>
+
+                        <div class="row form-group-row">
+                            <label class="col-sm-4 form-label">Konfirmasi Password <span class="required-star">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="password" class="custom-input" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-6 ps-lg-4">
+
+                        <div class="row mt-5">
+                            <div class="col-12 text-end">
+                                <button type="submit" class="btn-simpan">
+                                    <i class="fas fa-check"></i> Ubah Password
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function salinReferral() {
+        const kode = document.getElementById('kodeReferral').innerText;
+        navigator.clipboard.writeText(kode).then(() => {
+            alert('Kode referral berhasil disalin ✨');
+        });
+    }
+</script>
+@endsection

@@ -86,7 +86,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        Pelajari lebih lanjut
+                        
 
                     </a>
 
@@ -137,7 +137,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        Pelajari lebih lanjut
+                        
 
                     </a>
 
@@ -188,7 +188,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        Pelajari lebih lanjut
+                        
 
                     </a>
 
@@ -241,7 +241,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        Pelajari lebih lanjut
+                        
 
                     </a>
 
@@ -292,7 +292,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        Pelajari lebih lanjut
+                        
 
                     </a>
 
@@ -343,7 +343,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        Pelajari lebih lanjut
+                        
 
                     </a>
 

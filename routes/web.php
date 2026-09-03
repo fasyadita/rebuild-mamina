@@ -10,6 +10,7 @@ use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\JadwalTerapisController;
 use App\Http\Controllers\AnakController;
+use App\Http\Controllers\RiwayatReservasiController;
 
 // MAIN
 // landing page 
@@ -60,6 +61,8 @@ Route::prefix('guest')->name('guest.')->group(function () {
     Route::get('/regist', [AuthController::class, 'showRegistrationForm'])->name('register');
     Route::post('/regist', [AuthController::class, 'register'])->name('register.post');
 
+    Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('login.google');
+    Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback'])->name('login.google.callback');
 
     Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
     Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');
@@ -84,7 +87,7 @@ Route::prefix('member')->name('member.')->middleware('auth')->group(function () 
     Route::get('/terapis', [TimMaminaController::class, 'memberIndex'])->name('terapis');
     Route::get('/cabang', fn() => view('member.cabang.cabang'))->name('cabang');
 
-    Route::get('/riwayat-reservasi', fn() => view('member.reservasi.reservasi'))->name('reservasi');
+    Route::get('/riwayat-reservasi', [RiwayatReservasiController::class, 'index'])->name('reservasi');
     Route::get('/anak', [AnakController::class, 'index'])->name('anak');
     Route::post('/anak/store', [AnakController::class, 'storeKids'])->name('anak.store');
     Route::post('/anak/store-growth', [AnakController::class, 'storeGrowth'])->name('growth.store');
@@ -94,6 +97,7 @@ Route::prefix('member')->name('member.')->middleware('auth')->group(function () 
     Route::put('/edit-profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('/change-password', fn() => view('member.profile.change-password'))->name('change-password');
     Route::get('/reset-password', fn() => view('member.profile.reset-password'))->name('reset-password');
+    Route::post('/reset-password', [ProfileController::class, 'updatePassword'])->name('password.update');
     Route::get('/services', [LayananController::class, 'index'])->name('services');
     Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
     Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');

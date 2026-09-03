@@ -2,62 +2,75 @@
 
 @section('title', 'Riwayat Reservasi')
 
-@section('content')
+@push('styles')
 <style>
-    html, body {
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
+    body {
+        background-color: #FFFDF3;
     }
 
     .history-section {
-        padding: 40px 20px;
-        max-width: 1200px;
-        margin: 60px auto;
-        align-content: center;
+        padding: 20px 20px;
+        max-width: 1250px;
+        margin: 0px auto;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        margin-top: 25px;
     }
 
     .section-title {
-        color: #3fb6a8;
-        font-weight: 600;
-        font-size: 20px;
-        margin-bottom: 15px;
-        margin-top: 30px;
+        color: #5BA7A0;
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0;
     }
 
     .history-card {
-        border-radius: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        background: white;
+        border-radius: 22px;
         overflow: hidden;
-        margin-bottom: 20px;
-        min-height: 150px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        margin-bottom: 40px;
     }
 
     .custom-table {
         width: 100%;
-        margin-bottom: 0;
         border-collapse: collapse;
+        margin-bottom: 0;
     }
 
     .custom-table thead {
-        background-color: #ffdad6;
+        background: #FFD9D4;
     }
 
     .custom-table thead th {
-        color: #555;
-        font-weight: 500;
-        font-size: 14px;
-        padding: 18px 15px;
+        padding: 18px 20px;
+        font-size: 15px;
+        font-weight: 600;
+        background: #ffdad1;
+        color: #666;
         border: none;
-        text-align: left;
+        text-align: center;
         white-space: nowrap;
     }
 
     .custom-table tbody td {
-        padding: 15px;
+        padding: 18px 20px;
+        text-align: center;
         color: #666;
-        border-bottom: 1px solid #f0f0f0;
-        font-size: 14px;
+        border-bottom: 1px solid #f3f3f3;
+        vertical-align: middle;
+    }
+
+    .empty-state {
+        height: 140px;
+        text-align: center;
+        color: #b1b1b1;
+        font-size: 16px;
     }
 
     .text-success {
@@ -70,20 +83,32 @@
         font-weight: 600;
     }
 
-    .empty-space {
-        height: 20px;
-        background-color: white;
-    }
+    @media(max-width:768px) {
+        .section-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
 
-    .table-responsive {
-        border-radius: 20px;
+        .section-title {
+            font-size: 22px;
+        }
+
+        .custom-table thead th,
+        .custom-table tbody td {
+            font-size: 13px;
+            padding: 14px 10px;
+        }
     }
 </style>
+@endpush
 
-
+@section('content')
 <div class="history-section">
 
-    <h3 class="section-title">Riwayat Reservasi</h3>
+    <div class="section-header">
+        <h3 class="section-title">Riwayat Reservasi</h3>
+    </div>
 
     <div class="history-card">
         <div class="table-responsive">
@@ -93,7 +118,6 @@
                         <th>Nomor</th>
                         <th>Tanggal</th>
                         <th>Catatan</th>
-                        <th>Kasir</th>
                         <th>Bayar Via</th>
                         <th>Total</th>
                         <th>Bayar</th>
@@ -101,44 +125,30 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @forelse($reservations as $res)
                     <tr>
-                        <td>TRX-20231001-005</td>
-                        <td>01 Okt 2023</td>
-                        <td>Paket Family (Meja 4)</td>
-                        <td>Siti Aminah</td>
-                        <td>QRIS</td>
-                        <td>Rp 350.000</td>
-                        <td>Rp 350.000</td>
-                        <td>Rp 0</td>
+                        <td>{{ $res->id_number }}</td>
+                        <td>{{ \Carbon\Carbon::parse($res->date)->translatedFormat('d M Y') }}</td>
+                        <td>{{ $res->note ?? '-' }}</td>
+                        <td>{{ $res->via ?? '-' }}</td>
+                        <td>Rp {{ number_format($res->total, 0, ',', '.') }}</td>
+                        <td>Rp {{ number_format($res->paid, 0, ',', '.') }}</td>
+                        <td>Rp {{ number_format($res->change, 0, ',', '.') }}</td>
                     </tr>
+                    @empty
                     <tr>
-                        <td>TRX-20230925-012</td>
-                        <td>25 Sep 2023</td>
-                        <td>Makan Siang</td>
-                        <td>Budi Santoso</td>
-                        <td>Tunai</td>
-                        <td>Rp 75.000</td>
-                        <td>Rp 100.000</td>
-                        <td>Rp 25.000</td>
+                        <td colspan="7" class="empty-state">Belum ada data reservasi</td>
                     </tr>
-                    <tr>
-                        <td>TRX-20230910-003</td>
-                        <td>10 Sep 2023</td>
-                        <td>Meeting Room A</td>
-                        <td>Rina</td>
-                        <td>Transfer BCA</td>
-                        <td>Rp 1.200.000</td>
-                        <td>Rp 1.200.000</td>
-                        <td>Rp 0</td>
-                    </tr>
+                    @endforelse
                 </tbody>
             </table>
-            <div class="empty-space"></div>
         </div>
     </div>
 
 
-    <h3 class="section-title">Riwayat Poin</h3>
+    <div class="section-header">
+        <h3 class="section-title">Riwayat Poin</h3>
+    </div>
 
     <div class="history-card">
         <div class="table-responsive">
@@ -146,34 +156,32 @@
                 <thead>
                     <tr>
                         <th style="width: 20%;">Tanggal</th>
-                        <th style="width: 60%;">Note</th>
-                        <th style="width: 20%; text-align: right;">Poin</th>
+                        <th style="width: 60%; text-align: left;">Note</th>
+                        <th style="width: 20%;">Poin</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @forelse($points as $p)
                     <tr>
-                        <td>01 Okt 2023</td>
-                        <td>Reward Transaksi TRX-20231001-005</td>
-                        <td style="text-align: right;" class="text-success">+ 35</td>
+                        <td>{{ \Carbon\Carbon::parse($p->created_at)->translatedFormat('d M Y') }}</td>
+                        <td style="text-align: left;">{{ $p->note }}</td>
+                        <td>
+                            @if($p->point_in > 0)
+                                <span class="text-success">+ {{ $p->point_in }}</span>
+                            @elseif($p->point_out > 0)
+                                <span class="text-danger">- {{ $p->point_out }}</span>
+                            @else
+                                -
+                            @endif
+                        </td>
                     </tr>
+                    @empty
                     <tr>
-                        <td>30 Sep 2023</td>
-                        <td>Penukaran Voucher Diskon 50k</td>
-                        <td style="text-align: right;" class="text-danger">- 100</td>
+                        <td colspan="3" class="empty-state">Belum ada riwayat poin</td>
                     </tr>
-                    <tr>
-                        <td>25 Sep 2023</td>
-                        <td>Reward Transaksi TRX-20230925-012</td>
-                        <td style="text-align: right;" class="text-success">+ 7</td>
-                    </tr>
-                    <tr>
-                        <td>25 Sep 2023</td>
-                        <td>Bonus Member Baru</td>
-                        <td style="text-align: right;" class="text-success">+ 50</td>
-                    </tr>
+                    @endforelse
                 </tbody>
             </table>
-            <div class="empty-space"></div>
         </div>
     </div>
 

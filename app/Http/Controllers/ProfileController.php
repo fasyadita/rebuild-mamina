@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
@@ -92,5 +93,24 @@ class ProfileController extends Controller
         }
 
         return redirect()->route('member.profile')->with('info', 'Tidak ada perubahan data yang dilakukan.');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', 'string'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $customer = Auth::user();
+
+        if (!Hash::check($request->current_password, $customer->password)) {
+            return back()->withErrors(['current_password' => 'Password lama tidak sesuai.']);
+        }
+
+        $customer->password = Hash::make($request->password);
+        $customer->save();
+
+        return redirect()->back()->with('success', 'Password berhasil diubah.');
     }
 }

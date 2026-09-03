@@ -82,4 +82,49 @@ class AuthController extends Controller
 
         return redirect('/');
     }
+
+    public function redirectToGoogle()
+    {
+        return \Laravel\Socialite\Facades\Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback()
+    {
+        try {
+            $googleUser = \Laravel\Socialite\Facades\Socialite::driver('google')->user();
+
+            $user = \App\Models\Customer::where('google_id', $googleUser->getId())
+                                        ->orWhere('email', $googleUser->getEmail())
+                                        ->first();
+
+            if ($user) {
+                // Update google_id if it's missing (e.g. matched by email)
+                if (!$user->google_id) {
+                    $user->update(['google_id' => $googleUser->getId()]);
+                }
+                
+                Auth::login($user);
+                return redirect()->route('member.home');
+            }
+
+            // Create new user if not exists
+            $newUser = \App\Models\Customer::create([
+                'name' => $googleUser->getName(),
+                'email' => $googleUser->getEmail(),
+                'google_id' => $googleUser->getId(),
+                'password' => md5(\Illuminate\Support\Str::random(16)), // Fallback random password
+                'code' => strtoupper(\Illuminate\Support\Str::random(6)),
+                'register_via' => 'Google',
+                'is_active' => 1,
+                'level' => 'Newborn',
+                'points' => 0,
+            ]);
+
+            Auth::login($newUser);
+            return redirect()->route('member.profile')->with('success', 'Registrasi dengan Google berhasil! Selamat datang ✨');
+            
+        } catch (\Exception $e) {
+            return redirect()->route('guest.login')->withErrors(['email' => 'Gagal masuk dengan Google. Silakan coba lagi.']);
+        }
+    }
 }
