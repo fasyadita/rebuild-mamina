@@ -139,7 +139,7 @@
 
 /* ===== CARD KATEGORI ===== */
 .kategori-card {
-    background: #FCEEEE;
+    background: #ffffff;
     border-radius: 18px;
     padding: 26px 16px;
     text-align: center;
