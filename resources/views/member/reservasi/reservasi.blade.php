@@ -4,6 +4,12 @@
 
 @section('content')
 <style>
+    html, body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
+    }
+
     .history-section {
         padding: 40px 20px;
         max-width: 1200px;
@@ -20,7 +26,6 @@
     }
 
     .history-card {
-        background-color: #fff;
         border-radius: 20px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         overflow: hidden;

@@ -6,7 +6,6 @@
 @include('member.landing.hero')
 @include('member.landing.home')
 @include('member.landing.top-service')
-@include('member.landing.service')
 
 @endsection
 

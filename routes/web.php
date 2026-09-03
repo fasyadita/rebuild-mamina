@@ -81,7 +81,7 @@ Route::prefix('member')->name('member.')->middleware('auth')->group(function () 
 
     Route::get('/', fn() => view('welcome-member'))->name('home');
 
-    Route::get('/terapis', fn() => view('member.terapis.terapis'))->name('terapis');
+    Route::get('/terapis', [TimMaminaController::class, 'memberIndex'])->name('terapis');
     Route::get('/cabang', fn() => view('member.cabang.cabang'))->name('cabang');
 
     Route::get('/riwayat-reservasi', fn() => view('member.reservasi.reservasi'))->name('reservasi');
@@ -94,7 +94,7 @@ Route::prefix('member')->name('member.')->middleware('auth')->group(function () 
     Route::put('/edit-profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('/change-password', fn() => view('member.profile.change-password'))->name('change-password');
     Route::get('/reset-password', fn() => view('member.profile.reset-password'))->name('reset-password');
-
+    Route::get('/services', [LayananController::class, 'index'])->name('services');
     Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
     Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');
     Route::get('/layanan-ibu', [LayananController::class, 'ibu'])->name('layanan.ibu');

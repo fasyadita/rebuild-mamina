@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class LayananController extends Controller
 {
+    public function index()
+    {
+        return view('member.layanan.service');
+    }
     public function anak()
     {
         // category_id = 1 for Layanan Anak
