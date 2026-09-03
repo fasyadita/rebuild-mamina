@@ -1,5 +1,5 @@
 @extends('member.layouts.app')
-
+@section('content')
 <div class="profile-container">
 
     <div class="page-title">Profile Saya</div>
@@ -120,9 +120,10 @@
         </div>
     </div>
 </div>
+@endsection
 
+@push('styles')
 <style>
-    html, body {
     margin: 0;
     padding: 0;
     background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
@@ -369,7 +370,9 @@
         }
     }
 </style>
+@endpush
 
+@push('scripts')
 <script>
     function salinReferral() {
         const kode = document.getElementById('kodeReferral').innerText;
@@ -379,4 +382,4 @@
         });
     }
 </script>
-
+@endpush

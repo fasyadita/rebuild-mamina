@@ -1,25 +1,7 @@
 @extends('member.layouts.app')
 @section('title', 'Edit Profile')
-
+@section('content')
 <style>
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
-    }
-
-    body {
-        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
-        font-family: 'Nunito', sans-serif;
-        color: #333;
-    }
-
-    * {
-        box-sizing: border-box;
-        /* Memastikan padding tidak merusak lebar elemen */
-    }
-
     .profile-container {
         max-width: 1100px;
         margin: 160px auto 60px;
@@ -159,7 +141,7 @@
         color: #333;
     }
 
-    .container {
+    .edit-container {
         max-width: 1100px;
         margin-top: 50px;
     }
@@ -301,9 +283,6 @@
         }
     }
 </style>
-</head>
-
-<body>
 
     <div class="profile-container">
         <div class="page-title">Profile Saya</div>
@@ -351,7 +330,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="edit-container">
             <div class="form-card">
 
                 <h4 class="form-title">Data Pribadi</h4>

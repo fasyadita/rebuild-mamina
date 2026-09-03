@@ -13,14 +13,12 @@
 
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+        rel="stylesheet">
 
     {{-- Font Awesome --}}
     <link
         rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <style>
         * {
@@ -70,16 +68,12 @@
             text-align: center;
 
             background:
-                radial-gradient(
-                    circle at 20% 20%,
+                radial-gradient(circle at 20% 20%,
                     rgba(214, 247, 232, 0.95),
-                    transparent 38%
-                ),
-                radial-gradient(
-                    circle at 85% 80%,
+                    transparent 38%),
+                radial-gradient(circle at 85% 80%,
                     rgba(255, 218, 209, 0.70),
-                    transparent 38%
-                ),
+                    transparent 38%),
                 #fffdf0;
         }
 
@@ -195,7 +189,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             margin-bottom: 10px;
         }
 
@@ -491,8 +484,7 @@
                 <div class="login-logo">
                     <img
                         src="{{ asset('img/logo-2.png') }}"
-                        alt="Mamina"
-                    >
+                        alt="Mamina">
                 </div>
 
                 {{-- JUDUL --}}
@@ -532,8 +524,7 @@
                 {{-- FORM --}}
                 <form
                     action="{{ route('guest.login.post') }}"
-                    method="POST"
-                >
+                    method="POST">
 
                     @csrf
 
@@ -544,8 +535,7 @@
 
                             <label
                                 for="email"
-                                class="form-label"
-                            >
+                                class="form-label">
                                 Email
                             </label>
 
@@ -562,12 +552,11 @@
                                 class="form-input"
                                 placeholder="Contoh: email@anda.com"
                                 autocomplete="email"
-                                value="{{ old('email') }}"
-                            >
+                                value="{{ old('email') }}">
 
                         </div>
                         @error('email')
-                            <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
+                        <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
                         @enderror
 
                     </div>
@@ -580,17 +569,9 @@
 
                             <label
                                 for="password"
-                                class="form-label"
-                            >
+                                class="form-label">
                                 Password
                             </label>
-
-                            <a
-                                href="#"
-                                class="forgot-password"
-                            >
-                                Lupa Password?
-                            </a>
 
                         </div>
 
@@ -603,24 +584,28 @@
                                 id="password"
                                 name="password"
                                 class="form-input"
-                                placeholder="••••••••"
-                            >
+                                placeholder="••••••••">
 
                             <button
                                 type="button"
                                 class="password-toggle"
-                                onclick="togglePassword()"
-                            >
+                                onclick="togglePassword()">
                                 <i
                                     class="fa-regular fa-eye-slash"
-                                    id="password-icon"
-                                ></i>
+                                    id="password-icon"></i>
                             </button>
 
                         </div>
                         @error('password')
-                            <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
+                        <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
                         @enderror
+
+                        <a
+                            href="#"
+                            class="forgot-password"
+                            style="display: flex; justify-content: flex-end;">
+                            Lupa Password?
+                        </a>
 
                     </div>
 
@@ -628,10 +613,20 @@
                     {{-- BUTTON --}}
                     <button
                         type="submit"
-                        class="login-button"
-                    >
+                        class="login-button">
                         Masuk
                     </button>
+
+                    <div style="display: flex; align-items: center; text-align: center; margin: 25px 0;">
+                        <div style="flex: 1; height: 1px; background-color: #edf0f3;"></div>
+                        <div style="margin: 0 15px; color: #a3acba; font-size: 14px; font-weight: 600;">ATAU</div>
+                        <div style="flex: 1; height: 1px; background-color: #edf0f3;"></div>
+                    </div>
+
+                    <a href="{{ route('guest.login.google') }}" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 60px; border: 1px solid #edf0f3; border-radius: 32px; background: #ffffff; color: #59616d; font-size: 16px; font-weight: 700; text-decoration: none; transition: 0.2s; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.025);">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width: 24px; height: 24px; margin-right: 12px;">
+                        Masuk dengan Google
+                    </a>
 
                 </form>
 
@@ -643,8 +638,7 @@
 
                     <a
                         href="{{ route('guest.register') }}"
-                        class="register-link"
-                    >
+                        class="register-link">
                         Daftar Sekarang
                     </a>
 

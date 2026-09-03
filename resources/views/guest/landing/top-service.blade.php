@@ -269,8 +269,8 @@
                     <div class="treatment-price-wrap">
                         <span class="treatment-price">Mulai Rp 120.000</span>
                     </div>
-                    <a href="{{ route('guest.service') }}" class="treatment-link">
-                        Pelajari lebih lanjut
+                    <a href="{{ route('guest.login') }}" class="treatment-link">
+                        Reservasi sekarang
                     </a>
                 </div>
             </div>
@@ -291,8 +291,8 @@
                     <div class="treatment-price-wrap">
                         <span class="treatment-price">Mulai Rp 120.000</span>
                     </div>
-                    <a href="{{ route('guest.service') }}" class="treatment-link">
-                        Pelajari lebih lanjut
+                    <a href="{{ route('guest.login') }}" class="treatment-link">
+                        Reservasi sekarang
                     </a>
                 </div>
             </div>
@@ -313,8 +313,8 @@
                     <div class="treatment-price-wrap">
                         <span class="treatment-price">Mulai Rp 120.000</span>
                     </div>
-                    <a href="{{ route('guest.service') }}" class="treatment-link">
-                        Pelajari lebih lanjut
+                    <a href="{{ route('guest.login') }}" class="treatment-link">
+                        Reservasi sekarang
                     </a>
                 </div>
             </div>
@@ -335,8 +335,8 @@
                     <div class="treatment-price-wrap">
                         <span class="treatment-price">Mulai Rp 120.000</span>
                     </div>
-                    <a href="{{ route('guest.service') }}" class="treatment-link">
-                        Pelajari lebih lanjut
+                    <a href="{{ route('guest.login') }}" class="treatment-link">
+                        Reservasi sekarang
                     </a>
                 </div>
             </div>
@@ -357,8 +357,8 @@
                     <div class="treatment-price-wrap">
                         <span class="treatment-price">Mulai Rp 120.000</span>
                     </div>
-                    <a href="{{ route('guest.service') }}" class="treatment-link">
-                        Pelajari lebih lanjut
+                    <a href="{{ route('guest.login') }}" class="treatment-link">
+                        Reservasi sekarang
                     </a>
                 </div>
             </div>
@@ -379,8 +379,8 @@
                     <div class="treatment-price-wrap">
                         <span class="treatment-price">Mulai Rp 120.000</span>
                     </div>
-                    <a href="{{ route('guest.service') }}" class="treatment-link">
-                        Pelajari lebih lanjut
+                    <a href="{{ route('guest.login') }}" class="treatment-link">
+                        Reservasi sekarang
                     </a>
                 </div>
             </div>

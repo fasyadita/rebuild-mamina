@@ -29,7 +29,7 @@ class MaminaGoController extends Controller
         $encodedPesan = urlencode($pesan);
 
         // Nomor WA tujuan
-        $waNumber = "6287782169276";
+        $waNumber = "6281357046700";
 
         // Redirect ke link WhatsApp
         return redirect()->away("https://wa.me/{$waNumber}?text={$encodedPesan}");
