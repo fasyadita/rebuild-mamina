@@ -1,6 +1,6 @@
-@extends('guest.layouts.app')
+@extends('member.layouts.app')
 
-@section('title', 'join member')
+@section('title', 'Detail layanan')
 
 @section('content')
 

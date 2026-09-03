@@ -5,11 +5,11 @@
     html, body {
     margin: 0;
     padding: 0;
-    background-color: #fffdeb !important;
+    background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
 }
 
     body {
-        background-color: #FFFDEB;
+        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
         font-family: 'Nunito', sans-serif;
         color: #333;
     }

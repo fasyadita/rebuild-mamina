@@ -4,11 +4,11 @@
     html, body {
     margin: 0;
     padding: 0;
-    background-color: #fffdeb !important;
+    background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
 }
     /* Section Utama */
     .slider-section {
-        background: #FFFDEB; 
+        background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
         padding: 30px 20px;
         display: flex;
         justify-content: center;
@@ -21,12 +21,12 @@
     }
 
     /* Wrapper Background Pink */
-    .banner-wrapper {
+    /* .banner-wrapper {
         background-color: #FCE8E2; 
         border-radius: 20px;
         padding: 60px 0; 
         position: relative;
-    }
+    } */
 
     .swiper {
         width: 100%;
@@ -65,22 +65,6 @@
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
 
-    /* Memastikan slide sebelah kiri dan kanan tetap di bawah slide utama */
-    .swiper-slide-next, 
-    .swiper-slide-prev {
-        z-index: 5;
-    }
-
-    /* Navigasi Panah */
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: #555;
-        z-index: 20;
-    }
-
-    .swiper-button-prev { left: 20px; }
-    .swiper-button-next { right: 20px; }
-
     /* Responsif Mobile */
     @media (max-width: 768px) {
         .swiper-slide { width: 85%; }
@@ -88,34 +72,6 @@
         .swiper-slide.swiper-slide-active { transform: scale(1.03); }
     }
 </style>
-
-<div id="home" class="slider-section">
-    <div class="slider-container">
-        <div class="banner-wrapper">
-            
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="{{ asset('img/banner1.png') }}" alt="Banner 1">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{{ asset('img/benner2.png') }}" alt="Banner 2">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{{ asset('img/banner3.png') }}" alt="Banner 3">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{{ asset('img/banner4.png') }}" alt="Banner 4">
-                    </div>
-                </div>
-            </div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-        </div>
-    </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

@@ -103,13 +103,13 @@
         gap: 18px;
         overflow-x: auto;
         scroll-behavior: smooth;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
         padding-bottom: 12px;
     }
 
     .tim-cards::-webkit-scrollbar {
-        display: none;
+        display: none; /* Chrome/Safari */
     }
 
     /* =========================

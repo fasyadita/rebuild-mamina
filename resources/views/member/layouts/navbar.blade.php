@@ -1,208 +1,356 @@
 <style>
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-
-        background: #fffdeb;
-        /* putih/cream */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        height: 90px;
+    /* =========================
+       BACKGROUND
+    ========================= */
+    body {
+        background: linear-gradient(
+            90deg,
+            #FADCD5 0%,
+            #FFF3EF 50%,
+            #EAF8F6 100%
+        );
     }
 
-    .fixed-top {
+    /* =========================
+       NAVBAR
+    ========================= */
+    nav.navbar.mamina-navbar {
         position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        background-color: #fffdeb;
-    }
+        top: 10px;
+        left: 20px;
+        right: 20px;
 
-    .mamina-navbar {
-        background-color: #fffdeb !important;
+        width: auto;
+        height: 80px;
+
+        background: #ffffff !important;
+        border-radius: 50px;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+        z-index: 9999;
+
+        padding: 0;
     }
 
     .navbar .container {
         max-width: 1300px;
-        padding: 0 32px;
+        height: 100%;
+    }
+
+    /* =========================
+       LOGO
+    ========================= */
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin-right: 30px;
+    }
+
+    .navbar-brand img {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    /* =========================
+       MENU
+    ========================= */
+    .navbar-collapse {
+        height: 100%;
     }
 
     .navbar-nav {
-        gap: 28px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
     }
 
     .nav-link {
         color: #333 !important;
-        font-weight: 500;
         font-size: 15px;
-        transition: color 0.3s ease;
+        font-weight: 500;
+
+        padding: 8px 0 !important;
+
+        white-space: nowrap;
+
+        transition: all 0.3s ease;
     }
 
     .nav-link:hover {
         color: #3fb6a8 !important;
     }
 
+    /* =========================
+       CART
+    ========================= */
     .cart-icon {
         position: relative;
-        padding-right: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 8px 10px !important;
+    }
+
+    .cart-icon i {
+        color: #333;
+        font-size: 18px;
+
+        transition: color 0.3s ease;
+    }
+
+    .cart-icon:hover i {
+        color: #3fb6a8;
     }
 
     .cart-icon .badge {
-        top: -5px;
-        right: 0;
-        font-size: 11px;
-        padding: 2px 6px;
-        min-width: 18px;
-        height: 18px;
+        position: absolute;
+
+        top: -4px;
+        right: -4px;
+
+        min-width: 17px;
+        height: 17px;
+
+        padding: 0;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
+        font-size: 10px;
+        font-weight: 600;
+
+        border: 2px solid #fff;
     }
 
-    .btn-join {
-        background: #3fb6a8;
-        border: none;
-        color: #fff;
-        padding: 10px 24px;
-        border-radius: 50px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-
-    .btn-join:hover {
-        background: #359c8f;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(63, 182, 168, 0.2);
-        color: #fff;
-    }
-
+    /* =========================
+       PROFILE BUTTON
+    ========================= */
     .profile-btn {
-        width: 45px;
-        /* Lebar lingkaran */
-        height: 45px;
-        /* Tinggi lingkaran (harus sama dgn lebar) */
-        background-color: #fae3e3;
-        /* Warna Pink Background (mirip gambar) */
-        color: #555555;
-        /* Warna Icon Abu-abu tua */
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #3fb6a8;
+        color: #ffffff;
 
         border-radius: 50%;
-        /* KUNCI: Membuatnya jadi bulat sempurna */
-
-        display: flex;
-        /* Flexbox untuk menengahkan icon */
-        align-items: center;
-        /* Tengah secara vertikal */
-        justify-content: center;
-        /* Tengah secara horizontal */
 
         text-decoration: none;
-        /* Hilangkan garis bawah link */
+
         transition: all 0.3s ease;
-        border: 2px solid transparent;
-        /* Agar tidak loncat saat di-hover */
     }
 
-    /* Ukuran Icon di dalam lingkaran */
     .profile-btn i {
-        font-size: 20px;
+        font-size: 16px;
     }
 
-    /* Efek saat mouse diarahkan (Hover) */
     .profile-btn:hover {
-        background-color: #f5c6cb;
-        /* Pink sedikit lebih gelap */
-        color: #333;
-        transform: scale(1.05);
-        /* Sedikit membesar */
+        background: #359c8f;
+        color: #ffffff;
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 4px 12px rgba(63, 182, 168, 0.25);
     }
 
-    /* Responsif Mobile (Opsional: agar rapi di HP) */
-    @media (max-width: 991px) {
-        .profile-btn {
-            margin: 0 auto;
-            /* Tengah di mobile */
-        }
+    /* =========================
+       HAMBURGER
+    ========================= */
+    .navbar-toggler {
+        border: none;
+        padding: 8px;
     }
 
-    /* Mobile Responsive */
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
     @media (max-width: 991.98px) {
-        .navbar {
+
+        nav.navbar.mamina-navbar {
+            top: 10px;
+            left: 10px;
+            right: 10px;
+
+            width: auto;
             height: auto;
-            padding: 15px 0;
+
+            min-height: 70px;
+
+            padding: 10px 20px;
+
+            border-radius: 30px;
+        }
+
+        .navbar .container {
+            padding: 0;
+        }
+
+        .navbar-brand {
+            margin-right: 0;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-collapse {
+            height: auto;
         }
 
         .navbar-nav {
-            padding: 20px 0;
-            gap: 15px;
+            height: auto;
+
+            padding: 15px 0 5px;
+
+            gap: 12px;
         }
 
         .nav-item {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .nav-link {
             text-align: center;
         }
 
         .cart-icon {
             justify-content: center;
-            padding-right: 0;
         }
 
-        .btn-join {
-            margin-top: 10px;
+        .profile-btn {
+            margin-top: 5px;
         }
     }
 
-    @media (max-width: 768px) {
-        .navbar .container {
-            padding: 0 20px;
+    @media (max-width: 576px) {
+
+        nav.navbar.mamina-navbar {
+            padding: 8px 15px;
+        }
+
+        .navbar-brand img {
+            height: 45px;
         }
     }
 </style>
+
+
 <nav class="navbar navbar-expand-lg fixed-top mamina-navbar">
+
     <div class="container">
+
         <!-- Logo di Kiri -->
         <a class="navbar-brand" href="/">
             <img src="{{ asset('img/logo.png') }}" alt="Mamina" height="60">
         </a>
 
         <!-- Tombol Hamburger untuk Mobile -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
             <span class="navbar-toggler-icon"></span>
+
         </button>
 
         <!-- Menu di Kanan -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
             <ul class="navbar-nav align-items-center">
+
+                <!-- Layanan -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Layanan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/member/terapis">Terapis</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/member/cabang">Cabang</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/member/riwayat-reservasi">Riwayat Reservasi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/member/anak">Anak</a>
+                    <a class="nav-link" href="/member/services">
+                        Layanan
+                    </a>
                 </li>
 
+                <!-- Terapis -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/member/terapis">
+                        Terapis
+                    </a>
+                </li>
+
+                <!-- Cabang -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/member/cabang">
+                        Cabang
+                    </a>
+                </li>
+
+                <!-- Riwayat Reservasi -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/member/riwayat-reservasi">
+                        Riwayat Reservasi
+                    </a>
+                </li>
+
+                <!-- Anak -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/member/anak">
+                        Anak
+                    </a>
+                </li>
+
+                <!-- Keranjang -->
                 <li class="nav-item position-relative ms-3">
+
                     <a class="nav-link cart-icon" href="#">
+
                         <i class="fas fa-shopping-cart fa-lg"></i>
-                        <span class="badge bg-danger rounded-circle position-absolute">0</span>
+
+                        <span class="badge bg-danger rounded-circle position-absolute">
+                            0
+                        </span>
+
                     </a>
+
                 </li>
 
+                <!-- Profile -->
                 <li class="nav-item ms-3">
+
                     <a href="/member/profile" class="profile-btn">
+
                         <i class="fas fa-user"></i>
+
                     </a>
+
                 </li>
+
             </ul>
+
         </div>
+
     </div>
+
 </nav>

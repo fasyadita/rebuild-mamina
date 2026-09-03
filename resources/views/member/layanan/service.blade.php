@@ -1,6 +1,6 @@
-@extends('guest.layouts.app')
+@extends('member.layouts.app')
 
-@section('title', 'Layanan - Mamina')
+@section('title', 'Layanan Kami')
 
 @section('content')
 
@@ -13,61 +13,59 @@
     </div>
 
     {{-- JUDUL --}}
-    <h2 class="judul-page">Our Services</h2>
+    <h2 class="judul-page">Layanan Kami</h2>
 
         <div class="kategori-grid">
 
-    <a href="{{ url('/guest/layanan-anak') }}" class="kategori-card">
+    <a href="{{ url('/member/layanan-anak') }}" class="kategori-card">
         <i class="fas fa-child"></i>
         <span>Anak</span>
     </a>
 
-    <a href="{{ url('/guest/layanan-bayi') }}" class="kategori-card">
+    <a href="{{ url('/member/layanan-bayi') }}" class="kategori-card">
         <i class="fas fa-baby"></i>
         <span>Bayi</span>
     </a>
 
-    <a href="{{ url('/guest/layanan-ibu') }}" class="kategori-card">
+    <a href="{{ url('/member/layanan-ibu') }}" class="kategori-card">
         <i class="fas fa-person-breastfeeding"></i>
         <span>Ibu</span>
     </a>
 
-    <a href="{{ url('/guest/layanan-imunisasi') }}" class="kategori-card">
+    <a href="{{ url('/member/layanan-imunisasi') }}" class="kategori-card">
         <i class="fas fa-syringe"></i>
         <span>Imunisasi</span>
     </a>
 
-    <a href="{{ url('/guest/layanan-kelas') }}" class="kategori-card">
+    <a href="{{ url('/member/layanan-kelas') }}" class="kategori-card">
         <i class="fas fa-chalkboard-teacher"></i>
         <span>Kelas</span>
     </a>
 
-    <a href="{{ url('/guest/layanan-konsultasi') }}" class="kategori-card">
-        <i class="fas fa-headset"></i>
+    <a href="{{ url('/member/layanan-konsultasi') }}" class="kategori-card">
+        <i class="fas fa-comments"></i>
         <span>Konsultasi</span>
     </a>
 
-    <a href="{{ url('/guest/layanan-paket') }}" class="kategori-card">
-        <i class="fas fa-box-open"></i>
+    <a href="{{ url('/member/layanan-paket') }}" class="kategori-card">
+        <i class="fas fa-box"></i>
         <span>Paket</span>
     </a>
 
-    <a href="{{ url('/guest/layanan-toddler') }}" class="kategori-card">
-        <i class="fas fa-shapes"></i>
+    <a href="{{ url('/member/layanan-toddler') }}" class="kategori-card">
+        <i class="fas fa-child-reaching"></i>
         <span>Toddler</span>
     </a>
 
-    <a href="{{ url('/guest/layanan-umum') }}" class="kategori-card">
-        <i class="fas fa-user-check"></i>
+    <a href="{{ url('/member/layanan-umum') }}" class="kategori-card">
+        <i class="fas fa-user"></i>
         <span>Umum</span>
     </a>
 
-    <a href="{{ url('/guest/layanan-lainnya') }}" class="kategori-card">
+    <a href="{{ url('/member/layanan-lainnya') }}" class="kategori-card">
         <i class="fas fa-ellipsis-h"></i>
         <span>Lainnya</span>
     </a>
-
-        </div>
 
 </section>
 
@@ -141,7 +139,7 @@
 
 /* ===== CARD KATEGORI ===== */
 .kategori-card {
-    background: #ffffff;
+    background: #FCEEEE;
     border-radius: 18px;
     padding: 26px 16px;
     text-align: center;
