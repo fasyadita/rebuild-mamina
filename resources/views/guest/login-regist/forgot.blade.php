@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Masuk - Mamina</title>
+    <title>Lupa Password - Mamina</title>
 
     {{-- Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,9 +39,9 @@
         }
 
         /* =========================================
-           LOGIN PAGE
+           FORGOT PASSWORD PAGE
         ========================================= */
-        .login-page {
+        .forgot-page {
             width: 100%;
             min-height: 100vh;
 
@@ -55,7 +55,7 @@
         /* =========================================
            LEFT
         ========================================= */
-        .login-left {
+        .forgot-left {
             width: 52%;
             min-height: 100vh;
 
@@ -77,7 +77,7 @@
                 #fffdf0;
         }
 
-        .login-left-content {
+        .forgot-left-content {
             width: 100%;
             max-width: 600px;
 
@@ -85,13 +85,13 @@
         }
 
         /* LOGO */
-        .login-logo {
+        .forgot-logo {
             width: 210px;
 
             margin: 0 auto 28px;
         }
 
-        .login-logo img {
+        .forgot-logo img {
             width: 100%;
             height: auto;
 
@@ -99,7 +99,7 @@
         }
 
         /* TITLE */
-        .login-left-title {
+        .forgot-left-title {
             margin: 0 0 12px;
 
             color: #3da5a5;
@@ -111,7 +111,7 @@
         }
 
         /* DESCRIPTION */
-        .login-left-description {
+        .forgot-left-description {
             margin: 0 auto;
 
             color: #59616d;
@@ -125,10 +125,9 @@
         /* =========================================
            RIGHT
         ========================================= */
-        .login-right {
+        .forgot-right {
             width: 48%;
             min-height: 100vh;
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -143,20 +142,18 @@
                 -10px 0 30px rgba(0, 0, 0, 0.03);
         }
 
-        .login-form-container {
+        .forgot-form-container {
             width: 100%;
             max-width: 510px;
-
-            min-height: 620px;
-
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
         /* =========================================
            HEADER
         ========================================= */
-        .login-title {
+        .forgot-title {
             margin: 0;
 
             text-align: center;
@@ -167,7 +164,7 @@
             font-weight: 800;
         }
 
-        .login-subtitle {
+        .forgot-subtitle {
             margin: 8px 0 45px;
 
             text-align: center;
@@ -307,7 +304,7 @@
         /* =========================================
            BUTTON
         ========================================= */
-        .login-button {
+        .forgot-button {
             width: 100%;
             height: 64px;
 
@@ -330,7 +327,7 @@
             transition: 0.2s;
         }
 
-        .login-button:hover {
+        .forgot-button:hover {
             background: #329292;
 
             transform: translateY(-1px);
@@ -362,38 +359,38 @@
         ========================================= */
         @media (max-width: 768px) {
 
-            .login-page {
+            .forgot-page {
                 flex-direction: column;
 
                 overflow-y: auto;
             }
 
-            .login-left {
+            .forgot-left {
                 width: 100%;
                 min-height: 420px;
 
                 padding: 45px 25px 55px;
             }
 
-            .login-left-content {
+            .forgot-left-content {
                 margin-top: 0;
             }
 
-            .login-logo {
+            .forgot-logo {
                 width: 170px;
 
                 margin-bottom: 22px;
             }
 
-            .login-left-title {
+            .forgot-left-title {
                 font-size: 25px;
             }
 
-            .login-left-description {
+            .forgot-left-description {
                 font-size: 14px;
             }
 
-            .login-right {
+            .forgot-right {
                 width: 100%;
                 min-height: auto;
 
@@ -404,48 +401,48 @@
                 border-radius: 40px 40px 0 0;
             }
 
-            .login-form-container {
+            .forgot-form-container {
                 min-height: auto;
             }
 
-            .login-title {
+            .forgot-title {
                 font-size: 32px;
             }
 
-            .login-subtitle {
+            .forgot-subtitle {
                 margin-bottom: 35px;
             }
         }
 
         @media (max-width: 480px) {
 
-            .login-left {
+            .forgot-left {
                 min-height: 370px;
 
                 padding: 40px 20px 50px;
             }
 
-            .login-logo {
+            .forgot-logo {
                 width: 145px;
             }
 
-            .login-left-title {
+            .forgot-left-title {
                 font-size: 22px;
             }
 
-            .login-left-description {
+            .forgot-left-description {
                 font-size: 13px;
             }
 
-            .login-right {
+            .forgot-right {
                 padding: 40px 20px 45px;
             }
 
-            .login-title {
+            .forgot-title {
                 font-size: 29px;
             }
 
-            .login-subtitle {
+            .forgot-subtitle {
                 font-size: 14px;
             }
 
@@ -455,7 +452,7 @@
                 font-size: 14px;
             }
 
-            .login-button {
+            .forgot-button {
                 height: 58px;
 
                 font-size: 16px;
@@ -471,29 +468,29 @@
 
 <body>
 
-    <div class="login-page">
+    <div class="forgot-page">
 
         {{-- =========================================
              BAGIAN KIRI
         ========================================== --}}
-        <section class="login-left">
+        <section class="forgot-left">
 
-            <div class="login-left-content">
+            <div class="forgot-left-content">
 
                 {{-- LOGO --}}
-                <div class="login-logo">
+                <div class="forgot-logo">
                     <img
                         src="{{ asset('img/logo-2.png') }}"
                         alt="Mamina">
                 </div>
 
                 {{-- JUDUL --}}
-                <h1 class="login-left-title">
+                <h1 class="forgot-left-title">
                     Mendampingi Ibu &amp; Si Kecil
                 </h1>
 
                 {{-- DESKRIPSI --}}
-                <p class="login-left-description">
+                <p class="forgot-left-description">
                     Nikmati kemudahan berkonsultasi dan memantau tumbuh kembang
                     <br>
                     si kecil bersama Mamina.
@@ -507,23 +504,23 @@
         {{-- =========================================
              BAGIAN KANAN
         ========================================== --}}
-        <section class="login-right">
+        <section class="forgot-right">
 
-            <div class="login-form-container">
+            <div class="forgot-form-container">
 
                 {{-- JUDUL --}}
-                <h2 class="login-title">
-                    Masuk
+                <h2 class="forgot-title">
+                    Lupa Password
                 </h2>
 
-                <p class="login-subtitle">
-                    Silakan masuk ke akun Anda
+                <p class="forgot-subtitle">
+                    Masukkan email Anda untuk mereset password
                 </p>
 
 
                 {{-- FORM --}}
                 <form
-                    action="{{ route('guest.login.post') }}"
+                    action="{{ route('guest.forgot.post') }}"
                     method="POST">
 
                     @csrf
@@ -534,7 +531,7 @@
                         </div>
                     @endif
 
-                    {{-- NOMOR TELEPON --}}
+                    {{-- EMAIL --}}
                     <div class="form-group">
 
                         <div class="form-label-row">
@@ -558,7 +555,7 @@
                                 class="form-input"
                                 placeholder="Contoh: email@anda.com"
                                 autocomplete="email"
-                                value="{{ old('email') }}">
+                                value="{{ old('email') }}" required>
 
                         </div>
                         @error('email')
@@ -567,85 +564,24 @@
 
                     </div>
 
-
-                    {{-- PASSWORD --}}
-                    <div class="form-group">
-
-                        <div class="form-label-row">
-
-                            <label
-                                for="password"
-                                class="form-label">
-                                Password
-                            </label>
-
-                        </div>
-
-                        <div class="input-wrapper">
-
-                            <i class="fa-solid fa-lock input-icon"></i>
-
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                class="form-input"
-                                placeholder="••••••••">
-
-                            <button
-                                type="button"
-                                class="password-toggle"
-                                onclick="togglePassword()">
-                                <i
-                                    class="fa-regular fa-eye-slash"
-                                    id="password-icon"></i>
-                            </button>
-
-                        </div>
-                        @error('password')
-                        <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
-                        @enderror
-
-                        <a
-                            href="{{ route('guest.forgot') }}"
-                            class="forgot-password"
-                            style="display: flex; justify-content: flex-end;">
-                            Lupa Password?
-                        </a>
-
-                    </div>
-
-
                     {{-- BUTTON --}}
                     <button
                         type="submit"
-                        class="login-button">
-                        Masuk
+                        class="forgot-button">
+                        Kirim Link Reset Password
                     </button>
-
-                    <div style="display: flex; align-items: center; text-align: center; margin: 25px 0;">
-                        <div style="flex: 1; height: 1px; background-color: #edf0f3;"></div>
-                        <div style="margin: 0 15px; color: #a3acba; font-size: 14px; font-weight: 600;">ATAU</div>
-                        <div style="flex: 1; height: 1px; background-color: #edf0f3;"></div>
-                    </div>
-
-                    <a href="{{ route('guest.login.google') }}" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 60px; border: 1px solid #edf0f3; border-radius: 32px; background: #ffffff; color: #59616d; font-size: 16px; font-weight: 700; text-decoration: none; transition: 0.2s; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.025);">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width: 24px; height: 24px; margin-right: 12px;">
-                        Masuk dengan Google
-                    </a>
 
                 </form>
 
-
-                {{-- REGISTER --}}
+                {{-- BACK TO forgot --}}
                 <p class="register-text">
 
-                    Belum punya akun?
+                    Ingat password Anda?
 
                     <a
-                        href="{{ route('guest.register') }}"
+                        href="{{ route('guest.login') }}"
                         class="register-link">
-                        Daftar Sekarang
+                        Masuk
                     </a>
 
                 </p>
@@ -657,42 +593,7 @@
     </div>
 
 
-    {{-- PASSWORD SHOW / HIDE --}}
-    <script>
-        function togglePassword() {
 
-            const passwordInput =
-                document.getElementById('password');
-
-            const passwordIcon =
-                document.getElementById('password-icon');
-
-            if (passwordInput.type === 'password') {
-
-                passwordInput.type = 'text';
-
-                passwordIcon.classList.remove(
-                    'fa-eye-slash'
-                );
-
-                passwordIcon.classList.add(
-                    'fa-eye'
-                );
-
-            } else {
-
-                passwordInput.type = 'password';
-
-                passwordIcon.classList.remove(
-                    'fa-eye'
-                );
-
-                passwordIcon.classList.add(
-                    'fa-eye-slash'
-                );
-            }
-        }
-    </script>
 
 </body>
 

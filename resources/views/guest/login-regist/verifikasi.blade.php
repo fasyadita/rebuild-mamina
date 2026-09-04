@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Masuk - Mamina</title>
+    <title>Lupa Password - Mamina</title>
 
     {{-- Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,9 +39,9 @@
         }
 
         /* =========================================
-           LOGIN PAGE
+           FORGOT PASSWORD PAGE
         ========================================= */
-        .login-page {
+        .forgot-page {
             width: 100%;
             min-height: 100vh;
 
@@ -55,7 +55,7 @@
         /* =========================================
            LEFT
         ========================================= */
-        .login-left {
+        .forgot-left {
             width: 52%;
             min-height: 100vh;
 
@@ -77,7 +77,7 @@
                 #fffdf0;
         }
 
-        .login-left-content {
+        .forgot-left-content {
             width: 100%;
             max-width: 600px;
 
@@ -85,13 +85,13 @@
         }
 
         /* LOGO */
-        .login-logo {
+        .forgot-logo {
             width: 210px;
 
             margin: 0 auto 28px;
         }
 
-        .login-logo img {
+        .forgot-logo img {
             width: 100%;
             height: auto;
 
@@ -99,7 +99,7 @@
         }
 
         /* TITLE */
-        .login-left-title {
+        .forgot-left-title {
             margin: 0 0 12px;
 
             color: #3da5a5;
@@ -111,7 +111,7 @@
         }
 
         /* DESCRIPTION */
-        .login-left-description {
+        .forgot-left-description {
             margin: 0 auto;
 
             color: #59616d;
@@ -125,10 +125,9 @@
         /* =========================================
            RIGHT
         ========================================= */
-        .login-right {
+        .forgot-right {
             width: 48%;
             min-height: 100vh;
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -143,20 +142,18 @@
                 -10px 0 30px rgba(0, 0, 0, 0.03);
         }
 
-        .login-form-container {
+        .forgot-form-container {
             width: 100%;
             max-width: 510px;
-
-            min-height: 620px;
-
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
         /* =========================================
            HEADER
         ========================================= */
-        .login-title {
+        .forgot-title {
             margin: 0;
 
             text-align: center;
@@ -167,7 +164,7 @@
             font-weight: 800;
         }
 
-        .login-subtitle {
+        .forgot-subtitle {
             margin: 8px 0 45px;
 
             text-align: center;
@@ -215,99 +212,60 @@
         }
 
         /* =========================================
-           INPUT
+           OTP INPUT
         ========================================= */
-        .input-wrapper {
-            position: relative;
-
-            width: 100%;
+        .otp-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
         }
 
-        .input-icon {
-            position: absolute;
-
-            left: 18px;
-            top: 50%;
-
-            transform: translateY(-50%);
-
+        .otp-input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
             color: #3da5a5;
-
-            font-size: 17px;
-
-            z-index: 2;
-        }
-
-        .form-input {
-            width: 100%;
-            height: 60px;
-
-            padding: 0 48px;
-
             border: 1px solid #edf0f3;
-            border-radius: 16px;
-
+            border-radius: 12px;
             background: #fafbfc;
-
-            color: #59616d;
-
-            font-family: 'Nunito', sans-serif;
-
-            font-size: 16px;
-
             outline: none;
-
-            box-shadow:
-                0 3px 10px rgba(0, 0, 0, 0.025);
-
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.015);
             transition: 0.2s;
         }
 
-        .form-input::placeholder {
-            color: #aab2c0;
-        }
-
-        .form-input:focus {
+        .otp-input:focus {
             border-color: #3da5a5;
-
             background: #ffffff;
-
-            box-shadow:
-                0 0 0 3px rgba(61, 165, 165, 0.10);
+            box-shadow: 0 0 0 3px rgba(61, 165, 165, 0.10);
         }
 
-        /* =========================================
-           PASSWORD
-        ========================================= */
-        .password-toggle {
-            position: absolute;
-
-            right: 18px;
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            padding: 4px;
-
-            border: none;
-
-            background: transparent;
-
-            color: #a3acba;
-
-            font-size: 16px;
-
+        .resend-text {
+            text-align: center;
+            font-size: 14px;
+            color: #9ba5b6;
+            margin-bottom: 25px;
+        }
+        
+        .resend-link {
+            color: #ee9d99;
+            font-weight: 700;
+            text-decoration: none;
             cursor: pointer;
         }
 
-        .password-toggle:hover {
-            color: #3da5a5;
+        .resend-link:hover {
+            text-decoration: underline;
         }
+
+
 
         /* =========================================
            BUTTON
         ========================================= */
-        .login-button {
+        .forgot-button {
             width: 100%;
             height: 64px;
 
@@ -330,7 +288,7 @@
             transition: 0.2s;
         }
 
-        .login-button:hover {
+        .forgot-button:hover {
             background: #329292;
 
             transform: translateY(-1px);
@@ -362,38 +320,38 @@
         ========================================= */
         @media (max-width: 768px) {
 
-            .login-page {
+            .forgot-page {
                 flex-direction: column;
 
                 overflow-y: auto;
             }
 
-            .login-left {
+            .forgot-left {
                 width: 100%;
                 min-height: 420px;
 
                 padding: 45px 25px 55px;
             }
 
-            .login-left-content {
+            .forgot-left-content {
                 margin-top: 0;
             }
 
-            .login-logo {
+            .forgot-logo {
                 width: 170px;
 
                 margin-bottom: 22px;
             }
 
-            .login-left-title {
+            .forgot-left-title {
                 font-size: 25px;
             }
 
-            .login-left-description {
+            .forgot-left-description {
                 font-size: 14px;
             }
 
-            .login-right {
+            .forgot-right {
                 width: 100%;
                 min-height: auto;
 
@@ -404,58 +362,61 @@
                 border-radius: 40px 40px 0 0;
             }
 
-            .login-form-container {
+            .forgot-form-container {
                 min-height: auto;
             }
 
-            .login-title {
+            .forgot-title {
                 font-size: 32px;
             }
 
-            .login-subtitle {
+            .forgot-subtitle {
                 margin-bottom: 35px;
             }
         }
 
         @media (max-width: 480px) {
 
-            .login-left {
+            .forgot-left {
                 min-height: 370px;
 
                 padding: 40px 20px 50px;
             }
 
-            .login-logo {
+            .forgot-logo {
                 width: 145px;
             }
 
-            .login-left-title {
+            .forgot-left-title {
                 font-size: 22px;
             }
 
-            .login-left-description {
+            .forgot-left-description {
                 font-size: 13px;
             }
 
-            .login-right {
+            .forgot-right {
                 padding: 40px 20px 45px;
             }
 
-            .login-title {
+            .forgot-title {
                 font-size: 29px;
             }
 
-            .login-subtitle {
+            .forgot-subtitle {
                 font-size: 14px;
             }
 
-            .form-input {
-                height: 56px;
-
-                font-size: 14px;
+            .otp-input {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            .otp-container {
+                gap: 8px;
             }
 
-            .login-button {
+            .forgot-button {
                 height: 58px;
 
                 font-size: 16px;
@@ -471,29 +432,29 @@
 
 <body>
 
-    <div class="login-page">
+    <div class="forgot-page">
 
         {{-- =========================================
              BAGIAN KIRI
         ========================================== --}}
-        <section class="login-left">
+        <section class="forgot-left">
 
-            <div class="login-left-content">
+            <div class="forgot-left-content">
 
                 {{-- LOGO --}}
-                <div class="login-logo">
+                <div class="forgot-logo">
                     <img
                         src="{{ asset('img/logo-2.png') }}"
                         alt="Mamina">
                 </div>
 
                 {{-- JUDUL --}}
-                <h1 class="login-left-title">
+                <h1 class="forgot-left-title">
                     Mendampingi Ibu &amp; Si Kecil
                 </h1>
 
                 {{-- DESKRIPSI --}}
-                <p class="login-left-description">
+                <p class="forgot-left-description">
                     Nikmati kemudahan berkonsultasi dan memantau tumbuh kembang
                     <br>
                     si kecil bersama Mamina.
@@ -507,24 +468,24 @@
         {{-- =========================================
              BAGIAN KANAN
         ========================================== --}}
-        <section class="login-right">
+        <section class="forgot-right">
 
-            <div class="login-form-container">
+            <div class="forgot-form-container">
 
                 {{-- JUDUL --}}
-                <h2 class="login-title">
-                    Masuk
+                <h2 class="forgot-title">
+                    Verifikasi OTP
                 </h2>
 
-                <p class="login-subtitle">
-                    Silakan masuk ke akun Anda
+                <p class="forgot-subtitle">
+                    Masukkan 6 digit kode yang telah dikirimkan ke <br> email Anda.
                 </p>
 
 
                 {{-- FORM --}}
                 <form
-                    action="{{ route('guest.login.post') }}"
-                    method="POST">
+                    action="{{ route('guest.verifikasi.post') }}"
+                    method="POST" id="otp-form">
 
                     @csrf
 
@@ -533,122 +494,44 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{-- NOMOR TELEPON --}}
-                    <div class="form-group">
-
-                        <div class="form-label-row">
-
-                            <label
-                                for="email"
-                                class="form-label">
-                                Email
-                            </label>
-
+                    @if (session('error'))
+                        <div style="padding: 15px; margin-bottom: 20px; border-radius: 10px; color: #e74c3c; background-color: #fcebeb; border: 1px solid #f9d5d5; font-size: 15px; font-weight: 600; text-align: center;">
+                            {{ session('error') }}
                         </div>
+                    @endif
 
-                        <div class="input-wrapper">
-
-                            <i class="fa-solid fa-envelope input-icon"></i>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="form-input"
-                                placeholder="Contoh: email@anda.com"
-                                autocomplete="email"
-                                value="{{ old('email') }}">
-
-                        </div>
-                        @error('email')
-                        <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
-                        @enderror
-
+                    <div class="otp-container">
+                        <input type="text" name="otp[]" class="otp-input" maxlength="1" pattern="\d*" required>
+                        <input type="text" name="otp[]" class="otp-input" maxlength="1" pattern="\d*" required>
+                        <input type="text" name="otp[]" class="otp-input" maxlength="1" pattern="\d*" required>
+                        <input type="text" name="otp[]" class="otp-input" maxlength="1" pattern="\d*" required>
+                        <input type="text" name="otp[]" class="otp-input" maxlength="1" pattern="\d*" required>
+                        <input type="text" name="otp[]" class="otp-input" maxlength="1" pattern="\d*" required>
                     </div>
-
-
-                    {{-- PASSWORD --}}
-                    <div class="form-group">
-
-                        <div class="form-label-row">
-
-                            <label
-                                for="password"
-                                class="form-label">
-                                Password
-                            </label>
-
-                        </div>
-
-                        <div class="input-wrapper">
-
-                            <i class="fa-solid fa-lock input-icon"></i>
-
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                class="form-input"
-                                placeholder="••••••••">
-
-                            <button
-                                type="button"
-                                class="password-toggle"
-                                onclick="togglePassword()">
-                                <i
-                                    class="fa-regular fa-eye-slash"
-                                    id="password-icon"></i>
-                            </button>
-
-                        </div>
-                        @error('password')
-                        <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
-                        @enderror
-
-                        <a
-                            href="{{ route('guest.forgot') }}"
-                            class="forgot-password"
-                            style="display: flex; justify-content: flex-end;">
-                            Lupa Password?
-                        </a>
-
-                    </div>
-
+                    
+                    <p class="resend-text" id="resend-wrapper">
+                        Tidak menerima kode? <a href="#" class="resend-link" id="resend-btn" style="pointer-events: none; color: #aab2c0;">Kirim ulang (00:59)</a>
+                    </p>
 
                     {{-- BUTTON --}}
                     <button
                         type="submit"
-                        class="login-button">
-                        Masuk
+                        class="forgot-button">
+                        Verifikasi
                     </button>
-
-                    <div style="display: flex; align-items: center; text-align: center; margin: 25px 0;">
-                        <div style="flex: 1; height: 1px; background-color: #edf0f3;"></div>
-                        <div style="margin: 0 15px; color: #a3acba; font-size: 14px; font-weight: 600;">ATAU</div>
-                        <div style="flex: 1; height: 1px; background-color: #edf0f3;"></div>
-                    </div>
-
-                    <a href="{{ route('guest.login.google') }}" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 60px; border: 1px solid #edf0f3; border-radius: 32px; background: #ffffff; color: #59616d; font-size: 16px; font-weight: 700; text-decoration: none; transition: 0.2s; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.025);">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width: 24px; height: 24px; margin-right: 12px;">
-                        Masuk dengan Google
-                    </a>
 
                 </form>
 
-
-                {{-- REGISTER --}}
+                {{-- BACK TO LOGIN --}}
                 <p class="register-text">
-
-                    Belum punya akun?
-
-                    <a
-                        href="{{ route('guest.register') }}"
-                        class="register-link">
-                        Daftar Sekarang
-                    </a>
-
+                    Ingat password Anda?
+                    <a href="{{ route('guest.login') }}" class="register-link">Masuk</a>
                 </p>
+
+                {{-- FOOTER --}}
+                <div style="text-align: center; margin-top: 50px; color: #cbd5e1; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
+                    &copy; 2024 MAMINA INDONESIA &bull; TUMBUH KEMBANG SEHAT
+                </div>
 
             </div>
 
@@ -656,44 +539,66 @@
 
     </div>
 
-
-    {{-- PASSWORD SHOW / HIDE --}}
     <script>
-        function togglePassword() {
+        document.addEventListener("DOMContentLoaded", function() {
+            const inputs = document.querySelectorAll(".otp-input");
+            
+            inputs.forEach((input, index) => {
+                // Prevent typing non-numeric
+                input.addEventListener("input", function(e) {
+                    this.value = this.value.replace(/[^0-9]/g, "");
+                    if (this.value.length === 1 && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
 
-            const passwordInput =
-                document.getElementById('password');
+                // Handle backspace
+                input.addEventListener("keydown", function(e) {
+                    if (e.key === "Backspace" && this.value === "" && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
 
-            const passwordIcon =
-                document.getElementById('password-icon');
+                // Handle paste
+                input.addEventListener("paste", function(e) {
+                    e.preventDefault();
+                    const pastedData = e.clipboardData.getData('text').replace(/[^0-9]/g, '').slice(0, inputs.length);
+                    if (pastedData) {
+                        for (let i = 0; i < pastedData.length; i++) {
+                            inputs[i].value = pastedData[i];
+                        }
+                        const focusIndex = pastedData.length < inputs.length ? pastedData.length : inputs.length - 1;
+                        inputs[focusIndex].focus();
+                    }
+                });
+            });
 
-            if (passwordInput.type === 'password') {
+            // Timer Logic
+            let timeLeft = 59;
+            const resendBtn = document.getElementById("resend-btn");
+            const resendWrapper = document.getElementById("resend-wrapper");
 
-                passwordInput.type = 'text';
+            const timer = setInterval(() => {
+                timeLeft--;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    resendWrapper.innerHTML = 'Tidak menerima kode? <a href="#" class="resend-link" onclick="resendOTP(event)">Kirim ulang</a>';
+                } else {
+                    let formattedTime = timeLeft < 10 ? "0" + timeLeft : timeLeft;
+                    resendBtn.innerHTML = `Kirim ulang (00:${formattedTime})`;
+                }
+            }, 1000);
+        });
 
-                passwordIcon.classList.remove(
-                    'fa-eye-slash'
-                );
-
-                passwordIcon.classList.add(
-                    'fa-eye'
-                );
-
-            } else {
-
-                passwordInput.type = 'password';
-
-                passwordIcon.classList.remove(
-                    'fa-eye'
-                );
-
-                passwordIcon.classList.add(
-                    'fa-eye-slash'
-                );
-            }
+        // Dummy function for resend
+        function resendOTP(e) {
+            e.preventDefault();
+            // In a real app, make an AJAX/fetch request here to send a new OTP
+            alert('Kode OTP baru telah dikirimkan!');
+            // Reload page to reset timer or implement timer reset logic here
+            window.location.reload();
         }
     </script>
-
 </body>
 
 </html>

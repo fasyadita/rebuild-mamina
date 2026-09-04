@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
+use App\Mail\OtpMail;
 
 class AuthController extends Controller
 {
@@ -16,6 +19,94 @@ class AuthController extends Controller
     public function showRegistrationForm()
     {
         return view('guest.login-regist.regist');
+    }
+
+    public function showForgotForm()
+    {
+        return view('guest.login-regist.forgot');
+    }
+
+    public function sendResetLink(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|exists:customers,email',
+        ], [
+            'email.exists' => 'Email tidak terdaftar di sistem kami.'
+        ]);
+
+        // Generate 6 digit OTP
+        $otp = sprintf('%06d', mt_rand(0, 999999));
+        
+        // Save to session
+        Session::put('reset_email', $request->email);
+        Session::put('reset_otp', $otp);
+
+        // Send Email
+        Mail::to($request->email)->send(new OtpMail($otp));
+
+        // Redirect to verifikasi page
+        return redirect()->route('guest.verifikasi')->with('status', 'Kode OTP telah dikirim ke email Anda.');
+    }
+
+    public function showVerifikasiForm()
+    {
+        return view('guest.login-regist.verifikasi');
+    }
+
+    public function verifyOTP(Request $request)
+    {
+        $request->validate([
+            'otp' => 'required|array|min:6|max:6',
+            'otp.*' => 'required|numeric|digits:1',
+        ]);
+
+        $otpCode = implode('', $request->otp);
+        $savedOtp = Session::get('reset_otp');
+
+        if ($savedOtp && $otpCode === $savedOtp) {
+            // Success, clear OTP and proceed
+            // Session::forget('reset_otp'); // Actually, keep it so new password page knows it's verified. Or just set a verified flag.
+            Session::put('otp_verified', true);
+            return redirect()->route('guest.new-password')->with('status', 'Verifikasi berhasil. Silakan buat password baru Anda.');
+        }
+
+        return back()->with('error', 'Kode OTP yang Anda masukkan salah. Silakan coba lagi.');
+    }
+
+    public function showNewPasswordForm()
+    {
+        if (!Session::get('otp_verified') || !Session::get('reset_email')) {
+            return redirect()->route('guest.forgot')->withErrors(['email' => 'Sesi Anda telah berakhir. Silakan ulangi proses lupa password.']);
+        }
+        return view('guest.login-regist.new-password');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        if (!Session::get('otp_verified') || !Session::get('reset_email')) {
+            return redirect()->route('guest.forgot')->withErrors(['email' => 'Sesi Anda telah berakhir. Silakan ulangi proses lupa password.']);
+        }
+
+        $request->validate([
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ], [
+            'password.confirmed' => 'Konfirmasi password tidak cocok.'
+        ]);
+
+        $email = Session::get('reset_email');
+        $user = \App\Models\Customer::where('email', $email)->first();
+
+        if ($user) {
+            // Based on your existing code, you are using md5 for passwords
+            $user->update([
+                'password' => md5($request->password)
+            ]);
+        }
+
+        // Clear sessions
+        Session::forget(['reset_email', 'reset_otp', 'otp_verified']);
+
+        return redirect()->route('guest.login')->with('status', 'Password berhasil diubah. Silakan masuk menggunakan password baru Anda.');
     }
 
     public function login(Request $request)
