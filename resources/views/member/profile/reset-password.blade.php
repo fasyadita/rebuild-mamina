@@ -112,7 +112,7 @@
     }
 
     .stat-box {
-        background-color: #e0e0e0;
+        background-color: #ffffff;
         /* Abu-abu sesuai gambar */
         border-radius: 12px;
         padding: 10px 20px;
