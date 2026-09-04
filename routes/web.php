@@ -60,7 +60,12 @@ Route::prefix('guest')->name('guest.')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
     Route::get('/regist', [AuthController::class, 'showRegistrationForm'])->name('register');
     Route::post('/regist', [AuthController::class, 'register'])->name('register.post');
-
+    Route::get('/forgot', [AuthController::class, 'showForgotForm'])->name('forgot');
+    Route::post('/forgot', [AuthController::class, 'sendResetLink'])->name('forgot.post');
+    Route::get('/verifikasi', [AuthController::class, 'showVerifikasiForm'])->name('verifikasi');
+    Route::post('/verifikasi', [AuthController::class, 'verifyOTP'])->name('verifikasi.post');
+    Route::get('/new-password', [AuthController::class, 'showNewPasswordForm'])->name('new-password');
+    Route::post('/new-password', [AuthController::class, 'updatePassword'])->name('new-password.post');
     Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('login.google');
     Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback'])->name('login.google.callback');
 

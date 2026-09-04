@@ -513,17 +513,17 @@
 
                 {{-- JUDUL --}}
                 <h2 class="login-title">
-                    Masuk
+                    Buat Password Baru
                 </h2>
 
                 <p class="login-subtitle">
-                    Silakan masuk ke akun Anda
+                    Silakan masukkan password baru Anda.<br>Pastikan password Anda kuat dan mudah diingat.
                 </p>
 
 
                 {{-- FORM --}}
                 <form
-                    action="{{ route('guest.login.post') }}"
+                    action="{{ route('guest.new-password.post') }}"
                     method="POST">
 
                     @csrf
@@ -533,42 +533,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{-- NOMOR TELEPON --}}
-                    <div class="form-group">
-
-                        <div class="form-label-row">
-
-                            <label
-                                for="email"
-                                class="form-label">
-                                Email
-                            </label>
-
+                    @if (session('error'))
+                        <div style="padding: 15px; margin-bottom: 20px; border-radius: 10px; color: #e74c3c; background-color: #fcebeb; border: 1px solid #f9d5d5; font-size: 15px; font-weight: 600; text-align: center;">
+                            {{ session('error') }}
                         </div>
+                    @endif
 
-                        <div class="input-wrapper">
-
-                            <i class="fa-solid fa-envelope input-icon"></i>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="form-input"
-                                placeholder="Contoh: email@anda.com"
-                                autocomplete="email"
-                                value="{{ old('email') }}">
-
-                        </div>
-                        @error('email')
-                        <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
-                        @enderror
-
-                    </div>
-
-
-                    {{-- PASSWORD --}}
+                    {{-- PASSWORD BARU --}}
                     <div class="form-group">
 
                         <div class="form-label-row">
@@ -576,7 +547,7 @@
                             <label
                                 for="password"
                                 class="form-label">
-                                Password
+                                Password Baru
                             </label>
 
                         </div>
@@ -590,12 +561,12 @@
                                 id="password"
                                 name="password"
                                 class="form-input"
-                                placeholder="••••••••">
+                                placeholder="••••••••" required>
 
                             <button
                                 type="button"
                                 class="password-toggle"
-                                onclick="togglePassword()">
+                                onclick="togglePassword('password', 'password-icon')">
                                 <i
                                     class="fa-regular fa-eye-slash"
                                     id="password-icon"></i>
@@ -606,49 +577,67 @@
                         <div class="error-message" style="color: #e74c3c; font-size: 13px; margin-top: 6px; font-weight: 600;">{{ $message }}</div>
                         @enderror
 
-                        <a
-                            href="{{ route('guest.forgot') }}"
-                            class="forgot-password"
-                            style="display: flex; justify-content: flex-end;">
-                            Lupa Password?
-                        </a>
-
                     </div>
+
+                    {{-- KONFIRMASI PASSWORD BARU --}}
+                    <div class="form-group">
+
+                        <div class="form-label-row">
+
+                            <label
+                                for="password_confirmation"
+                                class="form-label">
+                                Konfirmasi Password Baru
+                            </label>
+
+                        </div>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lock input-icon"></i>
+
+                            <input
+                                type="password"
+                                id="password_confirmation"
+                                name="password_confirmation"
+                                class="form-input"
+                                placeholder="••••••••" required>
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                onclick="togglePassword('password_confirmation', 'password-confirmation-icon')">
+                                <i
+                                    class="fa-regular fa-eye-slash"
+                                    id="password-confirmation-icon"></i>
+                            </button>
+
+                        </div>
+                    </div>
+
+
+
 
 
                     {{-- BUTTON --}}
                     <button
                         type="submit"
                         class="login-button">
-                        Masuk
+                        Simpan Password Baru
                     </button>
-
-                    <div style="display: flex; align-items: center; text-align: center; margin: 25px 0;">
-                        <div style="flex: 1; height: 1px; background-color: #edf0f3;"></div>
-                        <div style="margin: 0 15px; color: #a3acba; font-size: 14px; font-weight: 600;">ATAU</div>
-                        <div style="flex: 1; height: 1px; background-color: #edf0f3;"></div>
-                    </div>
-
-                    <a href="{{ route('guest.login.google') }}" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 60px; border: 1px solid #edf0f3; border-radius: 32px; background: #ffffff; color: #59616d; font-size: 16px; font-weight: 700; text-decoration: none; transition: 0.2s; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.025);">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width: 24px; height: 24px; margin-right: 12px;">
-                        Masuk dengan Google
-                    </a>
 
                 </form>
 
-
-                {{-- REGISTER --}}
+                {{-- BACK TO LOGIN --}}
                 <p class="register-text">
-
-                    Belum punya akun?
-
-                    <a
-                        href="{{ route('guest.register') }}"
-                        class="register-link">
-                        Daftar Sekarang
-                    </a>
-
+                    Ingat password?
+                    <a href="{{ route('guest.login') }}" class="register-link">Kembali ke Masuk</a>
                 </p>
+
+                {{-- FOOTER --}}
+                <div style="text-align: center; margin-top: 50px; color: #cbd5e1; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">
+                    &copy; 2024 MAMINA INDONESIA &bull; TUMBUH KEMBANG SEHAT
+                </div>
 
             </div>
 
@@ -659,37 +648,19 @@
 
     {{-- PASSWORD SHOW / HIDE --}}
     <script>
-        function togglePassword() {
+        function togglePassword(inputId, iconId) {
 
-            const passwordInput =
-                document.getElementById('password');
-
-            const passwordIcon =
-                document.getElementById('password-icon');
+            const passwordInput = document.getElementById(inputId);
+            const passwordIcon = document.getElementById(iconId);
 
             if (passwordInput.type === 'password') {
-
                 passwordInput.type = 'text';
-
-                passwordIcon.classList.remove(
-                    'fa-eye-slash'
-                );
-
-                passwordIcon.classList.add(
-                    'fa-eye'
-                );
-
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
             } else {
-
                 passwordInput.type = 'password';
-
-                passwordIcon.classList.remove(
-                    'fa-eye'
-                );
-
-                passwordIcon.classList.add(
-                    'fa-eye-slash'
-                );
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
             }
         }
     </script>
