@@ -352,6 +352,14 @@
 
                 </li>
 
+                <li class="nav-item ms-3">
+                    <a href="{{ route('logout') }}"
+                        class="btn btn-outline-secondary btn-sm rounded-pill"
+                        style="border-color: #ff0037 !important; font-weight: 600;">
+                        <i class="fas fa-sign-out-alt me-1"></i> Logout
+                    </a>
+                </li>
+
             </ul>
 
         </div>

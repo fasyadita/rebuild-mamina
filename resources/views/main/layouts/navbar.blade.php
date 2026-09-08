@@ -176,6 +176,18 @@
                     <a class="nav-link" href="{{ route('beranda') }}#maminago">Mamina Go</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('beranda') }}#testimoni">Testimommy</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('beranda') }}#cabang">Cabang</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('beranda') }}#faq-section">FAQ</a>
+                </li>
+
                 <li class="nav-item position-relative ms-3">
                     <a class="nav-link cart-icon" href="{{ route('keranjang') }}">
                         <i class="fas fa-shopping-cart fa-lg"></i>

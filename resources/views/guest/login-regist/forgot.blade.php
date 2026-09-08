@@ -568,7 +568,7 @@
                     <button
                         type="submit"
                         class="forgot-button">
-                        Kirim Link Reset Password
+                        Kirim OTP melalui Email
                     </button>
 
                 </form>
