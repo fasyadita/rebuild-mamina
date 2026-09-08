@@ -42,6 +42,18 @@ $(document).ready(function () {
 		}
 	});
 
+	$("#chatbot-close").click(function () {
+		$("#chatbot-container").fadeOut();
+	});
+
+	$(document).click(function (event) {
+		if (!$(event.target).closest('#chatbot-container, #chatbot-toggle').length) {
+			if ($('#chatbot-container').is(':visible')) {
+				$('#chatbot-container').fadeOut();
+			}
+		}
+	});
+
 	$("#chatbot-send").click(sendMessage);
 	$("#chatbot-input").keypress(function (e) {
 		if (e.which == 13) sendMessage();

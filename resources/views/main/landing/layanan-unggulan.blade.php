@@ -1,7 +1,7 @@
 <!-- Treatment Section -->
 <section id="layanan-unggulan" class="relative py-12 overflow-hidden" style="background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);">
 
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto py-6 px-4">
 
         <!-- Badge -->
         <div class="flex items-center gap-2 mb-3">
