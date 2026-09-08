@@ -282,7 +282,7 @@
 </style>
 
 <section id="essentials" class="product-section">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto py-6 px-4">
 
         {{-- Heading --}}
         <div class="section-header mb-5">

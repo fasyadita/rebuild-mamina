@@ -100,35 +100,303 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
 
-    /* Mobile Responsive */
-    @media (max-width: 991.98px) {
-        .navbar {
-            height: auto;
-            padding: 15px 0;
+    /* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+    /* Laptop kecil / tablet landscape */
+    @media (max-width: 1100px) {
+
+        nav.navbar.mamina-navbar {
+            margin: 10px 15px;
+            width: calc(100% - 30px);
         }
 
-        .navbar-nav {
-            padding: 20px 0;
-            gap: 15px;
+        .mamina-navbar .container {
+            max-width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
         }
 
-        .nav-item {
-            text-align: center;
+        .mamina-navbar .navbar-nav {
+            gap: 14px;
         }
 
-        .cart-icon {
-            justify-content: center;
-            padding-right: 0;
+        .mamina-navbar .nav-link {
+            font-size: 13px;
         }
 
         .btn-join {
-            margin-top: 10px;
+            padding: 9px 18px;
+            font-size: 13px;
         }
     }
 
-    @media (max-width: 768px) {
-        .navbar .container {
-            padding: 0 20px;
+
+    /* =========================
+   TABLET & MOBILE
+========================= */
+    @media (max-width: 991.98px) {
+
+        nav.navbar.mamina-navbar {
+            top: 10px;
+            left: 10px;
+            right: 10px;
+
+            width: calc(100% - 20px);
+
+            margin: 0;
+
+            min-height: 70px;
+            height: auto;
+
+            border-radius: 30px;
+
+            padding: 8px 15px;
+        }
+
+        /* Container */
+        .mamina-navbar .container {
+            width: 100%;
+            max-width: 100%;
+
+            padding: 0 5px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        /* Logo */
+        .mamina-navbar .navbar-brand {
+            margin-right: 0;
+            padding: 0;
+        }
+
+        .mamina-navbar .navbar-brand img {
+            height: 48px;
+            width: auto;
+        }
+
+        /* Hamburger */
+        .mamina-navbar .navbar-toggler {
+            border: none;
+            padding: 8px;
+
+            margin-left: auto;
+
+            outline: none;
+            box-shadow: none;
+        }
+
+        .mamina-navbar .navbar-toggler:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        /* Menu ketika dibuka */
+        .mamina-navbar .navbar-collapse {
+            width: 100%;
+
+            margin-top: 10px;
+            padding: 12px 0 15px;
+
+            border-top: 1px solid #eeeeee;
+
+            background: #ffffff;
+
+            border-radius: 0 0 25px 25px;
+        }
+
+        /* List menu */
+        .mamina-navbar .navbar-nav {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center !important;
+
+            gap: 3px;
+
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Item */
+        .mamina-navbar .nav-item {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-left: 0 !important;
+        }
+
+        /* Link */
+        .mamina-navbar .nav-link {
+            width: 100%;
+
+            text-align: center;
+
+            padding: 9px 10px !important;
+
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Hover */
+        .mamina-navbar .nav-link:hover {
+            background: #f3fbfa;
+            border-radius: 10px;
+        }
+
+        /* Cart */
+        .mamina-navbar .cart-icon {
+            width: auto;
+
+            display: inline-flex;
+
+            justify-content: center;
+
+            padding: 9px 15px !important;
+        }
+
+        .mamina-navbar .cart-icon .badge {
+            top: 2px;
+            right: 2px;
+        }
+
+        /* Tombol Daftar Member */
+        .mamina-navbar .btn-join {
+            width: auto;
+
+            min-width: 150px;
+
+            margin-top: 8px;
+
+            padding: 9px 22px;
+
+            font-size: 13px;
+        }
+    }
+
+
+    /* =========================
+   HP
+========================= */
+    @media (max-width: 576px) {
+
+        nav.navbar.mamina-navbar {
+            top: 8px;
+            left: 8px;
+            right: 8px;
+
+            width: calc(100% - 16px);
+
+            border-radius: 25px;
+
+            padding: 7px 12px;
+        }
+
+        /* Container */
+        .mamina-navbar .container {
+            padding: 0 3px;
+        }
+
+        /* Logo */
+        .mamina-navbar .navbar-brand img {
+            height: 43px;
+        }
+
+        /* Hamburger */
+        .mamina-navbar .navbar-toggler {
+            padding: 6px;
+        }
+
+        /* Menu */
+        .mamina-navbar .navbar-collapse {
+            margin-top: 8px;
+            padding: 10px 0 12px;
+        }
+
+        .mamina-navbar .navbar-nav {
+            gap: 2px;
+        }
+
+        .mamina-navbar .nav-link {
+            font-size: 13px;
+
+            padding: 8px 10px !important;
+        }
+
+        /* Cart */
+        .mamina-navbar .cart-icon {
+            padding: 8px 15px !important;
+        }
+
+        .mamina-navbar .cart-icon i {
+            font-size: 17px;
+        }
+
+        .mamina-navbar .cart-icon .badge {
+            top: 1px;
+            right: 1px;
+
+            min-width: 17px;
+            height: 17px;
+
+            font-size: 10px;
+        }
+
+        /* Daftar Member */
+        .mamina-navbar .btn-join {
+            min-width: 140px;
+
+            padding: 8px 20px;
+
+            font-size: 12px;
+
+            margin-top: 7px;
+        }
+    }
+
+
+    /* =========================
+   HP SANGAT KECIL
+========================= */
+    @media (max-width: 400px) {
+
+        nav.navbar.mamina-navbar {
+            top: 6px;
+            left: 6px;
+            right: 6px;
+
+            width: calc(100% - 12px);
+
+            border-radius: 22px;
+        }
+
+        .mamina-navbar .navbar-brand img {
+            height: 39px;
+        }
+
+        .mamina-navbar .navbar-toggler {
+            padding: 5px;
+        }
+
+        .mamina-navbar .nav-link {
+            font-size: 12px;
+
+            padding: 7px 8px !important;
+        }
+
+        .mamina-navbar .btn-join {
+            min-width: 130px;
+
+            font-size: 11px;
+
+            padding: 8px 16px;
         }
     }
 </style>
@@ -205,3 +473,5 @@
         </div>
     </div>
 </nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

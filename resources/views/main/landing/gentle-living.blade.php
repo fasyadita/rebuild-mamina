@@ -340,7 +340,7 @@
 
 <section id="gentle-living" class="gentle-living">
 
-    <div class="container">
+    <div class="container py-6 px-4">
 
         <div class="section-heading">
 
