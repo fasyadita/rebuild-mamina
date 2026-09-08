@@ -22,6 +22,33 @@
         margin: 0 auto;
     }
 
+    /* ===== SEARCH ===== */
+    .layanan-search {
+        max-width: 520px;
+        margin: 0 auto 40px;
+        display: flex;
+        align-items: center;
+        background: #B4EBE6;
+        opacity: 0.45;
+        padding: 12px 20px;
+        border-radius: 40px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .layanan-search i {
+        color: #3D9F9E;
+        font-size: 16px;
+        margin-right: 12px;
+    }
+
+    .layanan-search input {
+        border: none;
+        background: transparent;
+        width: 100%;
+        outline: none;
+        font-size: 14px;
+        color: #303030;
+    }
 
     /* =========================
        SECTION LAYANAN
@@ -445,6 +472,19 @@
 
 
 <div class="layanan-page">
+
+        {{-- ===== SEARCH ===== --}}
+    <div class="layanan-search">
+        <i class="fas fa-search"></i>
+
+        <input
+            type="text"
+            id="searchLayanan"
+            placeholder="Cari layanan..."
+            autocomplete="off"
+        >
+    </div>
+
 
     <main class="layanan-container">
 

@@ -257,7 +257,7 @@
     }
 
     .stat-box {
-        background-color: #e0e0e0;
+        background-color: #ffffff;
         border-radius: 12px;
         padding: 10px 20px;
         text-align: center;

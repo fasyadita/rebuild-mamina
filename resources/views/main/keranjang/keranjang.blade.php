@@ -359,11 +359,15 @@
             </div>
 
         @empty
-
             <div style="text-align:center; padding:50px;">
-                Keranjang masih kosong ✨
-            </div>
+                <div style="margin-bottom:20px;">
+                    Keranjang masih kosong ✨
+                </div>
 
+                <a href="{{ route('layanan.index') }}" class="checkout-btn">
+                    Lihat Layanan
+                </a>
+            </div>
         @endforelse
 
 

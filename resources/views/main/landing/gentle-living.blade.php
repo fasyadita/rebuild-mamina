@@ -189,7 +189,7 @@
     .living-products {
         display: flex;
         flex-direction: column;
-        gap: 11px;
+        gap: 26px;
     }
 
 
@@ -247,12 +247,9 @@
 
     .living-product h5 {
         margin: 0 0 3px;
-
         color: #222;
-
         font-size: 12px;
         font-weight: 700;
-
         line-height: 1.2;
     }
 
