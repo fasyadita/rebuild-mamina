@@ -6,28 +6,54 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Layanan Kami</a></li>
-                    <li><a href="#">Tentang Kami</a></li>
-                    <li><a href="#">Testimommy</a></li>
-                    <li><a href="#">Kegiatan</a></li>
-                    <li><a href="#">Cabang</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#tentang">Tentang Mamina</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#artikel">Artikel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#layanan-unggulan">Treatment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#essentials">Essentials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#gentle-living">Gentle Living</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#kelas-pro">Kelas Pro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#maminago">Mamina Go</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#testimoni">Testimommy</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#cabang">Cabang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('beranda') }}#faq-section">FAQ</a>
+                    </li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h4>Extra Links</h4>
                 <ul>
-                    <li><a href="#">Kenali Tim Mamina</a></li>
-                    <li><a href="#">Daftar Member</a></li>
+                    <li><a href="{{ route('tim-mamina') }}">Kenali Tim Mamina</a></li>
+                    <li><a href="{{ route('guest.register') }}">Daftar Member</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h4>Lokasi</h4>
                 <ul>
-                    <li><a href="#">Malang</a></li>
-                    <li><a href="#">Kediri</a></li>
+                    <li><a href="https://maps.app.goo.gl/iSNL7YwZUPkyaVB1A">Malang - Sawojajar</a></li>
+                    <li><a href="https://maps.app.goo.gl/sT3BM3YnzyeJ1zF28">Malang - Soekarno Hatta</a></li>
+                    <li><a href="https://maps.app.goo.gl/6eFVGZbbF68wu9Q87">Kediri</a></li>
                 </ul>
             </div>
 

@@ -210,9 +210,10 @@
         font-weight: 700;
         text-decoration: none;
         display: inline-flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
+        gap: 6px;
 
         cursor: pointer;
 
