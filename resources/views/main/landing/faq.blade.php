@@ -318,25 +318,37 @@
             });
         });
 
-        // "Lihat Semua Pertanyaan" Button toggles all open
+        // "Lihat Semua Pertanyaan" Button toggles all open / close
         if (btnLihatSemua) {
+            let allOpen = false;
             btnLihatSemua.addEventListener("click", function() {
+                allOpen = !allOpen;
+
                 faqItems.forEach((item) => {
-                    item.setAttribute("data-active", "true");
                     const wrapper = item.querySelector(".faq-answer-wrapper");
                     const h3 = item.querySelector("h3");
                     const btn = item.querySelector(".faq-btn");
 
-                    wrapper.style.maxHeight = wrapper.scrollHeight + "px";
-                    wrapper.style.opacity = "1";
-                    h3.classList.add("mb-2");
-                    btn.innerText = "-";
+                    if (allOpen) {
+                        item.setAttribute("data-active", "true");
+                        wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+                        wrapper.style.opacity = "1";
+                        h3.classList.add("mb-2");
+                        btn.innerText = "-";
+                    } else {
+                        item.setAttribute("data-active", "false");
+                        wrapper.style.maxHeight = "0px";
+                        wrapper.style.opacity = "0";
+                        h3.classList.remove("mb-2");
+                        btn.innerText = "+";
+                    }
                 });
 
-                // Smoothly fade out the button since all are now visible and open
-                btnLihatSemua.style.opacity = "0";
-                btnLihatSemua.style.transform = "scale(0.95)";
-                btnLihatSemua.style.pointerEvents = "none";
+                if (allOpen) {
+                    btnLihatSemua.innerText = "Tutup Semua Pertanyaan";
+                } else {
+                    btnLihatSemua.innerText = "Lihat Semua Pertanyaan";
+                }
             });
         }
     });

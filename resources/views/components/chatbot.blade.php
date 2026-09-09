@@ -4,7 +4,11 @@
 <div id="chatbot-toggle"><img src="{{ asset('img/live-chat.png') }}" alt="Chatbot" style="width: 30px; height: 30px;"></div>
 
 <div id="chatbot-container">
-  <div id="chatbot-header">MaminaCare 🤖</div>
+  <div id="chatbot-header">
+    MaminaCare 🤖
+    <!-- Tombol Silang (Close) Ditambahkan Di Sini -->
+    <span id="chatbot-close" style="cursor: pointer; float: right; font-size: 18px; font-weight: bold; line-height: 1;">&times;</span>
+  </div>
 
   <div id="chatbot-body">
     <div id="chatbot-messages"></div>

@@ -483,9 +483,9 @@
               online & offline
             </span>
 
-            <button class="btn-daftar">
+            <a href="{{ route('form.kelas') }}" class="btn-daftar">
               Daftar Sekarang
-            </button>
+            </a>
 
           </div>
 
@@ -518,9 +518,9 @@
               online & offline
             </span>
 
-            <button class="btn-daftar">
+            <a href="{{ route('form.kelas') }}" class="btn-daftar">
               Daftar Sekarang
-            </button>
+            </a>
 
           </div>
 
@@ -553,9 +553,9 @@
               offline only
             </span>
 
-            <button class="btn-daftar">
+            <a href="{{ route('form.kelas') }}" class="btn-daftar">
               Daftar Sekarang
-            </button>
+            </a>
 
           </div>
 

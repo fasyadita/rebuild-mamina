@@ -127,7 +127,7 @@
     }
 </style>
 
-<section id="tentang" class="tentang-mamina py-4">
+<section id="tentang" class="tentang-mamina py-6 px-4">
     <div class="max-w-6xl mx-auto">
         <div class="row align-items-center">
 
@@ -215,7 +215,7 @@
 
                 <div class="service-item">
                     <div class="service-icon">
-                        👩‍⚕️
+                        <i class="fas fa-user-nurse"></i>
                     </div>
 
                     <div>
@@ -230,7 +230,7 @@
 
                 <div class="service-item">
                     <div class="service-icon">
-                        👶
+                        <i class="fas fa-baby"></i>
                     </div>
 
                     <div>
@@ -245,7 +245,7 @@
 
                 <div class="service-item">
                     <div class="service-icon">
-                        🌐
+                        <i class="fas fa-map-marked-alt"></i>
                     </div>
 
                     <div>
