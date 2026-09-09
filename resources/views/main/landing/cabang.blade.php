@@ -2,7 +2,7 @@
 <section id="cabang" class="cabang-section">
 
 
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto py-6 px-4">
 
         <!-- ================= BADGE ================= -->
         <div class="cabang-heading">
