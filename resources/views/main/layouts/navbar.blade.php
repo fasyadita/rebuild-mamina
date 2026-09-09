@@ -456,25 +456,7 @@
                     <a class="nav-link" href="{{ route('beranda') }}#faq-section">FAQ</a>
                 </li>
 
-                <li class="nav-item position-relative ms-3">
-                    <a class="nav-link cart-icon" href="{{ route('keranjang') }}">
-                        <i class="fas fa-shopping-cart fa-lg"></i>
-                        @php
-                        $cart = session('cart', []);
-
-                        $totalCart = 0;
-
-                        foreach ($cart as $item) {
-                        $totalCart += $item['qty'];
-                        }
-                        @endphp
-
-                        <span class="badge bg-danger rounded-circle position-absolute">
-                            {{ $totalCart }}
-                        </span>
-                    </a>
-                </li>
-
+                
                 <li class="nav-item ms-3">
                     <a href="{{ route('guest.home') }}" class="btn btn-primary btn-join">
                         Daftar Member

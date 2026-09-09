@@ -1,4 +1,4 @@
-@extends('main.layouts.app')
+@extends('member.layouts.app')
 
 @section('title', 'Detail Layanan')
 
@@ -364,7 +364,7 @@
                     Keranjang masih kosong ✨
                 </div>
 
-                <a href="{{ route('layanan.index') }}" class="checkout-btn">
+                <a href="{{ route('member.services') }}" class="checkout-btn">
                     Lihat Layanan
                 </a>
             </div>

@@ -6,12 +6,6 @@
 
 <section class="layanan-index">
 
-    {{-- SEARCH --}}
-    <div class="layanan-search">
-        <i class="fas fa-search"></i>
-        <input type="text" placeholder="Cari layanan...">
-    </div>
-
     {{-- JUDUL --}}
     <h2 class="judul-page">Layanan Kami</h2>
 
