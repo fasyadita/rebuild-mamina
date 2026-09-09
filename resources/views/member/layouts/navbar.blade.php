@@ -3,12 +3,10 @@
        BACKGROUND
     ========================= */
     body {
-        background: linear-gradient(
-            90deg,
-            #FADCD5 0%,
-            #FFF3EF 50%,
-            #EAF8F6 100%
-        );
+        background: linear-gradient(90deg,
+                #FADCD5 0%,
+                #FFF3EF 50%,
+                #EAF8F6 100%);
     }
 
     /* =========================
@@ -168,6 +166,25 @@
         box-shadow: 0 4px 12px rgba(63, 182, 168, 0.25);
     }
 
+    .logout-icon {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #ff0037;
+        background: #fff0f3;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .logout-icon:hover {
+        background: #ff0037;
+        color: white;
+        transform: rotate(-8deg);
+    }
+
     /* =========================
        HAMBURGER
     ========================= */
@@ -264,18 +281,18 @@
     <div class="container">
 
         <!-- Logo di Kiri -->
-        <a class="navbar-brand" href="member/">
+        <a class="navbar-brand" href="/member/">
             <img src="{{ asset('img/logo.png') }}" alt="Mamina" height="60">
         </a>
 
         <!-- Tombol Hamburger untuk Mobile -->
         <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
 
             <span class="navbar-toggler-icon"></span>
 
@@ -341,6 +358,7 @@
                     </a>
                 </li>
 
+
                 <!-- Profile -->
                 <li class="nav-item ms-3">
 
@@ -352,11 +370,10 @@
 
                 </li>
 
-                <li class="nav-item ms-3">
-                    <a href="{{ route('logout') }}"
-                        class="btn btn-outline-secondary btn-sm rounded-pill"
-                        style="border-color: #ff0037 !important; font-weight: 600;">
-                        <i class="fas fa-sign-out-alt me-1"></i> Logout
+                 <li class="nav-item ms-3">
+                    <a href="{{ route('guest.login') }}"
+                        class="logout-icon">
+                        <i class="fas fa-sign-out-alt"></i>
                     </a>
                 </li>
 

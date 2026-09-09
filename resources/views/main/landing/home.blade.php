@@ -18,7 +18,7 @@
                 beberapa kota di Indonesia untuk layanan homecare.
             </p>
 
-            <a href="/layanan" class="btn-reservasi">Reservasi</a>
+            <a href="/guest/login" class="btn-reservasi">Reservasi</a>
         </div>
     </div>
 </section>

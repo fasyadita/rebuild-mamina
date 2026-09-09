@@ -12,7 +12,7 @@ class KeranjangController extends Controller
     {
         $cart = session()->get('cart', []);
 
-        return view('main.keranjang.keranjang', compact('cart'));
+        return view('member.keranjang.keranjang', compact('cart'));
     }
 
     // TAMBAH KE KERANJANG
