@@ -11,98 +11,128 @@ class LayananController extends Controller
     {
         return view('member.layanan.service');
     }
-    public function anak()
-    {
-        // category_id = 1 for Layanan Anak
-        $products = Product::where('category_id', 1)
-            ->where('is_active', '1')
-            ->get();
 
+    private function getProductsByCategory(Request $request, $categoryId)
+    {
+        $search = $request->input('search');
+        return Product::where('category_id', $categoryId)
+            ->where('is_active', '1')
+            ->when($search, function ($query, $search) {
+                return $query->where('name', 'like', "%{$search}%");
+            })
+            ->get();
+    }
+
+    public function anak(Request $request)
+    {
+        $products = $this->getProductsByCategory($request, 1);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-anak", compact('products'));
     }
-    public function bayi()
+    public function bayi(Request $request)
     {
-        $babyProducts = Product::where('category_id', 2)
-            ->where('is_active', '1')
-            ->get();
-
+        $babyProducts = $this->getProductsByCategory($request, 2);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-bayi", compact('babyProducts'));
     }
-    public function ibu()
+    public function ibu(Request $request)
     {
-        $momProducts = Product::where('category_id', 5)
-            ->where('is_active', '1')
-            ->get();
-
+        $momProducts = $this->getProductsByCategory($request, 5);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-ibu", compact('momProducts'));
     }
-    public function imunisasi()
+    public function imunisasi(Request $request)
     {
-        $imunProducts = Product::where('category_id', 17)
-            ->where('is_active', '1')
-            ->get();
-
+        $imunProducts = $this->getProductsByCategory($request, 17);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-imunisasi", compact('imunProducts'));
     }
-    public function kelas()
+    public function kelas(Request $request)
     {
-        $classProducts = Product::where('category_id', 6)
-            ->where('is_active', '1')
-            ->get();
-
+        $classProducts = $this->getProductsByCategory($request, 6);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-kelas", compact('classProducts'));
     }
-    public function konsultasi()
+    public function konsultasi(Request $request)
     {
-        $konsulProducts = Product::where('category_id', 18)
-            ->where('is_active', '1')
-            ->get();
-
+        $konsulProducts = $this->getProductsByCategory($request, 18);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-konsultasi", compact('konsulProducts'));
     }
-    public function paket()
+    public function paket(Request $request)
     {
-        $packageProducts = Product::where('category_id', 8)
-        ->where('is_active', '1')
-        ->get();
-        
+        $packageProducts = $this->getProductsByCategory($request, 8);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-paket", compact('packageProducts'));
     }
-    public function toddler()
+    public function toddler(Request $request)
     {
-        $todlerProducts = Product::where('category_id', 9)
-            ->where('is_active', '1')
-            ->get();
-
+        $todlerProducts = $this->getProductsByCategory($request, 9);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-toddler", compact('todlerProducts'));
     }
-    public function lainnya()
+    public function lainnya(Request $request)
     {
-        $otherProducts = Product::where('category_id', 7)
-            ->where('is_active', '1')
-            ->get();
-
+        $otherProducts = $this->getProductsByCategory($request, 7);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-lainnya", compact('otherProducts'));
     }
-
-
-    public function umum()
+    public function umum(Request $request)
     {
-        $umumProducts = Product::where('category_id', 10)
-            ->where('is_active', '1')
-            ->get();
-
+        $umumProducts = $this->getProductsByCategory($request, 10);
         $viewPrefix = request()->is('member/*') ? 'member' : 'guest';
         return view("{$viewPrefix}.layanan.layanan-umum", compact('umumProducts'));
     }
-}
 
+
+    public function anakm(Request $request)
+    {
+        $products = $this->getProductsByCategory($request, 1);
+        return view("main.layanan.detail-layanan-anak", compact('products'));
+    }
+    public function bayim(Request $request)
+    {
+        $babyProducts = $this->getProductsByCategory($request, 2);
+        return view("main.layanan.detail-layanan-bayi", compact('babyProducts'));
+    }
+    public function ibum(Request $request)
+    {
+        $momProducts = $this->getProductsByCategory($request, 5);
+        return view("main.layanan.detail-layanan-ibu", compact('momProducts'));
+    }
+    public function imunisasim(Request $request)
+    {
+        $imunProducts = $this->getProductsByCategory($request, 17);
+        return view("main.layanan.detail-layanan-imunisasi", compact('imunProducts'));
+    }
+    public function kelasm(Request $request)
+    {
+        $classProducts = $this->getProductsByCategory($request, 6);
+        return view("main.layanan.detail-layanan-kelas", compact('classProducts'));
+    }
+    public function konsultasim(Request $request)
+    {
+        $konsulProducts = $this->getProductsByCategory($request, 18);
+        return view("main.layanan.detail-layanan-konsultasi", compact('konsulProducts'));
+    }
+    public function paketm(Request $request)
+    {
+        $packageProducts = $this->getProductsByCategory($request, 8);
+        return view("main.layanan.detail-layanan-paket", compact('packageProducts'));
+    }
+    public function toddlerm(Request $request)
+    {
+        $todlerProducts = $this->getProductsByCategory($request, 9);
+        return view("main.layanan.detail-layanan-toddler", compact('todlerProducts'));
+    }
+    public function lainnyam(Request $request)
+    {
+        $otherProducts = $this->getProductsByCategory($request, 7);
+        return view("main.layanan.detail-layanan-lainnya", compact('otherProducts'));
+    }
+    public function umumm(Request $request)
+    {
+        $umumProducts = $this->getProductsByCategory($request, 10);
+        return view("main.layanan.detail-layanan-umum", compact('umumProducts'));
+    }
+}

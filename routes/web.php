@@ -35,16 +35,16 @@ Route::post('/maminago/submit', [\App\Http\Controllers\MaminaGoController::class
 Route::get('/tim-mamina', [TimMaminaController::class, 'index'])->name('tim-mamina');
 Route::get('/event/detail-event', fn() => view('main.event.detail-event'))->name('event.detail');
 Route::get('/layanan', fn() => view('main.layanan.index'))->name('layanan.index');
-Route::get('/layanan-anak', [LayananController::class, 'anak'])->name('layanan.anak');
-Route::get('/layanan-bayi', [LayananController::class, 'bayi'])->name('layanan.bayi');
-Route::get('/layanan-ibu', [LayananController::class, 'ibu'])->name('layanan.ibu');
-Route::get('/layanan-toddler', [LayananController::class, 'toddler'])->name('layanan.toddler');
-Route::get('/layanan-imunisasi', [LayananController::class, 'imunisasi'])->name('layanan.imunisasi');
-Route::get('/layanan-kelas', [LayananController::class, 'kelas'])->name('layanan.kelas');
-Route::get('/layanan-konsultasi', [LayananController::class, 'konsultasi'])->name('layanan.konsultasi');
-Route::get('/layanan-lainnya', [LayananController::class, 'lainnya'])->name('layanan.lainnya');
-Route::get('/layanan-paket', [LayananController::class, 'paket'])->name('layanan.paket');
-Route::get('/layanan-umum', [LayananController::class, 'umum'])->name('layanan.umum');
+Route::get('/layanan-anak', [LayananController::class, 'anakm'])->name('layanan.anak');
+Route::get('/layanan-bayi', [LayananController::class, 'bayim'])->name('layanan.bayi');
+Route::get('/layanan-ibu', [LayananController::class, 'ibum'])->name('layanan.ibu');
+Route::get('/layanan-toddler', [LayananController::class, 'toddlerm'])->name('layanan.toddler');
+Route::get('/layanan-imunisasi', [LayananController::class, 'imunisasim'])->name('layanan.imunisasi');
+Route::get('/layanan-kelas', [LayananController::class, 'kelasm'])->name('layanan.kelas');
+Route::get('/layanan-konsultasi', [LayananController::class, 'konsultasim'])->name('layanan.konsultasi');
+Route::get('/layanan-lainnya', [LayananController::class, 'lainnyam'])->name('layanan.lainnya');
+Route::get('/layanan-paket', [LayananController::class, 'paketm'])->name('layanan.paket');
+Route::get('/layanan-umum', [LayananController::class, 'umumm'])->name('layanan.umum');
 Route::get('/jadwal-terapis', [JadwalTerapisController::class, 'index'])->name('jadwal-terapis');
 Route::get('/jadwal-terapis/detail', [JadwalTerapisController::class, 'detail'])->name('jadwal-terapis.detail');
 
