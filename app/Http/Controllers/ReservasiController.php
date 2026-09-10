@@ -134,14 +134,14 @@ class ReservasiController extends Controller
                 'sale_type'      => $service,
                 'nama_cust'      => $validated['name'] ?? '',
                 'nama_anak'      => $validated['baby_nickname'] ?? '',
-                'usia_kehamilan' => $validated['pregnancy_age'] ?? '',
-                'usia_anak'      => $validated['baby_age'] ?? '',
+                'usia_kehamilan' => isset($validated['pregnancy_age']) ? (int) filter_var($validated['pregnancy_age'], FILTER_SANITIZE_NUMBER_INT) : 0,
+                'usia_anak'      => isset($validated['baby_age']) ? (int) filter_var($validated['baby_age'], FILTER_SANITIZE_NUMBER_INT) : 0,
                 'no_tlp'         => $validated['no_tlp'] ?? '-',
                 'tanggal'        => $date,
                 'sesi'           => $time,
                 'status'         => 'Pending',
-                'note'           => $validated['complaint'] ?? '',
-                'user_id'        => auth()->id(),
+                'note'           => ($validated['complaint'] ?? '') . "\nAlamat: " . ($validated['address'] ?? ''),
+                'user_id'        => \App\Models\User::find(auth()->id()) ? auth()->id() : null,
             ]);
 
             foreach ($cart as $item) {
