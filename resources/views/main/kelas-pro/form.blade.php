@@ -628,6 +628,7 @@
         </h2>
 
         <form
+            id="formPendaftaran"
             action="#"
             method="POST"
             enctype="multipart/form-data">
@@ -719,21 +720,10 @@
                  3. UPLOAD DOKUMEN
             ========================== --}}
             <div class="upload-group">
-
-                <h3 class="section-heading">3. Upload Dokumen</h3>
-
+                <label class="form-label" style="margin-bottom: 10px; display: block;">Link Drive CV / STR</label>
                 <div class="form-group">
-                    <label class="form-label">Unggah CV / STR (PDF)</label>
-                    <label for="dokumen" class="upload-area">
-                        <div class="upload-title">Letakkan berkas di sini atau klik untuk mengunggah.</div>
-                        <div class="upload-icon">
-                            <i class="fa-solid fa-file-arrow-up"></i>
-                        </div>
-                        <div class="upload-format">Format: PDF, JPG (Maks. 5MB)</div>
-                        <input type="file" id="dokumen" name="dokumen" class="upload-input" accept=".pdf,.jpg,.jpeg">
-                    </label>
+                    <input type="text" id="cv" name="cv" class="form-control" placeholder="drive.google.com/file/d/..." required>
                 </div>
-
             </div>
 
 
@@ -777,3 +767,47 @@
 <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<script>
+    document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Ambil data dari form
+        const program = document.querySelector('input[value="Konselor Laktasi Dasar"]').value;
+        const nama = document.querySelector('input[name="nama_lengkap"]').value;
+        const whatsapp = document.querySelector('input[name="whatsapp"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const jenisKelamin = document.querySelector('select[name="jenis_kelamin"]').value;
+        const profesi = document.querySelector('select[name="profesi"]').value;
+        const instansi = document.querySelector('input[name="instansi"]').value;
+        const kota = document.querySelector('input[name="kota_domisili"]').value;
+        const cv = document.querySelector('input[name="cv"]').value;
+
+        // Validasi checkbox agreement
+        const agreement = document.getElementById('agreement').checked;
+        if (!agreement) {
+            alert('Anda harus menyetujui Syarat & Ketentuan.');
+            return;
+        }
+
+        // Nomor WA Admin (081357046700 -> 6281357046700)
+        const adminWA = "6281357046700";
+
+        // Format pesan
+        let text = `Halo Admin, saya ingin mendaftar Kelas Pro dengan data sebagai berikut:%0A%0A`;
+        text += `*Program:* ${program}%0A`;
+        text += `*Nama Lengkap:* ${nama}%0A`;
+        text += `*WhatsApp:* +62${whatsapp}%0A`;
+        text += `*Email:* ${email}%0A`;
+        text += `*Jenis Kelamin:* ${jenisKelamin}%0A`;
+        text += `*Profesi:* ${profesi}%0A`;
+        text += `*Instansi:* ${instansi}%0A`;
+        text += `*Kota Domisili:* ${kota}%0A`;
+        text += `*Link CV/STR:* ${cv}%0A%0A`;
+        text += `Terima kasih.`;
+
+        // Redirect ke WhatsApp
+        const waLink = `https://wa.me/${adminWA}?text=${text}`;
+        window.open(waLink, '_blank');
+    });
+</script>
