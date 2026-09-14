@@ -747,7 +747,7 @@
                 <div class="form-group">
 
                     <label class="slot-label">
-                        Sesi Waktu Yang Tersedia
+                        Sesi Waktu Yang Tersedia (Slot dan jam reservasi akan dikonfirmasi oleh admin melalui WhatsApp)
                     </label>
 
                     <div class="slot-grid" id="slot-grid">

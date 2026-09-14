@@ -328,32 +328,30 @@
                 <div class="product-card">
 
                     <div class="product-image">
-                        <img src="{{ asset('img/image 5.png') }}"
+                        <img src="{{ asset('img/cnf.jpeg') }}"
                             class="img-fluid"
                             alt="Nama Produk 1">
                     </div>
 
                     <div class="product-body">
 
-                        <small class="category">
-                            KATEGORI
-                        </small>
+                        
 
                         <h4>
-                            Nama Produk 1
+                            Gentle Baby Cough n Flu
                         </h4>
 
                         <p>
-                            Deskripsi singkat produk yang ditampilkan di sini.
+                            Minyak bayi yang memberi rasa hangat dan membantu melegakan pernapasan saat batuk dan flu.
                         </p>
 
                         <div class="d-flex justify-content-between align-items-center">
 
                             <h3 class="price">
-                                Rp 50.000
+                                Mulai dari Rp 38.500
                             </h3>
 
-                            <a href="https://gentleliving.id/" class="btn-buy">
+                            <a href="https://gentleliving.id/product/26" class="btn-buy">
                                 Beli Sekarang
                             </a>
 
@@ -370,32 +368,28 @@
                 <div class="product-card">
 
                     <div class="product-image">
-                        <img src="{{ asset('img/image 5.png') }}"
+                        <img src="{{ asset('img/ds.jpeg') }}"
                             class="img-fluid"
                             alt="Nama Produk 2">
                     </div>
 
                     <div class="product-body">
 
-                        <small class="category">
-                            KATEGORI
-                        </small>
-
                         <h4>
-                            Nama Produk 2
+                            Gentle Baby Deep Sleep
                         </h4>
 
                         <p>
-                            Deskripsi singkat produk yang ditampilkan di sini.
+                            Minyak bayi alami membantu menenangkan si kecil, mengurangi rewel, dan membuat tidur lebih nyenyak.
                         </p>
 
                         <div class="d-flex justify-content-between align-items-center">
 
                             <h3 class="price">
-                                Rp 75.000
+                                Mulai dari Rp 38.500
                             </h3>
 
-                            <a href="https://gentleliving.id/" class="btn-buy">
+                            <a href="https://gentleliving.id/product/27" class="btn-buy">
                                 Beli Sekarang
                             </a>
 
@@ -412,35 +406,32 @@
                 <div class="product-card">
 
                     <div class="product-image">
-                        <img src="{{ asset('img/image 5.png') }}"
+                        <img src="{{ asset('img/tc.jpeg') }}"
                             class="img-fluid"
                             alt="Nama Produk 3">
                     </div>
 
                     <div class="product-body">
 
-                        <small class="category">
-                            KATEGORI
-                        </small>
+                        
 
                         <h4>
-                            Nama Produk 3
+                            Gentle Baby Tummy Calmer
                         </h4>
 
                         <p>
-                            Deskripsi singkat produk yang ditampilkan di sini.
+                            Minyak bayi yang memberi rasa hangat untuk membantu meredakan kembung, gas berlebih, dan kolik pada si kecil.
                         </p>
 
                         <div class="d-flex justify-content-between align-items-center">
 
                             <h3 class="price">
-                                Rp 100.000
+                                Mulai dari Rp 38.500
                             </h3>
 
-                            <a href="https://gentleliving.id/" class="btn-buy">
+                            <a href="https://gentleliving.id/product/29" class="btn-buy">
                                 Beli Sekarang
                             </a>
-
                         </div>
 
                     </div>
