@@ -551,9 +551,10 @@
                             <form action="{{ route('cart.add', $product->id) }}" method="POST" style="margin-top: auto; width: 100%;">
                                 @csrf
                                 <button
-                                    type="submit"
+                                    type="button"
                                     class="btn-tambah"
                                     style="margin-top: 0;"
+                                    onclick="openConfirmationModal(this)"
                                 >
 
                                     <span class="icon-plus">
@@ -586,5 +587,232 @@
     </main>
 
 </div>
+
+<style>
+    /* =========================
+       MODAL KONFIRMASI
+    ========================= */
+    .mamina-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(50, 70, 70, 0.45);
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .mamina-modal.show {
+        display: flex;
+    }
+
+    .mamina-modal-content {
+        width: 100%;
+        max-width: 430px;
+        background: #fffdf0;
+        border-radius: 25px;
+        padding: 35px 30px 30px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        animation: modalIn 0.25s ease;
+        position: relative;
+    }
+
+    @keyframes modalIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.96);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .modal-icon {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 18px;
+        background: #439294;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+    }
+
+    .modal-title {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        color: #439294;
+        margin-bottom: 10px;
+    }
+
+    .modal-description {
+        font-family: 'Nunito', sans-serif;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #777;
+        margin-bottom: 25px;
+    }
+
+    .modal-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .modal-btn {
+        border: none;
+        border-radius: 20px;
+        padding: 10px 25px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .modal-btn-cancel {
+        background: #f2f1e8;
+        color: #777;
+    }
+
+    .modal-btn-cancel:hover {
+        background: #e5e4db;
+    }
+
+    .modal-btn-confirm {
+        background: #439294;
+        color: #fff;
+    }
+
+    .modal-btn-confirm:hover {
+        background: #377d7f;
+        transform: translateY(-1px);
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+        .mamina-modal {
+            padding: 15px;
+        }
+
+        .mamina-modal-content {
+            max-width: 100%;
+            padding: 30px 20px 25px;
+            border-radius: 22px;
+        }
+
+        .modal-icon {
+            width: 55px;
+            height: 55px;
+            font-size: 24px;
+        }
+
+        .modal-title {
+            font-size: 22px;
+        }
+
+        .modal-description {
+            font-size: 12px;
+        }
+
+        .modal-buttons {
+            flex-direction: column-reverse;
+        }
+
+        .modal-btn {
+            width: 100%;
+        }
+    }
+</style>
+
+<!-- =========================
+     MODAL KONFIRMASI
+========================= -->
+<div id="confirmationModal" class="mamina-modal">
+
+    <div class="mamina-modal-content">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
+
+        <h3 class="modal-title">
+            Konfirmasi Pendaftaran
+        </h3>
+
+        <p class="modal-description">
+            Apakah kamu yakin data yang dimasukkan sudah benar?
+            Setelah dikirim, data pendaftaran akan diproses oleh tim Mamina.
+        </p>
+
+        <div class="modal-buttons">
+
+            <button type="button"
+                    class="modal-btn modal-btn-cancel"
+                    onclick="closeConfirmationModal()">
+                Periksa Lagi
+            </button>
+
+            <button type="button"
+                    class="modal-btn modal-btn-confirm"
+                    onclick="submitRegistration()">
+                Ya, Daftar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    let currentRegistrationForm = null;
+    const confirmationModal = document.getElementById('confirmationModal');
+
+    function openConfirmationModal(button) {
+        currentRegistrationForm = button.closest('form');
+
+        // Cek validasi form terlebih dahulu
+        if (currentRegistrationForm && !currentRegistrationForm.checkValidity()) {
+            currentRegistrationForm.reportValidity();
+            return;
+        }
+
+        confirmationModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeConfirmationModal() {
+        confirmationModal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    function submitRegistration() {
+        if (currentRegistrationForm) {
+            currentRegistrationForm.submit();
+        }
+    }
+
+    // Klik area luar modal untuk menutup
+    confirmationModal.addEventListener('click', function(e) {
+        if (e.target === confirmationModal) {
+            closeConfirmationModal();
+        }
+    });
+
+    // Tombol ESC untuk menutup modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeConfirmationModal();
+        }
+    });
+</script>
 
 @endsection

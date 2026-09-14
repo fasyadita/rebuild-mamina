@@ -24,9 +24,8 @@
 
             <div class="hero-bottom">
 
-                <a href="#top-service" class="primary-button">
-                    Layanan Unggulan
-                    <span class="star">★</span>
+                <a href="{{ route('member.services') }}" class="primary-button">
+                    Reservasi Sekarang
                 </a>
 
                 <div class="registered">

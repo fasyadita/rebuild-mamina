@@ -720,7 +720,7 @@
                  3. UPLOAD DOKUMEN
             ========================== --}}
             <div class="upload-group">
-                <label class="form-label" style="margin-bottom: 10px; display: block;">Link Drive CV / STR</label>
+                <label class="form-label" style="margin-bottom: 10px; display: block;">Link Drive CV / Serifikat</label>
                 <div class="form-group">
                     <input type="text" id="cv" name="cv" class="form-control" placeholder="drive.google.com/file/d/..." required>
                 </div>
