@@ -9,12 +9,14 @@ use Carbon\Carbon;
 class ReservasiController extends Controller
 {
     private array $branches = [
-        'malang' => 'Malang',
+        'malang' => 'Sawojajar',
+        'suhat'  => 'Suhat',
         'kediri' => 'Kediri',
     ];
 
     private array $adminPhones = [
         'malang' => '6287782169276',
+        'suhat'  => '6287782169276',
         'kediri' => '6287782169276',
     ];
 
@@ -37,7 +39,7 @@ class ReservasiController extends Controller
     public function select(Request $request)
     {
         $data = $request->validate([
-            'branch'  => ['required', 'in:malang,kediri'],
+            'branch'  => ['required', 'in:malang,suhat,kediri'],
             'service' => ['required', 'in:outlet,homecare'],
             'date'    => ['required', 'date'],
             'time'    => ['nullable', 'string', 'max:50'],
