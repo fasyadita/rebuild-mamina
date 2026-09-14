@@ -552,10 +552,9 @@
                             <form action="{{ route('cart.add', $product->id) }}" method="POST" style="margin-top: auto; width: 100%;">
                                 @csrf
                                 <button
-                                    type="button"
+                                    type="submit"
                                     class="btn-tambah"
                                     style="margin-top: 0;"
-                                    onclick="openConfirmationModal(this)"
                                 >
 
                                     <span class="icon-plus">
@@ -773,47 +772,6 @@
 
 </div>
 
-<script>
-    let currentRegistrationForm = null;
-    const confirmationModal = document.getElementById('confirmationModal');
 
-    function openConfirmationModal(button) {
-        currentRegistrationForm = button.closest('form');
-
-        // Cek validasi form terlebih dahulu
-        if (currentRegistrationForm && !currentRegistrationForm.checkValidity()) {
-            currentRegistrationForm.reportValidity();
-            return;
-        }
-
-        confirmationModal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeConfirmationModal() {
-        confirmationModal.classList.remove('show');
-        document.body.style.overflow = '';
-    }
-
-    function submitRegistration() {
-        if (currentRegistrationForm) {
-            currentRegistrationForm.submit();
-        }
-    }
-
-    // Klik area luar modal untuk menutup
-    confirmationModal.addEventListener('click', function(e) {
-        if (e.target === confirmationModal) {
-            closeConfirmationModal();
-        }
-    });
-
-    // Tombol ESC untuk menutup modal
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeConfirmationModal();
-        }
-    });
-</script>
 
 @endsection

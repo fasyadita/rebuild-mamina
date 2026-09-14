@@ -30,8 +30,9 @@ class MaminaGoController extends Controller
 
         // Nomor WA tujuan
         $waNumber = "6281357046700";
+        $waLink = "https://wa.me/{$waNumber}?text={$encodedPesan}";
 
-        // Redirect ke link WhatsApp
-        return redirect()->away("https://wa.me/{$waNumber}?text={$encodedPesan}");
+        // Redirect kembali dengan session wa_link
+        return redirect()->back()->with('wa_link', $waLink);
     }
 }

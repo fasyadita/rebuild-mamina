@@ -43,7 +43,7 @@ class KeranjangController extends Controller
         // Simpan kembali ke session
         session()->put('cart', $cart);
 
-        return back()->with('success', 'Layanan berhasil ditambahkan ke keranjang ✨');
+        return back()->with('cart_added', true);
     }
 
     // HAPUS ITEM

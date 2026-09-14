@@ -791,7 +791,7 @@
         }
 
         // Nomor WA Admin (081357046700 -> 6281357046700)
-        const adminWA = "6281357046700";
+        const adminWA = "+6281952537731";
 
         // Format pesan
         let text = `Halo Admin, saya ingin mendaftar Kelas Pro dengan data sebagai berikut:%0A%0A`;
@@ -809,5 +809,152 @@
         // Redirect ke WhatsApp
         const waLink = `https://wa.me/${adminWA}?text=${text}`;
         window.open(waLink, '_blank');
+        
+        // Tampilkan modal sukses
+        document.getElementById('successModal').style.display = 'flex';
     });
+    
+    function closeSuccessModal() {
+        document.getElementById('successModal').style.display = 'none';
+        window.location.reload(); // reload form setelah ditutup
+    }
 </script>
+
+<!-- MODAL SUCCESS -->
+<div id="successModal" class="success-modal-overlay" style="display: none;">
+    <div class="mamina-modal-content success-cart-modal">
+        <div class="success-icon-wrapper">
+            <div class="success-circle">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+        </div>
+        
+        <h3 class="modal-title-success">Pendaftaran<br>Berhasil!</h3>
+        
+        <p class="modal-description-success">
+            Terima kasih telah mendaftar. Tim kami akan segera meninjau data Anda dan menghubungi melalui WhatsApp.
+        </p>
+        
+        <div class="modal-buttons-vertical">
+            <button type="button" class="btn-lihat-keranjang" onclick="closeSuccessModal()">
+                Tutup
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+    .success-modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(50, 70, 70, 0.45);
+        display: flex; /* flex when active */
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .success-cart-modal {
+        max-width: 380px !important;
+        background: #fcfaee !important; /* warna krem seperti di gambar */
+        border-radius: 25px !important;
+        padding: 45px 30px 40px !important;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        animation: modalIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+    }
+
+    .success-icon-wrapper {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .success-circle {
+        width: 80px;
+        height: 80px;
+        background: #55a3a4;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 35px;
+        z-index: 2;
+        position: relative;
+    }
+    
+    .success-circle::before {
+        content: '';
+        position: absolute;
+        inset: -15px;
+        background: #eaf8f6;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    .bubble {
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .bubble-1 {
+        width: 20px;
+        height: 20px;
+        background: #eaf8f6;
+        top: 0;
+        right: 5px;
+    }
+
+    .bubble-2 {
+        width: 14px;
+        height: 14px;
+        background: #ffffff;
+        border: 2px solid #eaf8f6;
+        bottom: 10px;
+        left: 5px;
+    }
+
+    .modal-title-success {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+        color: #55a3a4;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .modal-description-success {
+        font-family: 'Nunito', sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .btn-lihat-keranjang {
+        background: #55a3a4;
+        color: #ffffff;
+        border: none;
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 20px;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .btn-lihat-keranjang:hover {
+        background: #438f91;
+    }
+</style>

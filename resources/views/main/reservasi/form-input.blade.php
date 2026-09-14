@@ -5,7 +5,7 @@
     }
 
     .form-reservasi-page {
-        height: 100%;
+        min-height: 100vh;
         width: 100%;
         margin: 0;
         padding: 0;
@@ -14,7 +14,7 @@
     }
 
     .form-reservasi-container {
-        height: 100%;
+        min-height: 100vh;
         width: 100%;
         display: flex;
         margin: 0;
@@ -644,7 +644,7 @@
                             name="name"
                             class="form-input"
                             placeholder="Masukkan nama lengkap"
-                            value="{{ old('name') }}"
+                            value="{{ old('name', auth()->check() ? auth()->user()->name : '') }}"
                             required>
 
                     </div>
@@ -663,7 +663,7 @@
                             name="no_tlp"
                             class="form-input"
                             placeholder="Contoh: 081234567890"
-                            value="{{ old('no_tlp') }}"
+                            value="{{ old('no_tlp', auth()->check() ? auth()->user()->phone : '') }}"
                             required>
 
                     </div>
@@ -750,7 +750,7 @@
                         id="address"
                         name="address"
                         class="form-textarea"
-                        placeholder="Masukkan alamat lengkap...">{{ old('address') }}</textarea>
+                        placeholder="Masukkan alamat lengkap...">{{ old('address', auth()->check() ? auth()->user()->address : '') }}</textarea>
 
                 </div>
 

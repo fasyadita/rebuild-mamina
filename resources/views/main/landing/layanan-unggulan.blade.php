@@ -61,14 +61,12 @@
                 <div class="p-4">
 
                     <h3 class="text-lg font-semibold text-[#333]">
-                        Pijat Bayi
+                        Pijat Kid
                     </h3>
 
                     <p class="text-xs text-gray-500 leading-5 mt-2">
-                        Memperlancar ASI, mencegah mastitis,
-                        meningkatkan let-down reflex.
-                        Ditangani bidan & konselor laktasi
-                        bersertifikat.
+                        Durasi ± 45 menit. Layanan meliputi pijat seluruh tubuh untuk membantu
+                        memberikan rasa rileks, nyaman, dan mengurangi rasa lelah pada anak.
                     </p>
 
 
@@ -76,7 +74,7 @@
                     <div class="mt-4">
 
                         <span class="text-[#46C8C3] text-base font-bold">
-                            Mulai Rp 120.000
+                            Rp 121.000
                         </span>
 
                     </div>
@@ -86,7 +84,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        
+
 
                     </a>
 
@@ -114,21 +112,20 @@
                 <div class="p-4">
 
                     <h3 class="text-lg font-semibold text-[#333]">
-                        Pijat Bayi
+                        Pijat dan Scrub
                     </h3>
 
                     <p class="text-xs text-gray-500 leading-5 mt-2">
-                        Memperlancar ASI, mencegah mastitis,
-                        meningkatkan let-down reflex.
-                        Ditangani bidan & konselor laktasi
-                        bersertifikat.
+                        Durasi ± 60 menit. Layanan meliputi pijat seluruh tubuh dan lulur badan
+                        untuk membantu memberikan efek
+                        relaksasi.
                     </p>
 
 
                     <div class="mt-4">
 
                         <span class="text-[#46C8C3] text-base font-bold">
-                            Mulai Rp 120.000
+                            Rp 154.000
                         </span>
 
                     </div>
@@ -137,7 +134,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        
+
 
                     </a>
 
@@ -169,17 +166,16 @@
                     </h3>
 
                     <p class="text-xs text-gray-500 leading-5 mt-2">
-                        Memperlancar ASI, mencegah mastitis,
-                        meningkatkan let-down reflex.
-                        Ditangani bidan & konselor laktasi
-                        bersertifikat.
+                        Durasi 30–45 menit. Layanan meliputi baby gym dan pijat seluruh tubuh
+                        untuk membantu memberikan stimulasi dan
+                        membuat tubuh lebih rileks.
                     </p>
 
 
                     <div class="mt-4">
 
                         <span class="text-[#46C8C3] text-base font-bold">
-                            Mulai Rp 120.000
+                             Rp 88.000
                         </span>
 
                     </div>
@@ -188,7 +184,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        
+
 
                     </a>
 
@@ -196,7 +192,7 @@
 
             </div>
 
-            <!-- Card 1 -->
+            <!-- Card 4 -->
             <div
                 class="bg-white rounded-[17px] shadow-md overflow-hidden
                 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -216,14 +212,11 @@
                 <div class="p-4">
 
                     <h3 class="text-lg font-semibold text-[#333]">
-                        Pijat Bayi
+                        Pijat dan Swim
                     </h3>
-
                     <p class="text-xs text-gray-500 leading-5 mt-2">
-                        Memperlancar ASI, mencegah mastitis,
-                        meningkatkan let-down reflex.
-                        Ditangani bidan & konselor laktasi
-                        bersertifikat.
+                    Durasi ± 60 menit. Layanan meliputi baby gym, pijat seluruh tubuh, dan berenang untuk memberikan stimulasi
+                    agar bayi merasa lebih rileks, aktif, dan nyaman.
                     </p>
 
 
@@ -231,7 +224,7 @@
                     <div class="mt-4">
 
                         <span class="text-[#46C8C3] text-base font-bold">
-                            Mulai Rp 120.000
+                             Rp 132.000
                         </span>
 
                     </div>
@@ -241,7 +234,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        
+
 
                     </a>
 
@@ -249,7 +242,7 @@
 
             </div>
 
-            <!-- Card 2 -->
+            <!-- Card 5 -->
             <div
                 class="bg-white rounded-[17px] shadow-md overflow-hidden
                 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -269,21 +262,19 @@
                 <div class="p-4">
 
                     <h3 class="text-lg font-semibold text-[#333]">
-                        Pijat Bayi
+                        Pijat Hamil
                     </h3>
 
                     <p class="text-xs text-gray-500 leading-5 mt-2">
-                        Memperlancar ASI, mencegah mastitis,
-                        meningkatkan let-down reflex.
-                        Ditangani bidan & konselor laktasi
-                        bersertifikat.
+                        Layanan meliputi pijat seluruh tubuh kecuali perut dan totok wajah untuk membantu 
+                        memberikan rasa rileks dan nyaman selama masa kehamilan.
                     </p>
 
 
                     <div class="mt-4">
 
                         <span class="text-[#46C8C3] text-base font-bold">
-                            Mulai Rp 120.000
+                             Rp 165.000
                         </span>
 
                     </div>
@@ -292,7 +283,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        
+
 
                     </a>
 
@@ -300,7 +291,7 @@
 
             </div>
 
-            <!-- Card 3 -->
+            <!-- Card 6 -->
             <div
                 class="bg-white rounded-[17px] shadow-md overflow-hidden
                 transition duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -320,21 +311,18 @@
                 <div class="p-4">
 
                     <h3 class="text-lg font-semibold text-[#333]">
-                        Pijat Bayi
+                        Spa Hamil
                     </h3>
 
                     <p class="text-xs text-gray-500 leading-5 mt-2">
-                        Memperlancar ASI, mencegah mastitis,
-                        meningkatkan let-down reflex.
-                        Ditangani bidan & konselor laktasi
-                        bersertifikat.
+                        Durasi ± 90 menit. Layanan meliputi pijat seluruh kecuali perut, totok wajah, lulur badan, dan sheet mask .  UK 20 mgg
                     </p>
 
 
                     <div class="mt-4">
 
                         <span class="text-[#46C8C3] text-base font-bold">
-                            Mulai Rp 120.000
+                             Rp 220.000
                         </span>
 
                     </div>
@@ -343,7 +331,7 @@
                     <a href="#"
                         class="inline-block mt-1.5 text-xs text-[#46C8C3] hover:underline">
 
-                        
+
 
                     </a>
 
