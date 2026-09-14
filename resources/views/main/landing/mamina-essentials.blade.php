@@ -353,7 +353,7 @@
                                 Rp 50.000
                             </h3>
 
-                            <a href="#" class="btn-buy">
+                            <a href="https://gentleliving.id/" class="btn-buy">
                                 Beli Sekarang
                             </a>
 
@@ -395,7 +395,7 @@
                                 Rp 75.000
                             </h3>
 
-                            <a href="#" class="btn-buy">
+                            <a href="https://gentleliving.id/" class="btn-buy">
                                 Beli Sekarang
                             </a>
 
@@ -437,7 +437,7 @@
                                 Rp 100.000
                             </h3>
 
-                            <a href="#" class="btn-buy">
+                            <a href="https://gentleliving.id/" class="btn-buy">
                                 Beli Sekarang
                             </a>
 
@@ -467,12 +467,12 @@
 
             <div class="market-btn">
 
-                <a href="#" class="btn-shopee">
+                <a href="https://shopee.co.id/gentleliving_id?is_from_login=true" class="btn-shopee">
                     <i class="bi bi-bag-fill"></i>
                     Shopee
                 </a>
 
-                <a href="#" class="btn-tokopedia">
+                <a href="https://www.tokopedia.com/gentlebabyid" class="btn-tokopedia">
                     <i class="bi bi-bag-fill"></i>
                     Tokopedia
                 </a>

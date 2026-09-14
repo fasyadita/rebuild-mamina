@@ -117,10 +117,10 @@
 
 
                         {{-- Button --}}
-                        <button
+                        <a href="{{ route('artikel.detail') }}"
                             class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-4 py-1.5 rounded-full text-[11px] font-semibold transition">
                             Baca Selanjutnya
-                        </button>
+                        </a>
 
                     </div>
 

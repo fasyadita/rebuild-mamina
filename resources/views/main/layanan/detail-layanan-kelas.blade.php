@@ -553,7 +553,7 @@
 
                             {{-- BUTTON TAMBAH --}}
                            
-                                <a href="{{ route('login') }}" class="btn-tambah" style="margin-top: auto; text-decoration: none;">
+                                <a href="{{ route('guest.login') }}" class="btn-tambah" style="margin-top: auto; text-decoration: none;">
                                     <span class="icon-plus">
                                         <i class="fas fa-plus"></i>
                                     </span>
