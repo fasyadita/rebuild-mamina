@@ -449,13 +449,9 @@
     /* ================= SECTION ================= */
 
     .testimommy-section {
-
         padding: 60px 0;
-
         background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
-
         overflow: hidden;
-
     }
 
 
@@ -596,6 +592,8 @@
 
         font-size: 10px;
 
+        font-family: 'nunito', sans-serif;
+
     }
 
 
@@ -717,19 +715,12 @@
     /* ================= REVIEW ================= */
 
     .review-text {
-
-        font-family: sans-serif;
-
         font-size: 14px;
-
         font-style: normal;
-
         color: #333;
-
         line-height: 1.5;
-
         margin: 0 0 20px;
-
+        font-family: 'nunito', sans-serif;
     }
 
 

@@ -18,11 +18,13 @@
         font-weight: 700;
         color: #ef8f8f;
         line-height: 1.2;
+        font-family: 'fredoka', sans-serif;
     }
 
     .title span {
         display: block;
         color: #4f9d9a;
+        font-family: 'nunito', sans-serif;
     }
 
     .desc {
@@ -30,6 +32,7 @@
         margin: 14px 0 22px;
         line-height: 1.8;
         font-size: 14px;
+        font-family: 'nunito', sans-serif;
     }
 
     .feature-card {
@@ -54,12 +57,14 @@
         font-weight: 700;
         font-size: 15px;
         margin-bottom: 10px;
+        font-family: 'fredoka', sans-serif;
     }
 
     .feature-card p {
         font-size: 13px;
         color: #666;
         margin-bottom: 0;
+        font-family: 'nunito', sans-serif;
         line-height: 1.6;
     }
 
@@ -100,6 +105,7 @@
         font-weight: 700;
         color: #4b4b4b;
         font-size: 14px;
+        font-family: 'fredoka', sans-serif;
     }
 
     .service-item p {
@@ -107,6 +113,7 @@
         color: #666;
         line-height: 1.6;
         font-size: 13px;
+        font-family: 'nunito', sans-serif;
     }
 
     .btn-service {
@@ -119,6 +126,7 @@
         transition: .3s;
         font-size: 13px;
         font-weight: 600;
+        font-family: 'nunito', sans-serif;
     }
 
     .btn-service:hover {
@@ -126,6 +134,7 @@
         color: white;
     }
 </style>
+
 
 <section id="tentang" class="tentang-mamina py-6 px-4">
     <div class="max-w-6xl mx-auto">
