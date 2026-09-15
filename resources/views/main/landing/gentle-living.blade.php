@@ -189,7 +189,7 @@
     .living-products {
         display: flex;
         flex-direction: column;
-        gap: 26px;
+        gap: 12px;
     }
 
 
@@ -206,9 +206,9 @@
 
         background: #FFFDF5;
 
-        padding: 6px 11px 6px 8px;
+        padding: 16px 16px;
 
-        min-height: 67px;
+        min-height: 85px;
 
         transition: all .25s ease;
     }
@@ -224,8 +224,8 @@
     /* Product Image */
 
     .product-thumb {
-        width: 56px;
-        height: 56px;
+        width: 70px;
+        height: 70px;
 
         flex-shrink: 0;
 
@@ -248,7 +248,7 @@
     .living-product h5 {
         margin: 0 0 3px;
         color: #222;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 700;
         line-height: 1.2;
     }
@@ -258,7 +258,7 @@
 
         color: #777;
 
-        font-size: 11px;
+        font-size: 13px;
 
         line-height: 1.3;
     }
@@ -270,7 +270,7 @@
         min-width: 72px;
         text-align: right;
         color: #4F9D9A;
-        font-size: 11px;
+        font-size: 15px;
         font-weight: 700;
 
         white-space: nowrap;
@@ -346,10 +346,9 @@
 
             <div class="flex items-center gap-2 mb-3">
 
-            <div class="w-6 h-6 rounded-full bg-[#CBF1E8]"></div>
+                <div class="w-6 h-6 rounded-full bg-[#CBF1E8]"></div>
 
-            <span
-                class="px-3 py-1 rounded-full
+                <span class="px-3 py-1 rounded-full
                 bg-[#CBF1E8]
                 text-[#3D9F9E]
                 text-[12px]
@@ -357,29 +356,28 @@
                 uppercase
                 tracking-widest">
 
-                GENTLE LIVING
+                    MAMINA ESSENTIALS
 
-            </span>
+                </span>
 
-        </div>
+            </div>
 
 
             <h2 class="section-title">
 
-                Hidup Lebih
-                <span class="pink">Gentle,</span>
+                <span class="pink">Produk Pilihan</span>
                 <br>
 
-                Lebih
-                <span class="green">Alami</span>
+                Untuk
+                <span class="green">Ibu & Bayi</span>
 
             </h2>
 
 
             <p class="section-description">
 
-                Koleksi produk perawatan natural yang dikurasi khusus oleh tim Mamina —
-                untuk ibu, bayi, dan keluarga yang memilih cara hidup lebih gentle.
+                Semua produk yang digunakan di Mamina Baby Spa kini hadir untuk <br>
+                Bunda bawa pulang — gentle, aman, dan teruji klinis
 
             </p>
 
@@ -393,101 +391,9 @@
             {{-- ================= LEFT ================= --}}
             <div class="col-lg-7 col-md-5">
 
-                <div class="living-card">
-
-                    <img
-                        src="{{ asset('img/logo-gl.png') }}"
-                        class="living-logo"
-                        alt="Gentle Living">
-
-
-                    <h4>
-                        Gentle Living by Mamina
-                    </h4>
-
-
-                    <p>
-                        Alam menyediakan yang terbaik. Kami meraciknya
-                        dengan penuh cinta untuk Bunda dan Si Kecil.
-                    </p>
-
-
-                    {{-- Features --}}
-                    <div class="row">
-
-                        <div class="col-6">
-
-                            <div class="feature-box">
-
-                                <strong>
-                                    100% Natural
-                                </strong>
-
-                                <small>
-                                    Bebas bahan kimia
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-6">
-
-                            <div class="feature-box">
-
-                                <strong>
-                                    Derm Tested
-                                </strong>
-
-                                <small>
-                                    Aman kulit sensitif
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-6">
-
-                            <div class="feature-box">
-
-                                <strong>
-                                    Produk Lokal
-                                </strong>
-
-                                <small>
-                                    Made in Indonesia
-                                </small>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-6">
-
-                            <div class="feature-box">
-
-                                <strong>
-                                    Terdaftar BPOM
-                                </strong>
-
-                                <small>
-                                    Tersertifikasi resmi
-                                </small>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <img src="{{ asset('img/mamina-essentials.jpeg') }}" class="w-100 rounded-2xl" alt="Living 1">
 
             </div>
-
 
             {{-- ================= RIGHT ================= --}}
             <div class="col-lg-5 col-md-7">
@@ -498,27 +404,24 @@
                     {{-- Product 1 --}}
                     <div class="living-product">
 
-                        <img
-                            src="{{ asset('assets/images/product-1.jpg') }}"
-                            alt="Nama Produk 1"
-                            class="product-thumb">
+                        <img src="{{ asset('img/seduhan-original.jpeg') }}" alt="Nama Produk 1" class="product-thumb">
 
 
                         <div class="flex-grow-1">
 
                             <h5>
-                                Calming Sleep Lotion
+                                ASI Booster Herbal Original
                             </h5>
 
                             <p>
-                                Lavender & chamomile — rutinitas tidur si kecil
+                                Minuman herbal praktis untuk membantu melancarkan ASI.
                             </p>
 
                         </div>
 
 
                         <div class="product-price">
-                            Rp 95.000
+                            Rp 30.000
                         </div>
 
                     </div>
@@ -527,27 +430,24 @@
                     {{-- Product 2 --}}
                     <div class="living-product">
 
-                        <img
-                            src="{{ asset('assets/images/product-2.jpg') }}"
-                            alt="Nama Produk 2"
-                            class="product-thumb">
+                        <img src="{{ asset('img/seduhan-jeruknipis.jpeg') }}" alt="Nama Produk 2" class="product-thumb">
 
 
                         <div class="flex-grow-1">
 
                             <h5>
-                                Calming Sleep Lotion
+                                ASI Booster Herbal Jeruk Nipis
                             </h5>
 
                             <p>
-                                Lavender & chamomile — rutinitas tidur si kecil
+                                Seduhan herbal untuk membantu melancarkan ASI dengan rasa jeruk nipis.
                             </p>
 
                         </div>
 
 
                         <div class="product-price">
-                            Rp 95.000
+                            Rp 30.000
                         </div>
 
                     </div>
@@ -556,27 +456,24 @@
                     {{-- Product 3 --}}
                     <div class="living-product">
 
-                        <img
-                            src="{{ asset('assets/images/product-3.jpg') }}"
-                            alt="Nama Produk 3"
-                            class="product-thumb">
+                        <img src="{{ asset('img/seduhan-belimbingwuluh.jpeg') }}" alt="Nama Produk 3" class="product-thumb">
 
 
                         <div class="flex-grow-1">
 
                             <h5>
-                                Calming Sleep Lotion
+                                ASI Booster Herbal Belimbing Wuluh
                             </h5>
 
                             <p>
-                                Lavender & chamomile — rutinitas tidur si kecil
+                                Seduhan herbal untuk membantu melancarkan ASI dengan rasa belimbing wuluh.
                             </p>
 
                         </div>
 
 
                         <div class="product-price">
-                            Rp 95.000
+                            Rp 30.000
                         </div>
 
                     </div>
