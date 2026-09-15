@@ -315,7 +315,7 @@
                     </h3>
 
                     <p class="text-xs text-gray-500 leading-5 mt-2">
-                        Durasi ± 90 menit. Layanan meliputi pijat seluruh kecuali perut, totok wajah, lulur badan, dan sheet mask .  UK 20 mgg
+                        Durasi ± 90 menit. Layanan meliputi pijat seluruh tubuh kecuali perut, totok wajah, lulur badan, dan sheet mask .  UK 20 mgg
                     </p>
 
 

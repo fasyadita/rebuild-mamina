@@ -71,8 +71,8 @@
         color: #777;
         font-size: 14px;
         line-height: 1.55;
-
         margin: 0;
+        font-family: 'nunito', sans-serif;
     }
 
 
@@ -107,7 +107,7 @@
 
     /* Logo */
 
-    .living-logo {
+    /* .living-logo {
         width: 150px;
         max-width: 100%;
         height: auto;
@@ -120,11 +120,10 @@
 
     .living-card h4 {
         color: #4F9D9A;
-
         font-size: 16px;
         font-weight: 700;
-
         margin: 0 0 6px;
+        font-family: 'nunito', sans-serif;
     }
 
 
@@ -137,6 +136,7 @@
         margin: 0 auto 14px;
 
         max-width: 270px;
+        font-family: 'nunito', sans-serif;
     }
 
 
@@ -218,7 +218,7 @@
 
         box-shadow:
             0 5px 12px rgba(0, 0, 0, .07);
-    }
+    } 
 
 
     /* Product Image */
@@ -251,16 +251,15 @@
         font-size: 14px;
         font-weight: 700;
         line-height: 1.2;
+        font-family: 'nunito', sans-serif;
     }
 
     .living-product p {
         margin: 0;
-
         color: #777;
-
         font-size: 13px;
-
         line-height: 1.3;
+        font-family: 'nunito', sans-serif;
     }
 
 
@@ -272,8 +271,8 @@
         color: #4F9D9A;
         font-size: 15px;
         font-weight: 700;
-
         white-space: nowrap;
+        font-family: 'nunito', sans-serif;
     }
 
 

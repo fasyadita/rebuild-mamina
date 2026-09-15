@@ -38,6 +38,7 @@
         color: #E59A94;
         margin-top: 14px;
         margin-bottom: 12px;
+        font-family: 'fredoka', sans-serif;
     }
 
     .section-title span {
@@ -50,6 +51,7 @@
         font-size: 13px;
         line-height: 1.7;
         margin-top: 8px;
+        font-family: 'nunito', sans-serif;
     }
 
 
@@ -105,6 +107,7 @@
         font-size: 17px;
         font-weight: 700;
         color: #4A3B4A;
+        font-family: 'fredoka', sans-serif;
     }
 
     .product-body p {
@@ -117,6 +120,7 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        font-family: 'nunito', sans-serif;
     }
 
 
@@ -126,6 +130,7 @@
         font-weight: 700;
         color: #4F9D9A;
         margin: 0;
+        font-family: 'nunito', sans-serif;
     }
 
 
@@ -140,6 +145,7 @@
         font-size: 11px;
         font-weight: 600;
         transition: 0.3s;
+        font-family: 'nunito', sans-serif;
     }
 
     .btn-buy:hover {
@@ -171,12 +177,14 @@
         font-weight: 700;
         color: #4A3B4A;
         margin-bottom: 4px;
+        font-family: 'fredoka', sans-serif;
     }
 
     .marketplace p {
         margin: 0;
         color: #777;
         font-size: 11px;
+        font-family: 'nunito', sans-serif;
     }
 
 
@@ -197,10 +205,11 @@
 
         color: white;
         text-decoration: none;
-        font-size: 11px;
+        font-size: 13px;
         font-weight: 600;
 
         transition: 0.3s;
+        font-family: 'nunito', sans-serif;  
     }
 
     .btn-shopee {
