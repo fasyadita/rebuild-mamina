@@ -300,22 +300,28 @@
                 uppercase
                 tracking-widest">
 
-                    MAMINA ESSENTIALS
+                    GENTLE LIVING
 
                 </span>
 
             </div>
 
             <h2 class="section-title">
-                Produk Pilihan <br>
-                untuk <span>Ibu & Bayi</span>
+
+                Hidup Lebih
+                <span class="pink">Gentle,</span>
+                <br>
+
+                Lebih
+                <span class="green">Alami</span>
+
             </h2>
 
             <p class="section-desc">
-                Punya keahlian sebagai bidan, terapis, atau nakes?
-                Bergabunglah sebagai mitra MaminaGO! dan layani klien
-                di kotamu — dengan sistem, dukungan, dan brand Mamina
-                di belakangmu.
+                Koleksi produk perawatan natural yang
+                dikurasi khusus oleh tim Mamina —
+                untuk ibu, bayi, dan keluarga yang
+                memilih cara hidup lebih gentle.
             </p>
 
         </div>
