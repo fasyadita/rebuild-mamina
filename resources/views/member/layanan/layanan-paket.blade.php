@@ -1,4 +1,4 @@
-@extends('paket.layouts.app')
+@extends('member.layouts.app')
 
 @section('title', 'Detail Layanan')
 
