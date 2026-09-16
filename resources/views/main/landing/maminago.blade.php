@@ -211,3 +211,13 @@
     </div>
 
 </section>
+
+<style>
+    #maminago {
+        font-family: 'nunito', sans-serif;
+    }
+    #maminago h2, 
+    #maminago h3 {
+        font-family: 'fredoka', sans-serif;
+    }
+</style>

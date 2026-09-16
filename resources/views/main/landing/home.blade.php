@@ -103,8 +103,9 @@
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     transition: 0.3s;
+    font-family: 'nunito', sans-serif;
 }
 
 .btn-reservasi:hover {
@@ -163,6 +164,7 @@
     .btn-reservasi {
         padding: 12px 28px;
         font-size: 14px;
+        font-family: 'nunito', sans-serif;
     }
 }
 </style>

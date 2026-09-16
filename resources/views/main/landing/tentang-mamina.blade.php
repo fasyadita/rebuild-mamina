@@ -24,7 +24,7 @@
     .title span {
         display: block;
         color: #4f9d9a;
-        font-family: 'nunito', sans-serif;
+        font-family: 'fredoka', sans-serif;
     }
 
     .desc {

@@ -48,9 +48,7 @@
         font-size: 36px;
         font-weight: 700;
         line-height: 1.25;
-
         color: #E89A96;
-
         margin: 9px 0 5px;
     }
 
