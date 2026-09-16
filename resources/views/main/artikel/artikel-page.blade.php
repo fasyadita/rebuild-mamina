@@ -168,7 +168,7 @@
                                        text-white
                                        px-5 py-2.5
                                        rounded-full
-                                       text-xs
+                                       text-[13px]
                                        font-semibold
                                        transition
                                        hover:-translate-y-0.5
@@ -580,7 +580,7 @@
 
                             <p
                                 class="text-[#666]
-                                       text-[10px]
+                                       text-[12px]
                                        leading-relaxed
                                        mb-3">
 
@@ -729,7 +729,7 @@
 
                             <p
                                 class="text-[#666]
-                                       text-[10px]
+                                       text-[12px]
                                        leading-relaxed
                                        mb-3">
 
@@ -980,7 +980,7 @@
 
                             <p
                                 class="text-[#666]
-                                       text-[10px]
+                                       text-[12px]
                                        leading-relaxed
                                        mb-3">
 
@@ -1127,7 +1127,7 @@
 
                             <p
                                 class="text-[#666]
-                                       text-[10px]
+                                       text-[12px]
                                        leading-relaxed
                                        mb-3">
 

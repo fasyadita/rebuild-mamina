@@ -1,6 +1,7 @@
 <style>
     .artikel {
         background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
+        font-family: 'nunito', sans-serif;
     }
 
 </style>
@@ -118,7 +119,7 @@
 
                         {{-- Button --}}
                         <a href="{{ route('artikel.detail') }}"
-                            class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-4 py-1.5 rounded-full text-[11px] font-semibold transition">
+                            class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-4 py-1.5 rounded-full text-[13px] font-semibold transition">
                             Baca Selanjutnya
                         </a>
 
@@ -227,7 +228,7 @@
                 <div class="flex justify-end mt-1">
 
                     <a href="{{ route('artikel') }}"
-                        class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-5 py-2 rounded-full text-xs font-semibold transition inline-block text-center no-underline">
+                        class="bg-[#5AA6A5] hover:bg-[#4B9594] text-white px-5 py-2 rounded-full text-[13px] font-semibold transition inline-block text-center no-underline">
                         Baca Artikel Lain
                     </a>
 
