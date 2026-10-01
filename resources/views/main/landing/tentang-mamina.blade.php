@@ -144,8 +144,8 @@
             <div class="col-lg-5 mb-3 mb-lg-0">
 
                 <div class="feature-card feature-main text-center">
-                    <div class="icon mb-2">
-                        💚
+                    <div class="icon mb-2 text-success">
+                        <i class="fas fa-heart"></i>
                     </div>
 
                     <h5>Gentle & Comforting</h5>
@@ -160,8 +160,9 @@
                 <div class="row mt-2 g-2">
                     <div class="col-6">
                         <div class="feature-card small-card text-center">
-                            <div class="icon mb-2">
-                                🏅
+                            <div class="icon mb-2 text-warning">
+                                <i class="fas fa-medal"></i>
+                                <!-- or <i class="bi bi-medal-fill"></i> -->
                             </div>
 
                             <h6>Terapis Bersertifikat</h6>
@@ -175,10 +176,10 @@
 
                     <div class="col-6">
                         <div class="feature-card small-card text-center">
-                            <div class="icon mb-2">
-                                📍
+                            <div class="icon mb-2 text-danger">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <!-- or <i class="bi bi-pin-map-fill"></i> -->
                             </div>
-
                             <h6>Terapis Bersertifikat</h6>
 
                             <p>

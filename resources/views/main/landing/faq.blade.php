@@ -43,16 +43,6 @@
 
             </h2>
 
-            {{-- Description --}}
-            <p class="text-[#888]
-        text-xs
-        font-nunito
-        mt-0.5">
-
-                Berikut jawaban atas pertanyaan yang paling umum diajukan
-
-            </p>
-
         </div>
 
         {{-- FAQ Grid --}}

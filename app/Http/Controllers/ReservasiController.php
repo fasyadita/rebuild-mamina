@@ -160,7 +160,7 @@ class ReservasiController extends Controller
             // Clear session setelah berhasil
             $request->session()->forget(['cart', 'reservasi']);
 
-            return redirect()->route('beranda')->with('success', 'Pengajuan reservasi berhasil dikirim! ✅');
+            return redirect()->route('member.home')->with('success', 'Pengajuan reservasi berhasil dikirim! ✅');
 
         } catch (\Exception $e) {
             \Illuminate\Support\Facades\Log::error('Error saving reservasi: ' . $e->getMessage());
