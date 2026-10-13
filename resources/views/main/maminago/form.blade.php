@@ -348,6 +348,10 @@
     </aside>
 
     <main class="form-content">
+        <a href="{{ url('/') }}#maminago" style="display: inline-flex; align-items: center; gap: 8px; color: #439294; text-decoration: none; font-weight: 700; margin-bottom: 20px; font-size: 14px; width: fit-content;">
+            <i class="fa-solid fa-arrow-left"></i> Kembali
+        </a>
+
         <h2 class="form-title">Formulir Pendaftaran</h2>
 
         <form action="{{ route('maminago.submit') }}" method="POST">
@@ -585,3 +589,13 @@
     </script>
     @endif
 </section>
+
+{{-- Font --}}
+<link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+{{-- Font Awesome --}}
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">

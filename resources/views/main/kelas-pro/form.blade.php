@@ -623,6 +623,10 @@
     ========================== --}}
     <main class="form-content">
 
+        <a href="{{ url('/') }}#kelas-pro" style="display: inline-flex; align-items: center; gap: 8px; color: #439294; text-decoration: none; font-weight: 700; margin-bottom: 20px; font-size: 14px; width: fit-content;">
+            <i class="fa-solid fa-arrow-left"></i> Kembali
+        </a>
+
         <h2 class="form-title">
             Formulir Pendaftaran
         </h2>

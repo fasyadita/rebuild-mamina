@@ -660,6 +660,10 @@
         ============================================== --}}
         <main class="reservasi-content">
 
+            <a href="{{ route('keranjang') }}" style="display: inline-flex; align-items: center; gap: 8px; color: #55a3a4; text-decoration: none; font-weight: 700; margin-bottom: 20px; font-size: 14px; width: fit-content;">
+                <i class="fa-solid fa-arrow-left"></i> Kembali
+            </a>
+
             <h2 class="form-title">Formulir Reservasi</h2>
 
             {{-- Alert jika keranjang kosong --}}
@@ -821,3 +825,13 @@
         document.getElementById('selected-slot').value = el.dataset.slot;
     }
 </script>
+
+{{-- Font --}}
+<link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+{{-- Font Awesome --}}
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
