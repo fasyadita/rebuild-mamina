@@ -11,14 +11,17 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\JadwalTerapisController;
 use App\Http\Controllers\AnakController;
 use App\Http\Controllers\RiwayatReservasiController;
+use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\CmsDashboardController;
+use App\Http\Controllers\LandingController;
 
 // MAIN
 // landing page 
-Route::get('/', fn() => view('welcome'))->name('beranda');
+Route::get('/', [LandingController::class, 'main'])->name('beranda');
 Route::get('/event', fn() => view('main.event.event'))->name('event');
 Route::get('/artikel', fn() => view('main.artikel.artikel-page'))->name('artikel');
 Route::get('/artikel/detail', fn() => view('main.artikel.content-artikel'))->name('artikel.detail');
-Route::get('/guest', fn() => view('welcome-guest'))->name('guest');
+Route::get('/guest', [LandingController::class, 'guest'])->name('guest');
 Route::get('/keranjang', [KeranjangController::class, 'index'])->name('keranjang');
 Route::get('/reservasi/form-input', [ReservasiController::class, 'formInput'])->name('reservasi.form-input');
 Route::post('/cart/add/{id}', [KeranjangController::class, 'add'])->name('cart.add');
@@ -52,7 +55,7 @@ Route::get('/jadwal-terapis/detail', [JadwalTerapisController::class, 'detail'])
 // GUEST
 Route::prefix('guest')->name('guest.')->group(function () {
 
-    Route::get('/', fn() => view('welcome-guest'))->name('home');
+    Route::get('/', [LandingController::class, 'guest'])->name('home');
     Route::get('/service', fn() => view('guest.layanan.service'))->name('service');
     Route::get('/terapis', fn() => view('guest.terapis.terapis'))->name('terapis');
     Route::get('/terapis', [TimMaminaController::class, 'guestIndex'])->name('terapis');
@@ -88,7 +91,7 @@ Route::prefix('guest')->name('guest.')->group(function () {
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::prefix('member')->name('member.')->middleware('auth')->group(function () {
 
-    Route::get('/', fn() => view('welcome-member'))->name('home');
+    Route::get('/', [LandingController::class, 'member'])->name('home');
 
     Route::get('/terapis', [TimMaminaController::class, 'memberIndex'])->name('terapis');
     Route::get('/cabang', fn() => view('member.cabang.cabang'))->name('cabang');
@@ -116,4 +119,79 @@ Route::prefix('member')->name('member.')->middleware('auth')->group(function () 
     Route::get('/layanan-umum', [LayananController::class, 'umum'])->name('layanan.umum');
     Route::get('/layanan-lainnya', [LayananController::class, 'lainnya'])->name('layanan.lainnya');
 
+});
+
+
+// ==============================
+// ADMIN CMS ROUTES (Terpisah dari member)
+// ==============================
+Route::prefix('admin')->name('admin.')->group(function () {
+
+    // Login (tidak butuh middleware)
+    Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('login.post');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+
+    // Protected CMS routes
+    Route::middleware('admin.auth')->group(function () {
+
+        // Dashboard
+        Route::get('/', [CmsDashboardController::class, 'index'])->name('dashboard');
+
+        // CMS: Main Hero
+        Route::get('/cms/hero', [CmsDashboardController::class, 'heroIndex'])->name('cms.hero');
+        Route::put('/cms/hero', [CmsDashboardController::class, 'heroUpdate'])->name('cms.hero.update');
+
+        // CMS: About / Tentang Mamina
+        Route::get('/cms/about', [CmsDashboardController::class, 'aboutIndex'])->name('cms.about');
+        Route::put('/cms/about', [CmsDashboardController::class, 'aboutUpdate'])->name('cms.about.update');
+
+        // CMS: Layanan Unggulan
+        Route::get('/cms/layanan', [CmsDashboardController::class, 'layananIndex'])->name('cms.layanan');
+        Route::get('/cms/layanan/create', [CmsDashboardController::class, 'layananCreate'])->name('cms.layanan.create');
+        Route::post('/cms/layanan', [CmsDashboardController::class, 'layananStore'])->name('cms.layanan.store');
+        Route::get('/cms/layanan/{id}/edit', [CmsDashboardController::class, 'layananEdit'])->name('cms.layanan.edit');
+        Route::put('/cms/layanan/{id}', [CmsDashboardController::class, 'layananUpdate'])->name('cms.layanan.update');
+        Route::delete('/cms/layanan/{id}', [CmsDashboardController::class, 'layananDestroy'])->name('cms.layanan.destroy');
+
+        // CMS: Testimony
+        Route::get('/cms/testimony', [CmsDashboardController::class, 'testimonyIndex'])->name('cms.testimony');
+        Route::get('/cms/testimony/create', [CmsDashboardController::class, 'testimonyCreate'])->name('cms.testimony.create');
+        Route::post('/cms/testimony', [CmsDashboardController::class, 'testimonyStore'])->name('cms.testimony.store');
+        Route::get('/cms/testimony/{id}/edit', [CmsDashboardController::class, 'testimonyEdit'])->name('cms.testimony.edit');
+        Route::put('/cms/testimony/{id}', [CmsDashboardController::class, 'testimonyUpdate'])->name('cms.testimony.update');
+        Route::delete('/cms/testimony/{id}', [CmsDashboardController::class, 'testimonyDestroy'])->name('cms.testimony.destroy');
+
+        // CMS: FAQ
+        Route::get('/cms/faq', [CmsDashboardController::class, 'faqIndex'])->name('cms.faq');
+        Route::get('/cms/faq/create', [CmsDashboardController::class, 'faqCreate'])->name('cms.faq.create');
+        Route::post('/cms/faq', [CmsDashboardController::class, 'faqStore'])->name('cms.faq.store');
+        Route::get('/cms/faq/{id}/edit', [CmsDashboardController::class, 'faqEdit'])->name('cms.faq.edit');
+        Route::put('/cms/faq/{id}', [CmsDashboardController::class, 'faqUpdate'])->name('cms.faq.update');
+        Route::delete('/cms/faq/{id}', [CmsDashboardController::class, 'faqDestroy'])->name('cms.faq.destroy');
+
+        // CMS: Cabang
+        Route::get('/cms/cabang', [CmsDashboardController::class, 'cabangIndex'])->name('cms.cabang');
+        Route::get('/cms/cabang/create', [CmsDashboardController::class, 'cabangCreate'])->name('cms.cabang.create');
+        Route::post('/cms/cabang', [CmsDashboardController::class, 'cabangStore'])->name('cms.cabang.store');
+        Route::get('/cms/cabang/{id}/edit', [CmsDashboardController::class, 'cabangEdit'])->name('cms.cabang.edit');
+        Route::put('/cms/cabang/{id}', [CmsDashboardController::class, 'cabangUpdate'])->name('cms.cabang.update');
+        Route::delete('/cms/cabang/{id}', [CmsDashboardController::class, 'cabangDestroy'])->name('cms.cabang.destroy');
+
+        // CMS: Artikel
+        Route::get('/cms/artikel', [CmsDashboardController::class, 'artikelIndex'])->name('cms.artikel');
+        Route::get('/cms/artikel/create', [CmsDashboardController::class, 'artikelCreate'])->name('cms.artikel.create');
+        Route::post('/cms/artikel', [CmsDashboardController::class, 'artikelStore'])->name('cms.artikel.store');
+        Route::get('/cms/artikel/{id}/edit', [CmsDashboardController::class, 'artikelEdit'])->name('cms.artikel.edit');
+        Route::put('/cms/artikel/{id}', [CmsDashboardController::class, 'artikelUpdate'])->name('cms.artikel.update');
+        Route::delete('/cms/artikel/{id}', [CmsDashboardController::class, 'artikelDestroy'])->name('cms.artikel.destroy');
+
+        // CMS: Guest Hero
+        Route::get('/cms/guest-hero', [CmsDashboardController::class, 'guestHeroIndex'])->name('cms.guest-hero');
+        Route::put('/cms/guest-hero', [CmsDashboardController::class, 'guestHeroUpdate'])->name('cms.guest-hero.update');
+
+        // CMS: Settings
+        Route::get('/cms/settings', [CmsDashboardController::class, 'settingsIndex'])->name('cms.settings');
+        Route::put('/cms/settings', [CmsDashboardController::class, 'settingsUpdate'])->name('cms.settings.update');
+    });
 });

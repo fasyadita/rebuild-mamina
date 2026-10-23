@@ -19,7 +19,52 @@
         <!-- ================= CABANG LIST ================= -->
         <div class="cabang-content">
 
-
+            @if(isset($cmsCabangs) && $cmsCabangs->isNotEmpty())
+                @foreach($cmsCabangs as $cabang)
+                    <div class="cabang-card">
+                        <div class="card-img-wrapper">
+                            <img src="{{ !empty($cabang->image) ? (str_starts_with($cabang->image, 'http') ? $cabang->image : asset($cabang->image)) : asset('img/cabang-mlg.jpg') }}" alt="{{ $cabang->nama_cabang }}">
+                        </div>
+                        <div class="card-info">
+                            <h3>{{ $cabang->nama_cabang }}</h3>
+                            <ul class="info-details">
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>{{ $cabang->alamat }}</span>
+                                </li>
+                                @if(!empty($cabang->jam_operasional))
+                                    <li>
+                                        <i class="fa-regular fa-clock"></i>
+                                        <span>{{ $cabang->jam_operasional }}</span>
+                                    </li>
+                                @endif
+                                @if(!empty($cabang->no_telepon))
+                                    <li>
+                                        <i class="fa-solid fa-phone"></i>
+                                        <span>{{ $cabang->no_telepon }}</span>
+                                    </li>
+                                @endif
+                            </ul>
+                        </div>
+                        <div class="card-buttons">
+                            @if(!empty($cabang->no_telepon))
+                                @php
+                                    $cleanPhone = preg_replace('/[^0-9]/', '', $cabang->no_telepon);
+                                    $waNumber = preg_match('/^0/', $cleanPhone) ? preg_replace('/^0/', '62', $cleanPhone) : $cleanPhone;
+                                @endphp
+                                <a href="https://wa.me/{{ $waNumber }}?text=Halo%20Admin%20{{ urlencode($cabang->nama_cabang) }}" target="_blank" class="btn-contact">
+                                    Hubungi Cabang
+                                </a>
+                            @endif
+                            @if(!empty($cabang->gmaps_link))
+                                <a href="{{ $cabang->gmaps_link }}" target="_blank" class="btn-maps">
+                                    Lihat di Google Maps
+                                </a>
+                            @endif
+                        </div>
+                    </div>
+                @endforeach
+            @else
             <!-- ================= CABANG 1 ================= -->
             <div class="cabang-card">
 
@@ -242,6 +287,7 @@
                 </div>
 
             </div>
+            @endif
 
         </div>
 
