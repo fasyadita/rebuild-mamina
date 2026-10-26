@@ -90,7 +90,7 @@
             </p>
             
             <div class="modal-buttons-vertical">
-                <a href="{{ url('/member/keranjang') }}" class="btn-lihat-keranjang">
+                <a href="{{ url('/keranjang') }}" class="btn-lihat-keranjang">
                     <i class="fa-solid fa-basket-shopping"></i> Lihat Keranjang
                 </a>
                 <button type="button" class="btn-kembali" onclick="closeSuccessCartModal()">

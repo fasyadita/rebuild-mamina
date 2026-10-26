@@ -24,7 +24,7 @@
 </div>
 
 <div id="chatbot-bubble">
-    👩‍🍼 Halo Bunda! Butuh info layanan Mamina? Klik aku ya ✨
+    Halo Bunda! Butuh info layanan Mamina? Klik aku ya 
 </div>
 
 <!-- Chatbot JS -->
