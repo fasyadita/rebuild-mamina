@@ -113,7 +113,7 @@
 
   .kelas-card {
     min-height: 119px;
-    padding: 13px 20px 12px 92px;
+    padding: 13px 20px 12px 22px;
 
     position: relative;
 

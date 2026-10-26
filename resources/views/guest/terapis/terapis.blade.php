@@ -270,6 +270,7 @@
                     </h2>
                 </div>
 
+                @if(count($timMalang) >= 4)
                 <div class="tim-arrows">
                     <button class="arrow-button prev" onclick="scrollSection(this, -1)" title="Sebelumnya">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -279,6 +280,7 @@
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
+                @endif
 
             </div>
 
@@ -336,6 +338,7 @@
                     </h2>
                 </div>
 
+                @if(count($timKediri) > 4)
                 <div class="tim-arrows">
                     <button class="arrow-button prev" onclick="scrollSection(this, -1)" title="Sebelumnya">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -345,6 +348,7 @@
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
+                @endif
 
             </div>
 
@@ -402,6 +406,7 @@
                     </h2>
                 </div>
 
+                @if(count($konselor) >= 4)
                 <div class="tim-arrows">
                     <button class="arrow-button prev" onclick="scrollSection(this, -1)" title="Sebelumnya">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -411,6 +416,7 @@
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
+                @endif
 
             </div>
 
@@ -468,6 +474,7 @@
                     </h2>
                 </div>
 
+                @if(count($timExtend) >= 4)
                 <div class="tim-arrows">
                     <button class="arrow-button prev" onclick="scrollSection(this, -1)" title="Sebelumnya">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -477,6 +484,7 @@
                         <i class="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
+                @endif
 
             </div>
 

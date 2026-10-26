@@ -43,21 +43,34 @@
 
             </h2>
 
-            {{-- Description --}}
-            <p class="text-[#888]
-        text-xs
-        font-nunito
-        mt-0.5">
-
-                Berikut jawaban atas pertanyaan yang paling umum diajukan
-
-            </p>
-
         </div>
 
         {{-- FAQ Grid --}}
         <div class="grid md:grid-cols-2 gap-3 items-start font-nunito">
 
+            @if(isset($cmsFaqs) && $cmsFaqs->isNotEmpty())
+                @foreach($cmsFaqs as $faq)
+                    <div class="faq-item bg-[#DDE8E2] rounded-lg shadow-sm p-4 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="{{ $loop->first ? 'true' : 'false' }}">
+                        <div class="flex justify-between items-start gap-2">
+                            <div class="flex-grow">
+                                <h3 class="text-base font-medium text-[#222] {{ $loop->first ? 'mb-2' : '' }} faq-question transition-all duration-300">
+                                    {{ $faq->question }}
+                                </h3>
+
+                                <div class="faq-answer-wrapper overflow-hidden transition-all duration-300" style="{{ $loop->first ? 'max-height: 200px; opacity: 1;' : 'max-height: 0px; opacity: 0;' }}">
+                                    <p class="text-[#4A4A4A] leading-relaxed text-xs {{ $loop->first ? '' : 'mt-2' }}">
+                                        {{ $faq->answer }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="text-xl text-[#2F2F2F] font-light focus:outline-none faq-btn w-6 h-6 flex items-center justify-center rounded-full hover:bg-white/30 transition duration-300 flex-shrink-0">
+                                {{ $loop->first ? '-' : '+' }}
+                            </button>
+                        </div>
+                    </div>
+                @endforeach
+            @else
             {{-- FAQ Item 1 (Baby Spa bisa untuk usia berapa? - Active/Open by default) --}}
             <div class="faq-item bg-[#DDE8E2] rounded-lg shadow-sm p-4 transition-all duration-300 cursor-pointer border border-transparent hover:border-[#BBCDCE]" data-active="true">
                 <div class="flex justify-between items-start gap-2">
@@ -187,6 +200,7 @@
                     </button>
                 </div>
             </div>
+            @endif
 
         </div>
 

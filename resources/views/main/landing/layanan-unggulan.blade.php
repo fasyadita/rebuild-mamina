@@ -38,9 +38,37 @@
 
 
         <!-- Card -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-            gap-4 mt-7">
-
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-7">
+            @if(isset($cmsLayanan) && $cmsLayanan->isNotEmpty())
+                @foreach($cmsLayanan as $item)
+                    <div class="bg-white rounded-[17px] shadow-md overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                        <div class="h-36 bg-gray-200">
+                            <img
+                                src="{{ !empty($item->image) ? (str_starts_with($item->image, 'http') ? $item->image : asset($item->image)) : asset('img/pijat.png') }}"
+                                class="w-full h-full object-cover"
+                                alt="{{ $item->title }}">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold text-[#333]">
+                                {{ $item->title }}
+                            </h3>
+                            <p class="text-xs text-gray-500 leading-5 mt-2">
+                                {{ $item->description }}
+                            </p>
+                            @if(!empty($item->price))
+                                <div class="mt-4">
+                                    <span class="text-[#46C8C3] text-base font-bold">
+                                        {{ str_starts_with($item->price, 'Rp') ? $item->price : 'Rp ' . number_format((float)$item->price, 0, ',', '.') }}
+                                    </span>
+                                </div>
+                            @endif
+                            <a href="{{ route('guest.login') }}" class="inline-block mt-2 text-xs text-[#46C8C3] hover:underline font-semibold">
+                                Reservasi sekarang &rarr;
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            @else
             <!-- Card 1 -->
             <div
                 class="bg-white rounded-[17px] shadow-md overflow-hidden
@@ -338,6 +366,7 @@
                 </div>
 
             </div>
+            @endif
 
         </div>
 

@@ -252,7 +252,29 @@
 
         <!-- Card Grid -->
         <div class="treatment-grid">
-
+            @if(isset($cmsGuestLayanan) && $cmsGuestLayanan->isNotEmpty())
+                @foreach($cmsGuestLayanan as $layanan)
+                    <div class="treatment-card">
+                        <div class="treatment-img-box">
+                            <img src="{{ !empty($layanan->image) ? (str_starts_with($layanan->image, 'http') ? $layanan->image : asset($layanan->image)) : asset('img/pijat.png') }}" alt="{{ $layanan->title }}">
+                        </div>
+                        <div class="treatment-body">
+                            <h3 class="treatment-card-title">{{ $layanan->title }}</h3>
+                            <p class="treatment-card-desc">
+                                {{ $layanan->description }}
+                            </p>
+                            @if(!empty($layanan->price))
+                                <div class="treatment-price-wrap">
+                                    <span class="treatment-price">{{ str_starts_with($layanan->price, 'Rp') ? $layanan->price : 'Rp ' . number_format((float)$layanan->price, 0, ',', '.') }}</span>
+                                </div>
+                            @endif
+                            <a href="{{ route('keranjang') }}" class="treatment-link">
+                                Reservasi sekarang
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            @else
             <!-- Card 1 -->
             <div class="treatment-card">
                 <div class="treatment-img-box">
@@ -374,6 +396,7 @@
                     </a>
                 </div>
             </div>
+            @endif
 
         </div>
 

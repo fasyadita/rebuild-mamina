@@ -274,6 +274,17 @@
             font-size: 13px;
         }
     }
+
+    /* ===========================
+       Fix: Modal di atas navbar
+    ============================ */
+    .modal {
+        z-index: 99999 !important;
+    }
+
+    .modal-backdrop {
+        z-index: 99998 !important;
+    }
 </style>
 
 <div class="history-section">

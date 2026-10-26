@@ -25,6 +25,7 @@
 	background: white;
 	font-family: sans-serif;
 	animation: fadeIn 0.3s ease;
+	z-index: 99999;
 }
 
 #chatbot-header {

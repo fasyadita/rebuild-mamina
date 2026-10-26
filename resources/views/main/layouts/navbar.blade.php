@@ -40,17 +40,20 @@
     }
 
     .navbar .container {
-        max-width: 1300px;
+        max-width: 1400px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .navbar-nav {
-        gap: 20x;
+        gap: clamp(6px, 1.2vw, 20px);
     }
 
     .nav-link {
         color: #333 !important;
         font-weight: 500;
-        font-size: 15px;
+        font-size: clamp(12px, 1.1vw, 15px);
+        white-space: nowrap;
         transition: color 0.3s ease;
     }
 
@@ -79,9 +82,11 @@
         background: #3fb6a8;
         border: none;
         color: #fff;
-        padding: 10px 24px;
+        padding: 9px clamp(14px, 1.5vw, 24px);
         border-radius: 50px;
         font-weight: 500;
+        font-size: clamp(12px, 1vw, 15px);
+        white-space: nowrap;
         transition: all 0.3s ease;
     }
 
@@ -104,31 +109,78 @@
    RESPONSIVE NAVBAR
 ========================= */
 
-    /* Laptop kecil / tablet landscape */
-    @media (max-width: 1100px) {
+    /* Desktop lebar - 1400px ke bawah */
+    @media (max-width: 1400px) {
 
         nav.navbar.mamina-navbar {
-            margin: 10px 15px;
-            width: calc(100% - 30px);
+            margin: 10px 16px;
+            width: calc(100% - 32px);
         }
 
         .mamina-navbar .container {
             max-width: 100%;
-            padding-left: 15px;
-            padding-right: 15px;
+            padding-left: 12px;
+            padding-right: 12px;
         }
 
         .mamina-navbar .navbar-nav {
-            gap: 14px;
+            gap: clamp(5px, 0.9vw, 16px);
+        }
+    }
+
+    /* Laptop kecil / tablet landscape */
+    @media (max-width: 1200px) {
+
+        nav.navbar.mamina-navbar {
+            margin: 10px 12px;
+            width: calc(100% - 24px);
+        }
+
+        .mamina-navbar .container {
+            max-width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .mamina-navbar .navbar-nav {
+            gap: clamp(4px, 0.7vw, 12px);
         }
 
         .mamina-navbar .nav-link {
-            font-size: 13px;
+            font-size: clamp(11px, 0.9vw, 13px);
         }
 
         .btn-join {
-            padding: 9px 18px;
-            font-size: 13px;
+            padding: 8px 14px;
+            font-size: 12px;
+        }
+    }
+
+    /* Laptop sangat kecil */
+    @media (max-width: 1100px) {
+
+        nav.navbar.mamina-navbar {
+            margin: 10px 10px;
+            width: calc(100% - 20px);
+        }
+
+        .mamina-navbar .container {
+            max-width: 100%;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .mamina-navbar .navbar-nav {
+            gap: clamp(3px, 0.5vw, 10px);
+        }
+
+        .mamina-navbar .nav-link {
+            font-size: 11.5px;
+        }
+
+        .btn-join {
+            padding: 7px 12px;
+            font-size: 11.5px;
         }
     }
 
@@ -205,6 +257,11 @@
             background: #ffffff;
 
             border-radius: 0 0 25px 25px;
+
+            /* Bisa scroll di dalam menu, bukan background */
+            max-height: calc(100dvh - 90px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         /* List menu */
@@ -445,7 +502,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('beranda') }}#testimoni">Testimommy</a>
+                    <a class="nav-link" href="{{ route('beranda') }}#testimony">Testimommy</a>
                 </li>
 
                 <li class="nav-item">
@@ -469,3 +526,28 @@
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    (function () {
+        const navbarNav = document.getElementById('navbarNav');
+        if (!navbarNav) return;
+
+        // Saat menu dibuka: lock scroll body
+        navbarNav.addEventListener('show.bs.collapse', function () {
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Saat menu ditutup: unlock scroll body
+        navbarNav.addEventListener('hide.bs.collapse', function () {
+            document.body.style.overflow = '';
+        });
+
+        // Klik link di dalam menu → tutup menu dulu, lalu scroll ke section
+        navbarNav.querySelectorAll('.nav-link[href*="#"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarNav);
+                if (bsCollapse) bsCollapse.hide();
+            });
+        });
+    })();
+</script>

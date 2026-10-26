@@ -22,7 +22,7 @@ def get_intro():
         with conn.cursor() as cursor:
             cursor.execute("SELECT setting_value FROM tb_chatbot_settings WHERE setting_key='introduction'")
             intro = cursor.fetchone()
-            return jsonify({"intro": intro['setting_value'] if intro else "Halo Bunda! Selamat datang di MaminaCare 👩‍🍼✨. Ada yang bisa saya bantu hari ini? 🌸"})
+            return jsonify({"intro": intro['setting_value'] if intro else "Halo Bunda! Selamat datang di MaminaCare . Ada yang bisa saya bantu hari ini? "})
     finally:
         conn.close()
 

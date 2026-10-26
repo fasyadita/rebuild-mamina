@@ -473,12 +473,12 @@
 
             <div class="market-btn">
 
-                <a href="https://shopee.co.id/gentleliving_id?is_from_login=true" class="btn-shopee">
+                <a href="https://shopee.co.id/gentleliving_id?is_from_login=true" class="btn-shopee" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-bag-fill"></i>
                     Shopee
                 </a>
 
-                <a href="https://www.tokopedia.com/gentlebabyid" class="btn-tokopedia">
+                <a href="https://www.tokopedia.com/gentlebabyid" class="btn-tokopedia" target="_blank" rel="noopener noreferrer">
                     <i class="bi bi-bag-fill"></i>
                     Tokopedia
                 </a>

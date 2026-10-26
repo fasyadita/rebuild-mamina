@@ -19,7 +19,7 @@
                 uppercase
                 tracking-widest">
 
-                MAMINAGO - MITRA HOMECARE
+                MAMINAGO
 
             </span>
 
@@ -130,38 +130,62 @@
             <!-- RIGHT -->
             <div class="space-y-4">
 
-                <!-- Benefit -->
-                @for($i = 0; $i < 3; $i++)
+                <!-- Benefit 1 -->
+                <div class="flex gap-4 bg-white rounded-xl border border-[#59C7C8] shadow-sm p-3">
 
-                    <div class="flex gap-4
-                        bg-white
-                        rounded-xl
-                        border border-[#59C7C8]
-                        shadow-sm
-                        p-3">
-
-                        <div class="w-14 h-14 rounded-lg bg-[#FFF1B8] shrink-0"></div>
-
-                        <div>
-
-                            <h4 class="font-semibold text-base">
-
-                                Penghasilan Fleksibel
-
-                            </h4>
-
-                            <p class="text-xs text-gray-500 mt-1 leading-5">
-
-                                Tentukan sendiri jam kerja dan kota operasional.
-                                Rata-rata mitra memperoleh Rp 5–15 juta/bulan.
-
-                            </p>
-
-                        </div>
-
+                    <div class="w-14 h-14 rounded-lg bg-[#FFF1B8] shrink-0 flex items-center justify-center text-2xl">
+                        <i class="fas fa-money-bill-wave"></i>
                     </div>
 
-                @endfor
+                    <div>
+                        <h4 class="font-semibold text-base">
+                            Penghasilan Fleksibel
+                        </h4>
+                        <p class="text-xs text-gray-500 mt-1 leading-5">
+                            Tentukan sendiri jam kerja dan kota operasimu.
+                            Rata-rata mitra memperoleh Rp 5–15 juta/bulan.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="flex gap-4 bg-white rounded-xl border border-[#59C7C8] shadow-sm p-3">
+
+                    <div class="w-14 h-14 rounded-lg bg-[#FFF1B8] shrink-0 flex items-center justify-center text-2xl">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-base">
+                            Sistem Digital Terintegrasi
+                        </h4>
+                        <p class="text-xs text-gray-500 mt-1 leading-5">
+                            Aplikasi pemesanan, manajemen jadwal, pembayaran otomatis
+                            — semua dalam satu platform.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="flex gap-4 bg-white rounded-xl border border-[#59C7C8] shadow-sm p-3">
+
+                    <div class="w-14 h-14 rounded-lg bg-[#FFF1B8] shrink-0 flex items-center justify-center text-2xl">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-base">
+                            Pelatihan & Sertifikasi Gratis
+                        </h4>
+                        <p class="text-xs text-gray-500 mt-1 leading-5">
+                            Setiap mitra baru mendapat pelatihan standar Mamina
+                            dan sertifikat nasional — gratis.
+                        </p>
+                    </div>
+
+                </div>
 
                 <!-- CTA -->
 
