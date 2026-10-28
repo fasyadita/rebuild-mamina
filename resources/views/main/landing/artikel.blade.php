@@ -3,7 +3,6 @@
         background-image: linear-gradient(90deg, #faded5 0%, #fff3ef 50%, #eaf8f6 100%);
         font-family: 'nunito', sans-serif;
     }
-
 </style>
 
 <section id="artikel" class="artikel py-6 px-4">
@@ -61,9 +60,11 @@
                             </div>
                         </div>
 
-                        <h3 class="text-[14px] leading-tight font-bold text-[#5E9B98] mb-3">
-                            {{ $featured->title }}
-                        </h3>
+                        <a href="{{ route('artikel.detail') }}" class="hover:no-underline">
+                            <h3 class="text-[14px] leading-tight font-bold text-[#5E9B98] hover:text-[#4B9594] transition cursor-pointer mb-3">
+                                {{ $featured->title }}
+                            </h3>
+                        </a>
 
                         <p class="text-[#4D4D4D] text-[12px] leading-relaxed mb-4">
                             {{ $featured->excerpt }}
@@ -105,9 +106,11 @@
                                 <span class="border border-[#89A69B] text-[#7D8F87] text-[10px] px-2.5 py-0.5 rounded-full w-fit mb-1.5">
                                     {{ $side->category ?? 'Kesehatan' }}
                                 </span>
-                                <h3 class="text-[13px] leading-snug font-bold text-[#5E9B98] mb-1.5 line-clamp-2">
-                                    {{ $side->title }}
-                                </h3>
+                                <a href="{{ route('artikel.detail') }}" class="hover:no-underline">
+                                    <h3 class="text-[13px] leading-snug font-bold text-[#5E9B98] hover:text-[#4B9594] transition cursor-pointer mb-1.5 line-clamp-2">
+                                        {{ $side->title }}
+                                    </h3>
+                                </a>
                                 <p class="text-[#8A8A8A] text-[10px]">
                                     {{ $side->author_name ?? 'Mamina Team' }} | {{ !empty($side->published_at) ? \Carbon\Carbon::parse($side->published_at)->format('d F Y') : date('d F Y') }}
                                 </p>
@@ -167,11 +170,12 @@
 
 
                     {{-- Title --}}
-                    <h3
-                        class="text-[14px] leading-tight font-bold text-[#5E9B98] mb-3">
-                        Manfaat Baby Spa untuk Bayi: Rahasia Stimulasi
-                        Tumbuh Kembang dan Kualitas Tidur yang Lebih Optimal
-                    </h3>
+                    <a href="{{ route('artikel.detail') }}" class="hover:no-underline">
+                        <h3 class="text-[14px] leading-tight font-bold text-[#5E9B98] hover:text-[#4B9594] transition cursor-pointer mb-3">
+                            Manfaat Baby Spa untuk Bayi: Rahasia Stimulasi
+                            Tumbuh Kembang dan Kualitas Tidur yang Lebih Optimal
+                        </h3>
+                    </a>
 
 
                     {{-- Desc --}}
@@ -240,11 +244,12 @@
                             Kesehatan Ibu Hamil
                         </span>
 
-                        <h3
-                            class="text-[13px] leading-snug font-bold text-[#5E9B98] mb-1.5">
-                            Konsultasi Kehamilan: Langkah Awal Menjamin
-                            Tumbuh Kembang Janin yang Optimal
-                        </h3>
+                        <a href="{{ route('artikel.detail') }}" class="hover:no-underline">
+                            <h3 class="text-[13px] leading-snug font-bold text-[#5E9B98] hover:text-[#4B9594] transition cursor-pointer mb-1.5">
+                                Konsultasi Kehamilan: Langkah Awal Menjamin
+                                Tumbuh Kembang Janin yang Optimal
+                            </h3>
+                        </a>
 
                         <p class="text-[#8A8A8A] text-[10px]">
                             Fasya Dita | 27 Februari 2026
@@ -270,11 +275,12 @@
                             Kesehatan Ibu Hamil
                         </span>
 
-                        <h3
-                            class="text-[13px] leading-snug font-bold text-[#5E9B98] mb-1.5">
-                            Konsultasi Kehamilan: Langkah Awal Menjamin
-                            Tumbuh Kembang Janin yang Optimal
-                        </h3>
+                        <a href="{{ route('artikel.detail') }}" class="hover:no-underline">
+                            <h3 class="text-[13px] leading-snug font-bold text-[#5E9B98] hover:text-[#4B9594] transition cursor-pointer mb-1.5">
+                                Konsultasi Kehamilan: Langkah Awal Menjamin
+                                Tumbuh Kembang Janin yang Optimal
+                            </h3>
+                        </a>
 
                         <p class="text-[#8A8A8A] text-[10px]">
                             Fasya Dita | 27 Februari 2026
@@ -300,11 +306,12 @@
                             Kesehatan Ibu Hamil
                         </span>
 
-                        <h3
-                            class="text-[13px] leading-snug font-bold text-[#5E9B98] mb-1.5">
-                            Konsultasi Kehamilan: Langkah Awal Menjamin
-                            Tumbuh Kembang Janin yang Optimal
-                        </h3>
+                        <a href="{{ route('artikel.detail') }}" class="hover:no-underline">
+                            <h3 class="text-[13px] leading-snug font-bold text-[#5E9B98] hover:text-[#4B9594] transition cursor-pointer mb-1.5">
+                                Konsultasi Kehamilan: Langkah Awal Menjamin
+                                Tumbuh Kembang Janin yang Optimal
+                            </h3>
+                        </a>
 
                         <p class="text-[#8A8A8A] text-[10px]">
                             Fasya Dita | 27 Februari 2026
