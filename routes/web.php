@@ -146,13 +146,29 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/cms/about', [CmsDashboardController::class, 'aboutIndex'])->name('cms.about');
         Route::put('/cms/about', [CmsDashboardController::class, 'aboutUpdate'])->name('cms.about.update');
 
-        // CMS: Layanan Unggulan
+        // CMS: Layanan Unggulan (Landing Page Cards)
         Route::get('/cms/layanan', [CmsDashboardController::class, 'layananIndex'])->name('cms.layanan');
         Route::get('/cms/layanan/create', [CmsDashboardController::class, 'layananCreate'])->name('cms.layanan.create');
         Route::post('/cms/layanan', [CmsDashboardController::class, 'layananStore'])->name('cms.layanan.store');
         Route::get('/cms/layanan/{id}/edit', [CmsDashboardController::class, 'layananEdit'])->name('cms.layanan.edit');
         Route::put('/cms/layanan/{id}', [CmsDashboardController::class, 'layananUpdate'])->name('cms.layanan.update');
         Route::delete('/cms/layanan/{id}', [CmsDashboardController::class, 'layananDestroy'])->name('cms.layanan.destroy');
+
+        // CMS: Semua Layanan (Katalog Layanan & Foto)
+        Route::get('/cms/katalog-layanan', [CmsDashboardController::class, 'katalogLayananIndex'])->name('cms.katalog-layanan');
+        Route::get('/cms/katalog-layanan/create', [CmsDashboardController::class, 'katalogLayananCreate'])->name('cms.katalog-layanan.create');
+        Route::post('/cms/katalog-layanan', [CmsDashboardController::class, 'katalogLayananStore'])->name('cms.katalog-layanan.store');
+        Route::get('/cms/katalog-layanan/{id}/edit', [CmsDashboardController::class, 'katalogLayananEdit'])->name('cms.katalog-layanan.edit');
+        Route::put('/cms/katalog-layanan/{id}', [CmsDashboardController::class, 'katalogLayananUpdate'])->name('cms.katalog-layanan.update');
+        Route::delete('/cms/katalog-layanan/{id}', [CmsDashboardController::class, 'katalogLayananDestroy'])->name('cms.katalog-layanan.destroy');
+
+        // CMS: Terapis & Tim Mamina (Informasi Pribadi & Foto)
+        Route::get('/cms/terapis', [CmsDashboardController::class, 'terapisIndex'])->name('cms.terapis');
+        Route::get('/cms/terapis/create', [CmsDashboardController::class, 'terapisCreate'])->name('cms.terapis.create');
+        Route::post('/cms/terapis', [CmsDashboardController::class, 'terapisStore'])->name('cms.terapis.store');
+        Route::get('/cms/terapis/{id}/edit', [CmsDashboardController::class, 'terapisEdit'])->name('cms.terapis.edit');
+        Route::put('/cms/terapis/{id}', [CmsDashboardController::class, 'terapisUpdate'])->name('cms.terapis.update');
+        Route::delete('/cms/terapis/{id}', [CmsDashboardController::class, 'terapisDestroy'])->name('cms.terapis.destroy');
 
         // CMS: Testimony
         Route::get('/cms/testimony', [CmsDashboardController::class, 'testimonyIndex'])->name('cms.testimony');

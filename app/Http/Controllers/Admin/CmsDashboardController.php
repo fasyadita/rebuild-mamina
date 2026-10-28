@@ -13,6 +13,8 @@ class CmsDashboardController extends Controller
         $stats = [
             'hero'       => DB::table('cms_main_hero')->count(),
             'layanan'    => DB::table('cms_layanan_unggulan')->where('is_active', 1)->count(),
+            'semua_layanan' => \App\Models\Product::count(),
+            'terapis'    => \App\Models\User::where('roles', 'like', '%terapis%')->orWhere('roles', 'like', '%konselor%')->count(),
             'testimony'  => DB::table('cms_testimony')->where('is_active', 1)->count(),
             'faq'        => DB::table('cms_faq')->where('is_active', 1)->count(),
             'cabang'     => DB::table('cms_cabang')->where('is_active', 1)->count(),
@@ -77,9 +79,22 @@ class CmsDashboardController extends Controller
         ]);
 
         $data = $request->only([
-            'badge_text','title','title_highlight','description',
-            'card1_title','card1_desc','card2_title','card2_desc','card3_title','card3_desc',
-            'service1_title','service1_desc','service2_title','service2_desc','service3_title','service3_desc',
+            'badge_text',
+            'title',
+            'title_highlight',
+            'description',
+            'card1_title',
+            'card1_desc',
+            'card2_title',
+            'card2_desc',
+            'card3_title',
+            'card3_desc',
+            'service1_title',
+            'service1_desc',
+            'service2_title',
+            'service2_desc',
+            'service3_title',
+            'service3_desc',
         ]);
         $data['updated_at'] = now();
 
@@ -477,9 +492,17 @@ class CmsDashboardController extends Controller
         ]);
 
         $data = $request->only([
-            'small_label','title','title_highlight','description',
-            'cta_text','cta_link',
-            'comfort_label','comfort_value','rating_label','rating_value','registered_count',
+            'small_label',
+            'title',
+            'title_highlight',
+            'description',
+            'cta_text',
+            'cta_link',
+            'comfort_label',
+            'comfort_value',
+            'rating_label',
+            'rating_value',
+            'registered_count',
         ]);
         $data['updated_at'] = now();
 
@@ -521,5 +544,282 @@ class CmsDashboardController extends Controller
         }
 
         return back()->with('success', 'Pengaturan berhasil disimpan!');
+    }
+
+    // ==============================
+    // CMS: SEMUA LAYANAN (PRODUCTS)
+    // ==============================
+   public function katalogLayananIndex(Request $request)
+    {
+        $search = $request->input('search');
+        $categoryId = $request->input('category_id');
+
+        // 1. Tentukan kategori yang diizinkan di atas
+        $allowed = ['Anak', 'Bayi', 'Ibu', 'Imunisasi', 'Kelas', 'Konsultasi', 'Lainnya', 'Paket', 'Toddler', 'Umum'];
+
+        // 2. Tambahkan whereHas agar produk yang ditarik HANYA yang kategorinya ada di dalam $allowed
+        $query = \App\Models\Product::with('category')
+            ->whereHas('category', function ($q) use ($allowed) {
+                $q->whereIn('name', $allowed);
+            })
+            ->orderBy('name', 'asc');
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('description', 'like', "%{$search}%");
+            });
+        }
+
+        if ($categoryId) {
+            $query->where('category_id', $categoryId);
+        }
+
+        $layananList = $query->paginate(15)->withQueryString();
+        
+        // Dropdown kategori tetap difilter
+        $categories = \App\Models\ProductCategory::whereIn('name', $allowed)->orderBy('name')->get();
+
+        return view('admin.cms.katalog-layanan', compact('layananList', 'categories', 'search', 'categoryId'));
+    }
+
+    public function katalogLayananCreate()
+    {
+        $allowed = ['Anak', 'Bayi', 'Ibu', 'Imunisasi', 'Kelas', 'Konsultasi', 'Lainnya', 'Paket', 'Toddler', 'Umum'];
+        $categories = \App\Models\ProductCategory::whereIn('name', $allowed)->orderBy('name')->get();
+        return view('admin.cms.katalog-layanan-form', [
+            'item' => null,
+            'categories' => $categories
+        ]);
+    }
+
+    public function katalogLayananStore(Request $request)
+    {
+        $request->validate([
+            'name'        => 'required|string|max:255',
+            'category_id' => 'required|integer',
+            'sale_price'  => 'required|numeric|min:0',
+            'duration'    => 'nullable|integer|min:0',
+            'description' => 'nullable|string',
+            'image'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:3072',
+        ]);
+
+        $product = new \App\Models\Product();
+        $product->name = $request->name;
+        $product->category_id = $request->category_id;
+        $product->sale_price = $request->sale_price;
+        $product->duration = $request->duration ?? 0;
+        $product->description = $request->description;
+        $product->is_active = $request->has('is_active') ? '1' : '0';
+        $product->is_show = $request->has('is_active') ? true : false;
+        $product->vendor_id = 1;
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('cms/katalog-layanan', 'public');
+            $product->image = $path;
+        } elseif ($request->filled('image_url')) {
+            $product->image = $request->image_url;
+        }
+
+        $product->save();
+
+        return redirect()->route('admin.cms.katalog-layanan')->with('success', 'Layanan berhasil ditambahkan ke katalog!');
+    }
+
+    public function katalogLayananEdit($id)
+    {
+        $item = \App\Models\Product::findOrFail($id);
+        $allowed = ['Anak', 'Bayi', 'Ibu', 'Imunisasi', 'Kelas', 'Konsultasi', 'Lainnya', 'Paket', 'Toddler', 'Umum'];
+        $categories = \App\Models\ProductCategory::whereIn('name', $allowed)->orderBy('name')->get();
+        return view('admin.cms.katalog-layanan-form', compact('item', 'categories'));
+    }
+
+    public function katalogLayananUpdate(Request $request, $id)
+    {
+        $product = \App\Models\Product::findOrFail($id);
+
+        $request->validate([
+            'name'        => 'required|string|max:255',
+            'category_id' => 'required|integer',
+            'sale_price'  => 'required|numeric|min:0',
+            'duration'    => 'nullable|integer|min:0',
+            'description' => 'nullable|string',
+            'image'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:3072',
+        ]);
+
+        $product->name = $request->name;
+        $product->category_id = $request->category_id;
+        $product->sale_price = $request->sale_price;
+        $product->duration = $request->duration ?? 0;
+        $product->description = $request->description;
+        $product->is_active = $request->has('is_active') ? '1' : '0';
+        $product->is_show = $request->has('is_active') ? true : false;
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('cms/katalog-layanan', 'public');
+            $product->image = $path;
+        } elseif ($request->filled('image_url')) {
+            $product->image = $request->image_url;
+        }
+
+        $product->save();
+
+        return redirect()->route('admin.cms.katalog-layanan')->with('success', 'Layanan berhasil diperbarui!');
+    }
+
+    public function katalogLayananDestroy($id)
+    {
+        $product = \App\Models\Product::findOrFail($id);
+        $product->delete();
+        return redirect()->route('admin.cms.katalog-layanan')->with('success', 'Layanan berhasil dihapus!');
+    }
+
+    // ==============================
+    // CMS: TERAPIS & TIM MAMINA
+    // ==============================
+    public function terapisIndex(Request $request)
+    {
+        $search = $request->input('search');
+        $branchId = $request->input('branch_id');
+        $roleFilter = $request->input('role');
+
+        $query = \App\Models\User::where(function ($q) {
+            $q->where('roles', 'like', '%terapis%')
+                ->orWhere('roles', 'like', '%konselor%');
+        })->orderBy('name', 'asc');
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%")
+                    ->orWhere('phone', 'like', "%{$search}%")
+                    ->orWhere('ig', 'like', "%{$search}%");
+            });
+        }
+
+        if ($branchId) {
+            $query->where('branch_id', $branchId);
+        }
+
+        if ($roleFilter) {
+            $query->where('roles', 'like', "%{$roleFilter}%");
+        }
+
+        $terapisList = $query->paginate(15)->withQueryString();
+        $branches = DB::table('branches')->select('id', 'name')->get();
+
+        return view('admin.cms.terapis', compact('terapisList', 'branches', 'search', 'branchId', 'roleFilter'));
+    }
+
+    public function terapisCreate()
+    {
+        $branches = DB::table('branches')->select('id', 'name')->get();
+        return view('admin.cms.terapis-form', [
+            'item' => null,
+            'branches' => $branches
+        ]);
+    }
+
+    public function terapisStore(Request $request)
+    {
+        $request->validate([
+            'name'      => 'required|string|max:255',
+            'username'  => 'required|string|max:100|unique:users,username',
+            'branch_id' => 'required|integer',
+            'roles'     => 'required|string|max:100',
+            'phone'     => 'nullable|string|max:50',
+            'email'     => 'nullable|string|max:100',
+            'ig'        => 'nullable|string|max:100',
+            'address'   => 'nullable|string',
+            'birthdate' => 'nullable|date',
+            'area'      => 'nullable|string|max:255',
+            'photo'     => 'nullable|image|mimes:jpeg,png,jpg,webp|max:3072',
+        ]);
+
+        $user = new \App\Models\User();
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->branch_id = $request->branch_id;
+        $user->roles = $request->roles;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->ig = $request->ig ? ltrim($request->ig, '@') : null;
+        $user->address = $request->address;
+        $user->birthdate = $request->birthdate;
+        $user->area = $request->area;
+        $user->is_active = $request->has('is_active') ? 1 : 0;
+        $user->is_tim = 1;
+        $user->password = bcrypt('mamina123'); // Default password
+
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->store('cms/terapis', 'public');
+            $user->thumb = $path;
+            $user->cover = $path;
+        } elseif ($request->filled('photo_url')) {
+            $user->thumb = $request->photo_url;
+            $user->cover = $request->photo_url;
+        }
+
+        $user->save();
+
+        return redirect()->route('admin.cms.terapis')->with('success', 'Terapis berhasil ditambahkan!');
+    }
+
+    public function terapisEdit($id)
+    {
+        $item = \App\Models\User::findOrFail($id);
+        $branches = DB::table('branches')->select('id', 'name')->get();
+        return view('admin.cms.terapis-form', compact('item', 'branches'));
+    }
+
+    public function terapisUpdate(Request $request, $id)
+    {
+        $user = \App\Models\User::findOrFail($id);
+
+        $request->validate([
+            'name'      => 'required|string|max:255',
+            'username'  => 'required|string|max:100|unique:users,username,' . $id,
+            'branch_id' => 'required|integer',
+            'roles'     => 'required|string|max:100',
+            'phone'     => 'nullable|string|max:50',
+            'email'     => 'nullable|string|max:100',
+            'ig'        => 'nullable|string|max:100',
+            'address'   => 'nullable|string',
+            'birthdate' => 'nullable|date',
+            'area'      => 'nullable|string|max:255',
+            'photo'     => 'nullable|image|mimes:jpeg,png,jpg,webp|max:3072',
+        ]);
+
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->branch_id = $request->branch_id;
+        $user->roles = $request->roles;
+        $user->phone = $request->phone;
+        $user->email = $request->email;
+        $user->ig = $request->ig ? ltrim($request->ig, '@') : null;
+        $user->address = $request->address;
+        $user->birthdate = $request->birthdate;
+        $user->area = $request->area;
+        $user->is_active = $request->has('is_active') ? 1 : 0;
+
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->store('cms/terapis', 'public');
+            $user->thumb = $path;
+            $user->cover = $path;
+        } elseif ($request->filled('photo_url')) {
+            $user->thumb = $request->photo_url;
+            $user->cover = $request->photo_url;
+        }
+
+        $user->save();
+
+        return redirect()->route('admin.cms.terapis')->with('success', 'Data informasi dan foto terapis berhasil diperbarui!');
+    }
+
+    public function terapisDestroy($id)
+    {
+        $user = \App\Models\User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('admin.cms.terapis')->with('success', 'Data terapis berhasil dihapus!');
     }
 }
