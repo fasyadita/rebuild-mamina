@@ -1,4 +1,10 @@
-<section id="home" class="home" style="{{ !empty($cmsHero->bg_image) ? "background: linear-gradient(to right, rgba(255, 218, 209, 1) 0%, rgba(255, 218, 209, 0.95) 30%, rgba(255, 218, 209, 0.6) 55%, rgba(255, 218, 209, 0) 100%), url('".(str_starts_with($cmsHero->bg_image, 'http') ? $cmsHero->bg_image : asset($cmsHero->bg_image))."') center/cover no-repeat;" : '' }}">
+@php
+    $bgUrl = !empty($cmsHero->bg_image) 
+        ? (str_starts_with($cmsHero->bg_image, 'http') ? $cmsHero->bg_image : asset($cmsHero->bg_image)) 
+        : asset('/img/home.jpeg');
+@endphp
+
+<section id="home" class="home" style="background: linear-gradient(to right, rgba(255, 218, 209, 1) 0%, rgba(255, 218, 209, 0.95) 30%, rgba(255, 218, 209, 0.6) 55%, rgba(255, 218, 209, 0) 100%), url('{{ $bgUrl }}') center/cover no-repeat;">
     <div class="home-container">
         <div class="home-content">
 

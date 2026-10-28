@@ -139,6 +139,28 @@
                 </div>
             </a>
 
+            <a href="{{ route('admin.cms.katalog-layanan') }}" class="section-card">
+                <div class="section-icon" style="background:#E6FFFA; color:#319795">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <div>
+                    <div class="section-title">Semua Layanan (Katalog)</div>
+                    <div class="section-desc">Kelola detail harga, durasi, deskripsi, status aktif, dan foto semua layanan.</div>
+                    <div class="section-badge"><i class="fas fa-arrow-right"></i> Kelola ({{ $stats['semua_layanan'] ?? 0 }})</div>
+                </div>
+            </a>
+
+            <a href="{{ route('admin.cms.terapis') }}" class="section-card">
+                <div class="section-icon" style="background:#FFF5F5; color:#DD6B20">
+                    <i class="fas fa-user-nurse"></i>
+                </div>
+                <div>
+                    <div class="section-title">Tim Terapis & Konselor</div>
+                    <div class="section-desc">Kelola data terapis: informasi kontak, cabang, spesialisasi, dan foto profil.</div>
+                    <div class="section-badge"><i class="fas fa-arrow-right"></i> Kelola ({{ $stats['terapis'] ?? 0 }})</div>
+                </div>
+            </a>
+
             <a href="{{ route('admin.cms.artikel') }}" class="section-card">
                 <div class="section-icon" style="background:#FFF5F5; color:#C53030">
                     <i class="fas fa-newspaper"></i>

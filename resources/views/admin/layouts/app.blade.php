@@ -645,6 +645,14 @@
                 class="nav-item {{ request()->routeIs('admin.cms.layanan*') ? 'active' : '' }}">
                 <i class="fas fa-leaf"></i> Layanan Unggulan
             </a>
+            <a href="{{ route('admin.cms.katalog-layanan') }}"
+                class="nav-item {{ request()->routeIs('admin.cms.katalog-layanan*') ? 'active' : '' }}">
+                <i class="fas fa-spa"></i> Semua Layanan
+            </a>
+            <a href="{{ route('admin.cms.terapis') }}"
+                class="nav-item {{ request()->routeIs('admin.cms.terapis*') ? 'active' : '' }}">
+                <i class="fas fa-user-nurse"></i> Tim Terapis
+            </a>
             <a href="{{ route('admin.cms.artikel') }}"
                 class="nav-item {{ request()->routeIs('admin.cms.artikel*') ? 'active' : '' }}">
                 <i class="fas fa-newspaper"></i> Artikel
