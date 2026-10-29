@@ -32,7 +32,7 @@
         opacity: 0.45;
         padding: 12px 20px;
         border-radius: 40px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .layanan-search i {
@@ -182,11 +182,9 @@
         height: 155px;
 
         background:
-            linear-gradient(
-                135deg,
+            linear-gradient(135deg,
                 #e5f2ed,
-                #f5f7f1
-            );
+                #f5f7f1);
 
         display: flex;
         align-items: center;
@@ -473,17 +471,13 @@
 
 <div class="layanan-page">
 
-        {{-- ===== SEARCH ===== --}}
-    <div class="layanan-search">
-        <i class="fas fa-search"></i>
-
-        <input
-            type="text"
-            id="searchLayanan"
-            placeholder="Cari layanan..."
-            autocomplete="off"
-        >
-    </div>
+    {{-- ===== SEARCH ===== --}}
+    <form action="" method="GET">
+        <div class="layanan-search">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" value="{{ request('search') }}" id="searchLayanan" placeholder="Cari layanan..." autocomplete="off" onchange="this.form.submit()">
+        </div>
+    </form>
 
 
     <main class="layanan-container">
@@ -518,61 +512,70 @@
 
                 @forelse ($products as $product)
 
-                    <div class="layanan-card">
+                <div class="layanan-card">
 
-                        {{-- AREA GAMBAR --}}
-                        @php
-                            $productImg = $product->image ? asset('storage/' . $product->image) : asset('img/mamina.png');
-                        @endphp
-                        <img src="{{ $productImg }}" alt="{{ $product->name }}"
-                            onerror="this.onerror=null;this.src='{{ asset('img/mamina.png') }}';"
-                            style="width: 100%; height: 155px; object-fit: cover; flex-shrink: 0; display: block;">
-
-
-                        {{-- INFORMASI LAYANAN --}}
-                        <div class="layanan-card-body">
-
-                            <h3 class="layanan-card-name">
-                                {{ $product->name }}
-                            </h3>
-
-                            <span class="cabang">
-                                Tersedia
-                            </span>
-
-                            <div class="harga">
-                                Rp {{ number_format($product->sale_price, 0, ',', '.') }}
-                            </div>
-
-                            <div class="durasi">
-
-                                <i class="fas fa-heart"></i>
-
-                                4000+ suka
-
-                            </div>
+                    {{-- AREA GAMBAR --}}
+                    @php
+                    $productImg = $product->image ? asset('storage/' . $product->image) : asset('img/mamina.png');
+                    @endphp
+                    <img src="{{ $productImg }}" alt="{{ $product->name }}"
+                        onerror="this.onerror=null;this.src='{{ asset('img/mamina.png') }}';"
+                        style="width: 100%; height: 155px; object-fit: cover; flex-shrink: 0; display: block;">
 
 
-                            {{-- BUTTON TAMBAH --}}
-                                <a href="{{ route('guest.login') }}" class="btn-tambah" style="margin-top: auto; text-decoration: none;">
-                                    <span class="icon-plus">
-                                        <i class="fas fa-plus"></i>
-                                    </span>
-                                    <span class="text-tambah">
-                                        Tambah
-                                    </span>
-                                </a>
+                    {{-- INFORMASI LAYANAN --}}
+                    <div class="layanan-card-body">
+
+                        <h3 class="layanan-card-name">
+                            {{ $product->name }}
+                        </h3>
+
+                        <span class="cabang">
+                            Tersedia
+                        </span>
+
+                        <div class="harga">
+                            Rp {{ number_format($product->sale_price, 0, ',', '.') }}
+                        </div>
+
+                        <div class="durasi">
+
+                            <i class="fas fa-heart"></i>
+
+                            4000+ suka
 
                         </div>
 
+
+                        {{-- BUTTON TAMBAH --}}
+                        <form action="{{ route('cart.add', $product->id) }}" method="POST" style="margin-top: auto; width: 100%;">
+                            @csrf
+                            <button
+                                type="submit"
+                                class="btn-tambah"
+                                style="margin-top: 0;">
+
+                                <span class="icon-plus">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+
+                                <span class="text-tambah">
+                                    Tambah
+                                </span>
+
+                            </button>
+                        </form>
+
                     </div>
 
+                </div>
+
                 @empty
-                    <div
-                        style="width: 100%; text-align: center; padding: 50px; color: #888; font-family: 'nunito', sans-serif;">
-                        <i class="fas fa-info-circle" style="font-size: 30px; margin-bottom: 10px; color: #3fb6a8;"></i>
-                        <p>Layanan untuk kategori ini belum tersedia saat ini ✨</p>
-                    </div>
+                <div
+                    style="width: 100%; text-align: center; padding: 50px; color: #888; font-family: 'nunito', sans-serif;">
+                    <i class="fas fa-info-circle" style="font-size: 30px; margin-bottom: 10px; color: #3fb6a8;"></i>
+                    <p>Layanan untuk kategori ini belum tersedia saat ini ✨</p>
+                </div>
                 @endforelse
 
             </div>
@@ -582,5 +585,191 @@
     </main>
 
 </div>
+
+<style>
+    /* =========================
+       MODAL KONFIRMASI
+    ========================= */
+    .mamina-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(50, 70, 70, 0.45);
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .mamina-modal.show {
+        display: flex;
+    }
+
+    .mamina-modal-content {
+        width: 100%;
+        max-width: 430px;
+        background: #fffdf0;
+        border-radius: 25px;
+        padding: 35px 30px 30px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        animation: modalIn 0.25s ease;
+        position: relative;
+    }
+
+    @keyframes modalIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.96);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .modal-icon {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 18px;
+        background: #439294;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+    }
+
+    .modal-title {
+        font-family: 'Fredoka', sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        color: #439294;
+        margin-bottom: 10px;
+    }
+
+    .modal-description {
+        font-family: 'Nunito', sans-serif;
+        font-size: 13px;
+        line-height: 1.6;
+        color: #777;
+        margin-bottom: 25px;
+    }
+
+    .modal-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .modal-btn {
+        border: none;
+        border-radius: 20px;
+        padding: 10px 25px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .modal-btn-cancel {
+        background: #f2f1e8;
+        color: #777;
+    }
+
+    .modal-btn-cancel:hover {
+        background: #e5e4db;
+    }
+
+    .modal-btn-confirm {
+        background: #439294;
+        color: #fff;
+    }
+
+    .modal-btn-confirm:hover {
+        background: #377d7f;
+        transform: translateY(-1px);
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+        .mamina-modal {
+            padding: 15px;
+        }
+
+        .mamina-modal-content {
+            max-width: 100%;
+            padding: 30px 20px 25px;
+            border-radius: 22px;
+        }
+
+        .modal-icon {
+            width: 55px;
+            height: 55px;
+            font-size: 24px;
+        }
+
+        .modal-title {
+            font-size: 22px;
+        }
+
+        .modal-description {
+            font-size: 12px;
+        }
+
+        .modal-buttons {
+            flex-direction: column-reverse;
+        }
+
+        .modal-btn {
+            width: 100%;
+        }
+    }
+</style>
+
+<!-- =========================
+     MODAL KONFIRMASI
+========================= -->
+<div id="confirmationModal" class="mamina-modal">
+
+    <div class="mamina-modal-content">
+
+        <div class="modal-icon">
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
+
+        <h3 class="modal-title">
+            Konfirmasi Pendaftaran
+        </h3>
+
+        <p class="modal-description">
+            Apakah kamu yakin data yang dimasukkan sudah benar?
+            Setelah dikirim, data pendaftaran akan diproses oleh tim Mamina.
+        </p>
+
+        <div class="modal-buttons">
+
+            <button type="button"
+                class="modal-btn modal-btn-cancel"
+                onclick="closeConfirmationModal()">
+                Periksa Lagi
+            </button>
+
+            <button type="button"
+                class="modal-btn modal-btn-confirm"
+                onclick="submitRegistration()">
+                Ya, Daftar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
 
 @endsection
