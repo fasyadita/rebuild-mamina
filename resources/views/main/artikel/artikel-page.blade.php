@@ -141,7 +141,8 @@
                     <div class="w-full h-[1px] bg-[#CFC8B7]"></div>
                 </div>
 
-                <div class="flex gap-2 self-end sm:self-auto sm:pl-4 sm:mt-4">
+                {{-- Navigation --}}
+                <div class="hidden sm:flex gap-2 sm:self-auto sm:pl-4 sm:mt-4">
                     <button class="w-8 h-8 rounded-full border border-[#E7B7B0] bg-[#FFFDEB] text-[#E7B7B0] flex items-center justify-center font-bold hover:bg-[#E7B7B0] hover:text-white transition shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
@@ -153,6 +154,7 @@
                         </svg>
                     </button>
                 </div>
+
 
             </div>
 
