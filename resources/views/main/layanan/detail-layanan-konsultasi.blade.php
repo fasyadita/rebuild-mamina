@@ -475,15 +475,12 @@
     <main class="layanan-container">
 
     {{-- ===== SEARCH ===== --}}
-        <div class="layanan-search">
-            <i class="fas fa-search"></i>
-
-            <input
-                type="text"
-                id="searchLayanan"
-                placeholder="Cari layanan..."
-                autocomplete="off">
-        </div>
+        <form action="" method="GET">
+            <div class="layanan-search">
+                <i class="fas fa-search"></i>
+                <input type="text" name="search" value="{{ request('search') }}" id="searchLayanan" placeholder="Cari layanan..." autocomplete="off" onchange="this.form.submit()">
+            </div>
+        </form>
         
         {{-- =========================
              SECTION LAYANAN ANAK

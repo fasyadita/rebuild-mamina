@@ -1,572 +1,548 @@
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Kelas Pro - Mamina</title>
+    <link rel="icon" href="{{ asset('img/logo-2.png') }}" type="image/png">
 
-    .form-page {
-        display: flex;
-        width: 100%;
-        min-height: calc(100vh - 90px);
-        font-family: 'Nunito', sans-serif;
-        background: #fffdf0;
-    }
+    {{-- Font --}}
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    /* =========================
-       SIDEBAR KIRI
-    ========================= */
-    .form-sidebar {
-        width: 35%;
-        background: #439294;
-        padding: 60px 40px;
-        color: white;
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-    }
+    {{-- Font Awesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    .sidebar-title {
-        font-size: 36px;
-        font-family: 'Fredoka', sans-serif;
-        font-weight: 600;
-        margin-bottom: 20px;
-        line-height: 1.2;
-    }
-
-    .sidebar-title .yellow-text {
-        color: #fff2b3;
-    }
-
-    .sidebar-description {
-        font-size: 14px;
-        margin-bottom: 40px;
-        line-height: 1.6;
-        color: #e0f2f1;
-    }
-
-    .benefit-card {
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 12px;
-        padding: 16px;
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .benefit-card .icon {
-        background: #fffdf0;
-        color: #439294;
-        width: 40px;
-        height: 40px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        margin-right: 15px;
-        flex-shrink: 0;
-    }
-
-    .benefit-card h4 {
-        font-size: 14px;
-        margin-bottom: 4px;
-        font-weight: 700;
-        color: #fff;
-    }
-
-    .benefit-card p {
-        font-size: 11px;
-        color: #e0f2f1;
-        margin: 0;
-    }
-
-
-    /* =========================
-       FORM KANAN
-    ========================= */
-    .form-content {
-        flex: 1;
-        padding: 50px 70px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-width: 0;
-    }
-
-    .form-title {
-        color: #f1a89f;
-        font-family: 'Fredoka', sans-serif;
-        font-size: 34px;
-        margin-bottom: 30px;
-        font-weight: 600;
-    }
-
-    .form-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-bottom: 20px;
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 15px;
-        min-width: 0;
-    }
-
-    .form-label {
-        font-size: 11px;
-        font-weight: 700;
-        color: #777;
-        margin-bottom: 8px;
-        margin-left: 2px;
-    }
-
-    .form-control {
-        background: #f2f1e8;
-        border: 1px solid #e4e3da;
-        border-radius: 10px;
-        padding: 12px 16px;
-        font-size: 12.5px;
-        color: #555;
-        outline: none;
-        transition: 0.2s;
-        font-family: 'Nunito', sans-serif;
-        width: 100%;
-        min-width: 0;
-    }
-
-    .form-control:focus {
-        border-color: #439294;
-        background: #fff;
-    }
-
-    .form-control::placeholder {
-        color: #aaa;
-    }
-
-    select.form-control {
-        appearance: none;
-        -webkit-appearance: none;
-        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-        background-repeat: no-repeat;
-        background-position: right 15px center;
-        background-size: 10px auto;
-        padding-right: 30px;
-    }
-
-
-    /* =========================
-       UPLOAD
-    ========================= */
-    .upload-group {
-        margin-bottom: 25px;
-    }
-
-    .upload-input {
-        display: none;
-    }
-
-    .upload-area {
-        background: #f2f1e8;
-        border: 1.5px dashed #cccbc3;
-        border-radius: 12px;
-        padding: 35px 20px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .upload-area:hover {
-        background: #ebeadf;
-        border-color: #439294;
-    }
-
-    .upload-title {
-        font-size: 13.5px;
-        font-weight: 700;
-        color: #555;
-        margin-bottom: 12px;
-    }
-
-    .upload-icon {
-        width: 40px;
-        height: 40px;
-        background: #439294;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        margin-bottom: 12px;
-    }
-
-    .upload-icon i {
-        font-size: 20px;
-        color: white;
-    }
-
-    .upload-format {
-        font-size: 11.5px;
-        color: #888;
-    }
-
-
-    /* =========================
-       TERMS
-    ========================= */
-    .terms-wrapper {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        margin-bottom: 30px;
-    }
-
-    .terms-checkbox {
-        margin-top: 2px;
-        accent-color: #439294;
-        width: 15px;
-        height: 15px;
-        flex-shrink: 0;
-    }
-
-    .terms-text {
-        font-size: 10.5px;
-        color: #888;
-        line-height: 1.5;
-    }
-
-    .terms-text a {
-        color: #439294;
-        text-decoration: none;
-        font-weight: 700;
-    }
-
-    .terms-text a:hover {
-        text-decoration: underline;
-    }
-
-
-    /* =========================
-       BUTTON
-    ========================= */
-    .form-footer {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .btn-submit {
-        background: #439294;
-        color: #fff;
-        border: none;
-        border-radius: 20px;
-        padding: 9px 32px;
-        font-size: 13px;
-        font-family: 'Nunito', sans-serif;
-        font-weight: 700;
-        cursor: pointer;
-        transition: 0.2s ease;
-    }
-
-    .btn-submit:hover {
-        background: #377d7f;
-        transform: translateY(-1px);
-    }
-
-
-    /* =========================
-       SECTION HEADING
-    ========================= */
-    .section-heading {
-        font-size: 14px;
-        font-weight: 700;
-        margin: 20px 0 10px;
-        color: #444;
-    }
-
-
-    /* ==================================================
-       TABLET / LAPTOP KECIL
-       ================================================== */
-    @media (max-width: 1100px) {
-
-        .form-sidebar {
-            width: 32%;
-            padding: 50px 30px;
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .sidebar-title {
-            font-size: 32px;
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #fffdf0;
+            color: #333;
+            overflow-x: hidden;
         }
-
-        .sidebar-description {
-            font-size: 13px;
-        }
-
-        .form-content {
-            padding: 45px 40px;
-        }
-
-        .form-grid {
-            gap: 15px;
-        }
-    }
-
-
-    /* ==================================================
-       TABLET
-       ================================================== */
-    @media (max-width: 900px) {
 
         .form-page {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            background: #fffdf0;
+        }
+
+        /* =========================
+           SIDEBAR KIRI
+        ========================= */
+        .form-sidebar {
+            width: 35%;
+            background: #439294;
+            padding: 60px 40px;
+            color: white;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            display: flex;
             flex-direction: column;
-            min-height: auto;
-        }
-
-        /* SIDEBAR JADI BAGIAN ATAS */
-        .form-sidebar {
-            width: 100%;
-            padding: 40px 30px;
-            border-radius: 0 0 30px 30px;
-        }
-
-        .sidebar-title {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .sidebar-description {
-            max-width: 700px;
-            margin-bottom: 25px;
-        }
-
-        /* Benefit tetap rapi */
-        .benefit-card {
-            margin-bottom: 10px;
-        }
-
-        /* FORM */
-        .form-content {
-            width: 100%;
-            padding: 40px 30px;
-        }
-
-        .form-title {
-            font-size: 30px;
-            margin-bottom: 25px;
-        }
-
-        .form-grid {
-            grid-template-columns: 1fr;
-            gap: 0;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .section-heading {
-            margin-top: 20px;
-        }
-
-        .upload-area {
-            padding: 30px 20px;
-        }
-    }
-
-
-    /* ==================================================
-       HP
-       ================================================== */
-    @media (max-width: 600px) {
-
-        .form-page {
-            width: 100%;
-        }
-
-        /* SIDEBAR */
-        .form-sidebar {
-            padding: 30px 20px;
-            border-radius: 0 0 25px 25px;
-        }
-
-        .sidebar-title {
-            font-size: 28px;
-            line-height: 1.15;
-            margin-bottom: 15px;
-        }
-
-        .sidebar-description {
-            font-size: 12px;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .benefit-card {
-            padding: 12px;
-            margin-bottom: 8px;
-        }
-
-        .benefit-card .icon {
-            width: 36px;
-            height: 36px;
-            font-size: 16px;
-            margin-right: 12px;
-        }
-
-        .benefit-card h4 {
-            font-size: 12px;
-        }
-
-        .benefit-card p {
-            font-size: 10px;
-        }
-
-
-        /* FORM */
-        .form-content {
-            padding: 30px 20px;
-        }
-
-        .form-title {
-            font-size: 27px;
-            margin-bottom: 22px;
-        }
-
-        .section-heading {
-            font-size: 13px;
-            margin: 18px 0 10px;
-        }
-
-        .form-label {
-            font-size: 10.5px;
-            margin-bottom: 6px;
-        }
-
-        .form-control {
-            font-size: 12px;
-            padding: 11px 13px;
-            border-radius: 9px;
-        }
-
-
-        /* WHATSAPP */
-        .form-group>div[style*="display: flex"] {
-            gap: 6px !important;
-        }
-
-        .form-group>div[style*="display: flex"] input:first-child {
-            width: 52px !important;
             flex-shrink: 0;
         }
 
-
-        /* UPLOAD */
-        .upload-area {
-            padding: 25px 15px;
+        .sidebar-title {
+            font-size: 36px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
-        .upload-title {
-            font-size: 12px;
-            line-height: 1.4;
-            margin-bottom: 10px;
+        .sidebar-title .yellow-text {
+            color: #fff2b3;
         }
 
-        .upload-icon {
-            width: 38px;
-            height: 38px;
-            margin-bottom: 10px;
+        .sidebar-description {
+            font-size: 14px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            color: #e0f2f1;
         }
 
-        .upload-icon i {
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card .icon {
+            background: #fffdf0;
+            color: #439294;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 18px;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
 
-        .upload-format {
-            font-size: 10px;
+        .benefit-card h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+            font-weight: 700;
+            color: #fff;
         }
 
+        .benefit-card p {
+            font-size: 11px;
+            color: #e0f2f1;
+            margin: 0;
+        }
 
-        /* TERMS */
-        .terms-wrapper {
+        /* =========================
+           FORM KANAN
+        ========================= */
+        .form-content {
+            flex: 1;
+            padding: 50px 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
+            width: 100%;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
             gap: 8px;
+            color: #439294;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 14px;
+            width: fit-content;
+            transition: 0.2s ease;
+        }
+
+        .btn-back:hover {
+            color: #377d7f;
+            transform: translateX(-3px);
+        }
+
+        .form-title {
+            color: #f1a89f;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 34px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .section-heading {
+            font-size: 14px;
+            font-weight: 700;
+            margin: 20px 0 12px;
+            color: #444;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            min-width: 0;
+        }
+
+        .form-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 8px;
+            margin-left: 2px;
+        }
+
+        .form-control {
+            background: #f2f1e8;
+            border: 1px solid #e4e3da;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #444;
+            outline: none;
+            transition: 0.2s;
+            font-family: 'Nunito', sans-serif;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .form-control:focus {
+            border-color: #439294;
+            background: #fff;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        select.form-control {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23439294%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 10px auto;
+            padding-right: 32px;
+            cursor: pointer;
+        }
+
+        .phone-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .phone-prefix {
+            width: 65px;
+            text-align: center;
+            font-weight: 700;
+            padding: 12px 0;
+            background: #e8e7dd;
+            color: #555;
+            flex-shrink: 0;
+        }
+
+        .upload-group {
+            margin-bottom: 22px;
+        }
+
+        .terms-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
             margin-bottom: 25px;
         }
 
         .terms-checkbox {
-            width: 14px;
-            height: 14px;
+            margin-top: 3px;
+            accent-color: #439294;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            cursor: pointer;
         }
 
         .terms-text {
-            font-size: 10px;
+            font-size: 11.5px;
+            color: #777;
+            line-height: 1.5;
+            cursor: pointer;
         }
 
+        .terms-text a {
+            color: #439294;
+            text-decoration: none;
+            font-weight: 700;
+        }
 
-        /* BUTTON */
+        .terms-text a:hover {
+            text-decoration: underline;
+        }
+
         .form-footer {
-            justify-content: stretch;
+            display: flex;
+            justify-content: flex-end;
         }
 
         .btn-submit {
+            background: #439294;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 36px;
+            font-size: 14px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background: #377d7f;
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        @media (max-width: 1024px) {
+            .form-sidebar {
+                width: 38%;
+                padding: 50px 30px;
+            }
+
+            .form-content {
+                padding: 40px 40px;
+            }
+
+            .sidebar-title {
+                font-size: 32px;
+            }
+
+            .form-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .form-page {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .form-sidebar {
+                width: 100%;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 28px;
+                border-bottom-right-radius: 28px;
+                padding: 45px 30px 35px;
+            }
+
+            .sidebar-title {
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+
+            .sidebar-description {
+                margin-bottom: 25px;
+            }
+
+            .form-content {
+                width: 100%;
+                padding: 35px 25px 50px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-title {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .form-sidebar {
+                padding: 35px 20px 25px;
+                border-bottom-left-radius: 22px;
+                border-bottom-right-radius: 22px;
+            }
+
+            .sidebar-title {
+                font-size: 26px;
+                line-height: 1.25;
+            }
+
+            .sidebar-description {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+            .benefit-card {
+                padding: 12px 14px;
+                margin-bottom: 10px;
+            }
+
+            .benefit-card .icon {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+                margin-right: 12px;
+            }
+
+            .benefit-card h4 {
+                font-size: 13px;
+            }
+
+            .benefit-card p {
+                font-size: 11px;
+            }
+
+            .form-content {
+                padding: 25px 18px 40px;
+            }
+
+            .form-title {
+                font-size: 24px;
+                margin-bottom: 18px;
+            }
+
+            .section-heading {
+                font-size: 13.5px;
+                margin: 18px 0 10px;
+            }
+
+            .form-label {
+                font-size: 11.5px;
+            }
+
+            .form-control {
+                padding: 11px 14px;
+                font-size: 13px;
+            }
+
+            .terms-wrapper {
+                margin-bottom: 22px;
+            }
+
+            .terms-text {
+                font-size: 11px;
+            }
+
+            .form-footer {
+                justify-content: stretch;
+            }
+
+            .btn-submit {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* Modal Success */
+        .success-modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(50, 70, 70, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .success-cart-modal {
+            max-width: 380px !important;
             width: 100%;
-            padding: 11px 25px;
-            font-size: 13px;
-        }
-    }
-
-
-    /* ==================================================
-       HP SANGAT KECIL
-       ================================================== */
-    @media (max-width: 400px) {
-
-        .form-sidebar {
-            padding: 25px 15px;
+            background: #fcfaee !important;
+            border-radius: 25px !important;
+            padding: 45px 30px 40px !important;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            animation: modalIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
         }
 
-        .sidebar-title {
-            font-size: 25px;
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        .sidebar-description {
-            font-size: 11px;
+        .success-icon-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .form-content {
-            padding: 25px 15px;
+        .success-circle {
+            width: 80px;
+            height: 80px;
+            background: #55a3a4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 35px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .success-circle::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            background: #eaf8f6;
+            border-radius: 50%;
+            z-index: -1;
         }
 
-        .form-title {
-            font-size: 24px;
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
         }
 
-        .form-control {
-            padding: 10px 12px;
-            font-size: 11.5px;
+        .bubble-1 {
+            width: 20px;
+            height: 20px;
+            background: #eaf8f6;
+            top: 0;
+            right: 5px;
         }
 
-        .upload-area {
-            padding: 22px 10px;
+        .bubble-2 {
+            width: 14px;
+            height: 14px;
+            background: #ffffff;
+            border: 2px solid #eaf8f6;
+            bottom: 10px;
+            left: 5px;
         }
 
-        .upload-title {
-            font-size: 11px;
+        .modal-title-success {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: #55a3a4;
+            margin-bottom: 15px;
+            line-height: 1.2;
         }
 
-        .terms-text {
-            font-size: 9.5px;
+        .modal-description-success {
+            font-family: 'Nunito', sans-serif;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 30px;
         }
-    }
-</style>
+
+        .btn-lihat-keranjang {
+            background: #55a3a4;
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .btn-lihat-keranjang:hover {
+            background: #438f91;
+        }
+    </style>
+</head>
+<body>
+
 <section class="form-page">
 
     {{-- =========================
@@ -623,7 +599,7 @@
     ========================== --}}
     <main class="form-content">
 
-        <a href="{{ url('/') }}#kelas-pro" style="display: inline-flex; align-items: center; gap: 8px; color: #439294; text-decoration: none; font-weight: 700; margin-bottom: 20px; font-size: 14px; width: fit-content;">
+        <a href="{{ url('/') }}#kelas-pro" class="btn-back">
             <i class="fa-solid fa-arrow-left"></i> Kembali
         </a>
 
@@ -661,8 +637,8 @@
                 {{-- WhatsApp --}}
                 <div class="form-group">
                     <label class="form-label">Nomor WhatsApp</label>
-                    <div style="display: flex; gap: 8px;">
-                        <input type="text" class="form-control" value="+62" style="width: 60px; text-align: center; font-weight: bold;" readonly>
+                    <div class="phone-group">
+                        <input type="text" class="form-control phone-prefix" value="+62" readonly>
                         <input type="text" name="whatsapp" class="form-control" placeholder="8156324895" style="flex: 1;">
                     </div>
                 </div>
@@ -724,7 +700,7 @@
                  3. UPLOAD DOKUMEN
             ========================== --}}
             <div class="upload-group">
-                <label class="form-label" style="margin-bottom: 10px; display: block;">Link Drive CV / Serifikat</label>
+                <label class="form-label" style="margin-bottom: 8px; display: block;">Link Drive CV / Sertifikat</label>
                 <div class="form-group">
                     <input type="text" id="cv" name="cv" class="form-control" placeholder="drive.google.com/file/d/..." required>
                 </div>
@@ -741,7 +717,7 @@
                     <a href="#">Syarat & Ketentuan</a>
                     serta
                     <a href="#">Kebijakan Privasi</a>
-                    yang berlaku sebagai Mitra MaminaGo!
+                    yang berlaku sebagai Peserta Kelas Pro!
                 </label>
             </div>
 
@@ -761,16 +737,30 @@
 
 </section>
 
-
-{{-- Font --}}
-<link
-    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
-{{-- Font Awesome --}}
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- MODAL SUCCESS -->
+<div id="successModal" class="success-modal-overlay" style="display: none;">
+    <div class="mamina-modal-content success-cart-modal">
+        <div class="success-icon-wrapper">
+            <div class="success-circle">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+        </div>
+        
+        <h3 class="modal-title-success">Pendaftaran<br>Berhasil!</h3>
+        
+        <p class="modal-description-success">
+            Terima kasih telah mendaftar. Tim kami akan segera meninjau data Anda dan menghubungi melalui WhatsApp.
+        </p>
+        
+        <div class="modal-buttons-vertical">
+            <button type="button" class="btn-lihat-keranjang" onclick="closeSuccessModal()">
+                Tutup
+            </button>
+        </div>
+    </div>
+</div>
 
 <script>
     document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
@@ -785,7 +775,7 @@
         const profesi = document.querySelector('select[name="profesi"]').value;
         const instansi = document.querySelector('input[name="instansi"]').value;
         const kota = document.querySelector('input[name="kota_domisili"]').value;
-        const cv = document.querySelector('input[name="cv"]').value;
+        const cv = document.getElementById('cv').value;
 
         // Validasi checkbox agreement
         const agreement = document.getElementById('agreement').checked;
@@ -824,141 +814,5 @@
     }
 </script>
 
-<!-- MODAL SUCCESS -->
-<div id="successModal" class="success-modal-overlay" style="display: none;">
-    <div class="mamina-modal-content success-cart-modal">
-        <div class="success-icon-wrapper">
-            <div class="success-circle">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <div class="bubble bubble-1"></div>
-            <div class="bubble bubble-2"></div>
-        </div>
-        
-        <h3 class="modal-title-success">Pendaftaran<br>Berhasil!</h3>
-        
-        <p class="modal-description-success">
-            Terima kasih telah mendaftar. Tim kami akan segera meninjau data Anda dan menghubungi melalui WhatsApp.
-        </p>
-        
-        <div class="modal-buttons-vertical">
-            <button type="button" class="btn-lihat-keranjang" onclick="closeSuccessModal()">
-                Tutup
-            </button>
-        </div>
-    </div>
-</div>
-
-<style>
-    .success-modal-overlay {
-        position: fixed;
-        inset: 0;
-        z-index: 9999;
-        background: rgba(50, 70, 70, 0.45);
-        display: flex; /* flex when active */
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
-
-    .success-cart-modal {
-        max-width: 380px !important;
-        background: #fcfaee !important; /* warna krem seperti di gambar */
-        border-radius: 25px !important;
-        padding: 45px 30px 40px !important;
-        text-align: center;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        animation: modalIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        position: relative;
-    }
-
-    .success-icon-wrapper {
-        position: relative;
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .success-circle {
-        width: 80px;
-        height: 80px;
-        background: #55a3a4;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        font-size: 35px;
-        z-index: 2;
-        position: relative;
-    }
-    
-    .success-circle::before {
-        content: '';
-        position: absolute;
-        inset: -15px;
-        background: #eaf8f6;
-        border-radius: 50%;
-        z-index: -1;
-    }
-
-    .bubble {
-        position: absolute;
-        border-radius: 50%;
-    }
-
-    .bubble-1 {
-        width: 20px;
-        height: 20px;
-        background: #eaf8f6;
-        top: 0;
-        right: 5px;
-    }
-
-    .bubble-2 {
-        width: 14px;
-        height: 14px;
-        background: #ffffff;
-        border: 2px solid #eaf8f6;
-        bottom: 10px;
-        left: 5px;
-    }
-
-    .modal-title-success {
-        font-family: 'Fredoka', sans-serif;
-        font-size: 26px;
-        font-weight: 600;
-        color: #55a3a4;
-        margin-bottom: 15px;
-        line-height: 1.2;
-    }
-
-    .modal-description-success {
-        font-family: 'Nunito', sans-serif;
-        font-size: 15px;
-        line-height: 1.6;
-        color: #666;
-        margin-bottom: 30px;
-    }
-
-    .btn-lihat-keranjang {
-        background: #55a3a4;
-        color: #ffffff;
-        border: none;
-        width: 100%;
-        padding: 12px 20px;
-        border-radius: 20px;
-        font-family: 'Nunito', sans-serif;
-        font-weight: 800;
-        font-size: 16px;
-        cursor: pointer;
-        transition: 0.2s ease;
-    }
-
-    .btn-lihat-keranjang:hover {
-        background: #438f91;
-    }
-</style>
+</body>
+</html>
