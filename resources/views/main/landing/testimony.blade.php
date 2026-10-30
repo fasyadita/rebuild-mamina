@@ -42,24 +42,52 @@
             <div class="testi-rating">
 
                 <div class="rating-number">
-                    4.9
+                    {{ $cmsSettings['rating_value']->value ?? '4.9' }}
                     <span class="star">★</span>
                 </div>
 
                 <p>
-                    dari 1.200+ ulasan
+                    {{ $cmsSettings['rating_subtitle']->value ?? 'dari 1.200+ ulasan' }}
                 </p>
 
             </div>
 
         </div>
 
+        @php
+            $hasCmsTesti = isset($cmsTestimonies) && $cmsTestimonies->isNotEmpty();
+            if ($hasCmsTesti) {
+                $half = max(1, (int) ceil($cmsTestimonies->count() / 2));
+                $t1 = $cmsTestimonies->slice(0, $half);
+                $t2 = $cmsTestimonies->slice($half);
+                if ($t2->isEmpty()) { $t2 = $t1; }
+                $loopTrack1 = collect();
+                while ($loopTrack1->count() < 6) { $loopTrack1 = $loopTrack1->concat($t1); }
+                $loopTrack2 = collect();
+                while ($loopTrack2->count() < 6) { $loopTrack2 = $loopTrack2->concat($t2); }
+            }
+        @endphp
 
         <!-- ================= ROW 1 ================= -->
         <div class="testi-slider">
 
             <div class="testi-track scroll-left">
-
+                @if($hasCmsTesti)
+                    @foreach($loopTrack1 as $testi)
+                        <div class="testi-card">
+                            <p class="review-text">
+                                "{{ $testi->review_text }}"
+                            </p>
+                            <div class="user-profile">
+                                <img src="{{ !empty($testi->reviewer_photo) ? (str_starts_with($testi->reviewer_photo, 'http') ? $testi->reviewer_photo : asset($testi->reviewer_photo)) : asset('img/g1.png') }}" alt="{{ $testi->reviewer_name }}">
+                                <div class="user-info">
+                                    <h5>{{ $testi->reviewer_name }}</h5>
+                                    <span>{{ $testi->reviewer_desc ?? 'Bunda Mamina' }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
                 <!-- CARD 1 -->
                 <div class="testi-card">
 
@@ -238,8 +266,7 @@
 
                     </div>
 
-                </div>
-
+                @endif
             </div>
 
         </div>
@@ -249,7 +276,22 @@
         <div class="testi-slider">
 
             <div class="testi-track scroll-right">
-
+                @if($hasCmsTesti)
+                    @foreach($loopTrack2 as $testi)
+                        <div class="testi-card">
+                            <p class="review-text">
+                                "{{ $testi->review_text }}"
+                            </p>
+                            <div class="user-profile">
+                                <img src="{{ !empty($testi->reviewer_photo) ? (str_starts_with($testi->reviewer_photo, 'http') ? $testi->reviewer_photo : asset($testi->reviewer_photo)) : asset('img/mom.jpg') }}" alt="{{ $testi->reviewer_name }}">
+                                <div class="user-info">
+                                    <h5>{{ $testi->reviewer_name }}</h5>
+                                    <span>{{ $testi->reviewer_desc ?? 'Bunda Mamina' }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @else
                 <!-- CARD -->
                 <div class="testi-card">
 
@@ -431,6 +473,7 @@
                     </div>
 
                 </div>
+                @endif
 
             </div>
 

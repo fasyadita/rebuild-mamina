@@ -1,24 +1,46 @@
-<section id="home" class="home">
+@php
+    $bgUrl = !empty($cmsHero->bg_image) 
+        ? (str_starts_with($cmsHero->bg_image, 'http') ? $cmsHero->bg_image : asset($cmsHero->bg_image)) 
+        : asset('/img/home.jpeg');
+@endphp
+
+<section id="home" class="home" style="background: linear-gradient(to right, rgba(255, 218, 209, 1) 0%, rgba(255, 218, 209, 0.95) 30%, rgba(255, 218, 209, 0.6) 55%, rgba(255, 218, 209, 0) 100%), url('{{ $bgUrl }}') center/cover no-repeat;">
     <div class="home-container">
         <div class="home-content">
 
             <h1 class="home-title">
-                mam<span class="i-letter">i</span>na
+                @if(!empty($cmsHero->title_highlight) && !empty($cmsHero->title))
+                    {!! str_replace($cmsHero->title_highlight, '<span class="i-letter">'.e($cmsHero->title_highlight).'</span>', e($cmsHero->title)) !!}
+                @elseif(!empty($cmsHero->title))
+                    @if(strcasecmp($cmsHero->title, 'mamina') === 0)
+                        mam<span class="i-letter">i</span>na
+                    @else
+                        {{ $cmsHero->title }}
+                    @endif
+                @else
+                    mam<span class="i-letter">i</span>na
+                @endif
             </h1>
 
             <div class="home-subtitle">
-                Baby <span class="subtitle-span">Spa & Pijat </span> Laktasi
+                @if(!empty($cmsHero->subtitle))
+                    @if(str_contains($cmsHero->subtitle, 'Spa & Pijat'))
+                        {!! str_replace('Spa & Pijat', '<span class="subtitle-span">Spa & Pijat</span>', e($cmsHero->subtitle)) !!}
+                    @else
+                        {{ $cmsHero->subtitle }}
+                    @endif
+                @else
+                    Baby <span class="subtitle-span">Spa & Pijat </span> Laktasi
+                @endif
             </div>
 
             <p>
-                Mamina Baby Spa dan Pijat Laktasi merupakan penyedia
-                layanan kebidanan komplementer berpusat di Kota Malang
-                berupa layanan ibu dan bayi. Saat ini, Mamina telah membuka
-                cabang di luar Kota Malang, yaitu Kota Kediri untuk outlet dan
-                beberapa kota di Indonesia untuk layanan homecare.
+                {{ $cmsHero->description ?? 'Mamina Baby Spa dan Pijat Laktasi merupakan penyedia layanan kebidanan komplementer berpusat di Kota Malang berupa layanan ibu dan bayi. Saat ini, Mamina telah membuka cabang di luar Kota Malang, yaitu Kota Kediri untuk outlet dan beberapa kota di Indonesia untuk layanan homecare.' }}
             </p>
 
-            <a href="/guest/login" class="btn-reservasi">Reservasi</a>
+            <a href="{{ $cmsHero->cta_link ?? '/guest/login' }}" class="btn-reservasi">
+                {{ $cmsHero->cta_text ?? 'Reservasi' }}
+            </a>
         </div>
     </div>
 </section>

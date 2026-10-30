@@ -38,7 +38,7 @@ $(document).ready(function () {
 				},
 				error: function () {
 					$("#chatbot-messages").append(`
-				  <div class="chatbot-message bot-msg">Halo Bunda! 👩‍🍼✨ Ada yang bisa saya bantu hari ini? 🌸</div>
+				  <div class="chatbot-message bot-msg">Halo Bunda! Ada yang bisa saya bantu hari ini? </div>
 				`);
 				},
 			});

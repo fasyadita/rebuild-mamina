@@ -20,6 +20,26 @@
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
 
 
+    <!-- Global Font Rules -->
+    <style>
+        @font-face {
+            font-family: 'Fredoka';
+            src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'Nunito';
+            src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+            font-weight: 500;
+        }
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fredoka', sans-serif;
+        }
+    </style>
+
     @stack('styles')
 </head>
 

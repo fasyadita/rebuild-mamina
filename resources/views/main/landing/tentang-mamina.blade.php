@@ -148,12 +148,10 @@
                         <i class="fas fa-heart"></i>
                     </div>
 
-                    <h5>Gentle & Comforting</h5>
+                    <h5>{{ $cmsAbout->card1_title ?? 'Gentle & Comforting' }}</h5>
 
                     <p>
-                        Layanan kami dirancang untuk memberikan kenyamanan nyata
-                        bagi ibu dan buah hati — sesuai tagline
-                        <strong>"Comforting You."</strong>
+                        {{ $cmsAbout->card1_desc ?? 'Layanan kami dirancang untuk memberikan kenyamanan nyata bagi ibu dan buah hati — sesuai tagline "Comforting You."' }}
                     </p>
                 </div>
 
@@ -162,14 +160,12 @@
                         <div class="feature-card small-card text-center">
                             <div class="icon mb-2 text-warning">
                                 <i class="fas fa-medal"></i>
-                                <!-- or <i class="bi bi-medal-fill"></i> -->
                             </div>
 
-                            <h6>Terapis Bersertifikat</h6>
+                            <h6>{{ $cmsAbout->card2_title ?? 'Terapis Bersertifikat' }}</h6>
 
                             <p>
-                                Prosedur standar, ditangani bidan &
-                                terapis dengan sertifikasi resmi nasional.
+                                {{ $cmsAbout->card2_desc ?? 'Prosedur standar, ditangani bidan & terapis dengan sertifikasi resmi nasional.' }}
                             </p>
                         </div>
                     </div>
@@ -178,13 +174,11 @@
                         <div class="feature-card small-card text-center">
                             <div class="icon mb-2 text-danger">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <!-- or <i class="bi bi-pin-map-fill"></i> -->
                             </div>
-                            <h6>Terapis Bersertifikat</h6>
+                            <h6>{{ $cmsAbout->card3_title ?? 'Jangkauan Luas' }}</h6>
 
                             <p>
-                                Prosedur standar, ditangani bidan &
-                                terapis dengan sertifikasi resmi nasional.
+                                {{ $cmsAbout->card3_desc ?? 'Cabang outlet dan homecare tersebar di berbagai kota di Indonesia.' }}
                             </p>
                         </div>
                     </div>
@@ -207,20 +201,18 @@
                 uppercase
                 tracking-widest">
 
-                        TENTANG MAMINA
+                        {{ $cmsAbout->badge_text ?? 'TENTANG MAMINA' }}
 
                     </span>
 
                 </div>
                 <h2 class="title mt-2">
-                    Kenapa Bunda percaya
-                    <span>Mamina?</span>
+                    {{ $cmsAbout->title ?? 'Kenapa Bunda percaya' }}
+                    <span>{{ $cmsAbout->title_highlight ?? 'Mamina?' }}</span>
                 </h2>
 
                 <p class="desc">
-                    Sejak 2016, Mamina hadir sebagai mitra terpercaya ibu hamil
-                    hingga anak usia 7 tahun — dengan pendekatan gentle,
-                    tenaga bersertifikat, dan ekosistem layanan yang lengkap.
+                    {{ $cmsAbout->description ?? 'Sejak 2016, Mamina hadir sebagai mitra terpercaya ibu hamil hingga anak usia 7 tahun — dengan pendekatan gentle, tenaga bersertifikat, dan ekosistem layanan yang lengkap.' }}
                 </p>
 
                 <div class="service-item">
@@ -229,11 +221,10 @@
                     </div>
 
                     <div>
-                        <h6>Dukungan Laktasi Holistik</h6>
+                        <h6>{{ $cmsAbout->service1_title ?? 'Dukungan Laktasi Holistik' }}</h6>
 
                         <p>
-                            Konsultasi, pijat laktasi, dan kelas menyusui —
-                            semua dalam satu ekosistem Mamina.
+                            {{ $cmsAbout->service1_desc ?? 'Konsultasi, pijat laktasi, dan kelas menyusui — semua dalam satu ekosistem Mamina.' }}
                         </p>
                     </div>
                 </div>
@@ -244,11 +235,10 @@
                     </div>
 
                     <div>
-                        <h6>Layanan 0–7 Tahun</h6>
+                        <h6>{{ $cmsAbout->service2_title ?? 'Layanan 0–7 Tahun' }}</h6>
 
                         <p>
-                            Pijat bayi, baby spa, stimulasi tumbuh kembang —
-                            untuk setiap fase si kecil.
+                            {{ $cmsAbout->service2_desc ?? 'Pijat bayi, baby spa, stimulasi tumbuh kembang — untuk setiap fase si kecil.' }}
                         </p>
                     </div>
                 </div>
@@ -259,11 +249,10 @@
                     </div>
 
                     <div>
-                        <h6>Jangkauan Nasional</h6>
+                        <h6>{{ $cmsAbout->service3_title ?? 'Jangkauan Nasional' }}</h6>
 
                         <p>
-                            Dari Sabang sampai Merauke, mitra MaminaGO!
-                            siap hadir ke depan pintu rumah Bunda.
+                            {{ $cmsAbout->service3_desc ?? 'Dari Sabang sampai Merauke, mitra MaminaGO! siap hadir ke depan pintu rumah Bunda.' }}
                         </p>
                     </div>
                 </div>

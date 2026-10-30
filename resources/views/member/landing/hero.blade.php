@@ -7,25 +7,29 @@
         <div class="hero-content">
 
             <div class="small-label">
-                TERPERCAYA DI INDONESIA
+                {{ $cmsGuestHero->small_label ?? 'TERPERCAYA DI INDONESIA' }}
             </div>
 
             <h1 class="hero-title">
-                Perawatan<br>
-                Nyaman untuk<br>
-                <span>Ibu &amp; Si Kecil</span>
+                @if(!empty($cmsGuestHero->title_highlight) && !empty($cmsGuestHero->title))
+                    {!! str_replace($cmsGuestHero->title_highlight, '<span>'.e($cmsGuestHero->title_highlight).'</span>', nl2br(e($cmsGuestHero->title))) !!}
+                @elseif(!empty($cmsGuestHero->title))
+                    {!! nl2br(e($cmsGuestHero->title)) !!}
+                @else
+                    Perawatan<br>
+                    Nyaman untuk<br>
+                    <span>Ibu &amp; Si Kecil</span>
+                @endif
             </h1>
 
             <p class="hero-description">
-                Mamina hadir dengan kasih sayang profesional
-                untuk mendukung tumbuh kembang si kecil dan
-                pemulihan bunda pasca melahirkan.
+                {{ $cmsGuestHero->description ?? 'Mamina hadir dengan kasih sayang profesional untuk mendukung tumbuh kembang si kecil dan pemulihan bunda pasca melahirkan.' }}
             </p>
 
             <div class="hero-bottom">
 
-                <a href="{{ route('member.services') }}" class="primary-button">
-                    Reservasi Sekarang
+                <a href="{{ (!empty($cmsGuestHero->cta_link) && $cmsGuestHero->cta_link !== '#top-service') ? $cmsGuestHero->cta_link : route('member.services') }}" class="primary-button">
+                    {{ (!empty($cmsGuestHero->cta_text) && $cmsGuestHero->cta_text !== 'Layanan Unggulan') ? $cmsGuestHero->cta_text : 'Reservasi Sekarang' }}
                 </a>
 
                 <div class="registered">
@@ -47,7 +51,7 @@
                             alt="User">
 
                         <div class="more">
-                            5k+
+                            {{ $cmsGuestHero->registered_count ?? '5k+' }}
                         </div>
                     </div>
 
@@ -72,7 +76,7 @@
             <!-- Foto utama -->
             <img
                 class="main-image"
-                src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=90"
+                src="{{ !empty($cmsGuestHero->hero_image) ? (str_starts_with($cmsGuestHero->hero_image, 'http') ? $cmsGuestHero->hero_image : asset($cmsGuestHero->hero_image)) : 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=90' }}"
                 alt="Ibu dan bayi">
 
             <!-- Comfort Badge -->
@@ -83,8 +87,8 @@
                 </div>
 
                 <div class="comfort-info">
-                    <small>Pijat Bayi</small>
-                    <strong>98% Nyaman</strong>
+                    <small>{{ $cmsGuestHero->comfort_label ?? 'Pijat Bayi' }}</small>
+                    <strong>{{ $cmsGuestHero->comfort_value ?? '98% Nyaman' }}</strong>
                 </div>
 
             </div>
@@ -98,8 +102,8 @@
                 </div>
 
                 <div class="rating-info">
-                    <small>Rating</small>
-                    <strong>4.9 / 5.0</strong>
+                    <small>{{ $cmsGuestHero->rating_label ?? 'Rating' }}</small>
+                    <strong>{{ $cmsGuestHero->rating_value ?? '4.9 / 5.0' }}</strong>
                 </div>
 
             </div>
