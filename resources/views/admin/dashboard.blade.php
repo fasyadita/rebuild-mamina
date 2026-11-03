@@ -3,6 +3,7 @@
 @section('title', 'Dashboard — Mamina CMS')
 @section('page-title', 'Dashboard')
 @section('page-subtitle', 'Selamat datang di Mamina Content Management System')
+@section('page-icon', 'fas fa-chart-pie')
 
 @section('content')
 
