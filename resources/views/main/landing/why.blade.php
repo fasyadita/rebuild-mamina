@@ -43,14 +43,14 @@
 <style>
     @font-face {
         font-family: 'fredoka-m';
-        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        src: url('https://assets.mamina.id/fonts/Fredoka-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'nunito';
-        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        src: url('https://assets.mamina.id/fonts/Nunito-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }

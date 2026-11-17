@@ -42,7 +42,7 @@
                         <label class="form-label">Gambar Latar Belakang (Opsional)</label>
                         @if(!empty($hero->bg_image))
                             <div style="margin-bottom:8px;">
-                                <img src="{{ str_starts_with($hero->bg_image, 'http') ? $hero->bg_image : asset($hero->bg_image) }}"
+                                <img src="{{ str_starts_with($hero->bg_image, 'http') ? $hero->bg_image : cdn_asset($hero->bg_image) }}"
                                      alt="Preview Background" style="max-height:100px; border-radius:8px; border:1px solid #ddd;">
                             </div>
                         @endif

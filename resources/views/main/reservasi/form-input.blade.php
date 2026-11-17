@@ -524,7 +524,7 @@
             $totalQty += ($item['qty'] ?? 1);
 
             $imgSrc = !empty($item['image'])
-            ? asset('storage/' . $item['image'])
+            ? cdn_asset('storage/' . $item['image'])
             : 'https://placehold.co/100x100/f7d9d4/b08080?text=✨';
             @endphp
 

@@ -43,7 +43,7 @@
             {{-- LEFT BIG CARD --}}
             <div class="bg-[#DCE8E2] rounded-[14px] shadow-md overflow-hidden h-fit">
                 <img
-                    src="{{ !empty($featured->cover_image) ? (str_starts_with($featured->cover_image, 'http') ? $featured->cover_image : asset($featured->cover_image)) : 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1200&auto=format&fit=crop' }}"
+                    src="{{ !empty($featured->cover_image) ? (str_starts_with($featured->cover_image, 'http') ? $featured->cover_image : cdn_asset($featured->cover_image)) : 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=1200&auto=format&fit=crop' }}"
                     class="w-full h-[135px] object-cover"
                     alt="{{ $featured->title }}">
 
@@ -99,7 +99,7 @@
                 @forelse($sideArtikels as $side)
                 <div class="flex gap-3 items-start">
                     <img
-                        src="{{ !empty($side->cover_image) ? (str_starts_with($side->cover_image, 'http') ? $side->cover_image : asset($side->cover_image)) : 'https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop' }}"
+                        src="{{ !empty($side->cover_image) ? (str_starts_with($side->cover_image, 'http') ? $side->cover_image : cdn_asset($side->cover_image)) : 'https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop' }}"
                         class="w-[140px] h-[100px] rounded-xl object-cover flex-shrink-0"
                         alt="{{ $side->title }}">
                     <div class="flex flex-col justify-center">

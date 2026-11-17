@@ -23,7 +23,7 @@
                 @foreach($cmsCabangs as $cabang)
                     <div class="cabang-card">
                         <div class="card-img-wrapper">
-                            <img src="{{ !empty($cabang->image) ? (str_starts_with($cabang->image, 'http') ? $cabang->image : asset($cabang->image)) : asset('img/cabang-mlg.jpg') }}" alt="{{ $cabang->nama_cabang }}">
+                            <img src="{{ !empty($cabang->image) ? (str_starts_with($cabang->image, 'http') ? $cabang->image : cdn_asset($cabang->image)) : cdn_asset('img/cabang-mlg.jpg') }}" alt="{{ $cabang->nama_cabang }}">
                         </div>
                         <div class="card-info">
                             <h3>{{ $cabang->nama_cabang }}</h3>
@@ -71,7 +71,7 @@
                 <!-- IMAGE -->
                 <div class="card-img-wrapper">
 
-                    <img src="{{ asset('img/cabang-mlg.jpg') }}"
+                    <img src="{{ cdn_asset('img/cabang-mlg.jpg') }}"
                         alt="Mamina Cabang Malang">
 
                 </div>
@@ -147,7 +147,7 @@
 
                 <div class="card-img-wrapper">
 
-                    <img src="{{ asset('img/cabang-sht.jpeg') }}"
+                    <img src="{{ cdn_asset('img/cabang-sht.jpeg') }}"
                         alt="Mamina Cabang Soekarno Hatta">
 
                 </div>
@@ -221,7 +221,7 @@
 
                 <div class="card-img-wrapper">
 
-                    <img src="{{ asset('img/cabang-kdr.jpeg') }}"
+                    <img src="{{ cdn_asset('img/cabang-kdr.jpeg') }}"
                         alt="Mamina Cabang Kediri">
 
                 </div>

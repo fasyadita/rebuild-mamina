@@ -12,7 +12,7 @@
     <div class="event-grid">
         <div class="event-card">
             <div class="event-image">
-                <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
+                <img src="{{ cdn_asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
                 <span class="event-label">Sedang Berlangsung</span>
             </div>
             <div class="event-content">
@@ -33,7 +33,7 @@
 
         <div class="event-card">
             <div class="event-image">
-                <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
+                <img src="{{ cdn_asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
                 <span class="event-label">Sedang Berlangsung</span>
             </div>
             <div class="event-content">
@@ -54,7 +54,7 @@
 
         <div class="event-card">
             <div class="event-image">
-                <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
+                <img src="{{ cdn_asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
                 <span class="event-label">Sedang Berlangsung</span>
             </div>
             <div class="event-content">
@@ -75,7 +75,7 @@
 
         <div class="event-card">
             <div class="event-image">
-                <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
+                <img src="{{ cdn_asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
                 <span class="event-label">Sedang Berlangsung</span>
             </div>
             <div class="event-content">
@@ -96,7 +96,7 @@
 
         <div class="event-card">
             <div class="event-image">
-                <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
+                <img src="{{ cdn_asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
                 <span class="event-label">Akan Datang</span>
             </div>
             <div class="event-content">
@@ -117,7 +117,7 @@
 
         <div class="event-card">
             <div class="event-image">
-                <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
+                <img src="{{ cdn_asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
                 <span class="event-label">Akan Datang</span>
             </div>
             <div class="event-content">
@@ -138,7 +138,7 @@
 
         <div class="event-card">
             <div class="event-image">
-                <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
+                <img src="{{ cdn_asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
                 <span class="event-label">Akan Datang</span>
             </div>
             <div class="event-content">
@@ -159,7 +159,7 @@
 
         <div class="event-card">
             <div class="event-image">
-                <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
+                <img src="{{ cdn_asset('img/event.jpeg') }}" alt="Kelas Pijat Bayi">
                 <span class="event-label">Akan Datang</span>
             </div>
             <div class="event-content">
@@ -183,14 +183,14 @@
 <style>
     @font-face {
         font-family: 'fredoka';
-        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        src: url('https://assets.mamina.id/fonts/Fredoka-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'nunito';
-        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        src: url('https://assets.mamina.id/fonts/Nunito-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }

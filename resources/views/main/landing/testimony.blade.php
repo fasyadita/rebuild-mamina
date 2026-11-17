@@ -79,7 +79,7 @@
                                 "{{ $testi->review_text }}"
                             </p>
                             <div class="user-profile">
-                                <img src="{{ !empty($testi->reviewer_photo) ? (str_starts_with($testi->reviewer_photo, 'http') ? $testi->reviewer_photo : asset($testi->reviewer_photo)) : asset('img/g1.png') }}" alt="{{ $testi->reviewer_name }}">
+                                <img src="{{ !empty($testi->reviewer_photo) ? (str_starts_with($testi->reviewer_photo, 'http') ? $testi->reviewer_photo : cdn_asset($testi->reviewer_photo)) : cdn_asset('img/g1.png') }}" alt="{{ $testi->reviewer_name }}">
                                 <div class="user-info">
                                     <h5>{{ $testi->reviewer_name }}</h5>
                                     <span>{{ $testi->reviewer_desc ?? 'Bunda Mamina' }}</span>
@@ -98,7 +98,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g1.png" alt="Agnestiasanti Zuliana">
+                        <img src="{{ cdn_asset('img/g1.png') }}" alt="Agnestiasanti Zuliana">
 
                         <div class="user-info">
                             <h5>Agnestiasanti Zuliana</h5>
@@ -120,7 +120,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g2.png" alt="Shintia Lutica">
+                        <img src="{{ cdn_asset('img/g2.png') }}" alt="Shintia Lutica">
 
                         <div class="user-info">
                             <h5>Shintia Lutica</h5>
@@ -143,7 +143,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g3.png" alt="Galuh Mahanani">
+                        <img src="{{ cdn_asset('img/g3.png') }}" alt="Galuh Mahanani">
 
                         <div class="user-info">
                             <h5>Galuh Mahanani</h5>
@@ -166,7 +166,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g4.png" alt="Hildha Dea">
+                        <img src="{{ cdn_asset('img/g4.png') }}" alt="Hildha Dea">
 
                         <div class="user-info">
                             <h5>Hildha Dea</h5>
@@ -188,7 +188,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g5.png" alt="Ailynn">
+                        <img src="{{ cdn_asset('img/g5.png') }}" alt="Ailynn">
 
                         <div class="user-info">
                             <h5>Ailynn</h5>
@@ -211,7 +211,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g6.png" alt="Eka Nurvita">
+                        <img src="{{ cdn_asset('img/g6.png') }}" alt="Eka Nurvita">
 
                         <div class="user-info">
                             <h5>Eka Nurvita</h5>
@@ -234,7 +234,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g7.png" alt="Imaa">
+                        <img src="{{ cdn_asset('img/g7.png') }}" alt="Imaa">
 
                         <div class="user-info">
                             <h5>Imaa</h5>
@@ -257,7 +257,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g8.png" alt="Adilla Rosida">
+                        <img src="{{ cdn_asset('img/g8.png') }}" alt="Adilla Rosida">
 
                         <div class="user-info">
                             <h5>Adilla Rosida</h5>
@@ -283,7 +283,7 @@
                                 "{{ $testi->review_text }}"
                             </p>
                             <div class="user-profile">
-                                <img src="{{ !empty($testi->reviewer_photo) ? (str_starts_with($testi->reviewer_photo, 'http') ? $testi->reviewer_photo : asset($testi->reviewer_photo)) : asset('img/mom.jpg') }}" alt="{{ $testi->reviewer_name }}">
+                                <img src="{{ !empty($testi->reviewer_photo) ? (str_starts_with($testi->reviewer_photo, 'http') ? $testi->reviewer_photo : cdn_asset($testi->reviewer_photo)) : cdn_asset('img/mom.jpg') }}" alt="{{ $testi->reviewer_name }}">
                                 <div class="user-info">
                                     <h5>{{ $testi->reviewer_name }}</h5>
                                     <span>{{ $testi->reviewer_desc ?? 'Bunda Mamina' }}</span>
@@ -302,7 +302,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/mom.jpg" alt="Bunda Fia">
+                        <img src="{{ cdn_asset('img/mom.jpg') }}" alt="Bunda Fia">
 
                         <div class="user-info">
                             <h5>Bunda Fia</h5>
@@ -325,7 +325,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g9.png" alt="Ipin">
+                        <img src="{{ cdn_asset('img/g9.png') }}" alt="Ipin">
 
                         <div class="user-info">
                             <h5>Ipin</h5>
@@ -348,7 +348,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g10.png" alt="Dea Athaya Z">
+                        <img src="{{ cdn_asset('img/g10.png') }}" alt="Dea Athaya Z">
 
                         <div class="user-info">
                             <h5>Dea Athaya Z</h5>
@@ -371,7 +371,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g11.png" alt="Naufal Adrianto Nur">
+                        <img src="{{ cdn_asset('img/g11.png') }}" alt="Naufal Adrianto Nur">
 
                         <div class="user-info">
                             <h5>Naufal Adrianto Nur</h5>
@@ -394,7 +394,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g12.png" alt="Nadine Aulia">
+                        <img src="{{ cdn_asset('img/g12.png') }}" alt="Nadine Aulia">
 
                         <div class="user-info">
                             <h5>Nadine Aulia</h5>
@@ -417,7 +417,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g13.png" alt="Delphine Jasmine">
+                        <img src="{{ cdn_asset('img/g13.png') }}" alt="Delphine Jasmine">
 
                         <div class="user-info">
                             <h5>Delphine Jasmine</h5>
@@ -440,7 +440,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g14.png" alt="Annisa Rachmawati">
+                        <img src="{{ cdn_asset('img/g14.png') }}" alt="Annisa Rachmawati">
 
                         <div class="user-info">
                             <h5>Annisa Rachmawati</h5>
@@ -463,7 +463,7 @@
 
                     <div class="user-profile">
 
-                        <img src="img/g15.png" alt="Astrid Puspita">
+                        <img src="{{ cdn_asset('img/g15.png') }}" alt="Astrid Puspita">
 
                         <div class="user-info">
                             <h5>Astrid Puspita</h5>

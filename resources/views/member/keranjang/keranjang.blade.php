@@ -8,7 +8,7 @@
 
     @font-face {
         font-family: 'fredoka';
-        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        src: url('https://assets.mamina.id/fonts/Fredoka-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
@@ -295,7 +295,7 @@
                 $totalItems += $item['qty'];
 
                 $productImg = $item['image']
-                    ? asset('storage/' . $item['image'])
+                    ? cdn_asset('storage/' . $item['image'])
                     : 'https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80';
             @endphp
 

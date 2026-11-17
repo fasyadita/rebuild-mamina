@@ -1,7 +1,7 @@
 @php
     $bgUrl = !empty($cmsHero->bg_image) 
-        ? (str_starts_with($cmsHero->bg_image, 'http') ? $cmsHero->bg_image : asset($cmsHero->bg_image)) 
-        : asset('/img/home.jpeg');
+        ? (str_starts_with($cmsHero->bg_image, 'http') ? $cmsHero->bg_image : cdn_asset($cmsHero->bg_image)) 
+        : cdn_asset('img/home.jpeg');
 @endphp
 
 <section id="home" class="home" style="background: linear-gradient(to right, rgba(255, 218, 209, 1) 0%, rgba(255, 218, 209, 0.95) 30%, rgba(255, 218, 209, 0.6) 55%, rgba(255, 218, 209, 0) 100%), url('{{ $bgUrl }}') center/cover no-repeat;">
@@ -48,14 +48,14 @@
 <style>
     @font-face {
         font-family: 'fredoka';
-        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        src: url('https://assets.mamina.id/fonts/Fredoka-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'nunito';
-        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        src: url('https://assets.mamina.id/fonts/Nunito-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }

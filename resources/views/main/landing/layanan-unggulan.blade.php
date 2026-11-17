@@ -44,7 +44,7 @@
                     <div class="bg-white rounded-[17px] shadow-md overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-lg">
                         <div class="h-36 bg-gray-200">
                             <img
-                                src="{{ !empty($item->image) ? (str_starts_with($item->image, 'http') ? $item->image : asset($item->image)) : asset('img/pijat.png') }}"
+                                src="{{ !empty($item->image) ? (str_starts_with($item->image, 'http') ? $item->image : cdn_asset($item->image)) : cdn_asset('img/pijat.png') }}"
                                 class="w-full h-full object-cover"
                                 alt="{{ $item->title }}">
                         </div>
@@ -78,7 +78,7 @@
                 <div class="h-36 bg-gray-200">
 
                     <img
-                        src="{{ asset('img/pijat.png') }}"
+                        src="{{ cdn_asset('img/pijat.png') }}"
                         class="w-full h-full object-cover"
                         alt="Pijat Bayi">
 
@@ -129,7 +129,7 @@
                 <div class="h-36 bg-gray-200">
 
                     <img
-                        src="{{ asset('img/pijat1.png') }}"
+                        src="{{ cdn_asset('img/pijat1.png') }}"
                         class="w-full h-full object-cover"
                         alt="Pijat Bayi">
 
@@ -179,7 +179,7 @@
                 <div class="h-36 bg-gray-200">
 
                     <img
-                        src="{{ asset('img/spa.png') }}"
+                        src="{{ cdn_asset('img/spa.png') }}"
                         class="w-full h-full object-cover"
                         alt="Pijat Bayi">
 
@@ -229,7 +229,7 @@
                 <div class="h-36 bg-gray-200">
 
                     <img
-                        src="{{ asset('img/pijat1.png') }}"
+                        src="{{ cdn_asset('img/pijat1.png') }}"
                         class="w-full h-full object-cover"
                         alt="Pijat Bayi">
 
@@ -279,7 +279,7 @@
                 <div class="h-36 bg-gray-200">
 
                     <img
-                        src="{{ asset('img/pijat1.png') }}"
+                        src="{{ cdn_asset('img/pijat1.png') }}"
                         class="w-full h-full object-cover"
                         alt="Pijat Bayi">
 
@@ -328,7 +328,7 @@
                 <div class="h-36 bg-gray-200">
 
                     <img
-                        src="{{ asset('img/spa.png') }}"
+                        src="{{ cdn_asset('img/spa.png') }}"
                         class="w-full h-full object-cover"
                         alt="Pijat Bayi">
 

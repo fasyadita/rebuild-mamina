@@ -295,7 +295,7 @@
                 <div class="profile-img-wrapper">
                     @php
                     $fallbackImg = 'https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name ?? 'User') . '&background=ffdad1&color=3fb6a8';
-                    $profileImg = Auth::user()->image ? asset('storage/' . Auth::user()->image) : $fallbackImg;
+                    $profileImg = Auth::user()->image ? cdn_asset('storage/' . Auth::user()->image) : $fallbackImg;
                     @endphp
                     <img src="{{ $profileImg }}" alt="Profile" class="profile-img" onerror="this.onerror=null;this.src='{{ $fallbackImg }}';">
                     <div class="edit-icon-badge">

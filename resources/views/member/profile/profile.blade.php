@@ -17,7 +17,7 @@
                 <div class="profile-img-wrapper">
                     @php
                         $fallbackImg = 'https://ui-avatars.com/api/?name=' . urlencode($customer->name ?? 'User') . '&background=ffdad1&color=3fb6a8';
-                        $profileImg = $customer->image ? asset('storage/' . $customer->image) : $fallbackImg;
+                        $profileImg = $customer->image ? cdn_asset('storage/' . $customer->image) : $fallbackImg;
                     @endphp
                     <img src="{{ $profileImg }}" alt="Profile" class="profile-img" onerror="this.onerror=null;this.src='{{ $fallbackImg }}';">
                     <div class="edit-icon-badge">
