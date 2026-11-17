@@ -134,6 +134,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'branch_id' => ['required', 'integer'],
+            'kelurahan' => ['nullable', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:20', \Illuminate\Validation\Rule::unique('customers', 'phone')],
             'email' => ['required', 'email', 'max:50', \Illuminate\Validation\Rule::unique('customers', 'email')],
@@ -146,6 +147,7 @@ class AuthController extends Controller
 
         $user = \App\Models\Customer::create([
             'branch_id' => $request->branch_id,
+            'village_id' => $request->kelurahan,
             'name' => $request->name,
             'phone' => $request->phone,
             'email' => $request->email,

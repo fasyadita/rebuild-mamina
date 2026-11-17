@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -426,8 +427,15 @@
         }
 
         @keyframes modalIn {
-            from { opacity: 0; transform: translateY(20px) scale(0.96); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .success-icon-wrapper {
@@ -453,7 +461,7 @@
             z-index: 2;
             position: relative;
         }
-        
+
         .success-circle::before {
             content: '';
             position: absolute;
@@ -519,185 +527,378 @@
         .btn-lihat-keranjang:hover {
             background: #438f91;
         }
+
+        /* =========================================
+           KELURAHAN CUSTOM AUTOCOMPLETE DROPDOWN
+        ========================================= */
+        .autocomplete-dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border: 1px solid #edf0f3;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            padding: 6px 0;
+            text-align: left;
+        }
+
+        .autocomplete-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            transition: background 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            border-bottom: 1px solid #f6f8fa;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:hover,
+        .autocomplete-item.active {
+            background: #f0f9f9;
+        }
+
+        .autocomplete-main {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #2f3640;
+        }
+
+        .autocomplete-sub {
+            font-size: 11.5px;
+            color: #8c97a7;
+            font-weight: 500;
+        }
+
+        .autocomplete-empty {
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #9ba5b6;
+            text-align: center;
+        }
     </style>
 </head>
+
 <body>
 
-<section class="form-page">
+    <section class="form-page">
 
-    <aside class="form-sidebar">
-        <h1 class="sidebar-title">
-            Gabung Jadi<br>
-            Mitra MaminaGo!
-        </h1>
+        <aside class="form-sidebar">
+            <h1 class="sidebar-title">
+                Gabung Jadi<br>
+                Mitra MaminaGo!
+            </h1>
 
-        <p class="sidebar-description">
-            Wujudkan karir fleksibel sebagai bidan, terapis, atau nakes profesional dengan penghasilan Rp 5-15 juta/bulan.
-        </p>
+            <p class="sidebar-description">
+                Wujudkan karir fleksibel sebagai bidan, terapis, atau nakes profesional dengan penghasilan Rp 5-15 juta/bulan.
+            </p>
 
-        <div class="benefit-card">
-            <div class="icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-            </div>
-            <div>
-                <h4>Waktu Fleksibel</h4>
-                <p>Atur jam kerjamu sendiri</p>
-            </div>
-        </div>
-
-        <div class="benefit-card">
-            <div class="icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                    <line x1="2" y1="10" x2="22" y2="10"></line>
-                </svg>
-            </div>
-            <div>
-                <h4>Penghasilan Tinggi</h4>
-                <p>Lorem Ipsum</p>
-            </div>
-        </div>
-
-        <div class="benefit-card">
-            <div class="icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-            </div>
-            <div>
-                <h4>Waktu Fleksibel</h4>
-                <p>Atur jam kerjamu sendiri</p>
-            </div>
-        </div>
-    </aside>
-
-    <main class="form-content">
-        <a href="{{ url('/') }}#maminago" class="btn-back">
-            <i class="fa-solid fa-arrow-left"></i> Kembali
-        </a>
-
-        <h2 class="form-title">Formulir Pendaftaran</h2>
-
-        <form action="{{ route('maminago.submit') }}" method="POST">
-            @csrf
-
-            <div class="form-grid">
-                <!-- Nama Lengkap -->
-                <div class="form-group">
-                    <label class="form-label" for="nama_lengkap">Nama Lengkap</label>
-                    <input type="text" id="nama_lengkap" name="nama_lengkap" class="form-control" placeholder="Contoh: Fasya Dita" required>
+            <div class="benefit-card">
+                <div class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
                 </div>
-
-                <!-- Profesi -->
-                <div class="form-group">
-                    <label class="form-label" for="profesi">Profesi</label>
-                    <select id="profesi" name="profesi" class="form-control" required>
-                        <option value="" disabled selected>Pilih Profesi</option>
-                        <option value="bidan">Bidan</option>
-                        <option value="terapis">Terapis</option>
-                        <option value="nakes_lain">Nakes Lainnya</option>
-                    </select>
+                <div>
+                    <h4>Waktu Fleksibel</h4>
+                    <p>Atur jam kerjamu sendiri</p>
                 </div>
+            </div>
 
-                <!-- Kota Operasi -->
-                <div class="form-group">
-                    <label class="form-label" for="kota_operasi">Kota Operasi</label>
-                    <input type="text" id="kota_operasi" name="kota_operasi" class="form-control" placeholder="Contoh: Jakarta Selatan" required>
+            <div class="benefit-card">
+                <div class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                        <line x1="2" y1="10" x2="22" y2="10"></line>
+                    </svg>
                 </div>
-
-                <!-- Pengalaman (Tahun) -->
-                <div class="form-group">
-                    <label class="form-label" for="pengalaman">Pengalaman (Tahun)</label>
-                    <input type="number" id="pengalaman" name="pengalaman" class="form-control" placeholder="Misal: 3" min="0" required>
+                <div>
+                    <h4>Penghasilan Tinggi</h4>
+                    <p>Lorem Ipsum</p>
                 </div>
+            </div>
 
-                <!-- Nomor WhatsApp -->
-                <div class="form-group">
-                    <label class="form-label" for="whatsapp">Nomor WhatsApp</label>
-                    <div class="phone-group">
-                        <input type="text" class="form-control phone-prefix" value="+62" readonly>
-                        <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="8156324895" style="flex: 1;" required>
+            <div class="benefit-card">
+                <div class="icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <div>
+                    <h4>Waktu Fleksibel</h4>
+                    <p>Atur jam kerjamu sendiri</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="form-content">
+            <a href="{{ url('/') }}#maminago" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i> Kembali
+            </a>
+
+            <h2 class="form-title">Formulir Pendaftaran</h2>
+
+            <form action="{{ route('maminago.submit') }}" method="POST">
+                @csrf
+
+                <div class="form-grid">
+                    <!-- Nama Lengkap -->
+                    <div class="form-group">
+                        <label class="form-label" for="nama_lengkap">Nama Lengkap</label>
+                        <input type="text" id="nama_lengkap" name="nama_lengkap" class="form-control" placeholder="Contoh: Fasya Dita" required>
+                    </div>
+
+                    <!-- Profesi -->
+                    <div class="form-group">
+                        <label class="form-label" for="profesi">Profesi</label>
+                        <select id="profesi" name="profesi" class="form-control" required>
+                            <option value="" disabled selected>Pilih Profesi</option>
+                            <option value="bidan">Bidan</option>
+                            <option value="terapis">Terapis</option>
+                            <option value="nakes_lain">Nakes Lainnya</option>
+                        </select>
+                    </div>
+
+                    <!-- Kelurahan Operasi -->
+                    <div class="form-group" style="position: relative;">
+                        <label class="form-label">Kelurahan / Desa</label>
+                        <input type="text" id="kelurahan" name="kelurahan" class="form-control" placeholder="Ketik kelurahan / desa..." autocomplete="off">
+                        <div id="kelurahan-dropdown" class="autocomplete-dropdown"></div>
+                    </div>
+
+                    <!-- Pengalaman (Tahun) -->
+                    <div class="form-group">
+                        <label class="form-label" for="pengalaman">Pengalaman (Tahun)</label>
+                        <input type="number" id="pengalaman" name="pengalaman" class="form-control" placeholder="Misal: 3" min="0" required>
+                    </div>
+
+                    <!-- Nomor WhatsApp -->
+                    <div class="form-group">
+                        <label class="form-label" for="whatsapp">Nomor WhatsApp</label>
+                        <div class="phone-group">
+                            <input type="text" class="form-control phone-prefix" value="+62" readonly>
+                            <input type="text" id="whatsapp" name="whatsapp" class="form-control" placeholder="8156324895" style="flex: 1;" required>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="nama@gmail.com" required>
                     </div>
                 </div>
 
-                <!-- Email -->
-                <div class="form-group">
-                    <label class="form-label" for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="nama@gmail.com" required>
+                <!-- Upload CV/STR -->
+                <div class="upload-group">
+                    <label class="form-label" style="margin-bottom: 8px; display: block;">Link Drive CV / Sertifikat</label>
+                    <div class="form-group">
+                        <input type="text" id="cv" name="cv" class="form-control" placeholder="drive.google.com/file/d/..." required>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Upload CV/STR -->
-            <div class="upload-group">
-                <label class="form-label" style="margin-bottom: 8px; display: block;">Link Drive CV / Sertifikat</label>
-                <div class="form-group">
-                    <input type="text" id="cv" name="cv" class="form-control" placeholder="drive.google.com/file/d/..." required>
+                <!-- Syarat dan Ketentuan -->
+                <div class="terms-wrapper">
+                    <input type="checkbox" id="terms" name="terms" class="terms-checkbox" required>
+                    <label for="terms" class="terms-text">
+                        Saya menyetujui <a href="#">Syarat & Ketentuan</a> serta <a href="#">Kebijakan Privasi</a> yang berlaku sebagai Mitra MaminaGo!
+                    </label>
                 </div>
-            </div>
 
-            <!-- Syarat dan Ketentuan -->
-            <div class="terms-wrapper">
-                <input type="checkbox" id="terms" name="terms" class="terms-checkbox" required>
-                <label for="terms" class="terms-text">
-                    Saya menyetujui <a href="#">Syarat & Ketentuan</a> serta <a href="#">Kebijakan Privasi</a> yang berlaku sebagai Mitra MaminaGo!
-                </label>
-            </div>
-
-            <!-- Button Daftar -->
-            <div class="form-footer">
-                <button type="submit" class="btn-submit">Daftar</button>
-            </div>
-
-        </form>
-    </main>
-
-    <!-- MODAL SUCCESS -->
-    <div id="successModal" class="success-modal-overlay" style="display: none;">
-        <div class="mamina-modal-content success-cart-modal">
-            <div class="success-icon-wrapper">
-                <div class="success-circle">
-                    <i class="fa-solid fa-check"></i>
+                <!-- Button Daftar -->
+                <div class="form-footer">
+                    <button type="submit" class="btn-submit">Daftar</button>
                 </div>
-                <div class="bubble bubble-1"></div>
-                <div class="bubble bubble-2"></div>
-            </div>
-            
-            <h3 class="modal-title-success">Pendaftaran<br>Berhasil!</h3>
-            
-            <p class="modal-description-success">
-                Terima kasih telah mendaftar. Tim kami akan segera meninjau data Anda dan menghubungi melalui WhatsApp.
-            </p>
-            
-            <div class="modal-buttons-vertical">
-                <button type="button" class="btn-lihat-keranjang" onclick="closeSuccessModal()">
-                    Tutup
-                </button>
+
+            </form>
+        </main>
+
+        <!-- MODAL SUCCESS -->
+        <div id="successModal" class="success-modal-overlay" style="display: none;">
+            <div class="mamina-modal-content success-cart-modal">
+                <div class="success-icon-wrapper">
+                    <div class="success-circle">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div class="bubble bubble-1"></div>
+                    <div class="bubble bubble-2"></div>
+                </div>
+
+                <h3 class="modal-title-success">Pendaftaran<br>Berhasil!</h3>
+
+                <p class="modal-description-success">
+                    Terima kasih telah mendaftar. Tim kami akan segera meninjau data Anda dan menghubungi melalui WhatsApp.
+                </p>
+
+                <div class="modal-buttons-vertical">
+                    <button type="button" class="btn-lihat-keranjang" onclick="closeSuccessModal()">
+                        Tutup
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        function closeSuccessModal() {
-            document.getElementById('successModal').style.display = 'none';
-        }
-    </script>
+        <script>
+            // Auto Suggestion Dropdown Kelurahan (Autocomplete)
+            document.addEventListener('DOMContentLoaded', function() {
+                const kelurahanInput = document.getElementById('kelurahan');
+                const dropdown = document.getElementById('kelurahan-dropdown');
 
-    @if(session('wa_link'))
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tampilkan modal sukses
-            document.getElementById('successModal').style.display = 'flex';
-            
-            // Buka WhatsApp di tab baru
-            window.open('{!! session('wa_link') !!}', '_blank');
-        });
-    </script>
-    @endif
-</section>
+                let allVillages = [];
+                let activeIndex = -1;
+
+                // Ambil data kelurahan dari public/data/villages.json
+                fetch("{{ asset('data/villages.json') }}")
+                    .then(response => response.json())
+                    .then(res => {
+                        if (res && res.data) {
+                            allVillages = res.data;
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Gagal memuat data kelurahan:', err);
+                    });
+
+                // Event saat mengetik
+                kelurahanInput.addEventListener('input', function() {
+                    const keyword = this.value.trim().toLowerCase();
+                    renderSuggestions(keyword);
+                });
+
+                // Tampilkan kembali dropdown saat fokus jika sudah ada ketikan
+                kelurahanInput.addEventListener('focus', function() {
+                    const keyword = this.value.trim().toLowerCase();
+                    if (keyword.length > 0) {
+                        renderSuggestions(keyword);
+                    }
+                });
+
+                // Tutup dropdown jika klik di luar
+                document.addEventListener('click', function(e) {
+                    if (!kelurahanInput.contains(e.target) && !dropdown.contains(e.target)) {
+                        dropdown.style.display = 'none';
+                    }
+                });
+
+                // Dukungan navigasi keyboard (panah bawah, panah atas, enter)
+                kelurahanInput.addEventListener('keydown', function(e) {
+                    const items = dropdown.querySelectorAll('.autocomplete-item');
+                    if (!items.length || dropdown.style.display === 'none') return;
+
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        activeIndex = (activeIndex + 1) % items.length;
+                        updateActiveItem(items);
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        activeIndex = (activeIndex - 1 + items.length) % items.length;
+                        updateActiveItem(items);
+                    } else if (e.key === 'Enter') {
+                        if (activeIndex > -1 && items[activeIndex]) {
+                            e.preventDefault();
+                            items[activeIndex].click();
+                        }
+                    } else if (e.key === 'Escape') {
+                        dropdown.style.display = 'none';
+                    }
+                });
+
+                function updateActiveItem(items) {
+                    items.forEach((item, idx) => {
+                        if (idx === activeIndex) {
+                            item.classList.add('active');
+                            item.scrollIntoView({
+                                block: 'nearest'
+                            });
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+
+                function renderSuggestions(keyword) {
+                    activeIndex = -1;
+                    dropdown.innerHTML = '';
+
+                    if (!keyword || keyword.length === 0) {
+                        dropdown.style.display = 'none';
+                        return;
+                    }
+
+                    // Filter berdasarkan keyword (nama kelurahan, kecamatan, atau kota)
+                    const filtered = allVillages.filter(item => {
+                        const text = `${item.village || ''} ${item.district || ''} ${item.regency || ''}`.toLowerCase();
+                        return text.includes(keyword);
+                    });
+
+                    if (filtered.length === 0) {
+                        dropdown.innerHTML = '<div class="autocomplete-empty">Tidak ada kelurahan yang cocok</div>';
+                        dropdown.style.display = 'block';
+                        return;
+                    }
+
+                    // Ambil maksimal 8 hasil agar rapi
+                    const topResults = filtered.slice(0, 8);
+
+                    topResults.forEach(item => {
+                        const row = document.createElement('div');
+                        row.className = 'autocomplete-item';
+
+                        // Format baris 1: Mojolangu · Lowokwaru, Malang
+                        const mainText = `${item.village} · ${item.district}, ${item.regency}`;
+
+                        // Format baris 2: Jawa Timur 65142
+                        const subParts = [];
+                        if (item.province) subParts.push(item.province);
+                        if (item.code) subParts.push(item.code);
+                        const subText = subParts.join(' ');
+
+                        row.innerHTML = `
+                    <div class="autocomplete-main">${mainText}</div>
+                    <div class="autocomplete-sub">${subText}</div>
+                `;
+
+                        row.addEventListener('click', function() {
+                            kelurahanInput.value = `${item.village} (${item.district}, ${item.regency})`;
+                            dropdown.style.display = 'none';
+                        });
+
+                        dropdown.appendChild(row);
+                    });
+
+                    dropdown.style.display = 'block';
+                }
+            });
+
+            function closeSuccessModal() {
+                document.getElementById('successModal').style.display = 'none';
+            }
+        </script>
+
+        @if(session('wa_link'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Tampilkan modal sukses
+                document.getElementById('successModal').style.display = 'flex';
+
+                // Buka WhatsApp di tab baru
+                window.open('{!! session('
+                    wa_link ') !!}', '_blank');
+            });
+        </script>
+        @endif
+    </section>
 
 </body>
+
 </html>

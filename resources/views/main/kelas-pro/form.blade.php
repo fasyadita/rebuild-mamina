@@ -421,6 +421,64 @@
             }
         }
 
+        /* =========================================
+           KELURAHAN CUSTOM AUTOCOMPLETE DROPDOWN
+        ========================================= */
+        .autocomplete-dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border: 1px solid #edf0f3;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            padding: 6px 0;
+            text-align: left;
+        }
+
+        .autocomplete-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            transition: background 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            border-bottom: 1px solid #f6f8fa;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:hover,
+        .autocomplete-item.active {
+            background: #f0f9f9;
+        }
+
+        .autocomplete-main {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #2f3640;
+        }
+
+        .autocomplete-sub {
+            font-size: 11.5px;
+            color: #8c97a7;
+            font-weight: 500;
+        }
+
+        .autocomplete-empty {
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #9ba5b6;
+            text-align: center;
+        }
+
         /* Modal Success */
         .success-modal-overlay {
             position: fixed;
@@ -687,10 +745,11 @@
                     <input type="text" name="instansi" class="form-control" placeholder="Kemenkes">
                 </div>
 
-                {{-- Kota --}}
-                <div class="form-group">
-                    <label class="form-label">Kota Domisili</label>
-                    <input type="text" name="kota_domisili" class="form-control" placeholder="Jakarta Selatan">
+                {{-- Kelurahan --}}
+                <div class="form-group" style="position: relative;">
+                    <label class="form-label">Kelurahan / Desa</label>
+                    <input type="text" id="kelurahan" name="kelurahan" class="form-control" placeholder="Ketik kelurahan / desa..." autocomplete="off">
+                    <div id="kelurahan-dropdown" class="autocomplete-dropdown"></div>
                 </div>
 
             </div>
@@ -763,6 +822,135 @@
 </div>
 
 <script>
+    // Auto Suggestion Dropdown Kelurahan (Autocomplete)
+    document.addEventListener('DOMContentLoaded', function () {
+        const kelurahanInput = document.getElementById('kelurahan');
+        const dropdown = document.getElementById('kelurahan-dropdown');
+
+        let allVillages = [];
+        let activeIndex = -1;
+
+        // Ambil data kelurahan dari public/data/villages.json
+        fetch("{{ asset('data/villages.json') }}")
+            .then(response => response.json())
+            .then(res => {
+                if (res && res.data) {
+                    allVillages = res.data;
+                }
+            })
+            .catch(err => {
+                console.error('Gagal memuat data kelurahan:', err);
+            });
+
+        // Event saat mengetik
+        kelurahanInput.addEventListener('input', function () {
+            const keyword = this.value.trim().toLowerCase();
+            renderSuggestions(keyword);
+        });
+
+        // Tampilkan kembali dropdown saat fokus jika sudah ada ketikan
+        kelurahanInput.addEventListener('focus', function () {
+            const keyword = this.value.trim().toLowerCase();
+            if (keyword.length > 0) {
+                renderSuggestions(keyword);
+            }
+        });
+
+        // Tutup dropdown jika klik di luar
+        document.addEventListener('click', function (e) {
+            if (!kelurahanInput.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // Dukungan navigasi keyboard (panah bawah, panah atas, enter)
+        kelurahanInput.addEventListener('keydown', function (e) {
+            const items = dropdown.querySelectorAll('.autocomplete-item');
+            if (!items.length || dropdown.style.display === 'none') return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                activeIndex = (activeIndex + 1) % items.length;
+                updateActiveItem(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                activeIndex = (activeIndex - 1 + items.length) % items.length;
+                updateActiveItem(items);
+            } else if (e.key === 'Enter') {
+                if (activeIndex > -1 && items[activeIndex]) {
+                    e.preventDefault();
+                    items[activeIndex].click();
+                }
+            } else if (e.key === 'Escape') {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        function updateActiveItem(items) {
+            items.forEach((item, idx) => {
+                if (idx === activeIndex) {
+                    item.classList.add('active');
+                    item.scrollIntoView({ block: 'nearest' });
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        function renderSuggestions(keyword) {
+            activeIndex = -1;
+            dropdown.innerHTML = '';
+
+            if (!keyword || keyword.length === 0) {
+                dropdown.style.display = 'none';
+                return;
+            }
+
+            // Filter berdasarkan keyword (nama kelurahan, kecamatan, atau kota)
+            const filtered = allVillages.filter(item => {
+                const text = `${item.village || ''} ${item.district || ''} ${item.regency || ''}`.toLowerCase();
+                return text.includes(keyword);
+            });
+
+            if (filtered.length === 0) {
+                dropdown.innerHTML = '<div class="autocomplete-empty">Tidak ada kelurahan yang cocok</div>';
+                dropdown.style.display = 'block';
+                return;
+            }
+
+            // Ambil maksimal 8 hasil agar rapi
+            const topResults = filtered.slice(0, 8);
+
+            topResults.forEach(item => {
+                const row = document.createElement('div');
+                row.className = 'autocomplete-item';
+
+                // Format baris 1: Mojolangu · Lowokwaru, Malang
+                const mainText = `${item.village} · ${item.district}, ${item.regency}`;
+                
+                // Format baris 2: Jawa Timur 65142
+                const subParts = [];
+                if (item.province) subParts.push(item.province);
+                if (item.code) subParts.push(item.code);
+                const subText = subParts.join(' ');
+
+                row.innerHTML = `
+                    <div class="autocomplete-main">${mainText}</div>
+                    <div class="autocomplete-sub">${subText}</div>
+                `;
+
+                row.addEventListener('click', function () {
+                    kelurahanInput.value = `${item.village} (${item.district}, ${item.regency})`;
+                    dropdown.style.display = 'none';
+                });
+
+                dropdown.appendChild(row);
+            });
+
+            dropdown.style.display = 'block';
+        }
+    });
+
     document.getElementById('formPendaftaran').addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -774,7 +962,7 @@
         const jenisKelamin = document.querySelector('select[name="jenis_kelamin"]').value;
         const profesi = document.querySelector('select[name="profesi"]').value;
         const instansi = document.querySelector('input[name="instansi"]').value;
-        const kota = document.querySelector('input[name="kota_domisili"]').value;
+        const kelurahan = document.getElementById('kelurahan').value;
         const cv = document.getElementById('cv').value;
 
         // Validasi checkbox agreement
@@ -796,7 +984,7 @@
         text += `*Jenis Kelamin:* ${jenisKelamin}%0A`;
         text += `*Profesi:* ${profesi}%0A`;
         text += `*Instansi:* ${instansi}%0A`;
-        text += `*Kota Domisili:* ${kota}%0A`;
+        text += `*Kelurahan/Domisili:* ${kelurahan}%0A`;
         text += `*Link CV/STR:* ${cv}%0A%0A`;
         text += `Terima kasih.`;
 

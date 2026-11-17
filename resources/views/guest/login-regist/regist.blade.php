@@ -410,6 +410,63 @@
         }
 
         /* =========================================
+           KELURAHAN CUSTOM AUTOCOMPLETE DROPDOWN
+        ========================================= */
+        .autocomplete-dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border: 1px solid #edf0f3;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            max-height: 260px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            padding: 6px 0;
+        }
+
+        .autocomplete-item {
+            padding: 10px 18px;
+            cursor: pointer;
+            transition: background 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            border-bottom: 1px solid #f6f8fa;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:hover,
+        .autocomplete-item.active {
+            background: #f0f9f9;
+        }
+
+        .autocomplete-main {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #2f3640;
+        }
+
+        .autocomplete-sub {
+            font-size: 12px;
+            color: #8c97a7;
+            font-weight: 500;
+        }
+
+        .autocomplete-empty {
+            padding: 14px 18px;
+            font-size: 13.5px;
+            color: #9ba5b6;
+            text-align: center;
+        }
+
+        /* =========================================
            RESPONSIVE MOBILE
         ========================================= */
         @media (max-width: 992px) {
@@ -538,6 +595,32 @@
                             </select>
                         </div>
                         @error('branch_id')
+                            <div class="error-message">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    {{-- KELURAHAN --}}
+                    <div class="form-group">
+                        <div class="form-label-row">
+                            <label for="kelurahan" class="form-label">
+                                Kelurahan / Desa
+                            </label>
+                        </div>
+                        <div class="input-wrapper" style="position: relative;">
+                            <i class="fa-solid fa-map-pin input-icon"></i>
+                            <input
+                                type="text"
+                                id="kelurahan"
+                                name="kelurahan"
+                                class="form-input"
+                                placeholder="Ketik kelurahan / desa Anda..."
+                                value="{{ old('kelurahan') }}"
+                                autocomplete="off"
+                            >
+                            {{-- Custom Dropdown Menu --}}
+                            <div id="kelurahan-dropdown" class="autocomplete-dropdown"></div>
+                        </div>
+                        @error('kelurahan')
                             <div class="error-message">{{ $message }}</div>
                         @enderror
                     </div>
@@ -748,7 +831,7 @@
     </div>
 
 
-    {{-- PASSWORD SHOW / HIDE --}}
+    {{-- PASSWORD SHOW / HIDE & DROPDOWN KELURAHAN OTOMATIS --}}
     <script>
         function togglePasswordVisibility(inputId, iconId) {
             const passwordInput = document.getElementById(inputId);
@@ -764,6 +847,152 @@
                 passwordIcon.classList.add('fa-eye-slash');
             }
         }
+
+        // Auto Suggestion Dropdown Kelurahan (Custom Dropdown seperti di gambar)
+        document.addEventListener('DOMContentLoaded', function () {
+            const branchSelect = document.getElementById('branch_id');
+            const kelurahanInput = document.getElementById('kelurahan');
+            const dropdown = document.getElementById('kelurahan-dropdown');
+
+            let allVillages = [];
+            let activeIndex = -1;
+
+            // Ambil data kelurahan dari public/data/villages.json
+            fetch("{{ asset('data/villages.json') }}")
+                .then(response => response.json())
+                .then(res => {
+                    if (res && res.data) {
+                        allVillages = res.data;
+                    }
+                })
+                .catch(err => {
+                    console.error('Gagal memuat data kelurahan:', err);
+                });
+
+            // Event saat mengetik
+            kelurahanInput.addEventListener('input', function () {
+                const keyword = this.value.trim().toLowerCase();
+                renderSuggestions(keyword);
+            });
+
+            // Tampilkan kembali dropdown saat fokus jika sudah ada ketikan
+            kelurahanInput.addEventListener('focus', function () {
+                const keyword = this.value.trim().toLowerCase();
+                if (keyword.length > 0) {
+                    renderSuggestions(keyword);
+                }
+            });
+
+            // Tutup dropdown jika klik di luar
+            document.addEventListener('click', function (e) {
+                if (!kelurahanInput.contains(e.target) && !dropdown.contains(e.target)) {
+                    dropdown.style.display = 'none';
+                }
+            });
+
+            // Dukungan navigasi keyboard (panah bawah, panah atas, enter)
+            kelurahanInput.addEventListener('keydown', function (e) {
+                const items = dropdown.querySelectorAll('.autocomplete-item');
+                if (!items.length || dropdown.style.display === 'none') return;
+
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    activeIndex = (activeIndex + 1) % items.length;
+                    updateActiveItem(items);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    activeIndex = (activeIndex - 1 + items.length) % items.length;
+                    updateActiveItem(items);
+                } else if (e.key === 'Enter') {
+                    if (activeIndex > -1 && items[activeIndex]) {
+                        e.preventDefault();
+                        items[activeIndex].click();
+                    }
+                } else if (e.key === 'Escape') {
+                    dropdown.style.display = 'none';
+                }
+            });
+
+            function updateActiveItem(items) {
+                items.forEach((item, idx) => {
+                    if (idx === activeIndex) {
+                        item.classList.add('active');
+                        item.scrollIntoView({ block: 'nearest' });
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+
+            function renderSuggestions(keyword) {
+                activeIndex = -1;
+                dropdown.innerHTML = '';
+
+                if (!keyword || keyword.length === 0) {
+                    dropdown.style.display = 'none';
+                    return;
+                }
+
+                const branchId = branchSelect.value;
+
+                // Filter berdasarkan keyword (nama kelurahan, kecamatan, atau kota)
+                let filtered = allVillages.filter(item => {
+                    const matchBranch = !branchId || !item.branch_id || item.branch_id == branchId;
+                    const text = `${item.village || ''} ${item.district || ''} ${item.regency || ''}`.toLowerCase();
+                    return matchBranch && text.includes(keyword);
+                });
+
+                // Jika filter cabang menghasilkan 0 tapi ada di cabang lain, berikan toleransi pencarian bebas
+                if (filtered.length === 0) {
+                    filtered = allVillages.filter(item => {
+                        const text = `${item.village || ''} ${item.district || ''} ${item.regency || ''}`.toLowerCase();
+                        return text.includes(keyword);
+                    });
+                }
+
+                if (filtered.length === 0) {
+                    dropdown.innerHTML = '<div class="autocomplete-empty">Tidak ada kelurahan yang cocok</div>';
+                    dropdown.style.display = 'block';
+                    return;
+                }
+
+                // Ambil maksimal 8 hasil agar rapi
+                const topResults = filtered.slice(0, 8);
+
+                topResults.forEach(item => {
+                    const row = document.createElement('div');
+                    row.className = 'autocomplete-item';
+
+                    // Format baris 1: Mojolangu · Lowokwaru, Malang
+                    const mainText = `${item.village} · ${item.district}, ${item.regency}`;
+                    
+                    // Format baris 2: Jawa Timur 65142
+                    const subParts = [];
+                    if (item.province) subParts.push(item.province);
+                    if (item.code) subParts.push(item.code);
+                    const subText = subParts.join(' ');
+
+                    row.innerHTML = `
+                        <div class="autocomplete-main">${mainText}</div>
+                        <div class="autocomplete-sub">${subText}</div>
+                    `;
+
+                    row.addEventListener('click', function () {
+                        kelurahanInput.value = item.village;
+                        dropdown.style.display = 'none';
+
+                        // Otomatis pilih cabang jika belum terpilih
+                        if (!branchSelect.value && item.branch_id) {
+                            branchSelect.value = item.branch_id;
+                        }
+                    });
+
+                    dropdown.appendChild(row);
+                });
+
+                dropdown.style.display = 'block';
+            }
+        });
     </script>
 
 </body>
