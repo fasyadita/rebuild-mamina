@@ -1,3 +1,6 @@
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_BASE_URL = isLocalhost ? 'http://127.0.0.1:5001' : '/chatbot-api';
+
 // Cek atau buat session_id di localStorage
 function generateSessionId() {
 	return "sess-" + Math.random().toString(36).substr(2, 9);
@@ -26,7 +29,7 @@ $(document).ready(function () {
 		$("#chatbot-container").fadeToggle();
 		if ($("#chatbot-messages").is(":empty")) {
 			$.ajax({
-				url: "http://127.0.0.1:5001/get_intro",
+				url: `${API_BASE_URL}/get_intro`,
 				method: "GET",
 				success: function (res) {
 					$("#chatbot-messages").append(`
@@ -74,7 +77,7 @@ $(document).ready(function () {
 		showTyping();
 
 		$.ajax({
-			url: "http://127.0.0.1:5001/ask",
+			url: `${API_BASE_URL}/ask`,
 			method: "POST",
 			contentType: "application/json",
 			data: JSON.stringify({
@@ -152,7 +155,7 @@ window.kirimUlasan = function () {
 	}
 
 	$.ajax({
-		url: "http://127.0.0.1:5001/simpan_ulasan",
+		url: `${API_BASE_URL}/simpan_ulasan`,
 		method: "POST",
 		contentType: "application/json",
 		data: JSON.stringify({
