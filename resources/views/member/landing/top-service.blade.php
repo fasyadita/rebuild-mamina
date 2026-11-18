@@ -256,7 +256,7 @@
                 @foreach($cmsGuestLayanan as $layanan)
                     <div class="treatment-card">
                         <div class="treatment-img-box">
-                            <img src="{{ !empty($layanan->image) ? (str_starts_with($layanan->image, 'http') ? $layanan->image : asset($layanan->image)) : asset('img/pijat.png') }}" alt="{{ $layanan->title }}">
+                            <img src="{{ !empty($layanan->image) ? (str_starts_with($layanan->image, 'http') ? $layanan->image : cdn_asset($layanan->image)) : cdn_asset('img/pijat.png') }}" alt="{{ $layanan->title }}">
                         </div>
                         <div class="treatment-body">
                             <h3 class="treatment-card-title">{{ $layanan->title }}</h3>
@@ -278,7 +278,7 @@
             <!-- Card 1 -->
             <div class="treatment-card">
                 <div class="treatment-img-box">
-                    <img src="{{ asset('img/pijat.png') }}" alt="Pijat Bayi">
+                    <img src="{{ cdn_asset('img/pijat.png') }}" alt="Pijat Bayi">
                 </div>
                 <div class="treatment-body">
                     <h3 class="treatment-card-title">Pijat Kid</h3>
@@ -299,7 +299,7 @@
             <!-- Card 2 -->
             <div class="treatment-card">
                 <div class="treatment-img-box">
-                    <img src="{{ asset('img/pijat1.png') }}" alt="Pijat Bayi">
+                    <img src="{{ cdn_asset('img/pijat1.png') }}" alt="Pijat Bayi">
                 </div>
                 <div class="treatment-body">
                     <h3 class="treatment-card-title">Pijat dan Scrub</h3>
@@ -319,7 +319,7 @@
             <!-- Card 3 -->
             <div class="treatment-card">
                 <div class="treatment-img-box">
-                    <img src="{{ asset('img/spa.png') }}" alt="Pijat Bayi">
+                    <img src="{{ cdn_asset('img/spa.png') }}" alt="Pijat Bayi">
                 </div>
                 <div class="treatment-body">
                     <h3 class="treatment-card-title">Pijat Bayi</h3>
@@ -339,7 +339,7 @@
             <!-- Card 4 -->
             <div class="treatment-card">
                 <div class="treatment-img-box">
-                    <img src="{{ asset('img/pijat1.png') }}" alt="Pijat Bayi">
+                    <img src="{{ cdn_asset('img/pijat1.png') }}" alt="Pijat Bayi">
                 </div>
                 <div class="treatment-body">
                     <h3 class="treatment-card-title">Pijat dan Swim</h3>
@@ -359,7 +359,7 @@
             <!-- Card 5 -->
             <div class="treatment-card">
                 <div class="treatment-img-box">
-                    <img src="{{ asset('img/pijat1.png') }}" alt="Pijat Bayi">
+                    <img src="{{ cdn_asset('img/pijat1.png') }}" alt="Pijat Bayi">
                 </div>
                 <div class="treatment-body">
                     <h3 class="treatment-card-title">Pijat Hamil</h3>
@@ -379,7 +379,7 @@
             <!-- Card 6 -->
             <div class="treatment-card">
                 <div class="treatment-img-box">
-                    <img src="{{ asset('img/spa.png') }}" alt="Pijat Bayi">
+                    <img src="{{ cdn_asset('img/spa.png') }}" alt="Pijat Bayi">
                 </div>
                 <div class="treatment-body">
                     <h3 class="treatment-card-title">Spa Hamil</h3>

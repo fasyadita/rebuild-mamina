@@ -74,11 +74,11 @@
                             if (str_starts_with($item->image, 'http') || str_starts_with($item->image, '/')) {
                                 $photoUrl = $item->image;
                             } elseif (file_exists(public_path('storage/' . $item->image))) {
-                                $photoUrl = asset('storage/' . $item->image);
+                                $photoUrl = cdn_asset('storage/' . $item->image);
                             } elseif (file_exists(public_path($item->image))) {
-                                $photoUrl = asset($item->image);
+                                $photoUrl = cdn_asset($item->image);
                             } else {
-                                $photoUrl = asset('storage/' . $item->image);
+                                $photoUrl = cdn_asset('storage/' . $item->image);
                             }
                         }
                     @endphp
@@ -87,7 +87,7 @@
                         <div style="margin-bottom:14px;">
                             <div style="font-size:12px; color:var(--text-light); margin-bottom:6px;">Foto saat ini:</div>
                             <img src="{{ $photoUrl }}" alt="preview"
-                                onerror="this.onerror=null;this.src='{{ asset('img/mamina.png') }}';"
+                                onerror="this.onerror=null;this.src='{{ cdn_asset('img/mamina.png') }}';"
                                 style="width:100%; max-height:200px; object-fit:cover; border-radius:10px; border:1px solid var(--border);">
                         </div>
                     @endif

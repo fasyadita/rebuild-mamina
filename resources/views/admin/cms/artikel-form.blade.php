@@ -58,7 +58,7 @@
                         <label class="form-label">Foto Sampul (Cover Image)</label>
                         @if(!empty($item->cover_image))
                             <div style="margin-bottom:10px;">
-                                <img src="{{ str_starts_with($item->cover_image, 'http') ? $item->cover_image : asset($item->cover_image) }}"
+                                <img src="{{ str_starts_with($item->cover_image, 'http') ? $item->cover_image : cdn_asset($item->cover_image) }}"
                                      alt="Cover" style="max-height:120px; border-radius:8px; border:1px solid #ddd; object-fit:cover;">
                             </div>
                         @endif

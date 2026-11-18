@@ -41,7 +41,7 @@
                             <tr>
                                 <td style="width:70px">
                                     @if($item->cover_image)
-                                        <img src="{{ str_starts_with($item->cover_image, 'http') ? $item->cover_image : asset($item->cover_image) }}"
+                                        <img src="{{ str_starts_with($item->cover_image, 'http') ? $item->cover_image : cdn_asset($item->cover_image) }}"
                                              alt="Cover" style="width:60px; height:45px; object-fit:cover; border-radius:6px;">
                                     @else
                                         <div style="width:60px; height:45px; background:#EDF2F7; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#A0AEC0;">

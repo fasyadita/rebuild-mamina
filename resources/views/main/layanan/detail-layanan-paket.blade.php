@@ -515,10 +515,10 @@
 
                         {{-- AREA GAMBAR --}}
                         @php
-                            $productImg = $product->image ? asset('storage/' . $product->image) : asset('img/mamina.png');
+                            $productImg = $product->image ? cdn_asset('storage/' . $product->image) : cdn_asset('img/mamina.png');
                         @endphp
                         <img src="{{ $productImg }}" alt="{{ $product->name }}"
-                            onerror="this.onerror=null;this.src='{{ asset('img/mamina.png') }}';"
+                            onerror="this.onerror=null;this.src='{{ cdn_asset('img/mamina.png') }}';"
                             style="width: 100%; height: 155px; object-fit: cover; flex-shrink: 0; display: block;">
 
 

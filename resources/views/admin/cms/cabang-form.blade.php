@@ -66,7 +66,7 @@
                         <label class="form-label">Foto Cabang</label>
                         @if(!empty($item->image))
                             <div style="margin-bottom:10px;">
-                                <img src="{{ str_starts_with($item->image, 'http') ? $item->image : asset($item->image) }}"
+                                <img src="{{ str_starts_with($item->image, 'http') ? $item->image : cdn_asset($item->image) }}"
                                      alt="Preview" style="max-height:140px; border-radius:10px; border:1px solid #ddd; object-fit:cover;">
                             </div>
                         @endif

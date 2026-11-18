@@ -54,6 +54,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'asset_cdn_url' => env('ASSET_CDN_URL', env('APP_URL', 'http://localhost')),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

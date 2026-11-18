@@ -343,7 +343,7 @@
                 <div class="product-card">
 
                     <div class="product-image">
-                        <img src="{{ asset('img/cnf.jpeg') }}"
+                        <img src="{{ cdn_asset('img/cnf.jpeg') }}"
                             class="img-fluid"
                             alt="Nama Produk 1">
                     </div>
@@ -383,7 +383,7 @@
                 <div class="product-card">
 
                     <div class="product-image">
-                        <img src="{{ asset('img/ds.jpeg') }}"
+                        <img src="{{ cdn_asset('img/ds.jpeg') }}"
                             class="img-fluid"
                             alt="Nama Produk 2">
                     </div>
@@ -421,7 +421,7 @@
                 <div class="product-card">
 
                     <div class="product-image">
-                        <img src="{{ asset('img/tc.jpeg') }}"
+                        <img src="{{ cdn_asset('img/tc.jpeg') }}"
                             class="img-fluid"
                             alt="Nama Produk 3">
                     </div>

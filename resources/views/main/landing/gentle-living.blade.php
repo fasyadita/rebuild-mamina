@@ -388,7 +388,7 @@
             {{-- ================= LEFT ================= --}}
             <div class="col-lg-7 col-md-5">
 
-                <img src="{{ asset('img/mamina-essentials.jpeg') }}" class="w-100 rounded-2xl" alt="Living 1">
+                <img src="{{ cdn_asset('img/mamina-essentials.jpeg') }}" class="w-100 rounded-2xl" alt="Living 1">
 
             </div>
 
@@ -401,7 +401,7 @@
                     {{-- Product 1 --}}
                     <div class="living-product">
 
-                        <img src="{{ asset('img/seduhan-original.jpeg') }}" alt="Nama Produk 1" class="product-thumb">
+                        <img src="{{ cdn_asset('img/seduhan-original.jpeg') }}" alt="Nama Produk 1" class="product-thumb">
 
 
                         <div class="flex-grow-1">
@@ -427,7 +427,7 @@
                     {{-- Product 2 --}}
                     <div class="living-product">
 
-                        <img src="{{ asset('img/seduhan-jeruknipis.jpeg') }}" alt="Nama Produk 2" class="product-thumb">
+                        <img src="{{ cdn_asset('img/seduhan-jeruknipis.jpeg') }}" alt="Nama Produk 2" class="product-thumb">
 
 
                         <div class="flex-grow-1">
@@ -453,7 +453,7 @@
                     {{-- Product 3 --}}
                     <div class="living-product">
 
-                        <img src="{{ asset('img/seduhan-belimbingwuluh.jpeg') }}" alt="Nama Produk 3" class="product-thumb">
+                        <img src="{{ cdn_asset('img/seduhan-belimbingwuluh.jpeg') }}" alt="Nama Produk 3" class="product-thumb">
 
 
                         <div class="flex-grow-1">

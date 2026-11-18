@@ -122,11 +122,11 @@
                             if (str_starts_with($item->image, 'http') || str_starts_with($item->image, '/')) {
                                 $photoUrl = $item->image;
                             } elseif (file_exists(public_path('storage/' . $item->image))) {
-                                $photoUrl = asset('storage/' . $item->image);
+                                $photoUrl = cdn_asset('storage/' . $item->image);
                             } elseif (file_exists(public_path($item->image))) {
-                                $photoUrl = asset($item->image);
+                                $photoUrl = cdn_asset($item->image);
                             } else {
-                                $photoUrl = asset('storage/' . $item->image);
+                                $photoUrl = cdn_asset('storage/' . $item->image);
                             }
                         }
                     @endphp
@@ -135,7 +135,7 @@
                         <td>
                             @if($photoUrl)
                                 <img src="{{ $photoUrl }}" alt="{{ $item->name }}"
-                                    onerror="this.onerror=null;this.src='{{ asset('img/mamina.png') }}';"
+                                    onerror="this.onerror=null;this.src='{{ cdn_asset('img/mamina.png') }}';"
                                     style="width:65px; height:45px; object-fit:cover; border-radius:7px; border:1px solid var(--border); display:block;">
                             @else
                                 <div style="width:65px; height:45px; background:#f0f4f4; border-radius:7px; display:flex; align-items:center; justify-content:center; color:#3ca5a5; font-size:18px;">

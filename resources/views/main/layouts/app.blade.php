@@ -19,12 +19,12 @@
     <style>
         @font-face {
             font-family: 'Fredoka';
-            src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+            src: url('https://assets.mamina.id/fonts/Fredoka-Medium.ttf') format('truetype');
             font-weight: 500;
         }
         @font-face {
             font-family: 'Nunito';
-            src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+            src: url('https://assets.mamina.id/fonts/Nunito-Medium.ttf') format('truetype');
             font-weight: 500;
         }
         body {

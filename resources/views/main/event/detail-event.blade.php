@@ -8,7 +8,7 @@
 
     <div class="event-hero">
         <div class="event-hero-image">
-            <img src="{{ asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
+            <img src="{{ cdn_asset('img/event.jpeg') }}" alt="Kelas Persiapan Menyusui">
             <span class="event-status">Kegiatan Sedang Berlangsung</span>
         </div>
 
@@ -96,14 +96,14 @@
 <style>
     @font-face {
         font-family: 'fredoka';
-        src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+        src: url('https://assets.mamina.id/fonts/Fredoka-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'nunito';
-        src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+        src: url('https://assets.mamina.id/fonts/Nunito-Medium.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
     }

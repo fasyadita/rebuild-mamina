@@ -289,15 +289,15 @@
                 @forelse($timMalang as $user)
                 @php
                     $photo = $user->thumb 
-                        ? (file_exists(public_path('storage/' . $user->thumb)) ? asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : asset('img/tim-mamina.jpeg')))
-                        : asset('img/tim-mamina.jpeg');
+                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
+                        : cdn_asset('img/tim-mamina.jpeg');
                 @endphp
                 <div class="tim-card">
                     <img
                         src="{{ $photo }}"
                         alt="{{ $user->name }}"
                         class="tim-card-image"
-                        onerror="this.onerror=null;this.src='{{ asset('img/tim-mamina.jpeg') }}';"
+                        onerror="this.onerror=null;this.src='{{ cdn_asset('img/tim-mamina.jpeg') }}';"
                     >
                     <div class="tim-card-body">
                         <h3 class="tim-card-name">
@@ -357,15 +357,15 @@
                 @forelse($timKediri as $user)
                 @php
                     $photo = $user->thumb 
-                        ? (file_exists(public_path('storage/' . $user->thumb)) ? asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : asset('img/tim-mamina.jpeg')))
-                        : asset('img/tim-mamina.jpeg');
+                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
+                        : cdn_asset('img/tim-mamina.jpeg');
                 @endphp
                 <div class="tim-card">
                     <img
                         src="{{ $photo }}"
                         alt="{{ $user->name }}"
                         class="tim-card-image"
-                        onerror="this.onerror=null;this.src='{{ asset('img/tim-mamina.jpeg') }}';"
+                        onerror="this.onerror=null;this.src='{{ cdn_asset('img/tim-mamina.jpeg') }}';"
                     >
                     <div class="tim-card-body">
                         <h3 class="tim-card-name">
@@ -425,15 +425,15 @@
                 @forelse($konselor as $user)
                 @php
                     $photo = $user->thumb 
-                        ? (file_exists(public_path('storage/' . $user->thumb)) ? asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : asset('img/tim-mamina.jpeg')))
-                        : asset('img/tim-mamina.jpeg');
+                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
+                        : cdn_asset('img/tim-mamina.jpeg');
                 @endphp
                 <div class="tim-card">
                     <img
                         src="{{ $photo }}"
                         alt="{{ $user->name }}"
                         class="tim-card-image"
-                        onerror="this.onerror=null;this.src='{{ asset('img/tim-mamina.jpeg') }}';"
+                        onerror="this.onerror=null;this.src='{{ cdn_asset('img/tim-mamina.jpeg') }}';"
                     >
                     <div class="tim-card-body">
                         <h3 class="tim-card-name">
@@ -493,15 +493,15 @@
                 @forelse($timExtend as $user)
                 @php
                     $photo = $user->thumb 
-                        ? (file_exists(public_path('storage/' . $user->thumb)) ? asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : asset('img/tim-mamina.jpeg')))
-                        : asset('img/tim-mamina.jpeg');
+                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
+                        : cdn_asset('img/tim-mamina.jpeg');
                 @endphp
                 <div class="tim-card">
                     <img
                         src="{{ $photo }}"
                         alt="{{ $user->name }}"
                         class="tim-card-image"
-                        onerror="this.onerror=null;this.src='{{ asset('img/tim-mamina.jpeg') }}';"
+                        onerror="this.onerror=null;this.src='{{ cdn_asset('img/tim-mamina.jpeg') }}';"
                     >
                     <div class="tim-card-body">
                         <h3 class="tim-card-name">

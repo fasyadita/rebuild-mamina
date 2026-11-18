@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/png" href="{{ asset('images/logo-tab.png') }}">
 
     <title>@yield('title', 'Mamina')</title>
     <link rel="icon" href="{{ asset('img/logo-2.png') }}" type="image/png">
@@ -24,12 +23,12 @@
     <style>
         @font-face {
             font-family: 'Fredoka';
-            src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+            src: url('https://assets.mamina.id/fonts/Fredoka-Medium.ttf') format('truetype');
             font-weight: 500;
         }
         @font-face {
             font-family: 'Nunito';
-            src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+            src: url('https://assets.mamina.id/fonts/Nunito-Medium.ttf') format('truetype');
             font-weight: 500;
         }
         body {

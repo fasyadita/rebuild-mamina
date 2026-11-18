@@ -24,7 +24,7 @@
 
             {{-- FOTO --}}
             <div class="cabang-image-wrapper">
-                <img src="{{ asset('img/cabang-mlg.jpg') }}"
+                <img src="{{ cdn_asset('img/cabang-mlg.jpg') }}"
                      alt="Cabang Mamina Malang Central"
                      class="cabang-image">
             </div>
@@ -76,7 +76,7 @@
 
             {{-- FOTO --}}
             <div class="cabang-image-wrapper mint-bg">
-                <img src="{{ asset('img/cabang-sht.jpeg') }}"
+                <img src="{{ cdn_asset('img/cabang-sht.jpeg') }}"
                      alt="Cabang Mamina Malang East"
                      class="cabang-image">
             </div>
@@ -128,7 +128,7 @@
 
             {{-- FOTO --}}
             <div class="cabang-image-wrapper pink-bg">
-                <img src="{{ asset('img/cabang-kdr.jpeg') }}"
+                <img src="{{ cdn_asset('img/cabang-kdr.jpeg') }}"
                      alt="Cabang Mamina Kediri"
                      class="cabang-image">
             </div>
@@ -187,13 +187,13 @@
 
 @font-face {
     font-family: 'Fredoka';
-    src: url('/fonts/Fredoka/static/Fredoka-Medium.ttf') format('truetype');
+    src: url('https://assets.mamina.id/fonts/Fredoka-Medium.ttf') format('truetype');
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'Nunito';
-    src: url('/fonts/nunito/static/Nunito-Medium.ttf') format('truetype');
+    src: url('https://assets.mamina.id/fonts/Nunito-Medium.ttf') format('truetype');
     font-weight: 500;
 }
 
