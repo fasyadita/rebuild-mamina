@@ -79,7 +79,7 @@
                         <label class="form-label">Foto Penulis</label>
                         @if(!empty($item->author_photo))
                             <div style="margin-bottom:8px;">
-                                <img src="{{ str_starts_with($item->author_photo, 'http') ? $item->author_photo : asset($item->author_photo) }}"
+                                <img src="{{ str_starts_with($item->author_photo, 'http') ? $item->author_photo : cdn_asset($item->author_photo) }}"
                                      alt="Author" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
                             </div>
                         @endif
