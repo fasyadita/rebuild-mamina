@@ -90,7 +90,7 @@
                             } elseif (file_exists(public_path('storage/' . $item->thumb))) {
                                 $photoUrl = cdn_asset('storage/' . $item->thumb);
                             } elseif (file_exists(public_path($item->thumb))) {
-                                $photoUrl = asset($item->thumb);
+                                $photoUrl = cdn_asset($item->thumb);
                             } else {
                                 $photoUrl = cdn_asset('storage/' . $item->thumb);
                             }

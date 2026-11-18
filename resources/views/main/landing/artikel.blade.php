@@ -73,7 +73,7 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2.5">
                             <img
-                                src="{{ !empty($featured->author_photo) ? (str_starts_with($featured->author_photo, 'http') ? $featured->author_photo : asset($featured->author_photo)) : 'https://randomuser.me/api/portraits/women/65.jpg' }}"
+                                src="{{ !empty($featured->author_photo) ? (str_starts_with($featured->author_photo, 'http') ? $featured->author_photo : cdn_asset($featured->author_photo)) : 'https://randomuser.me/api/portraits/women/65.jpg' }}"
                                 class="w-10 h-10 rounded-full object-cover"
                                 alt="author">
                             <div>

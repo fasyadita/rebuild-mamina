@@ -289,7 +289,7 @@
                 @forelse($timMalang as $user)
                 @php
                     $photo = $user->thumb 
-                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
+                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? cdn_asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
                         : cdn_asset('img/tim-mamina.jpeg');
                 @endphp
                 <div class="tim-card">
@@ -357,7 +357,7 @@
                 @forelse($timKediri as $user)
                 @php
                     $photo = $user->thumb 
-                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
+                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? cdn_asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
                         : cdn_asset('img/tim-mamina.jpeg');
                 @endphp
                 <div class="tim-card">
@@ -425,7 +425,7 @@
                 @forelse($konselor as $user)
                 @php
                     $photo = $user->thumb 
-                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
+                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? cdn_asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
                         : cdn_asset('img/tim-mamina.jpeg');
                 @endphp
                 <div class="tim-card">
@@ -493,7 +493,7 @@
                 @forelse($timExtend as $user)
                 @php
                     $photo = $user->thumb 
-                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
+                        ? (file_exists(public_path('storage/' . $user->thumb)) ? cdn_asset('storage/' . $user->thumb) : (file_exists(public_path($user->thumb)) ? cdn_asset($user->thumb) : cdn_asset('img/tim-mamina.jpeg')))
                         : cdn_asset('img/tim-mamina.jpeg');
                 @endphp
                 <div class="tim-card">

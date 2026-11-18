@@ -77,7 +77,7 @@
             <!-- Foto utama -->
             <img
                 class="main-image"
-                src="{{ !empty($cmsGuestHero->hero_image) ? (str_starts_with($cmsGuestHero->hero_image, 'http') ? $cmsGuestHero->hero_image : asset($cmsGuestHero->hero_image)) : 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=90' }}"
+                src="{{ !empty($cmsGuestHero->hero_image) ? (str_starts_with($cmsGuestHero->hero_image, 'http') ? $cmsGuestHero->hero_image : cdn_asset($cmsGuestHero->hero_image)) : 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=90' }}"
                 alt="Ibu dan bayi">
 
             <!-- Comfort Badge -->

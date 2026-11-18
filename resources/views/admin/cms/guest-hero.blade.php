@@ -78,7 +78,7 @@
                         <label class="form-label">Foto Utama</label>
                         @if(!empty($hero->hero_image))
                             <div style="margin-bottom:10px;">
-                                <img src="{{ str_starts_with($hero->hero_image, 'http') ? $hero->hero_image : asset($hero->hero_image) }}"
+                                <img src="{{ str_starts_with($hero->hero_image, 'http') ? $hero->hero_image : cdn_asset($hero->hero_image) }}"
                                      alt="Preview" style="max-height:120px; border-radius:10px; border:1px solid #ddd;">
                             </div>
                         @endif
